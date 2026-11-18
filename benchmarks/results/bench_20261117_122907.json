@@ -1,0 +1,68 @@
+{
+  "recorded_at": "2026-11-17T12:29:07",
+  "model": "ollama:gemma3:4b",
+  "model_digest": "68ceab7e468a31c988b44d5a4984a0e21f58c4f7158c6ce29c1804babac38df7",
+  "prompt_version": "p2-v3",
+  "config_sha256": "f384c42bf585b3448619e43e15c3a058d31c7c552585de238bc633c6fafaa638",
+  "config_values": {
+    "spare_io_threshold_pct": 15.0,
+    "cable_length_tolerance_pct": 10.0,
+    "model_name": "gemma3:4b",
+    "temperature": 0.0,
+    "model_timeout_seconds": 120,
+    "model_attempts": 2,
+    "max_prompt_tokens": 4096,
+    "max_context_tokens": 3000,
+    "max_pdf_pages": 250,
+    "max_suspected_findings": 150
+  },
+  "per_set": [
+    {
+      "set": "seeded",
+      "kind": "seeded",
+      "dataset": "seeded (generator 0.1.0, frozen 2026-11-17)",
+      "seconds": 35.0,
+      "source_hashes": {
+        "drawings.pdf": "60bd0b03bef632ee358101f5611cae95fac218f844a13ac081ef9f31f66eb2a2",
+        "points.xlsx": "407b420312cf217f2be74efdd187171a670d1c8596830dfc2f03cefaf1c2b445",
+        "sequence.txt": "48ce48b66482b7e6b543658ec827ebd5b04a6c6f9c4edf1f13172b5e8fa29ae7"
+      },
+      "seeded": 5,
+      "tp": 4,
+      "fn": 1,
+      "fp": 0,
+      "comments": 4,
+      "unresolved": 2,
+      "conventions": 1
+    },
+    {
+      "set": "clean",
+      "kind": "clean",
+      "dataset": "clean (generator 0.1.0, frozen 2026-11-17)",
+      "seconds": 9.985000000000582,
+      "source_hashes": {
+        "drawings.pdf": "068887297e14a74b4a8ce31999cf6a9a8f3c225181eee01b033947e51e8bf8e9",
+        "points.xlsx": "ef4a49e9f70e3d28c2717dc54c6c267faaa60710e29520d217562e4fc30a1179",
+        "sequence.txt": "a982be11d8dcacfdffc447e8a482f8f7f1497d1f0cdc22c673f63013d73665cc"
+      },
+      "seeded": 0,
+      "tp": 0,
+      "fn": 0,
+      "fp": 0,
+      "comments": 0,
+      "unresolved": 1,
+      "conventions": 1
+    }
+  ],
+  "totals": {
+    "seeded_errors": 5,
+    "caught": 4,
+    "missed": 1,
+    "wrong_comments": 0,
+    "precision": 1.0,
+    "recall": 0.8,
+    "clean_set_comments": 0,
+    "unresolved": 3,
+    "seconds": 45.0
+  }
+}

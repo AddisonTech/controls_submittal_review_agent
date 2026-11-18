@@ -1,0 +1,15 @@
+{
+  "generator": "make_eval_sets",
+  "generator_version": "1.0.0",
+  "seed": 22,
+  "panels": 4,
+  "controller": "ECY-S1000",
+  "typical": false,
+  "seeded_errors": [],
+  "expected_other_verdicts": [
+    {
+      "finding_id": "R1:AHU-01-OAT:NO_SCOPE",
+      "verdict": "unresolved"
+    }
+  ]
+}

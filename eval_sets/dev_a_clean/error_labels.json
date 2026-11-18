@@ -1,0 +1,19 @@
+{
+  "generator": "make_eval_sets",
+  "generator_version": "1.0.0",
+  "seed": 11,
+  "panels": 3,
+  "controller": "ECY-600",
+  "typical": true,
+  "seeded_errors": [],
+  "expected_other_verdicts": [
+    {
+      "finding_id": "R5:CBL-102",
+      "verdict": "drafting_convention"
+    },
+    {
+      "finding_id": "R1:AHU-01-OAT:NO_SCOPE",
+      "verdict": "unresolved"
+    }
+  ]
+}

@@ -1,0 +1,676 @@
+{
+  "sets": [
+    {
+      "set": "seeded",
+      "kind": "seeded",
+      "dataset": "seeded (generator 0.1.0, frozen 2026-11-17)",
+      "source_hashes": {
+        "drawings.pdf": "60bd0b03bef632ee358101f5611cae95fac218f844a13ac081ef9f31f66eb2a2",
+        "points.xlsx": "407b420312cf217f2be74efdd187171a670d1c8596830dfc2f03cefaf1c2b445",
+        "sequence.txt": "48ce48b66482b7e6b543658ec827ebd5b04a6c6f9c4edf1f13172b5e8fa29ae7"
+      },
+      "comments": 5,
+      "seconds": 48.8,
+      "trace_problems": [],
+      "agent": {
+        "R1": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0
+        },
+        "R2": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0
+        },
+        "R3": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0
+        },
+        "R4": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0
+        },
+        "R5": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0
+        }
+      },
+      "rules_only": {
+        "R1": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 1
+        },
+        "R2": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0
+        },
+        "R3": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0
+        },
+        "R4": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0
+        },
+        "R5": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 1
+        }
+      },
+      "confusion": {
+        "R1:AHU-02-SAT:MISSING_FROM_SEQUENCE": "caught",
+        "R2:CP-01:AI-02:TYPE_MISMATCH": "caught",
+        "R3:CP-02:DO": "caught",
+        "R4:IO-102:TITLE_MISMATCH": "caught",
+        "R5:CBL-001": "caught"
+      },
+      "wrong_comments": [],
+      "conventions": 1,
+      "unresolved": 1
+    },
+    {
+      "set": "clean",
+      "kind": "clean",
+      "dataset": "clean (generator 0.1.0, frozen 2026-11-17)",
+      "source_hashes": {
+        "drawings.pdf": "068887297e14a74b4a8ce31999cf6a9a8f3c225181eee01b033947e51e8bf8e9",
+        "points.xlsx": "ef4a49e9f70e3d28c2717dc54c6c267faaa60710e29520d217562e4fc30a1179",
+        "sequence.txt": "a982be11d8dcacfdffc447e8a482f8f7f1497d1f0cdc22c673f63013d73665cc"
+      },
+      "comments": 0,
+      "seconds": 10.4,
+      "trace_problems": [],
+      "agent": {
+        "R1": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 0
+        },
+        "R2": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 0
+        },
+        "R3": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 0
+        },
+        "R4": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 0
+        },
+        "R5": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 0
+        }
+      },
+      "rules_only": {
+        "R1": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 1
+        },
+        "R2": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 0
+        },
+        "R3": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 0
+        },
+        "R4": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 0
+        },
+        "R5": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 1
+        }
+      },
+      "confusion": {},
+      "wrong_comments": [],
+      "conventions": 1,
+      "unresolved": 1
+    },
+    {
+      "set": "dev_a",
+      "kind": "seeded",
+      "dataset": "dev_a (generator 1.0.0, frozen 2026-11-17)",
+      "source_hashes": {
+        "drawings.pdf": "e727fb1dd8e4713acd962b30ccf26477ae0d148443d5c5004c834f0cfab00ef6",
+        "points.xlsx": "3b70edc87feac2432de0226a9dc97503528a01368843c9330d1b0a7038c33860",
+        "sequence.txt": "bd0578b77f881b54db2ca0f2c32411bf28b3c5bb4de9cb55b5bebd4e3c366859"
+      },
+      "comments": 5,
+      "seconds": 36.2,
+      "trace_problems": [],
+      "agent": {
+        "R1": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0
+        },
+        "R2": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0
+        },
+        "R3": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0
+        },
+        "R4": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0
+        },
+        "R5": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0
+        }
+      },
+      "rules_only": {
+        "R1": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 1
+        },
+        "R2": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0
+        },
+        "R3": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0
+        },
+        "R4": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0
+        },
+        "R5": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 1
+        }
+      },
+      "confusion": {
+        "R1:AHU-02-RAT:MISSING_FROM_SEQUENCE": "caught",
+        "R2:CP-02:DO-01:TYPE_MISMATCH": "caught",
+        "R3:CP-03:AO": "caught",
+        "R4:IO-101:TITLE_MISMATCH": "caught",
+        "R5:CBL-003": "caught"
+      },
+      "wrong_comments": [],
+      "conventions": 1,
+      "unresolved": 1
+    },
+    {
+      "set": "dev_a_clean",
+      "kind": "clean",
+      "dataset": "dev_a_clean (generator 1.0.0, frozen 2026-11-17)",
+      "source_hashes": {
+        "drawings.pdf": "f747914b58184c292dc1d6c05bfa6dbe7188340b75aac9bc5d5997a34605a26b",
+        "points.xlsx": "730a187950f0eeb67407d73040cb783f4c042441a810cd7fc43639a37427de85",
+        "sequence.txt": "25faf36d846330d2e9b19df7da480daf6eff8f1f4c3888a8c53e21371749589e"
+      },
+      "comments": 0,
+      "seconds": 10.3,
+      "trace_problems": [],
+      "agent": {
+        "R1": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 0
+        },
+        "R2": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 0
+        },
+        "R3": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 0
+        },
+        "R4": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 0
+        },
+        "R5": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 0
+        }
+      },
+      "rules_only": {
+        "R1": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 1
+        },
+        "R2": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 0
+        },
+        "R3": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 0
+        },
+        "R4": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 0
+        },
+        "R5": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 1
+        }
+      },
+      "confusion": {},
+      "wrong_comments": [],
+      "conventions": 1,
+      "unresolved": 1
+    },
+    {
+      "set": "dev_b",
+      "kind": "seeded",
+      "dataset": "dev_b (generator 1.0.0, frozen 2026-11-17)",
+      "source_hashes": {
+        "drawings.pdf": "42362255dbb8bf2b3b1bd1c77018dc39a9c804287c1bf6131f52103c118107f7",
+        "points.xlsx": "aaff04b5d6d648d21a84a71167753fd743dc43aac01e8345c51212e32d28b3c6",
+        "sequence.txt": "62353de8535945d203d72d265574aa1dda0b9c8023b9ea690ce5c3524cd8d0e0"
+      },
+      "comments": 5,
+      "seconds": 37.5,
+      "trace_problems": [],
+      "agent": {
+        "R1": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0
+        },
+        "R2": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0
+        },
+        "R3": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0
+        },
+        "R4": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0
+        },
+        "R5": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0
+        }
+      },
+      "rules_only": {
+        "R1": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 1
+        },
+        "R2": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0
+        },
+        "R3": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0
+        },
+        "R4": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0
+        },
+        "R5": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0
+        }
+      },
+      "confusion": {
+        "R1:AHU-02-SAT:MISSING_FROM_SEQUENCE": "caught",
+        "R2:CP-01:DO-01:TYPE_MISMATCH": "caught",
+        "R3:CP-04:AO": "caught",
+        "R4:IO-101:TITLE_MISMATCH": "caught",
+        "R5:CBL-003": "caught"
+      },
+      "wrong_comments": [],
+      "conventions": 0,
+      "unresolved": 1
+    },
+    {
+      "set": "dev_b_clean",
+      "kind": "clean",
+      "dataset": "dev_b_clean (generator 1.0.0, frozen 2026-11-17)",
+      "source_hashes": {
+        "drawings.pdf": "5f3a69c4d4615be9321b0d94b7f80603d754155e293a8ce6ade0b3d2d15208b8",
+        "points.xlsx": "8b9ee668cb595007484254c8bcd17eb2a6dc1c46302a02388e7ecd952de99bd7",
+        "sequence.txt": "d8cf51fedb0c7af0c235552bb16ca397c5eadef803e49e39c52bf3d14ce135c8"
+      },
+      "comments": 0,
+      "seconds": 6.2,
+      "trace_problems": [],
+      "agent": {
+        "R1": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 0
+        },
+        "R2": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 0
+        },
+        "R3": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 0
+        },
+        "R4": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 0
+        },
+        "R5": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 0
+        }
+      },
+      "rules_only": {
+        "R1": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 1
+        },
+        "R2": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 0
+        },
+        "R3": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 0
+        },
+        "R4": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 0
+        },
+        "R5": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 0
+        }
+      },
+      "confusion": {},
+      "wrong_comments": [],
+      "conventions": 0,
+      "unresolved": 1
+    },
+    {
+      "set": "dev_c",
+      "kind": "seeded",
+      "dataset": "dev_c (generator 1.0.0, frozen 2026-11-17)",
+      "source_hashes": {
+        "drawings.pdf": "0b85559bb67039c8f7045c6cc77336aaa1abf9275259f27ecc99b0037c3be7bf",
+        "points.xlsx": "2258074f4aab3e977b78ce6e710a1f47eecd336b265ace65f626025402a25803",
+        "sequence.txt": "7b6d4859140c58178ea2703e628fb70494a592e43e484eb7c81eab5e1104675d"
+      },
+      "comments": 5,
+      "seconds": 35.6,
+      "trace_problems": [],
+      "agent": {
+        "R1": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0
+        },
+        "R2": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0
+        },
+        "R3": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0
+        },
+        "R4": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0
+        },
+        "R5": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0
+        }
+      },
+      "rules_only": {
+        "R1": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 1
+        },
+        "R2": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0
+        },
+        "R3": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0
+        },
+        "R4": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 0
+        },
+        "R5": {
+          "tp": 1,
+          "fn": 0,
+          "fp": 1
+        }
+      },
+      "confusion": {
+        "R1:AHU-01-SAT:MISSING_FROM_SEQUENCE": "caught",
+        "R2:CP-02:DI-01:TYPE_MISMATCH": "caught",
+        "R3:CP-01:DI": "caught",
+        "R4:IO-102:TITLE_MISMATCH": "caught",
+        "R5:CBL-002": "caught"
+      },
+      "wrong_comments": [],
+      "conventions": 1,
+      "unresolved": 1
+    },
+    {
+      "set": "dev_c_clean",
+      "kind": "clean",
+      "dataset": "dev_c_clean (generator 1.0.0, frozen 2026-11-17)",
+      "source_hashes": {
+        "drawings.pdf": "34c36a785ae39ae4ec3712f663d55c9d59053fad0dee762fcb3cf32922088e3e",
+        "points.xlsx": "197b4f97711cfd7c6f9ff9c2120d486c53a9711de232551777bbaab7e6f16ce0",
+        "sequence.txt": "a982be11d8dcacfdffc447e8a482f8f7f1497d1f0cdc22c673f63013d73665cc"
+      },
+      "comments": 0,
+      "seconds": 11.1,
+      "trace_problems": [],
+      "agent": {
+        "R1": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 0
+        },
+        "R2": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 0
+        },
+        "R3": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 0
+        },
+        "R4": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 0
+        },
+        "R5": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 0
+        }
+      },
+      "rules_only": {
+        "R1": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 1
+        },
+        "R2": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 0
+        },
+        "R3": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 0
+        },
+        "R4": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 0
+        },
+        "R5": {
+          "tp": 0,
+          "fn": 0,
+          "fp": 1
+        }
+      },
+      "confusion": {},
+      "wrong_comments": [],
+      "conventions": 1,
+      "unresolved": 1
+    }
+  ],
+  "agent_per_rule": {
+    "R1": {
+      "tp": 4,
+      "fn": 0,
+      "fp": 0
+    },
+    "R2": {
+      "tp": 4,
+      "fn": 0,
+      "fp": 0
+    },
+    "R3": {
+      "tp": 4,
+      "fn": 0,
+      "fp": 0
+    },
+    "R4": {
+      "tp": 4,
+      "fn": 0,
+      "fp": 0
+    },
+    "R5": {
+      "tp": 4,
+      "fn": 0,
+      "fp": 0
+    }
+  },
+  "rules_only_per_rule": {
+    "R1": {
+      "tp": 4,
+      "fn": 0,
+      "fp": 4
+    },
+    "R2": {
+      "tp": 4,
+      "fn": 0,
+      "fp": 0
+    },
+    "R3": {
+      "tp": 4,
+      "fn": 0,
+      "fp": 0
+    },
+    "R4": {
+      "tp": 4,
+      "fn": 0,
+      "fp": 0
+    },
+    "R5": {
+      "tp": 4,
+      "fn": 0,
+      "fp": 3
+    }
+  },
+  "agent_totals": {
+    "tp": 20,
+    "fn": 0,
+    "fp": 0,
+    "recall": 1.0,
+    "precision": 1.0
+  },
+  "rules_only_totals": {
+    "tp": 20,
+    "fn": 0,
+    "fp": 7,
+    "recall": 1.0,
+    "precision": 0.741
+  },
+  "problems": [],
+  "model": "ollama:gemma3:4b",
+  "model_digest": "68ceab7e468a31c988b44d5a4984a0e21f58c4f7158c6ce29c1804babac38df7",
+  "prompt_version": "p2-v4",
+  "holdout": false,
+  "conclusion": "The model step cut wrong comments from 7 to 0 without losing seeded errors, so it adds measurable value over the rules alone.",
+  "limitations": [
+    "Generated drawings are cleaner than real ones; extraction from a real exported set is unproven.",
+    "The blind holdout seeded by a working controls engineer does not exist yet; every result is graded against errors the student seeded through the generator.",
+    "Version one reads text only; errors in drawing geometry are out of reach."
+  ],
+  "failed": []
+}

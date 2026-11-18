@@ -1,0 +1,36 @@
+{
+  "generator_version": "0.1.0",
+  "fixture_schema_version": "1",
+  "seed": "none: deterministic, no random numbers",
+  "datasets": {
+    "seeded": {
+      "files": {
+        "drawings.pdf": "60bd0b03bef632ee358101f5611cae95fac218f844a13ac081ef9f31f66eb2a2",
+        "error_labels.json": "f1b6eea6ddad644ec90a66fda2be5150df474f9451d42aa8256bd28fc0ff66eb",
+        "extraction_truth.json": "8dc08fea37d71e0e230b02e56150bb3d9476175a8b93ce3bb8998c56039901a6",
+        "points.xlsx": "407b420312cf217f2be74efdd187171a670d1c8596830dfc2f03cefaf1c2b445",
+        "sequence.txt": "48ce48b66482b7e6b543658ec827ebd5b04a6c6f9c4edf1f13172b5e8fa29ae7"
+      }
+    },
+    "clean": {
+      "files": {
+        "drawings.pdf": "068887297e14a74b4a8ce31999cf6a9a8f3c225181eee01b033947e51e8bf8e9",
+        "error_labels.json": "2d33dacc06a7f1d08e54deedc8fc817370082695eadf9dab4b27eb404a58eeee",
+        "extraction_truth.json": "2e098b6613656b4dccfe6a56d8592b34ea0a69b575761056eaa4656d802f0758",
+        "points.xlsx": "ef4a49e9f70e3d28c2717dc54c6c267faaa60710e29520d217562e4fc30a1179",
+        "sequence.txt": "a982be11d8dcacfdffc447e8a482f8f7f1497d1f0cdc22c673f63013d73665cc"
+      }
+    },
+    "malformed": {
+      "files": {
+        "drawings.pdf": "a50a052e83c0408572e61dde2bc9591dd9de8c4f17ca8eeab35ddd96750a75c9",
+        "points.xlsx": "c6b3d435849f3cad07b8aaf28a12bb6bad5f8af3299b1e8dd3414a15c6b884e4",
+        "sequence.txt": "a982be11d8dcacfdffc447e8a482f8f7f1497d1f0cdc22c673f63013d73665cc"
+      }
+    }
+  },
+  "shared_files": {
+    "recorded_responses.json": "f90242cfb330dded7d006acee2554bd00e34ed0caeb565e7cad034e89a3761b8"
+  },
+  "frozen_on": "2026-11-17"
+}

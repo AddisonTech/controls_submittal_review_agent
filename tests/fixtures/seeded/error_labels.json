@@ -1,0 +1,52 @@
+{
+  "generator_version": "0.1.0",
+  "seeded_errors": [
+    {
+      "finding_id": "R1:AHU-02-SAT:MISSING_FROM_SEQUENCE",
+      "rule_id": "R1",
+      "sheets": [
+        "G-001"
+      ]
+    },
+    {
+      "finding_id": "R2:CP-01:AI-02:TYPE_MISMATCH",
+      "rule_id": "R2",
+      "sheets": [
+        "IO-101"
+      ]
+    },
+    {
+      "finding_id": "R3:CP-02:DO",
+      "rule_id": "R3",
+      "sheets": [
+        "P-102"
+      ]
+    },
+    {
+      "finding_id": "R4:IO-102:TITLE_MISMATCH",
+      "rule_id": "R4",
+      "sheets": [
+        "G-001",
+        "IO-102"
+      ]
+    },
+    {
+      "finding_id": "R5:CBL-001",
+      "rule_id": "R5",
+      "sheets": [
+        "G-002",
+        "W-101"
+      ]
+    }
+  ],
+  "expected_other_verdicts": [
+    {
+      "finding_id": "R5:CBL-102",
+      "verdict": "drafting_convention"
+    },
+    {
+      "finding_id": "R1:AHU-01-OAT:NO_SCOPE",
+      "verdict": "unresolved"
+    }
+  ]
+}

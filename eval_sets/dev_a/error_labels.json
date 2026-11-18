@@ -1,0 +1,57 @@
+{
+  "generator": "make_eval_sets",
+  "generator_version": "1.0.0",
+  "seed": 11,
+  "panels": 3,
+  "controller": "ECY-600",
+  "typical": true,
+  "seeded_errors": [
+    {
+      "finding_id": "R1:AHU-02-RAT:MISSING_FROM_SEQUENCE",
+      "rule_id": "R1",
+      "sheets": [
+        "G-001"
+      ]
+    },
+    {
+      "finding_id": "R2:CP-02:DO-01:TYPE_MISMATCH",
+      "rule_id": "R2",
+      "sheets": [
+        "IO-102"
+      ]
+    },
+    {
+      "finding_id": "R3:CP-03:AO",
+      "rule_id": "R3",
+      "sheets": [
+        "P-103"
+      ]
+    },
+    {
+      "finding_id": "R4:IO-101:TITLE_MISMATCH",
+      "rule_id": "R4",
+      "sheets": [
+        "G-001",
+        "IO-101"
+      ]
+    },
+    {
+      "finding_id": "R5:CBL-003",
+      "rule_id": "R5",
+      "sheets": [
+        "G-002",
+        "W-103"
+      ]
+    }
+  ],
+  "expected_other_verdicts": [
+    {
+      "finding_id": "R5:CBL-102",
+      "verdict": "drafting_convention"
+    },
+    {
+      "finding_id": "R1:AHU-01-OAT:NO_SCOPE",
+      "verdict": "unresolved"
+    }
+  ]
+}

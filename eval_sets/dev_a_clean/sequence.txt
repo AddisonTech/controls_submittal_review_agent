@@ -1,0 +1,10 @@
+SEQ: CP-01 controls AHU-01-SAT using AHU-01-CHWV
+SEQ: CP-01 starts AHU-01-SF-CMD and proves AHU-01-SF-STS
+SEQ: CP-01 monitors AHU-01-RAT
+SEQ: CP-02 controls AHU-02-SAT using AHU-02-CHWV
+SEQ: CP-02 starts AHU-02-SF-CMD and proves AHU-02-SF-STS
+SEQ: CP-02 monitors AHU-02-RAT
+SEQ: CP-03 controls AHU-03-SAT using AHU-03-CHWV
+SEQ: CP-03 starts AHU-03-SF-CMD and proves AHU-03-SF-STS
+SEQ: CP-03 monitors AHU-03-RAT
+SEQ: CP-01 reads AHU-01-OAT from the BAS network

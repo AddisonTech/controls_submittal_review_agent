@@ -1,0 +1,120 @@
+{
+  "generator": "make_eval_sets",
+  "generator_version": "1.0.0",
+  "fixture_schema_version": "1",
+  "datasets": {
+    "dev_a": {
+      "seed": 11,
+      "panels": 3,
+      "controller": "ECY-600",
+      "typical": true,
+      "holdout": false,
+      "kind": "seeded",
+      "files": {
+        "drawings.pdf": "e727fb1dd8e4713acd962b30ccf26477ae0d148443d5c5004c834f0cfab00ef6",
+        "error_labels.json": "3ae4edc585f50e68ce56b7e4c41f4a28edccc784c4ca0a7df9fda1fe08017860",
+        "points.xlsx": "3b70edc87feac2432de0226a9dc97503528a01368843c9330d1b0a7038c33860",
+        "sequence.txt": "bd0578b77f881b54db2ca0f2c32411bf28b3c5bb4de9cb55b5bebd4e3c366859"
+      }
+    },
+    "dev_a_clean": {
+      "seed": 11,
+      "panels": 3,
+      "controller": "ECY-600",
+      "typical": true,
+      "holdout": false,
+      "kind": "clean",
+      "files": {
+        "drawings.pdf": "f747914b58184c292dc1d6c05bfa6dbe7188340b75aac9bc5d5997a34605a26b",
+        "error_labels.json": "16fe64afb27b056e8000c15dcf13e38b3dee3e250dcb08bdc9ee201add5244b7",
+        "points.xlsx": "730a187950f0eeb67407d73040cb783f4c042441a810cd7fc43639a37427de85",
+        "sequence.txt": "25faf36d846330d2e9b19df7da480daf6eff8f1f4c3888a8c53e21371749589e"
+      }
+    },
+    "dev_b": {
+      "seed": 22,
+      "panels": 4,
+      "controller": "ECY-S1000",
+      "typical": false,
+      "holdout": false,
+      "kind": "seeded",
+      "files": {
+        "drawings.pdf": "42362255dbb8bf2b3b1bd1c77018dc39a9c804287c1bf6131f52103c118107f7",
+        "error_labels.json": "0865e6d58ca785934acc52f05c32cd870729f729564410c78bdbe86ad4ab391f",
+        "points.xlsx": "aaff04b5d6d648d21a84a71167753fd743dc43aac01e8345c51212e32d28b3c6",
+        "sequence.txt": "62353de8535945d203d72d265574aa1dda0b9c8023b9ea690ce5c3524cd8d0e0"
+      }
+    },
+    "dev_b_clean": {
+      "seed": 22,
+      "panels": 4,
+      "controller": "ECY-S1000",
+      "typical": false,
+      "holdout": false,
+      "kind": "clean",
+      "files": {
+        "drawings.pdf": "5f3a69c4d4615be9321b0d94b7f80603d754155e293a8ce6ade0b3d2d15208b8",
+        "error_labels.json": "c1b396f6b4e906a966dc2e8dee383fadcb5880bacf76400e5c818f48035e0c69",
+        "points.xlsx": "8b9ee668cb595007484254c8bcd17eb2a6dc1c46302a02388e7ecd952de99bd7",
+        "sequence.txt": "d8cf51fedb0c7af0c235552bb16ca397c5eadef803e49e39c52bf3d14ce135c8"
+      }
+    },
+    "dev_c": {
+      "seed": 33,
+      "panels": 2,
+      "controller": "PLC-1769",
+      "typical": true,
+      "holdout": false,
+      "kind": "seeded",
+      "files": {
+        "drawings.pdf": "0b85559bb67039c8f7045c6cc77336aaa1abf9275259f27ecc99b0037c3be7bf",
+        "error_labels.json": "9f141e9bb7f5abf4251ccbc8893e7311a7a4ba771bb8125d96414ca4b765dc41",
+        "points.xlsx": "2258074f4aab3e977b78ce6e710a1f47eecd336b265ace65f626025402a25803",
+        "sequence.txt": "7b6d4859140c58178ea2703e628fb70494a592e43e484eb7c81eab5e1104675d"
+      }
+    },
+    "dev_c_clean": {
+      "seed": 33,
+      "panels": 2,
+      "controller": "PLC-1769",
+      "typical": true,
+      "holdout": false,
+      "kind": "clean",
+      "files": {
+        "drawings.pdf": "34c36a785ae39ae4ec3712f663d55c9d59053fad0dee762fcb3cf32922088e3e",
+        "error_labels.json": "0ca31258fc64c6f09b65e0e1ce94f4fbd9a3ecd28560760803bdf3b2a296896a",
+        "points.xlsx": "197b4f97711cfd7c6f9ff9c2120d486c53a9711de232551777bbaab7e6f16ce0",
+        "sequence.txt": "a982be11d8dcacfdffc447e8a482f8f7f1497d1f0cdc22c673f63013d73665cc"
+      }
+    },
+    "holdout_1": {
+      "seed": 9001,
+      "panels": 5,
+      "controller": "ECY-600",
+      "typical": true,
+      "holdout": true,
+      "kind": "seeded",
+      "files": {
+        "drawings.pdf": "cdc5a7cddc730873bb96c7fcce5ffff12581933cdcca42bb472aee7ada67f892",
+        "error_labels.json": "1a9db7c7e662086e75d23b0d562c20c9f38c64390a7bd56c420f71e42df7129e",
+        "points.xlsx": "20013e3e642d91d13c201ef6020637c03041c49a1341a702b3252c23189c8664",
+        "sequence.txt": "61327af8d25e9fd47a7a825a14f2677a06d0c7de73d8ef3722e7ee9a0bf3f215"
+      }
+    },
+    "holdout_1_clean": {
+      "seed": 9001,
+      "panels": 5,
+      "controller": "ECY-600",
+      "typical": true,
+      "holdout": true,
+      "kind": "clean",
+      "files": {
+        "drawings.pdf": "4000f01dea5625b95cd5d5b9e55a5c3de38b350a14f83d27e4d466337c6b55fa",
+        "error_labels.json": "37b3cafc34bd5541310a04161e9d602955b8cb567f225ca5d66cac0bfe62320e",
+        "points.xlsx": "552e8a1f3f93e0afaa18c5230a8961d6a54412e20a3a5ada058a00ed5d9b2f8a",
+        "sequence.txt": "1975004553f308a4d28c1b4d03141bebd5a24acde608ad7548873bb2ffd10353"
+      }
+    }
+  },
+  "frozen_on": "2026-11-17"
+}

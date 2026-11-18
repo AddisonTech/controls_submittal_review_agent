@@ -1,0 +1,12 @@
+{
+  "spare_io_threshold_pct": 15,
+  "cable_length_tolerance_pct": 10,
+  "model_name": "qwen2.5:7b",
+  "temperature": 0,
+  "model_timeout_seconds": 120,
+  "model_attempts": 2,
+  "max_prompt_tokens": 4096,
+  "max_context_tokens": 3000,
+  "max_pdf_pages": 250,
+  "max_suspected_findings": 150
+}

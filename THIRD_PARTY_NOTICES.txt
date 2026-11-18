@@ -1,0 +1,26 @@
+THIRD PARTY NOTICES (P4-C2)
+Controls Submittal Review Agent - Addison Smith (addsmi1720) - MIT License
+
+The project itself is MIT licensed (see LICENSE). It uses these, unmodified:
+
+Python libraries (requirements.txt)
+  langgraph     MIT      graph and state machine
+  pydantic      MIT      typed records and reply schema
+  pdfplumber    MIT      PDF text
+  openpyxl      MIT      points list workbook
+  pytest        MIT      tests
+  reportlab     BSD      fixture generator only, never used during a review
+
+Local model runtime (installed separately, not shipped here)
+  Ollama        MIT
+
+Models (pulled into Ollama, not shipped here)
+  gemma3:4b     Gemma Terms of Use (Google). Not an open source license; recorded
+                here, and swappable by config if the terms ever matter.
+  qwen2.5:7b    Apache 2.0. Comparison config only (configs\qwen2.5-7b.json).
+
+No reference entries or borrowed code are used, so no license is unknown.
+
+Data: version one runs only on generated synthetic data. Any real submittal
+goes in real_packages\ (ignored by git), is run locally, and is never sent
+anywhere or committed.

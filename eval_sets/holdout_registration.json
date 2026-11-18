@@ -1,0 +1,35 @@
+{
+  "registered_on": "2026-11-17",
+  "generator_version": "1.0.0",
+  "metric_script_sha256": "53b4b271ea80e0582feddddc962dabea216ebd070c5a54f374ce5bd41b36b970",
+  "cases": {
+    "holdout_1": {
+      "folder": "holdout_1",
+      "kind": "seeded",
+      "inputs": {
+        "drawings.pdf": "cdc5a7cddc730873bb96c7fcce5ffff12581933cdcca42bb472aee7ada67f892",
+        "points.xlsx": "20013e3e642d91d13c201ef6020637c03041c49a1341a702b3252c23189c8664",
+        "sequence.txt": "61327af8d25e9fd47a7a825a14f2677a06d0c7de73d8ef3722e7ee9a0bf3f215"
+      },
+      "labels": {
+        "error_labels.json": "1a9db7c7e662086e75d23b0d562c20c9f38c64390a7bd56c420f71e42df7129e"
+      }
+    },
+    "holdout_1_clean": {
+      "folder": "holdout_1_clean",
+      "kind": "clean",
+      "inputs": {
+        "drawings.pdf": "4000f01dea5625b95cd5d5b9e55a5c3de38b350a14f83d27e4d466337c6b55fa",
+        "points.xlsx": "552e8a1f3f93e0afaa18c5230a8961d6a54412e20a3a5ada058a00ed5d9b2f8a",
+        "sequence.txt": "1975004553f308a4d28c1b4d03141bebd5a24acde608ad7548873bb2ffd10353"
+      },
+      "labels": {
+        "error_labels.json": "37b3cafc34bd5541310a04161e9d602955b8cb567f225ca5d66cac0bfe62320e"
+      }
+    }
+  },
+  "final_run": {
+    "at": "2026-11-17T13:28:43",
+    "result": "final_holdout_20261117_132843.json"
+  }
+}

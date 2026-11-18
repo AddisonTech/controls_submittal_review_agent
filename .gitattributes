@@ -1,0 +1,2 @@
+# Store every file byte for byte. Frozen datasets and the holdout registration are checked by SHA-256.
+* -text

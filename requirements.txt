@@ -1,0 +1,6 @@
+langgraph
+pydantic
+pytest
+pdfplumber
+openpyxl
+reportlab

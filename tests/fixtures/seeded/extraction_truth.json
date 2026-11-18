@@ -1,0 +1,196 @@
+{
+  "generator_version": "0.1.0",
+  "sheets": [
+    {
+      "sheet_number": "G-001",
+      "title": "Drawing Index",
+      "pdf_page_number_1based": 1,
+      "tags": [],
+      "cables": []
+    },
+    {
+      "sheet_number": "G-002",
+      "title": "Network Riser",
+      "pdf_page_number_1based": 2,
+      "tags": [],
+      "cables": [
+        {
+          "cable_id": "CBL-001",
+          "length_value": 287.0
+        },
+        {
+          "cable_id": "CBL-002",
+          "length_value": 310.0
+        }
+      ]
+    },
+    {
+      "sheet_number": "G-003",
+      "title": "Legend and General Notes",
+      "pdf_page_number_1based": 3,
+      "tags": [],
+      "cables": []
+    },
+    {
+      "sheet_number": "M-101",
+      "title": "AHU-01 Control Schematic",
+      "pdf_page_number_1based": 4,
+      "tags": [],
+      "cables": []
+    },
+    {
+      "sheet_number": "M-102",
+      "title": "AHU-02 Control Schematic",
+      "pdf_page_number_1based": 5,
+      "tags": [],
+      "cables": []
+    },
+    {
+      "sheet_number": "P-101",
+      "title": "Panel CP-01 Layout",
+      "pdf_page_number_1based": 6,
+      "tags": [],
+      "cables": []
+    },
+    {
+      "sheet_number": "IO-101",
+      "title": "Panel CP-01 IO",
+      "pdf_page_number_1based": 7,
+      "tags": [
+        "AHU-01-SAT",
+        "AHU-01-RAT",
+        "AHU-01-CHWV",
+        "AHU-01-SF-STS",
+        "AHU-01-SF-CMD"
+      ],
+      "cables": []
+    },
+    {
+      "sheet_number": "W-101",
+      "title": "Panel CP-01 Wiring",
+      "pdf_page_number_1based": 8,
+      "tags": [],
+      "cables": [
+        {
+          "cable_id": "CBL-001",
+          "length_value": 340.0
+        },
+        {
+          "cable_id": "CBL-101",
+          "length_value": 45.0
+        }
+      ]
+    },
+    {
+      "sheet_number": "P-102",
+      "title": "Panel CP-02 Layout",
+      "pdf_page_number_1based": 9,
+      "tags": [],
+      "cables": []
+    },
+    {
+      "sheet_number": "IO-102",
+      "title": "Panel CP-02 I/O",
+      "pdf_page_number_1based": 10,
+      "tags": [
+        "AHU-02-SAT",
+        "AHU-02-RAT",
+        "AHU-02-CHWV",
+        "AHU-02-SF-STS",
+        "AHU-02-SF-CMD"
+      ],
+      "cables": []
+    },
+    {
+      "sheet_number": "W-102",
+      "title": "Panel CP-02 Wiring",
+      "pdf_page_number_1based": 11,
+      "tags": [],
+      "cables": [
+        {
+          "cable_id": "CBL-002",
+          "length_value": 310.0
+        },
+        {
+          "cable_id": "CBL-102",
+          "length_value": 62.0
+        }
+      ]
+    },
+    {
+      "sheet_number": "T-201",
+      "title": "Typical AHU Field Wiring",
+      "pdf_page_number_1based": 12,
+      "tags": [],
+      "cables": [
+        {
+          "cable_id": "CBL-102",
+          "length_value": 50.0
+        }
+      ]
+    }
+  ],
+  "index_entries": [
+    {
+      "sheet_number": "G-001",
+      "title": "Drawing Index"
+    },
+    {
+      "sheet_number": "G-002",
+      "title": "Network Riser"
+    },
+    {
+      "sheet_number": "G-003",
+      "title": "Legend and General Notes"
+    },
+    {
+      "sheet_number": "M-101",
+      "title": "AHU-01 Control Schematic"
+    },
+    {
+      "sheet_number": "M-102",
+      "title": "AHU-02 Control Schematic"
+    },
+    {
+      "sheet_number": "P-101",
+      "title": "Panel CP-01 Layout"
+    },
+    {
+      "sheet_number": "IO-101",
+      "title": "Panel CP-01 IO"
+    },
+    {
+      "sheet_number": "W-101",
+      "title": "Panel CP-01 Wiring"
+    },
+    {
+      "sheet_number": "P-102",
+      "title": "Panel CP-02 Layout"
+    },
+    {
+      "sheet_number": "IO-102",
+      "title": "Panel CP-02 IO"
+    },
+    {
+      "sheet_number": "W-102",
+      "title": "Panel CP-02 Wiring"
+    },
+    {
+      "sheet_number": "T-201",
+      "title": "Typical AHU Field Wiring"
+    }
+  ],
+  "points_row_count": 10,
+  "sequence_tags": [
+    "AHU-01-SAT",
+    "AHU-01-CHWV",
+    "AHU-01-SF-CMD",
+    "AHU-01-SF-STS",
+    "AHU-01-RAT",
+    "AHU-02-CHWV",
+    "AHU-02-SF-CMD",
+    "AHU-02-SF-STS",
+    "AHU-02-RAT",
+    "AHU-01-OAT"
+  ]
+}
