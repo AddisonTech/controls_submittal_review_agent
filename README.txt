@@ -36,8 +36,8 @@ Quick start on a fresh Windows PC
   2. Install Ollama for Windows (ollama.com), leave it running, then:
        ollama pull gemma3:4b
   3. In PowerShell:
-       git clone https://github.com/AddisonTech/controls-submittal-review-agent.git
-       cd controls-submittal-review-agent
+       git clone https://github.com/AddisonTech/controls_submittal_review_agent.git
+       cd controls_submittal_review_agent
        py -m venv .venv
        .venv\Scripts\python.exe -m pip install -r requirements.txt
        .venv\Scripts\python.exe -m pytest -q
