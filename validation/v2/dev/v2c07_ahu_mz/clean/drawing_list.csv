@@ -1,0 +1,19 @@
+device_tag,description,ddc_hardware_id,sheet,connected_points
+VFD-2-SF,"Variable frequency drive, supply fan start/stop",DDC-AHU2-1,M-501,AHU-2-SF-C; AHU-2-SF-S; AHU-2-SF-SPD
+VFD-2-RF,"Variable frequency drive, return fan start/stop",DDC-AHU2-1,M-501,AHU-2-RF-C; AHU-2-RF-S; AHU-2-RF-SPD
+DPT-2-1,"Differential pressure transmitter, duct static pressure",DDC-AHU2-1,M-501,AHU-2-DSP
+TT-2-SA,"Temperature sensor, supply air temperature",DDC-AHU2-1,M-501,AHU-2-SAT
+TT-2-MA,"Temperature sensor, mixed air temperature",DDC-AHU2-1,M-501,AHU-2-MAT
+TT-2-RA,"Temperature sensor, return air temperature",DDC-AHU2-1,M-501,AHU-2-RAT
+TT-2-OA,"Temperature sensor, outdoor air temperature",DDC-AHU2-1,M-501,AHU-2-OAT
+AFMS-2-1,"Airflow measuring station, minimum outdoor airflow",DDC-AHU2-1,M-501,AHU-2-OAF
+DMP-2-MOA,"Damper actuator, minimum outdoor air damper command",DDC-AHU2-2,M-501,AHU-2-MOAD; AHU-2-MOAD-ES
+DMP-2-EOA,"Damper actuator, economizer outdoor air damper command",DDC-AHU2-2,M-501,AHU-2-EOAD
+DMP-2-RA,"Damper actuator, return air damper command",DDC-AHU2-2,M-501,AHU-2-RAD
+VLV-2-CHW,"Control valve actuator, chilled water valve command",DDC-AHU2-1,M-501,AHU-2-CHWV
+VLV-2-HW,"Control valve actuator, heating hot water valve command",DDC-AHU2-1,M-501,AHU-2-HWV
+TS-2-FZ,"Temperature switch or sensor, freeze-stat status",DDC-AHU2-2,M-501,AHU-2-FZ
+SD-2-SA,"Duct smoke detector, supply duct smoke detector",DDC-AHU2-2,M-501,AHU-2-SD-SA
+SD-2-RA,"Duct smoke detector, return duct smoke detector",DDC-AHU2-2,M-501,AHU-2-SD-RA
+PS-2-HS,"Pressure switch, high static safety switch",DDC-AHU2-2,M-501,AHU-2-HSS
+DPT-2-FLT,"Differential pressure transmitter, filter differential pressure",DDC-AHU2-1,M-501,AHU-2-FLT

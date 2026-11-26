@@ -1,0 +1,17 @@
+point_name,description,ddc_hardware_id,io_type,units,range,settings,alarm,device_tag
+HWP-4-HWST,Hot water supply temperature,DDC-HWP4-1,AI,degF,40 to 240,,"L3 deviation alarm, +/- 10 degF from setpoint, 15 min delay",TT-4-HWS
+HWP-4-HWRT,Hot water return temperature,DDC-HWP4-1,AI,degF,40 to 240,,,TT-4-HWR
+HWP-4-HW-DP,Remote hot water differential pressure,DDC-HWP4-2,AI,psi,0 to 50,,"L3 low alarm at 3 psi, 10 min delay",DPT-4-HW
+HWP-4-OAT,Outdoor air temperature,DDC-HWP4-1,AI,degF,-40 to 130,,,TT-4-OA
+HWP-4-HW-FS,Hot water flow switch,DDC-HWP4-1,BI,-,No flow/Flow,,,FS-4-HW
+HWP-4-ESS,Boiler room emergency shutoff status,DDC-HWP4-1,BI,-,Normal/Stop,,L1 alarm when tripped,ES-4-1
+HWP-4-B1-EN,Boiler 1 enable,DDC-HWP4-1,BO,-,Off/On,,,B-41
+HWP-4-B1-S,Boiler 1 status,DDC-HWP4-1,BI,-,Off/On,,"L2 command/status mismatch alarm, 120 s delay",B-41
+HWP-4-B1-ALM,Boiler 1 common alarm,DDC-HWP4-1,BI,-,Normal/Alarm,,L2 alarm when tripped,B-41
+HWP-4-HWP1-SPD,Hot water pump 1 speed command,DDC-HWP4-1,AO,%,0 to 100,,,VFD-4-P1
+HWP-4-HWP1-S,Hot water pump 1 status,DDC-HWP4-1,BI,-,Off/On,,"L2 command/status mismatch alarm, 15 s delay",VFD-4-P1
+HWP-4-B2-EN,Boiler 2 enable,DDC-HWP4-1,BO,-,Off/On,,,B-42
+HWP-4-B2-S,Boiler 2 status,DDC-HWP4-1,BI,-,Off/On,,"L2 command/status mismatch alarm, 120 s delay",B-42
+HWP-4-B2-ALM,Boiler 2 common alarm,DDC-HWP4-1,BI,-,Normal/Alarm,,L2 alarm when tripped,B-42
+HWP-4-HWP2-SPD,Hot water pump 2 speed command,DDC-HWP4-1,AO,%,0 to 100,,,VFD-4-P2
+HWP-4-HWP2-S,Hot water pump 2 status,DDC-HWP4-1,BI,-,Off/On,,"L2 command/status mismatch alarm, 15 s delay",VFD-4-P2

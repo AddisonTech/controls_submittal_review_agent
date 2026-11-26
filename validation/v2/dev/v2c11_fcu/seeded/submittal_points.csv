@@ -1,0 +1,9 @@
+point_name,description,ddc_hardware_id,io_type,units,range,settings,alarm,device_tag
+FCU-4-FAN-C,Fan start/stop,DDC-FCU4,BO,-,Off/On,,,M-4-FAN
+FCU-4-FAN-S,Fan status,DDC-FCU4,BI,-,Off/On,,"L2 command/status mismatch alarm, 15 s delay",CS-4-FAN
+FCU-4-FAN-SPD,Fan speed command,DDC-FCU4,AO,%,0 to 100,,,M-4-FAN
+FCU-4-ZT,Zone temperature,DDC-FCU4,AI,degF,40 to 100,,,TS-4-Z
+FCU-4-SAT,Supply air temperature,DDC-FCU4,AI,degF,30 to 130,,"L3 deviation alarm, +/- 5 degF from setpoint, 15 min delay",TT-4-SA
+FCU-4-CHWV,Cooling valve command,DDC-FCU4,BO,%,0 to 100,,,VLV-4-CHW
+FCU-4-HWV,Heating valve command,DDC-FCU4,AO,%,0 to 100,,,VLV-4-HW
+FCU-4-COS,Condensate overflow switch,DDC-FCU4,BI,-,Normal/Alarm,,L3 alarm when tripped,LS-4-CO

@@ -1,0 +1,69 @@
+SPECIFICATION EXCERPT (synthetic test document, case v2c34_chw_plant)
+SECTION 23 09 93 SEQUENCES OF OPERATION FOR HVAC CONTROLS
+SYSTEM: Chilled Water Plant CHWP-6
+
+PART 1 GENERAL
+1.1 Provide a points schedule in tabular form for each HVAC system, with each row representing a hardware point, network point or configuration point.
+1.2 Alarm generation is the monitoring of a value, comparison of the value to alarm conditions and the creation of an alarm when the conditions set for the alarm are met.
+1.3 Values in this section are stated in inch-pound units. A submittal may state values in SI units when they convert to the specified value.
+1.4 The sequences below are the minimum required behavior. Do not change a specified value without approval.
+
+PART 3 EXECUTION, SEQUENCE OF OPERATION
+SECTION: 3.1 | Plant Enable
+3.1.1 The plant shall be enabled when there are 2 or more chiller plant requests for 5 minutes and the outdoor air temperature is above the 60 °F lockout.
+3.1.2 The plant shall be disabled when there are fewer than 2 requests for 3 minutes or when the outdoor air temperature falls 2 °F below the lockout.
+
+SECTION: 3.2 | Chiller Staging
+3.2.1 Before a chiller is enabled, its chilled water and condenser water isolation valves shall be open and flow shall be proven through its evaporator and condenser.
+3.2.2 The next chiller shall be staged on when the chilled water supply temperature is 2 °F above setpoint for 10 minutes and the operating chillers are above 80 percent load.
+3.2.3 A chiller shall be staged off when the operating chillers are below 35 percent load for 15 minutes.
+
+SECTION: 3.3 | Chilled Water Pumping
+3.3.1 The lead chilled water pump shall run whenever the plant is enabled.
+3.3.2 Pump speed shall be modulated to maintain the remote differential pressure at setpoint, reset between 4 psi and 20 psi by trim and respond logic.
+3.3.3 The minimum flow bypass valve shall modulate to keep chilled water flow through each operating chiller above 180 gpm.
+
+SECTION: 3.4 | Chilled Water Supply Temperature Reset
+3.4.1 The chilled water supply temperature setpoint shall be reset between 45 °F and 52 °F by trim and respond logic driven by cooling coil requests.
+3.4.2 On plant enable the chilled water supply temperature setpoint shall start at 45 °F.
+
+SECTION: 3.5 | Condenser Water and Cooling Tower
+3.5.1 Cooling tower fan speed shall be modulated to maintain the condenser water supply temperature at 83 °F.
+3.5.2 The tower fans shall stop and the tower bypass valve shall modulate open when the condenser water supply temperature falls below 68 °F.
+
+SECTION: 3.6 | Safeties and Interlocks
+3.6.1 Each chiller shall be hardwired to its chilled water and condenser water flow switches so that it cannot run without proven flow.
+3.6.2 When the refrigerant monitor exceeds 20 ppm, the machine room exhaust fans shall start and a Level 1 alarm shall be set.
+3.6.3 The emergency stop switch at the machine room exit shall be hardwired to stop all chillers.
+
+POINTS SCHEDULE: CHWP-6
+point_name | description | io_type | units | range | alarm
+CHWP-6-CHWST | Chilled water supply temperature | AI | degF | 30 to 80 | Level 3: 5 degF from setpoint for 15 min
+CHWP-6-CHWRT | Chilled water return temperature | AI | degF | 30 to 80 | -
+CHWP-6-CHW-DP | Remote chilled water differential pressure | AI | psi | 0 to 50 | Level 3: below 2 psi for 10 min
+CHWP-6-CHW-FLOW | Chilled water flow | AI | gpm | 0 to 2000 | -
+CHWP-6-BYPV | Minimum flow bypass valve command | AO | % | 0 to 100 | -
+CHWP-6-CWST | Condenser water supply temperature | AI | degF | 40 to 110 | -
+CHWP-6-CWRT | Condenser water return temperature | AI | degF | 40 to 110 | -
+CHWP-6-CT-SPD | Cooling tower fan speed command | AO | % | 0 to 100 | -
+CHWP-6-CT-S | Cooling tower fan status | BI | - | Off/On | Level 2: status differs from command for 30 s
+CHWP-6-RM | Refrigerant monitor concentration | AI | ppm | 0 to 1000 | Level 1: above 20 ppm for 1 min
+CHWP-6-ESTOP | Machine room emergency stop status | BI | - | Normal/Stop | Level 1: on trip
+CHWP-6-CH1-EN | Chiller 1 enable | BO | - | Off/On | -
+CHWP-6-CH1-S | Chiller 1 status | BI | - | Off/On | Level 2: status differs from command for 300 s
+CHWP-6-CH1-ALM | Chiller 1 common alarm | BI | - | Normal/Alarm | Level 2: on trip
+CHWP-6-CHWP1-SPD | Chilled water pump 1 speed command | AO | % | 0 to 100 | -
+CHWP-6-CHWP1-S | Chilled water pump 1 status | BI | - | Off/On | Level 2: status differs from command for 15 s
+CHWP-6-CHW-FS1 | Chiller 1 evaporator flow switch | BI | - | No flow/Flow | -
+CHWP-6-CH2-EN | Chiller 2 enable | BO | - | Off/On | -
+CHWP-6-CH2-S | Chiller 2 status | BI | - | Off/On | Level 2: status differs from command for 300 s
+CHWP-6-CH2-ALM | Chiller 2 common alarm | BI | - | Normal/Alarm | Level 2: on trip
+CHWP-6-CHWP2-SPD | Chilled water pump 2 speed command | AO | % | 0 to 100 | -
+CHWP-6-CHWP2-S | Chilled water pump 2 status | BI | - | Off/On | Level 2: status differs from command for 15 s
+CHWP-6-CHW-FS2 | Chiller 2 evaporator flow switch | BI | - | No flow/Flow | -
+CHWP-6-CH3-EN | Chiller 3 enable | BO | - | Off/On | -
+CHWP-6-CH3-S | Chiller 3 status | BI | - | Off/On | Level 2: status differs from command for 300 s
+CHWP-6-CH3-ALM | Chiller 3 common alarm | BI | - | Normal/Alarm | Level 2: on trip
+CHWP-6-CHWP3-SPD | Chilled water pump 3 speed command | AO | % | 0 to 100 | -
+CHWP-6-CHWP3-S | Chilled water pump 3 status | BI | - | Off/On | Level 2: status differs from command for 15 s
+CHWP-6-CHW-FS3 | Chiller 3 evaporator flow switch | BI | - | No flow/Flow | -

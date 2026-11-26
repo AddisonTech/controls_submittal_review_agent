@@ -1,0 +1,54 @@
+{
+  "case": "v2c17_fcu",
+  "twin": "seeded",
+  "system": "Fan Coil Unit FCU-5",
+  "style": "si",
+  "lookalikes": [
+    "alarm_words",
+    "units_si"
+  ],
+  "long_document": false,
+  "paragraphs": 9,
+  "points": 8,
+  "errors": [
+    {
+      "error_id": "v2c17_fcu-E1",
+      "type": "setpoint_out_of_spec",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.2.2",
+          ""
+        ],
+        [
+          "spec",
+          "3.2.2",
+          ""
+        ]
+      ],
+      "section": "3.2",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "3.2.2: setpt variant planted: Heating resets the supply air temperature setpoint from 21.7 \u00b0C at 0 percent loop up to 54.4 \u00b0C at 50 percent loop."
+    },
+    {
+      "error_id": "v2c17_fcu-E2",
+      "type": "ddc_hardware_mismatch",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "FCU-5-ZT",
+          "ddc_hardware_id"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "FCU-5-ZT DDC hardware DDC-FCU5-2 on the points list, DDC-FCU5 on the drawing list"
+    }
+  ]
+}

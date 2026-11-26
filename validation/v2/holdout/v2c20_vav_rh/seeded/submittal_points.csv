@@ -1,0 +1,51 @@
+point_name,description,ddc_hardware_id,io_type,units,range,settings,alarm,device_tag
+VAV-501-ZT,Zone temperature,DDC-VAV501,AI,degC,4.4 to 37.8,,,TS-501
+VAV-501-FLOW,Discharge airflow,DDC-VAV501,AI,L/s,0 to 378,,Level 3: below 70 percent of setpoint for 5 min,FS-501
+VAV-501-DMP,Damper command,DDC-VAV501,AO,%,0 to 100,,,DA-501
+VAV-501-HWV,Hot water valve command,DDC-VAV501,AO,%,0 to 100,,,VLV-501
+VAV-501-DAT,Discharge air temperature,DDC-VAV501,AI,degC,4.4 to 60,,Level 3: below 12.8 degC for 10 min,TT-501-DA
+VAV-502-ZT,Zone temperature,DDC-VAV502,AI,degC,4.4 to 37.8,,,TS-502
+VAV-502-FLOW,Discharge airflow,DDC-VAV502,AI,L/s,0 to 472,,Level 3: below 70 percent of setpoint for 5 min,FS-502
+VAV-502-DMP,Damper command,DDC-VAV502,AO,%,0 to 100,,,DA-502
+VAV-502-HWV,Hot water valve command,DDC-VAV502,AO,%,0 to 100,,,VLV-502
+VAV-502-DAT,Discharge air temperature,DDC-VAV502,AI,degC,4.4 to 60,,Level 3: below 12.8 degC for 10 min,TT-502-DA
+VAV-503-ZT,Zone temperature,DDC-VAV503,AI,degC,4.4 to 37.8,,,TS-503
+VAV-503-FLOW,Discharge airflow,DDC-VAV503,AI,L/s,0 to 566,,Level 3: below 70 percent of setpoint for 5 min,FS-503
+VAV-503-DMP,Damper command,DDC-VAV503,AO,%,0 to 100,,,DA-503
+VAV-503-HWV,Hot water valve command,DDC-VAV503,AO,%,0 to 100,,,VLV-503
+VAV-503-DAT,Discharge air temperature,DDC-VAV503,AI,degC,4.4 to 60,,Level 3: below 12.8 degC for 10 min,TT-503-DA
+VAV-504-ZT,Zone temperature,DDC-VAV504,AI,degC,4.4 to 37.8,,,TS-504
+VAV-504-FLOW,Discharge airflow,DDC-VAV504,AI,L/s,0 to 661,,Level 3: below 70 percent of setpoint for 5 min,FS-504
+VAV-504-DMP,Damper command,DDC-VAV504,AO,%,0 to 100,,,DA-504
+VAV-504-HWV,Hot water valve command,DDC-VAV504,AO,%,0 to 100,,,VLV-504
+VAV-504-DAT,Discharge air temperature,DDC-VAV504,AI,degC,4.4 to 60,,Level 3: below 12.8 degC for 10 min,TT-504-AD
+VAV-505-ZT,Zone temperature,DDC-VAV505,AI,degC,4.4 to 37.8,,,TS-505
+VAV-505-FLOW,Discharge airflow,DDC-VAV505,AI,L/s,0 to 330,,Level 3: below 70 percent of setpoint for 5 min,FS-505
+VAV-505-DMP,Damper command,DDC-VAV505,AO,%,0 to 100,,,DA-505
+VAV-505-HWV,Hot water valve command,DDC-VAV505,AO,%,0 to 100,,,VLV-505
+VAV-505-DAT,Discharge air temperature,DDC-VAV505,AI,degC,4.4 to 60,,Level 3: below 12.8 degC for 10 min,TT-505-DA
+VAV-506-ZT,Zone temperature,DDC-VAV506,AI,degC,4.4 to 37.8,,,TS-506
+VAV-506-FLOW,Discharge airflow,DDC-VAV506,AI,L/s,0 to 425,,Level 3: below 70 percent of setpoint for 5 min,FS-506
+VAV-506-DMP,Damper command,DDC-VAV506,AO,%,0 to 100,,,DA-506
+VAV-506-HWV,Hot water valve command,DDC-VAV506,AO,%,0 to 100,,,VLV-506
+VAV-506-DAT,Discharge air temperature,DDC-VAV506,AI,degC,4.4 to 60,,Level 3: below 12.8 degC for 10 min,TT-506-DA
+VAV-507-ZT,Zone temperature,DDC-VAV507,AI,degC,4.4 to 37.8,,,TS-507
+VAV-507-FLOW,Discharge airflow,DDC-VAV507,AI,L/s,0 to 519,,Level 3: below 70 percent of setpoint for 5 min,FS-507
+VAV-507-DMP,Damper command,DDC-VAV507,AO,%,0 to 100,,,DA-507
+VAV-507-HWV,Hot water valve command,DDC-VAV507,AO,%,0 to 100,,,VLV-507
+VAV-507-DAT,Discharge air temperature,DDC-VAV507,AI,degC,4.4 to 60,,Level 3: below 12.8 degC for 10 min,TT-507-DA
+VAV-508-ZT,Zone temperature,DDC-VAV508,AI,degC,4.4 to 37.8,,,TS-508
+VAV-508-FLOW,Discharge airflow,DDC-VAV508,AI,L/s,0 to 613,,Level 3: below 70 percent of setpoint for 5 min,FS-508
+VAV-508-DMP,Damper command,DDC-VAV508,AO,%,0 to 100,,,DA-508
+VAV-508-HWV,Hot water valve command,DDC-VAV508,AO,%,0 to 100,,,VLV-508
+VAV-508-DAT,Discharge air temperature,DDC-VAV508,AI,degC,4.4 to 60,,Level 3: below 12.8 degC for 10 min,TT-508-DA
+VAV-509-ZT,Zone temperature,DDC-VAV509,AI,degC,4.4 to 37.8,,,TS-509
+VAV-509-FLOW,Discharge airflow,DDC-VAV509,AI,L/s,0 to 283,,Level 3: below 70 percent of setpoint for 5 min,FS-509
+VAV-509-DMP,Damper command,DDC-VAV509,AO,%,0 to 100,,,DA-509
+VAV-509-HWV,Hot water valve command,DDC-VAV509,AO,%,0 to 100,,,VLV-509
+VAV-509-DAT,Discharge air temperature,DDC-VAV509,AI,degC,4.4 to 60,,Level 3: below 12.8 degC for 10 min,TT-509-DA
+VAV-510-ZT,Zone temperature,DDC-VAV510,AI,degC,4.4 to 37.8,,,TS-510
+VAV-510-FLOW,Discharge airflow,DDC-VAV510,AI,L/s,0 to 378,,Level 3: below 70 percent of setpoint for 5 min,FS-510
+VAV-510-DMP,Damper command,DDC-VAV510,AO,%,0 to 100,,,DA-510
+VAV-510-HWV,Hot water valve command,DDC-VAV510,AO,%,0 to 100,,,VLV-510
+VAV-510-DAT,Discharge air temperature,DDC-VAV510,AI,degC,4.4 to 60,,Level 3: below 12.8 degC for 10 min,TT-510-DA

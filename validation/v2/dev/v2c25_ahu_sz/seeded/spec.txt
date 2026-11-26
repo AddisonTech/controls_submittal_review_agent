@@ -1,0 +1,54 @@
+SPECIFICATION EXCERPT (synthetic test document, case v2c25_ahu_sz)
+SECTION 23 09 93 SEQUENCES OF OPERATION FOR HVAC CONTROLS
+SYSTEM: Single Zone VAV Air Handling Unit RTU-7
+
+PART 1 GENERAL
+1.1 Provide a points schedule in tabular form for each HVAC system, with each row representing a hardware point, network point or configuration point.
+1.2 Alarm generation is the monitoring of a value, comparison of the value to alarm conditions and the creation of an alarm when the conditions set for the alarm are met.
+1.3 Values in this section are stated in inch-pound units. A submittal may state values in SI units when they convert to the specified value.
+1.4 The sequences below are the minimum required behavior. Do not change a specified value without approval.
+
+PART 3 EXECUTION, SEQUENCE OF OPERATION
+SECTION: 3.1 | Zone Setpoints and Modes
+3.1.1 Occupied zone setpoints shall be 70 °F heating and 75 °F cooling; unoccupied setpoints shall be 60 °F heating and 85 °F cooling.
+3.1.2 Occupant adjustment of the zone setpoints shall be limited to plus or minus 2 °F.
+3.1.3 During unoccupied hours the unit shall run only in the Setback or Setup mode, as needed to hold the unoccupied setpoints.
+
+SECTION: 3.2 | Supply Fan Control
+3.2.1 The supply fan shall run continuously in the Occupied mode.
+3.2.2 In the deadband the supply fan shall run at its minimum speed of 30 percent.
+3.2.3 In cooling, supply fan speed shall rise from minimum to 100 percent as the cooling loop goes from 50 to 100 percent.
+3.2.4 In heating, supply fan speed shall rise from minimum to 50 percent as the heating loop goes from 50 to 100 percent.
+
+SECTION: 3.3 | Supply Air Temperature Control
+3.3.1 In cooling, the supply air temperature setpoint shall be reset from 70 °F at 0 percent cooling loop down to 55 °F at 50 percent cooling loop.
+3.3.2 In heating, the supply air temperature setpoint shall be reset from 70 °F at 0 percent heating loop up to 90 °F at 50 percent heating loop.
+3.3.3 Mechanical cooling shall be enabled only when the outdoor air temperature is above 55 °F.
+
+SECTION: 3.4 | Economizer
+3.4.1 The economizer shall be disabled when the outdoor air temperature exceeds 75 °F and enabled again when it falls 1 °F below that limit.
+3.4.2 The outdoor air damper shall be held at its minimum position whenever the unit is in heating.
+3.4.3 The minimum outdoor air damper position shall be 25 percent at minimum fan speed and 15 percent at maximum fan speed, interpolated linearly between.
+
+SECTION: 3.5 | Safeties and Interlocks
+3.5.1 The duct smoke detector shall be hardwired to stop the supply fan and close the outdoor air damper, and the BAS shall set a Level 1 alarm on detection.
+3.5.2 The freeze-stat shall be hardwired to stop the supply fan and shall require a manual reset.
+3.5.3 A condensate overflow switch shall close the chilled water valve and set a Level 3 alarm.
+3.5.4 Heating and cooling shall be disabled until the supply fan is proven on.
+
+POINTS SCHEDULE: RTU-7
+point_name | description | io_type | units | range | alarm
+RTU-7-SF-C | Supply fan start/stop | BO | - | Off/On | -
+RTU-7-SF-S | Supply fan status | BI | - | Off/On | Level 2: status differs from command for 15 s
+RTU-7-SF-SPD | Supply fan speed command | AO | % | 0 to 100 | -
+RTU-7-ZT | Zone temperature | AI | degF | 40 to 100 | Level 3: 4 degF from setpoint for 60 min
+RTU-7-SAT | Supply air temperature | AI | degF | 30 to 130 | Level 3: 5 degF from setpoint for 10 min
+RTU-7-MAT | Mixed air temperature | AI | degF | 0 to 130 | -
+RTU-7-OAT | Outdoor air temperature | AI | degF | -40 to 130 | -
+RTU-7-OAD | Outdoor air damper command | AO | % | 0 to 100 | -
+RTU-7-CHWV | Chilled water valve command | AO | % | 0 to 100 | -
+RTU-7-HWV | Heating hot water valve command | AO | % | 0 to 100 | -
+RTU-7-FZ | Freeze-stat status | BI | - | Normal/Alarm | Level 2: on trip
+RTU-7-SD | Duct smoke detector | BI | - | Normal/Alarm | Level 1: on trip
+RTU-7-COS | Condensate overflow switch | BI | - | Normal/Alarm | Level 3: on trip
+RTU-7-FLT | Filter differential pressure | AI | in. w.c. | 0 to 2 | Level 4: above 1 in. w.c. for 30 min

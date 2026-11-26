@@ -1,0 +1,24 @@
+point_name,description,ddc_hardware_id,io_type,units,range,settings,alarm,device_tag
+AHU-8-SF-C,Supply fan start/stop,DDC-AHU8-1,BO,-,Off/On,,,VFD-8-SF
+AHU-8-SF-S,Supply fan status,DDC-AHU8-1,BI,-,Off/On,,"L2 command/status mismatch alarm, 15 s delay",VFD-8-SF
+AHU-8-SF-SPD,Supply fan speed command,DDC-AHU8-1,AO,%,0 to 100,,,VFD-8-SF
+AHU-8-RF-C,Return fan start/stop,DDC-AHU8-1,BO,-,Off/On,,,VFD-8-RF
+AHU-8-RF-S,Return fan status,DDC-AHU8-1,BI,-,Off/On,,"L2 command/status mismatch alarm, 15 s delay",VFD-8-RF
+AHU-8-RF-SPD,Return fan speed command,DDC-AHU8-1,AO,%,0 to 100,,,VFD-8-RF
+AHU-8-DSP,Duct static pressure,DDC-AHU8-1,AI,in. w.c.,0 to 5,,"L3 high alarm at 2 in. w.c., 10 min delay",DPT-8-1
+AHU-8-SAT,Supply air temperature,DDC-AHU8-1,AI,degF,30 to 130,,"L3 deviation alarm, +/- 5 degF from setpoint, 10 min delay",TT-8-SA
+AHU-8-MAT,Mixed air temperature,DDC-AHU8-1,AI,degF,0 to 130,,,TT-8-MA
+AHU-8-RAT,Return air temperature,DDC-AHU8-1,AI,degF,30 to 130,,,TT-8-RA
+AHU-8-OAT,Outdoor air temperature,DDC-AHU8-1,AI,degF,-40 to 130,,,TT-8-OA
+AHU-8-OAF,Minimum outdoor airflow,DDC-AHU8-1,AI,cfm,0 to 20000,,"L3 low alarm under 90% of setpoint, 15 min delay",AFMS-8-1
+AHU-8-MOAD,Minimum outdoor air damper command,DDC-AHU8-2,AO,%,0 to 100,,,DMP-8-MOA
+AHU-8-EOAD,Economizer outdoor air damper command,DDC-AHU8-2,AO,%,0 to 100,,,DMP-8-EOA
+AHU-8-RAD,Return air damper command,DDC-AHU8-2,AO,%,0 to 100,,,DMP-8-RA
+AHU-8-CHWV,Chilled water valve command,DDC-AHU8-1,AO,%,0 to 100,,,VLV-8-CHW
+AHU-8-HWV,Heating hot water valve command,DDC-AHU8-1,AO,%,0 to 100,,,VLV-8-HW
+AHU-8-FZ,Freeze-stat status,DDC-AHU8-2,BI,-,Normal/Alarm,,L2 alarm when tripped,TS-8-FZ
+AHU-8-SD-SA,Supply duct smoke detector,DDC-AHU8-2,BI,-,Normal/Alarm,,L1 alarm when tripped,SD-8-SA
+AHU-8-SD-RA,Return duct smoke detector,DDC-AHU8-2,BI,-,Normal/Alarm,,L1 alarm when tripped,SD-8-RA
+AHU-8-HSS,High static safety switch,DDC-AHU8-2,BI,-,Normal/Trip,,L2 alarm when tripped,PS-8-HS
+AHU-8-FLT,Filter differential pressure,DDC-AHU8-1,AI,in. w.c.,0 to 2,,"L4 high alarm at 1 in. w.c., 30 min delay",DPT-8-FLT
+AHU-8-MOAD-ES,Minimum outdoor air damper end switch,DDC-AHU8-2,BI,-,Closed/Open,,,DMP-8-MOA

@@ -1,0 +1,39 @@
+CONTRACTOR SUBMITTAL: SEQUENCE OF OPERATION (synthetic test document, case v2c40_ahu_mz)
+SUBMITTAL FOR: SECTION 23 09 93, Multizone VAV Air Handling Unit AHU-9
+Paragraph numbers follow the specification. Paragraphs with a letter suffix are contractor additions.
+
+SECTION: 3.1 | Supply Fan Control
+3.1.1 The supply fan runs in the Occupied, Cool-down and Setup modes.
+3.1.2 Since no zone on AHU-9 has reheat, the supply fan stays off in the Setback and Warmup modes.
+3.1.3 Trim and respond logic resets the duct static pressure setpoint between a minimum of 0.15 in. w.c. and a maximum of 1.8 in. w.c., with an initial value of 1 in. w.c..
+3.1.4 At 2 minute intervals the logic lowers the setpoint by 0.05 in. w.c. if there are fewer than 2 zone pressure requests, and otherwise raises it by 0.06 in. w.c. per request beyond 2, limited to 0.15 in. w.c. per interval.
+3.1.5 With the supply fan proven on, a PI loop modulates fan speed to hold duct static pressure at setpoint.
+3.1.6 The minimum supply fan speed is 15 percent.
+3.1.7 The return fan is started after the supply fan proves on and is stopped whenever the supply fan stops.
+
+SECTION: 3.2 | Supply Air Temperature Control
+3.2.1 The supply air temperature loop is enabled only while the supply fan is proven on. When it is disabled, heating is off and the economizer is at minimum position.
+3.2.2 In the Occupied and Setup modes the supply air temperature setpoint is 55 °F with outdoor air at 70 °F or warmer and rises linearly to the maximum setpoint with outdoor air at 60 °F or cooler.
+3.2.3 The maximum supply air temperature setpoint is reset by trim and respond logic within the range 55 °F to 63 °F.
+3.2.4 In Cool-down mode the supply air temperature setpoint is fixed at 55 °F.
+3.2.5 In Setback and Warmup modes the supply air temperature setpoint is 92 °F.
+3.2.6 As the loop output rises it strokes the heating coil valve closed first, then modulates the outdoor and return air dampers, and finally opens the chilled water valve.
+
+SECTION: 3.3 | Economizer and Minimum Outdoor Air
+3.3.1 Economizer operation is locked out above an outdoor air temperature of 70 °F and released once the outdoor air temperature drops 1 °F below the limit.
+3.3.2 Economizer operation is disabled during freeze protection stage 2 and stage 3.
+3.3.3 The minimum outdoor air damper modulates to hold the measured outdoor airflow at the 3200 cfm minimum setpoint.
+3.3.4 With the supply fan off, the outdoor air dampers are closed and the return air damper is open.
+3.3.5 When the economizer is enabled, the economizer outdoor air and return air dampers modulate in sequence to hold supply air temperature at setpoint.
+
+SECTION: 3.4 | Freeze Protection
+3.4.1 Stage 1: when supply air temperature stays below 40 °F for 5 minutes, the controller sends two heating hot water plant requests, holds the outdoor air damper at minimum position and modulates the heating coil to maintain at least 42 °F; stage 1 ends after the supply air temperature is above 45 °F for 5 minutes.
+3.4.2 Stage 2: when supply air temperature stays below 38 °F for 5 minutes, both outdoor air dampers close for 1 hour and the controller sets a Level 3 alarm stating that minimum ventilation was interrupted.
+3.4.3 Stage 3: on a freeze-stat trip, or when supply air temperature is below 38 °F for 15 minutes or below 34 °F for 5 minutes, the supply and return fans stop, the outdoor air dampers close, the cooling coil valve opens fully, the chilled water pumps are energized and a Level 4 alarm reports a freeze protection shutdown.
+3.4.4 Restart after a freeze protection shutdown requires a manual reset at the operator workstation.
+
+SECTION: 3.5 | Safeties and Interlocks
+3.5.1 The freeze-stat is hardwired in the fan starter circuits and stops the supply and return fans independent of the BAS; the BAS monitors its status.
+3.5.2 The supply and return duct smoke detectors are hardwired to stop both fans and close the outdoor air dampers; the BAS sets a Level 1 alarm on detection.
+3.5.3 The high static pressure safety switch, set at 2.5 in. w.c., stops the supply fan, which then needs a manual reset to restart.
+3.5.4 The supply fan start is held off until the minimum outdoor air damper end switch proves the damper open.

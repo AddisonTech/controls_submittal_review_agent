@@ -1,0 +1,76 @@
+{
+  "case": "v2c21_ahu_mz",
+  "twin": "seeded",
+  "system": "Multizone VAV Air Handling Unit AHU-5",
+  "style": "dual",
+  "lookalikes": [
+    "alarm_words",
+    "units_dual"
+  ],
+  "long_document": false,
+  "paragraphs": 26,
+  "points": 23,
+  "errors": [
+    {
+      "error_id": "v2c21_ahu_mz-E1",
+      "type": "alarm_wrong_or_missing",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.4.2",
+          ""
+        ],
+        [
+          "spec",
+          "3.4.2",
+          ""
+        ]
+      ],
+      "section": "3.4",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "3.4.2: alarm variant planted: Stage 2: when supply air temperature stays below 3.3 \u00b0C (38 \u00b0F) for 5 minutes, both outdoor air dampers close for 1 hour."
+    },
+    {
+      "error_id": "v2c21_ahu_mz-E2",
+      "type": "alarm_wrong_or_missing",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.5.2",
+          ""
+        ],
+        [
+          "spec",
+          "3.5.2",
+          ""
+        ]
+      ],
+      "section": "3.5",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "3.5.2: alarm variant planted: The supply and return duct smoke detectors are hardwired to stop both fans and close the outdoor air dampers; the BAS sets a Level 3 alarm on detection."
+    },
+    {
+      "error_id": "v2c21_ahu_mz-E3",
+      "type": "unit_scaling_mismatch",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "AHU-5-SAT",
+          "units_range"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "AHU-5-SAT units degF with the range numbers left as -1.1 to 54.4"
+    }
+  ]
+}

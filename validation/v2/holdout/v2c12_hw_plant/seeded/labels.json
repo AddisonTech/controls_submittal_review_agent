@@ -1,0 +1,73 @@
+{
+  "case": "v2c12_hw_plant",
+  "twin": "seeded",
+  "system": "Hot Water Boiler Plant HWP-2",
+  "style": "si",
+  "lookalikes": [
+    "extra",
+    "units_si"
+  ],
+  "long_document": false,
+  "paragraphs": 10,
+  "points": 20,
+  "errors": [
+    {
+      "error_id": "v2c12_hw_plant-E1",
+      "type": "setpoint_out_of_spec",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.5.2",
+          ""
+        ],
+        [
+          "spec",
+          "3.5.2",
+          ""
+        ]
+      ],
+      "section": "3.5",
+      "hard": [
+        "lookalikes_nearby",
+        "two_in_one_section"
+      ],
+      "description": "3.5.2: setpt variant planted: Each boiler high limit is set at 110.0 \u00b0C with manual reset."
+    },
+    {
+      "error_id": "v2c12_hw_plant-E2",
+      "type": "interlock_missing",
+      "kind": "absent",
+      "anchors": [
+        [
+          "spec",
+          "3.5.3",
+          ""
+        ]
+      ],
+      "section": "3.5",
+      "hard": [
+        "lookalikes_nearby",
+        "two_in_one_section"
+      ],
+      "description": "3.5.3: paragraph left out of the submittal"
+    },
+    {
+      "error_id": "v2c12_hw_plant-E3",
+      "type": "point_missing",
+      "kind": "absent",
+      "anchors": [
+        [
+          "spec_points",
+          "HWP-2-HWRT",
+          "row"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "HWP-2-HWRT left out of the points list and the drawing list"
+    }
+  ]
+}

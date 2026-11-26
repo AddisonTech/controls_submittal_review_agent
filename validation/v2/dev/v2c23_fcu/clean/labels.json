@@ -1,0 +1,14 @@
+{
+  "case": "v2c23_fcu",
+  "twin": "clean",
+  "system": "Fan Coil Unit FCU-6",
+  "style": "ip",
+  "lookalikes": [
+    "deg",
+    "local"
+  ],
+  "long_document": false,
+  "paragraphs": 9,
+  "points": 8,
+  "errors": []
+}

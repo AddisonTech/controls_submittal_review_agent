@@ -1,0 +1,14 @@
+point_name,description,ddc_hardware_id,io_type,units,range,settings,alarm,device_tag
+RTU-6-SF-C,Supply fan start/stop,DDC-RTU6-1,BO,-,Off/On,,,VFD-6-SF
+RTU-6-SF-S,Supply fan status,DDC-RTU6-1,BI,-,Off/On,,"L2 command/status mismatch alarm, 15 s delay",VFD-6-SF
+RTU-6-SF-SPD,Supply fan speed command,DDC-RTU6-1,AO,%,0 to 100,,,VFD-6-SF
+RTU-6-ZT,Zone temperature,DDC-RTU6-1,AI,degF,40 to 100,,"L3 deviation alarm, +/- 4 degF from setpoint, 60 min delay",TS-6-Z
+RTU-6-SAT,Supply air temperature,DDC-RTU6-1,AI,degF,30 to 130,,"L3 deviation alarm, +/- 5 degF from setpoint, 10 min delay",TT-6-SA
+RTU-6-MAT,Mixed air temperature,DDC-RTU6-1,AI,degF,0 to 130,,,TT-6-MA
+RTU-6-OAD,Outdoor air damper command,DDC-RTU6-1,AO,%,0 to 100,,,DMP-6-OA
+RTU-6-CHWV,Chilled water valve command,DDC-RTU6-1,AO,%,0 to 100,,,VLV-6-CHW
+RTU-6-HWV,Heating hot water valve command,DDC-RTU6-1,AO,%,0 to 100,,,VLV-6-HW
+RTU-6-FZ,Freeze-stat status,DDC-RTU6-1,BI,-,Normal/Alarm,,L2 alarm when tripped,TS-6-FZ
+RTU-6-SD,Duct smoke detector,DDC-RTU6-1,BI,-,Normal/Alarm,,L1 alarm when tripped,SD-6-SA
+RTU-6-COS,Condensate overflow switch,DDC-RTU6-1,BI,-,Normal/Alarm,,L3 alarm when tripped,LS-6-CO
+RTU-6-FLT,Filter differential pressure,DDC-RTU6-1,AI,in. w.c.,0 to 4,,"L4 high alarm at 1 in. w.c., 30 min delay",DPT-6-FLT

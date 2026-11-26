@@ -1,0 +1,24 @@
+point_name,description,ddc_hardware_id,io_type,units,range,settings,alarm,device_tag
+AHU-2-SF-C,Supply fan start/stop,DDC-AHU2-1,BO,-,Off/On,,,VFD-2-SF
+AHU-2-SF-S,Supply fan status,DDC-AHU2-1,BI,-,Off/On,,Level 2: status differs from command for 15 s,VFD-2-SF
+AHU-2-SF-SPD,Supply fan speed command,DDC-AHU2-1,AO,%,0 to 100,,,VFD-2-SF
+AHU-2-RF-C,Return fan start/stop,DDC-AHU2-1,BO,-,Off/On,,,VFD-2-RF
+AHU-2-RF-S,Return fan status,DDC-AHU2-1,BI,-,Off/On,,Level 2: status differs from command for 15 s,VFD-2-RF
+AHU-2-RF-SPD,Return fan speed command,DDC-AHU2-1,AO,%,0 to 100,,,VFD-2-RF
+AHU-2-DSP,Duct static pressure,DDC-AHU2-1,AI,Pa,0 to 1245,,Level 3: above 498 Pa for 10 min,DPT-2-1
+AHU-2-SAT,Supply air temperature,DDC-AHU2-1,AI,degC,-1.1 to 54.4,,Level 3: 2.8 degC from setpoint for 10 min,TT-2-SA
+AHU-2-MAT,Mixed air temperature,DDC-AHU2-1,AI,degC,-17.8 to 54.4,,,TT-2-MA
+AHU-2-RAT,Return air temperature,DDC-AHU2-1,AI,degC,-1.1 to 54.4,,,TT-2-RA
+AHU-2-OAT,Outdoor air temperature,DDC-AHU2-1,AI,degC,-40 to 54.4,,,TT-2-OA
+AHU-2-OAF,Minimum outdoor airflow,DDC-AHU2-1,AI,L/s,0 to 4719,,Level 3: below 90 percent of setpoint for 15 min,AFMS-2-1
+AHU-2-MOAD,Minimum outdoor air damper command,DDC-AHU2-2,AO,%,0 to 100,,,DMP-2-MOA
+AHU-2-EOAD,Economizer outdoor air damper command,DDC-AHU2-2,AO,%,0 to 100,,,DMP-2-EOA
+AHU-2-RAD,Return air damper command,DDC-AHU2-2,AO,%,0 to 100,,,DMP-2-RA
+AHU-2-CHWV,Chilled water valve command,DDC-AHU2-1,AO,%,0 to 100,,,VLV-2-CHW
+AHU-2-HWV,Heating hot water valve command,DDC-AHU2-1,AO,%,0 to 100,,,VLV-2-HW
+AHU-2-FZ,Freeze-stat status,DDC-AHU2-2,BI,-,Normal/Alarm,,Level 2: on trip,TS-2-FZ
+AHU-2-SD-SA,Supply duct smoke detector,DDC-AHU2-2,BI,-,Normal/Alarm,,Level 1: on trip,SD-2-SA
+AHU-2-SD-RA,Return duct smoke detector,DDC-AHU2-2,BI,-,Normal/Alarm,,Level 1: on trip,SD-2-RA
+AHU-2-HSS,High static safety switch,DDC-AHU2-2,BI,-,Normal/Trip,,Level 2: on trip,PS-2-HS
+AHU-2-FLT,Filter differential pressure,DDC-AHU2-1,AI,Pa,0 to 498,,Level 4: above 249 Pa for 30 min,DPT-2-FLT
+AHU-2-MOAD-ES,Minimum outdoor air damper end switch,DDC-AHU2-2,BI,-,Closed/Open,,,DMP-2-MOA

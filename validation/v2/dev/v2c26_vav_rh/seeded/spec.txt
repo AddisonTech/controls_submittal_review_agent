@@ -1,0 +1,118 @@
+SPECIFICATION EXCERPT (synthetic test document, case v2c26_vav_rh)
+SECTION 23 09 93 SEQUENCES OF OPERATION FOR HVAC CONTROLS
+SYSTEM: VAV Terminal Units with Hot Water Reheat on AHU-6
+
+PART 1 GENERAL
+1.1 Provide a points schedule in tabular form for each HVAC system, with each row representing a hardware point, network point or configuration point.
+1.2 Alarm generation is the monitoring of a value, comparison of the value to alarm conditions and the creation of an alarm when the conditions set for the alarm are met.
+1.3 Values in this section are stated in inch-pound units. A submittal may state values in SI units when they convert to the specified value.
+1.4 The sequences below are the minimum required behavior. Do not change a specified value without approval.
+
+PART 3 EXECUTION, SEQUENCE OF OPERATION
+SECTION: 3.1 | Zone Temperature Setpoints
+3.1.1 Occupied zone setpoints shall be 69 °F heating and 75 °F cooling; unoccupied setpoints shall be 60 °F heating and 85 °F cooling.
+3.1.2 Occupant adjustment of the zone setpoints shall be limited to plus or minus 2 °F.
+
+SECTION: 3.2 | Terminal Airflow Setpoints
+3.2.1 Each terminal shall control discharge airflow between its scheduled minimum airflow and the active maximum airflow listed below.
+3.2.2 Terminal VAV-601 shall have a maximum cooling airflow of 300 cfm, a minimum airflow of 90 cfm and a maximum heating airflow of 150 cfm.
+3.2.3 Terminal VAV-602 shall have a maximum cooling airflow of 500 cfm, a minimum airflow of 150 cfm and a maximum heating airflow of 250 cfm.
+3.2.4 Terminal VAV-603 shall have a maximum cooling airflow of 700 cfm, a minimum airflow of 210 cfm and a maximum heating airflow of 350 cfm.
+3.2.5 Terminal VAV-604 shall have a maximum cooling airflow of 900 cfm, a minimum airflow of 270 cfm and a maximum heating airflow of 450 cfm.
+3.2.6 Terminal VAV-605 shall have a maximum cooling airflow of 1100 cfm, a minimum airflow of 330 cfm and a maximum heating airflow of 550 cfm.
+3.2.7 Terminal VAV-606 shall have a maximum cooling airflow of 400 cfm, a minimum airflow of 120 cfm and a maximum heating airflow of 200 cfm.
+3.2.8 Terminal VAV-607 shall have a maximum cooling airflow of 600 cfm, a minimum airflow of 180 cfm and a maximum heating airflow of 300 cfm.
+3.2.9 Terminal VAV-608 shall have a maximum cooling airflow of 800 cfm, a minimum airflow of 240 cfm and a maximum heating airflow of 400 cfm.
+3.2.10 Terminal VAV-609 shall have a maximum cooling airflow of 1000 cfm, a minimum airflow of 300 cfm and a maximum heating airflow of 500 cfm.
+3.2.11 Terminal VAV-610 shall have a maximum cooling airflow of 300 cfm, a minimum airflow of 90 cfm and a maximum heating airflow of 150 cfm.
+3.2.12 Terminal VAV-611 shall have a maximum cooling airflow of 500 cfm, a minimum airflow of 150 cfm and a maximum heating airflow of 250 cfm.
+3.2.13 Terminal VAV-612 shall have a maximum cooling airflow of 700 cfm, a minimum airflow of 210 cfm and a maximum heating airflow of 350 cfm.
+3.2.14 Terminal VAV-613 shall have a maximum cooling airflow of 900 cfm, a minimum airflow of 270 cfm and a maximum heating airflow of 450 cfm.
+3.2.15 Terminal VAV-614 shall have a maximum cooling airflow of 1100 cfm, a minimum airflow of 330 cfm and a maximum heating airflow of 550 cfm.
+
+SECTION: 3.3 | Damper and Valve Control
+3.3.1 In cooling, the airflow setpoint shall be reset from the minimum airflow up to the maximum cooling airflow as the cooling loop rises from 0 to 100 percent.
+3.3.2 In heating, the discharge air temperature setpoint shall be reset from the zone temperature up to 20 °F above the zone temperature as the heating loop rises from 0 to 50 percent, and the airflow setpoint shall rise to the maximum heating airflow as the heating loop rises from 50 to 100 percent.
+3.3.3 The hot water valve shall be closed whenever the zone is in cooling or in the deadband.
+3.3.4 On loss of communication with the AHU controller, each terminal shall control to its minimum airflow setpoint.
+
+SECTION: 3.4 | Terminal Alarms
+3.4.1 If the measured airflow is below 70 percent of setpoint for 5 minutes while the setpoint is above zero, a Level 3 low airflow alarm shall be set; if it is below 50 percent of setpoint for 5 minutes, a Level 2 alarm shall be set.
+3.4.2 If heating hot water is available and the discharge air temperature is 15 °F below its setpoint for 10 minutes, a Level 3 low discharge temperature alarm shall be set.
+3.4.3 If the damper is commanded closed and the measured airflow stays above 10 percent of the maximum cooling airflow for 10 minutes, a Level 4 leaking damper alarm shall be set.
+
+SECTION: 3.5 | Interlocks
+3.5.1 The hot water valve shall be closed and heating disabled whenever the AHU-6 supply fan is not proven on.
+
+POINTS SCHEDULE: VAV-6
+point_name | description | io_type | units | range | alarm
+VAV-601-ZT | Zone temperature | AI | degF | 40 to 100 | -
+VAV-601-FLOW | Discharge airflow | AI | cfm | 0 to 600 | Level 3: below 70 percent of setpoint for 5 min
+VAV-601-DMP | Damper command | AO | % | 0 to 100 | -
+VAV-601-HWV | Hot water valve command | AO | % | 0 to 100 | -
+VAV-601-DAT | Discharge air temperature | AI | degF | 40 to 140 | Level 3: below 55 degF for 10 min
+VAV-602-ZT | Zone temperature | AI | degF | 40 to 100 | -
+VAV-602-FLOW | Discharge airflow | AI | cfm | 0 to 800 | Level 3: below 70 percent of setpoint for 5 min
+VAV-602-DMP | Damper command | AO | % | 0 to 100 | -
+VAV-602-HWV | Hot water valve command | AO | % | 0 to 100 | -
+VAV-602-DAT | Discharge air temperature | AI | degF | 40 to 140 | Level 3: below 55 degF for 10 min
+VAV-603-ZT | Zone temperature | AI | degF | 40 to 100 | -
+VAV-603-FLOW | Discharge airflow | AI | cfm | 0 to 1000 | Level 3: below 70 percent of setpoint for 5 min
+VAV-603-DMP | Damper command | AO | % | 0 to 100 | -
+VAV-603-HWV | Hot water valve command | AO | % | 0 to 100 | -
+VAV-603-DAT | Discharge air temperature | AI | degF | 40 to 140 | Level 3: below 55 degF for 10 min
+VAV-604-ZT | Zone temperature | AI | degF | 40 to 100 | -
+VAV-604-FLOW | Discharge airflow | AI | cfm | 0 to 1200 | Level 3: below 70 percent of setpoint for 5 min
+VAV-604-DMP | Damper command | AO | % | 0 to 100 | -
+VAV-604-HWV | Hot water valve command | AO | % | 0 to 100 | -
+VAV-604-DAT | Discharge air temperature | AI | degF | 40 to 140 | Level 3: below 55 degF for 10 min
+VAV-605-ZT | Zone temperature | AI | degF | 40 to 100 | -
+VAV-605-FLOW | Discharge airflow | AI | cfm | 0 to 1400 | Level 3: below 70 percent of setpoint for 5 min
+VAV-605-DMP | Damper command | AO | % | 0 to 100 | -
+VAV-605-HWV | Hot water valve command | AO | % | 0 to 100 | -
+VAV-605-DAT | Discharge air temperature | AI | degF | 40 to 140 | Level 3: below 55 degF for 10 min
+VAV-606-ZT | Zone temperature | AI | degF | 40 to 100 | -
+VAV-606-FLOW | Discharge airflow | AI | cfm | 0 to 700 | Level 3: below 70 percent of setpoint for 5 min
+VAV-606-DMP | Damper command | AO | % | 0 to 100 | -
+VAV-606-HWV | Hot water valve command | AO | % | 0 to 100 | -
+VAV-606-DAT | Discharge air temperature | AI | degF | 40 to 140 | Level 3: below 55 degF for 10 min
+VAV-607-ZT | Zone temperature | AI | degF | 40 to 100 | -
+VAV-607-FLOW | Discharge airflow | AI | cfm | 0 to 900 | Level 3: below 70 percent of setpoint for 5 min
+VAV-607-DMP | Damper command | AO | % | 0 to 100 | -
+VAV-607-HWV | Hot water valve command | AO | % | 0 to 100 | -
+VAV-607-DAT | Discharge air temperature | AI | degF | 40 to 140 | Level 3: below 55 degF for 10 min
+VAV-608-ZT | Zone temperature | AI | degF | 40 to 100 | -
+VAV-608-FLOW | Discharge airflow | AI | cfm | 0 to 1100 | Level 3: below 70 percent of setpoint for 5 min
+VAV-608-DMP | Damper command | AO | % | 0 to 100 | -
+VAV-608-HWV | Hot water valve command | AO | % | 0 to 100 | -
+VAV-608-DAT | Discharge air temperature | AI | degF | 40 to 140 | Level 3: below 55 degF for 10 min
+VAV-609-ZT | Zone temperature | AI | degF | 40 to 100 | -
+VAV-609-FLOW | Discharge airflow | AI | cfm | 0 to 1300 | Level 3: below 70 percent of setpoint for 5 min
+VAV-609-DMP | Damper command | AO | % | 0 to 100 | -
+VAV-609-HWV | Hot water valve command | AO | % | 0 to 100 | -
+VAV-609-DAT | Discharge air temperature | AI | degF | 40 to 140 | Level 3: below 55 degF for 10 min
+VAV-610-ZT | Zone temperature | AI | degF | 40 to 100 | -
+VAV-610-FLOW | Discharge airflow | AI | cfm | 0 to 600 | Level 3: below 70 percent of setpoint for 5 min
+VAV-610-DMP | Damper command | AO | % | 0 to 100 | -
+VAV-610-HWV | Hot water valve command | AO | % | 0 to 100 | -
+VAV-610-DAT | Discharge air temperature | AI | degF | 40 to 140 | Level 3: below 55 degF for 10 min
+VAV-611-ZT | Zone temperature | AI | degF | 40 to 100 | -
+VAV-611-FLOW | Discharge airflow | AI | cfm | 0 to 800 | Level 3: below 70 percent of setpoint for 5 min
+VAV-611-DMP | Damper command | AO | % | 0 to 100 | -
+VAV-611-HWV | Hot water valve command | AO | % | 0 to 100 | -
+VAV-611-DAT | Discharge air temperature | AI | degF | 40 to 140 | Level 3: below 55 degF for 10 min
+VAV-612-ZT | Zone temperature | AI | degF | 40 to 100 | -
+VAV-612-FLOW | Discharge airflow | AI | cfm | 0 to 1000 | Level 3: below 70 percent of setpoint for 5 min
+VAV-612-DMP | Damper command | AO | % | 0 to 100 | -
+VAV-612-HWV | Hot water valve command | AO | % | 0 to 100 | -
+VAV-612-DAT | Discharge air temperature | AI | degF | 40 to 140 | Level 3: below 55 degF for 10 min
+VAV-613-ZT | Zone temperature | AI | degF | 40 to 100 | -
+VAV-613-FLOW | Discharge airflow | AI | cfm | 0 to 1200 | Level 3: below 70 percent of setpoint for 5 min
+VAV-613-DMP | Damper command | AO | % | 0 to 100 | -
+VAV-613-HWV | Hot water valve command | AO | % | 0 to 100 | -
+VAV-613-DAT | Discharge air temperature | AI | degF | 40 to 140 | Level 3: below 55 degF for 10 min
+VAV-614-ZT | Zone temperature | AI | degF | 40 to 100 | -
+VAV-614-FLOW | Discharge airflow | AI | cfm | 0 to 1400 | Level 3: below 70 percent of setpoint for 5 min
+VAV-614-DMP | Damper command | AO | % | 0 to 100 | -
+VAV-614-HWV | Hot water valve command | AO | % | 0 to 100 | -
+VAV-614-DAT | Discharge air temperature | AI | degF | 40 to 140 | Level 3: below 55 degF for 10 min

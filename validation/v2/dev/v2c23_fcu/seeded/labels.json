@@ -1,0 +1,76 @@
+{
+  "case": "v2c23_fcu",
+  "twin": "seeded",
+  "system": "Fan Coil Unit FCU-6",
+  "style": "ip",
+  "lookalikes": [
+    "deg",
+    "local"
+  ],
+  "long_document": false,
+  "paragraphs": 9,
+  "points": 8,
+  "errors": [
+    {
+      "error_id": "v2c23_fcu-E1",
+      "type": "setpoint_out_of_spec",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.1.2",
+          ""
+        ],
+        [
+          "spec",
+          "3.1.2",
+          ""
+        ]
+      ],
+      "section": "3.1",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "3.1.2: setpt variant planted: In deadband the fan runs at 5 percent, ramping to 100 percent as the heating or cooling loop goes from 50 to 100 percent."
+    },
+    {
+      "error_id": "v2c23_fcu-E2",
+      "type": "device_tag_mismatch",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "FCU-6-SAT",
+          "device_tag"
+        ],
+        [
+          "drawing",
+          "TT-6-SA",
+          "connected_points"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "FCU-6-SAT device tag TT-6-AS on the points list, TT-6-SA on the drawing list"
+    },
+    {
+      "error_id": "v2c23_fcu-E3",
+      "type": "unit_scaling_mismatch",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "FCU-6-ZT",
+          "units_range"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "FCU-6-ZT units degC with the range numbers left as 40-100"
+    }
+  ]
+}

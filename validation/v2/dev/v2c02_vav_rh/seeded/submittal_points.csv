@@ -1,0 +1,41 @@
+point_name,description,ddc_hardware_id,io_type,units,range,settings,alarm,device_tag
+VAV-201-ZT,Zone temperature,DDC-VAV201,AI,degF,40 to 100,,,TS-201
+VAV-201-FLOW,Discharge airflow,DDC-VAV201,AI,cfm,0 to 800,,"L3 low alarm under 70% of setpoint, 5 min delay",FS-201
+VAV-201-DMP,Damper command,DDC-VAV201,AO,%,0 to 100,,,DA-201
+VAV-201-HWV,Hot water valve command,DDC-VAV201,AO,%,0 to 100,,,VLV-201
+VAV-201-DAT,Discharge air temperature,DDC-VAV201,AI,degF,40 to 140,,"L3 low alarm at 55 degF, 10 min delay",TT-201-DA
+VAV-202-ZT,Zone temperature,DDC-VAV202,AI,degF,40 to 100,,,TS-202
+VAV-202-FLOW,Discharge airflow,DDC-VAV202,AI,cfm,0 to 1000,,"L3 low alarm under 70% of setpoint, 5 min delay",FS-202
+VAV-202-DMP,Damper command,DDC-VAV202,AO,%,0 to 100,,,DA-202
+VAV-202-HWV,Hot water valve command,DDC-VAV202,AO,%,0 to 100,,,VLV-202
+VAV-202-DAT,Discharge air temperature,DDC-VAV202,AI,degF,40 to 140,,"L3 low alarm at 55 degF, 10 min delay",TT-202-DA
+VAV-203-ZT,Zone temperature,DDC-VAV203,AI,degF,40 to 100,,,TS-203
+VAV-203-FLOW,Discharge airflow,DDC-VAV203,AI,cfm,0 to 1200,,"L3 low alarm under 70% of setpoint, 5 min delay",FS-208
+VAV-203-DMP,Damper command,DDC-VAV203,AO,%,0 to 100,,,DA-203
+VAV-203-HWV,Hot water valve command,DDC-VAV203,AO,%,0 to 100,,,VLV-203
+VAV-203-DAT,Discharge air temperature,DDC-VAV203,AI,degF,40 to 140,,"L3 low alarm at 55 degF, 10 min delay",TT-203-DA
+VAV-204-ZT,Zone temperature,DDC-VAV204,AI,degF,40 to 100,,,TS-204
+VAV-204-FLOW,Discharge airflow,DDC-VAV204,AI,cfm,0 to 1400,,"L3 low alarm under 70% of setpoint, 5 min delay",FS-204
+VAV-204-DMP,Damper command,DDC-VAV204,AO,%,0 to 100,,,DA-204
+VAV-204-HWV,Hot water valve command,DDC-VAV204,AO,%,0 to 100,,,VLV-204
+VAV-204-DAT,Discharge air temperature,DDC-VAV204,AI,degF,40 to 140,,"L3 low alarm at 55 degF, 10 min delay",TT-204-DA
+VAV-205-ZT,Zone temperature,DDC-VAV205,AI,degF,40 to 100,,,TS-205
+VAV-205-FLOW,Discharge airflow,DDC-VAV205,AI,cfm,0 to 700,,"L3 low alarm under 70% of setpoint, 5 min delay",FS-205
+VAV-205-DMP,Damper command,DDC-VAV205,AO,%,0 to 100,,,DA-205
+VAV-205-HWV,Hot water valve command,DDC-VAV205,AO,%,0 to 100,,,VLV-205
+VAV-205-DAT,Discharge air temperature,DDC-VAV205,AI,degF,40 to 140,,"L3 low alarm at 55 degF, 10 min delay",TT-205-DA
+VAV-206-ZT,Zone temperature,DDC-VAV206,AI,degF,40 to 100,,,TS-206
+VAV-206-FLOW,Discharge airflow,DDC-VAV206,AI,cfm,0 to 900,,"L3 low alarm under 70% of setpoint, 5 min delay",FS-206
+VAV-206-DMP,Damper command,DDC-VAV206,BO,%,0 to 100,,,DA-206
+VAV-206-HWV,Hot water valve command,DDC-VAV206,AO,%,0 to 100,,,VLV-206
+VAV-206-DAT,Discharge air temperature,DDC-VAV206,AI,degF,40 to 140,,"L3 low alarm at 55 degF, 10 min delay",TT-206-DA
+VAV-207-ZT,Zone temperature,DDC-VAV207,AI,degF,40 to 100,,,TS-207
+VAV-207-FLOW,Discharge airflow,DDC-VAV207,AI,cfm,0 to 1100,,"L3 low alarm under 70% of setpoint, 5 min delay",FS-207
+VAV-207-DMP,Damper command,DDC-VAV207,AO,%,0 to 100,,,DA-207
+VAV-207-HWV,Hot water valve command,DDC-VAV207,AO,%,0 to 100,,,VLV-207
+VAV-207-DAT,Discharge air temperature,DDC-VAV207,AI,degF,40 to 140,,"L3 low alarm at 55 degF, 10 min delay",TT-207-DA
+VAV-208-ZT,Zone temperature,DDC-VAV208,AI,degF,40 to 100,,,TS-208
+VAV-208-FLOW,Discharge airflow,DDC-VAV208,AI,cfm,0 to 1300,,"L3 low alarm under 70% of setpoint, 5 min delay",FS-208
+VAV-208-DMP,Damper command,DDC-VAV208,AO,%,0 to 100,,,DA-208
+VAV-208-HWV,Hot water valve command,DDC-VAV208,AO,%,0 to 100,,,VLV-208
+VAV-208-DAT,Discharge air temperature,DDC-VAV208,AI,degF,40 to 140,,"L3 low alarm at 55 degF, 10 min delay",TT-208-DA

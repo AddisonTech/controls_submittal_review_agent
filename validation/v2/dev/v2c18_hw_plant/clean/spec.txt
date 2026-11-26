@@ -1,0 +1,50 @@
+SPECIFICATION EXCERPT (synthetic test document, case v2c18_hw_plant)
+SECTION 23 09 93 SEQUENCES OF OPERATION FOR HVAC CONTROLS
+SYSTEM: Hot Water Boiler Plant HWP-3
+
+PART 1 GENERAL
+1.1 Provide a points schedule in tabular form for each HVAC system, with each row representing a hardware point, network point or configuration point.
+1.2 Alarm generation is the monitoring of a value, comparison of the value to alarm conditions and the creation of an alarm when the conditions set for the alarm are met.
+1.3 Values in this section are stated in inch-pound units. A submittal may state values in SI units when they convert to the specified value.
+1.4 The sequences below are the minimum required behavior. Do not change a specified value without approval.
+
+PART 3 EXECUTION, SEQUENCE OF OPERATION
+SECTION: 3.1 | Plant Enable
+3.1.1 The plant shall be enabled when there are 2 or more heating hot water plant requests for 5 minutes and the outdoor air temperature is below the 70 °F lockout.
+
+SECTION: 3.2 | Hot Water Supply Temperature Reset
+3.2.1 The hot water supply temperature setpoint shall be reset from 140 °F at an outdoor air temperature of 15 °F and below to 110 °F at 55 °F and above.
+3.2.2 The setpoint shall never be lower than 110 °F.
+
+SECTION: 3.3 | Boiler Staging
+3.3.1 The lead boiler shall be enabled only after the lead hot water pump is proven on and boiler flow is proven.
+3.3.2 The next boiler shall be staged on when the hot water supply temperature is 10 °F below setpoint for 10 minutes with the operating boilers at full fire.
+3.3.3 Each boiler shall operate no lower than 30 percent firing rate.
+
+SECTION: 3.4 | Hot Water Pumping
+3.4.1 Pump speed shall be modulated to maintain the remote differential pressure at setpoint, reset between 3 psi and 10 psi by trim and respond logic.
+3.4.2 On failure of the lead pump, the lag pump shall start and a Level 2 alarm shall be set.
+
+SECTION: 3.5 | Safeties and Interlocks
+3.5.1 Each boiler shall be hardwired to its flow switch and low water cutoff so that it cannot fire without proven flow and water level.
+3.5.2 Each boiler high limit control shall be set at 180 °F and shall require a manual reset.
+3.5.3 The emergency shutoff switch at the boiler room exit shall be hardwired to stop all boilers, and the BAS shall set a Level 1 alarm.
+
+POINTS SCHEDULE: HWP-3
+point_name | description | io_type | units | range | alarm
+HWP-3-HWST | Hot water supply temperature | AI | degF | 40 to 240 | Level 3: 10 degF from setpoint for 15 min
+HWP-3-HWRT | Hot water return temperature | AI | degF | 40 to 240 | -
+HWP-3-HW-DP | Remote hot water differential pressure | AI | psi | 0 to 50 | Level 3: below 2 psi for 10 min
+HWP-3-OAT | Outdoor air temperature | AI | degF | -40 to 130 | -
+HWP-3-HW-FS | Hot water flow switch | BI | - | No flow/Flow | -
+HWP-3-ESS | Boiler room emergency shutoff status | BI | - | Normal/Stop | Level 1: on trip
+HWP-3-B1-EN | Boiler 1 enable | BO | - | Off/On | -
+HWP-3-B1-S | Boiler 1 status | BI | - | Off/On | Level 2: status differs from command for 120 s
+HWP-3-B1-ALM | Boiler 1 common alarm | BI | - | Normal/Alarm | Level 2: on trip
+HWP-3-HWP1-SPD | Hot water pump 1 speed command | AO | % | 0 to 100 | -
+HWP-3-HWP1-S | Hot water pump 1 status | BI | - | Off/On | Level 2: status differs from command for 15 s
+HWP-3-B2-EN | Boiler 2 enable | BO | - | Off/On | -
+HWP-3-B2-S | Boiler 2 status | BI | - | Off/On | Level 2: status differs from command for 120 s
+HWP-3-B2-ALM | Boiler 2 common alarm | BI | - | Normal/Alarm | Level 2: on trip
+HWP-3-HWP2-SPD | Hot water pump 2 speed command | AO | % | 0 to 100 | -
+HWP-3-HWP2-S | Hot water pump 2 status | BI | - | Off/On | Level 2: status differs from command for 15 s

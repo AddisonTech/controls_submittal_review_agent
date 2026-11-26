@@ -1,0 +1,38 @@
+SPECIFICATION EXCERPT (synthetic test document, case v2c23_fcu)
+SECTION 23 09 93 SEQUENCES OF OPERATION FOR HVAC CONTROLS
+SYSTEM: Fan Coil Unit FCU-6
+
+PART 1 GENERAL
+1.1 Provide a points schedule in tabular form for each HVAC system, with each row representing a hardware point, network point or configuration point.
+1.2 Alarm generation is the monitoring of a value, comparison of the value to alarm conditions and the creation of an alarm when the conditions set for the alarm are met.
+1.3 Values in this section are stated in inch-pound units. A submittal may state values in SI units when they convert to the specified value.
+1.4 The sequences below are the minimum required behavior. Do not change a specified value without approval.
+
+PART 3 EXECUTION, SEQUENCE OF OPERATION
+SECTION: 3.1 | Fan Control
+3.1.1 The fan shall run continuously in the Occupied mode and shall cycle with demand in the Setback and Setup modes.
+3.1.2 The fan shall run at its minimum speed of 20 percent in the deadband and rise to 100 percent as either loop rises from 50 to 100 percent.
+
+SECTION: 3.2 | Supply Air Temperature Control
+3.2.1 In cooling, the supply air temperature setpoint shall be reset from 72 °F at 0 percent cooling loop down to 55 °F at 50 percent cooling loop.
+3.2.2 In heating, the supply air temperature setpoint shall be reset from 72 °F at 0 percent heating loop up to 95 °F at 50 percent heating loop.
+3.2.3 The heating valve and the cooling valve shall never be open at the same time.
+
+SECTION: 3.3 | Zone Setpoints
+3.3.1 Occupied zone setpoints shall be 70 °F heating and 75 °F cooling; unoccupied setpoints shall be 60 °F heating and 85 °F cooling.
+
+SECTION: 3.4 | Alarms and Interlocks
+3.4.1 A condensate overflow switch shall be hardwired to close the cooling valve, and the BAS shall set a Level 3 alarm when it trips.
+3.4.2 If the fan status does not match its command for 15 seconds, a Level 2 fan failure alarm shall be set and both valves shall close.
+3.4.3 The heating valve shall not open until the fan is proven on.
+
+POINTS SCHEDULE: FCU-6
+point_name | description | io_type | units | range | alarm
+FCU-6-FAN-C | Fan start/stop | BO | - | Off/On | -
+FCU-6-FAN-S | Fan status | BI | - | Off/On | Level 2: status differs from command for 15 s
+FCU-6-FAN-SPD | Fan speed command | AO | % | 0 to 100 | -
+FCU-6-ZT | Zone temperature | AI | degF | 40 to 100 | -
+FCU-6-SAT | Supply air temperature | AI | degF | 30 to 130 | Level 3: 5 degF from setpoint for 15 min
+FCU-6-CHWV | Cooling valve command | AO | % | 0 to 100 | -
+FCU-6-HWV | Heating valve command | AO | % | 0 to 100 | -
+FCU-6-COS | Condensate overflow switch | BI | - | Normal/Alarm | Level 3: on trip

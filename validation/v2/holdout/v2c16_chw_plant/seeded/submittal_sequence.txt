@@ -1,0 +1,32 @@
+CONTRACTOR SUBMITTAL: SEQUENCE OF OPERATION (synthetic test document, case v2c16_chw_plant)
+SUBMITTAL FOR: SECTION 23 09 93, Chilled Water Plant CHWP-3
+Paragraph numbers follow the specification. Paragraphs with a letter suffix are contractor additions.
+
+SECTION: 3.1 | Plant Enable
+3.1.1 The plant enables after 5 minutes with at least 2 chiller plant requests, provided outdoor air is warmer than the 60 °F lockout.
+3.1.2 The plant disables after 3 minutes with fewer than 2 requests, or once outdoor air is 2 °F below the lockout.
+
+SECTION: 3.2 | Chiller Staging
+3.2.1 A chiller is enabled after its chilled water and condenser water isolation valves are commanded open.
+3.2.2 A chiller stages on when chilled water supply temperature is 2 °F above setpoint for 10 minutes with the running chillers above 80 percent load.
+3.2.3 A chiller stages off after the running chillers are under 35 percent load for 15 minutes.
+3.2.3a Chiller lead and lag order rotates weekly at the operator workstation, adjustable.
+
+SECTION: 3.3 | Chilled Water Pumping
+3.3.1 The lead chilled water pump runs whenever the plant is enabled.
+3.3.2 Pump speed modulates to hold remote differential pressure at a setpoint that trim and respond logic resets between 4 psi and 20 psi.
+3.3.3 The minimum flow bypass valve modulates to keep chilled water flow through each running chiller above 180 gpm.
+
+SECTION: 3.4 | Chilled Water Supply Temperature Reset
+3.4.1 Trim and respond logic driven by cooling coil requests resets the chilled water supply temperature setpoint between 45 °F and 52 °F.
+3.4.2 When the plant enables, the chilled water supply temperature setpoint starts at 45 °F.
+3.4.2a Requests from each cooling coil are counted only while its air handling unit supply fan is proven on.
+
+SECTION: 3.5 | Condenser Water and Cooling Tower
+3.5.1 Tower fan speed modulates to hold condenser water supply temperature at 83 °F.
+3.5.2 Below 68 °F condenser water supply temperature the tower fans stop and the tower bypass valve modulates open.
+
+SECTION: 3.6 | Safeties and Interlocks
+3.6.1 The chilled water and condenser water flow switches are hardwired into each chiller control circuit so the chiller cannot run without proven flow.
+3.6.2 A refrigerant monitor reading above 20 ppm starts the machine room exhaust fans and sets a Level 1 alarm.
+3.6.3 The emergency stop switch at the machine room exit is hardwired to stop every chiller.

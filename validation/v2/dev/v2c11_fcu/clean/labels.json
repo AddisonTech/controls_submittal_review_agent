@@ -1,0 +1,14 @@
+{
+  "case": "v2c11_fcu",
+  "twin": "clean",
+  "system": "Fan Coil Unit FCU-4",
+  "style": "ip",
+  "lookalikes": [
+    "alarm_words",
+    "local"
+  ],
+  "long_document": false,
+  "paragraphs": 9,
+  "points": 8,
+  "errors": []
+}

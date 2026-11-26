@@ -1,0 +1,78 @@
+{
+  "case": "v2c15_ahu_mz",
+  "twin": "seeded",
+  "system": "Multizone VAV Air Handling Unit AHU-4",
+  "style": "ip",
+  "lookalikes": [
+    "di",
+    "local"
+  ],
+  "long_document": false,
+  "paragraphs": 26,
+  "points": 23,
+  "errors": [
+    {
+      "error_id": "v2c15_ahu_mz-E1",
+      "type": "setpoint_out_of_spec",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.4.1",
+          ""
+        ],
+        [
+          "spec",
+          "3.4.1",
+          ""
+        ]
+      ],
+      "section": "3.4",
+      "hard": [
+        "lookalikes_nearby",
+        "two_in_one_section"
+      ],
+      "description": "3.4.1: setpt variant planted: Stage 1: when supply air temperature stays below 35 \u00b0F for 5 minutes, the controller sends two heating hot water plant requests, holds the outdoor air damper at minimum position and modulates the heating coil to maintain at least 42 \u00b0F; stage 1 ends after the supply air temperature is above 45 \u00b0F for 5 minutes."
+    },
+    {
+      "error_id": "v2c15_ahu_mz-E2",
+      "type": "sequence_contradiction",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.4.3",
+          ""
+        ],
+        [
+          "spec",
+          "3.4.3",
+          ""
+        ]
+      ],
+      "section": "3.4",
+      "hard": [
+        "lookalikes_nearby",
+        "two_in_one_section"
+      ],
+      "description": "3.4.3: contra variant planted: Stage 3: on a freeze-stat trip, or when supply air temperature is below 38 \u00b0F for 15 minutes or below 34 \u00b0F for 5 minutes, the supply and return fans stop, the outdoor air dampers close, the cooling coil valve closes, the chilled water pumps are energized and a Level 2 alarm reports a freeze protection shutdown."
+    },
+    {
+      "error_id": "v2c15_ahu_mz-E3",
+      "type": "wrong_point_type",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "AHU-4-DSP",
+          "io_type"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "AHU-4-DSP type AI listed as BI"
+    }
+  ]
+}

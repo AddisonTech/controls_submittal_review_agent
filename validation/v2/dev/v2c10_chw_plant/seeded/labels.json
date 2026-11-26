@@ -1,0 +1,76 @@
+{
+  "case": "v2c10_chw_plant",
+  "twin": "seeded",
+  "system": "Chilled Water Plant CHWP-2",
+  "style": "dual",
+  "lookalikes": [
+    "di",
+    "units_dual"
+  ],
+  "long_document": false,
+  "paragraphs": 15,
+  "points": 29,
+  "errors": [
+    {
+      "error_id": "v2c10_chw_plant-E1",
+      "type": "sequence_contradiction",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.3.2",
+          ""
+        ],
+        [
+          "spec",
+          "3.3.2",
+          ""
+        ]
+      ],
+      "section": "3.3",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "3.3.2: contra variant planted: Pump speed modulates to hold pump discharge pressure at a fixed 124 kPa (18 psi)."
+    },
+    {
+      "error_id": "v2c10_chw_plant-E2",
+      "type": "device_tag_mismatch",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "CHWP-2-CHWST",
+          "device_tag"
+        ],
+        [
+          "drawing",
+          "TT-2-CHWS",
+          "connected_points"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "CHWP-2-CHWST device tag TT-2-CHSW on the points list, TT-2-CHWS on the drawing list"
+    },
+    {
+      "error_id": "v2c10_chw_plant-E3",
+      "type": "ddc_hardware_mismatch",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "CHWP-2-CWST",
+          "ddc_hardware_id"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "CHWP-2-CWST DDC hardware DDC-CHWP2-1 on the points list, DDC-CHWP2-2 on the drawing list"
+    }
+  ]
+}

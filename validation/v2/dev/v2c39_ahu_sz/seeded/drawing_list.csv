@@ -1,0 +1,12 @@
+device_tag,description,ddc_hardware_id,sheet,connected_points
+VFD-9-SF,"Variable frequency drive, supply fan start/stop",DDC-RTU9-1,M-502,RTU-9-SF-C; RTU-9-SF-S; RTU-9-SF-SPD
+TT-9-SA,"Temperature sensor, supply air temperature",DDC-RTU9-1,M-502,RTU-9-SAT
+TT-9-MA,"Temperature sensor, mixed air temperature",DDC-RTU9-1,M-502,RTU-9-MAT
+TT-9-OA,"Temperature sensor, outdoor air temperature",DDC-RTU9-1,M-502,RTU-9-OAT
+DMP-9-OA,"Damper actuator, outdoor air damper command",DDC-RTU9-1,M-502,RTU-9-OAD
+VLV-9-CHW,"Control valve actuator, chilled water valve command",DDC-RTU9-1,M-502,RTU-9-CHWV
+VLV-9-HW,"Control valve actuator, heating hot water valve command",DDC-RTU9-1,M-502,RTU-9-HWV
+TS-9-FZ,"Temperature switch or sensor, freeze-stat status",DDC-RTU9-1,M-502,RTU-9-FZ
+SD-9-SA,"Duct smoke detector, duct smoke detector",DDC-RTU9-1,M-502,RTU-9-SD
+LS-9-CO,"Level switch, condensate overflow switch",DDC-RTU9-1,M-502,RTU-9-COS
+DPT-9-FLT,"Differential pressure transmitter, filter differential pressure",DDC-RTU9-1,M-502,RTU-9-FLT

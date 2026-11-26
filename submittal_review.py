@@ -1,4 +1,4 @@
-"""Controls Submittal Review Agent - Phase 5 validation.
+"""Controls Submittal Review Agent v2 (phases 0 to 5 plus the v2 engines and spec compliance review).
 
 Student: Addison Smith (addsmi1720). License: MIT.
 Build Guide: Smith_Controls_Submittal_Review_Agent_Build_Guide_REVISED.txt
@@ -9,7 +9,8 @@ Nine nodes wired in one linear LangGraph graph:
   -> N6 gather context -> N7 classify -> N8 order -> N9 report
 
 Run:   python -m submittal_review --input tests/fixtures/seeded --output out [--config review_config.json]
-       (needs Ollama running locally with the configured model; --classifier recorded runs offline)
+       (needs Ollama running locally with the configured model; --classifier recorded runs offline;
+       --engine claude-haiku or --engine claude-sonnet uses Claude at N7, see engines.py)
 Tests: python -m pytest -q
 """
 
@@ -38,6 +39,7 @@ from pydantic import BaseModel, Field, field_validator
 
 # Future (P0-C1): native Visio and spreadsheet sources, revision-to-revision compare, riser and BOM quantity checks.
 
+VERSION = "2.0.0"
 HERE = Path(__file__).resolve().parent
 DEFAULT_RESPONSES = HERE / "tests" / "fixtures" / "recorded_responses.json"
 DEFAULT_CONFIG = HERE / "review_config.json"
@@ -1220,6 +1222,8 @@ def n7_classify(state: ReviewState, client: ClassifierClient) -> dict:
                 if problem is None and reply.verdict == "drafting_convention":  # P4-C1
                     problem, *applies = check_convention(reply, item)
             except Exception as exc:  # timeout, connection error or unparseable reply: a failed attempt, never a stop
+                if type(exc).__name__ == "BudgetExceeded":  # v2: the spend hard stop ends the run, it is not a reply
+                    raise
                 reply, problem = None, f"{type(exc).__name__}: {str(exc)[:200]}"
             attempts.append({"attempt": attempt, "seconds": round(time.monotonic() - started, 3), "reply": raw,
                              "problem": problem, "usage": getattr(client, "last_usage", None)})
@@ -1556,7 +1560,8 @@ def run_review(input_folder: Path, output_folder: Path, client: ClassifierClient
 
 
 def main(argv: Optional[list[str]] = None) -> int:
-    ap = argparse.ArgumentParser(prog="submittal_review", description="Controls Submittal Review Agent (Phase 5)")
+    import engines as en  # imported here: engines.py imports this module
+    ap = argparse.ArgumentParser(prog="submittal_review", description=f"Controls Submittal Review Agent v{VERSION}")
     ap.add_argument("--input", required=True, help="submittal folder with drawings.pdf, points.xlsx, sequence.txt")
     ap.add_argument("--output", required=True, help="output folder; each run gets its own subfolder")
     ap.add_argument("--classifier", choices=("ollama", "recorded"), default="ollama",
@@ -1564,6 +1569,10 @@ def main(argv: Optional[list[str]] = None) -> int:
     ap.add_argument("--ollama-url", default=DEFAULT_OLLAMA_URL, help="local Ollama address (localhost only)")
     ap.add_argument("--responses", default=str(DEFAULT_RESPONSES), help="recorded replies for --classifier recorded")
     ap.add_argument("--config", default=str(DEFAULT_CONFIG), help="thresholds and limits (P1-C3)")
+    ap.add_argument("--engine", choices=en.ENGINE_CHOICES, default=en.DEFAULT_ENGINE,
+                    help="N7 engine: gemma3:4b (default, the local Ollama model in the config), claude-haiku or claude-sonnet")
+    ap.add_argument("--allow-cloud", action="store_true",
+                    help="let a Claude engine send a package that is not a frozen synthetic test set")
     args = ap.parse_args(argv)
     try:
         config_path = Path(args.config)
@@ -1571,10 +1580,15 @@ def main(argv: Optional[list[str]] = None) -> int:
         config_sha = hashlib.sha256(config_path.read_bytes()).hexdigest()
         print(f"[config] {config_path.name}: spare under {config.spare_io_threshold_pct:g} percent, "
               f"cable over {config.cable_length_tolerance_pct:g} percent, sha256 {config_sha[:12]}")
-        client = (OllamaClient(config, args.ollama_url) if args.classifier == "ollama"
-                  else RecordedResponseClient(Path(args.responses)))
+        if args.classifier == "recorded":
+            client = RecordedResponseClient(Path(args.responses))
+        elif args.engine == en.DEFAULT_ENGINE:
+            client = OllamaClient(config, args.ollama_url)
+        else:
+            en.check_cloud_allowed(args.engine, Path(args.input), args.allow_cloud)
+            client = en.make_engine(args.engine, config, args.ollama_url, run_label="submittal_review_cli")
         result = run_review(Path(args.input), Path(args.output), client, config, str(config_path.resolve()), config_sha)
-    except (ModelUnavailableError, SizeLimitError, ValueError, FileNotFoundError) as exc:
+    except (ModelUnavailableError, SizeLimitError, ValueError, FileNotFoundError, en.BudgetExceeded) as exc:
         print(f"[stopped] {exc}")
         return 1
     except KeyboardInterrupt:  # P5-C4: cancellation keeps the partial audit log and classify progress

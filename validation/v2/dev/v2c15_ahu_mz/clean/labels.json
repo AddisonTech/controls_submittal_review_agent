@@ -1,0 +1,14 @@
+{
+  "case": "v2c15_ahu_mz",
+  "twin": "clean",
+  "system": "Multizone VAV Air Handling Unit AHU-4",
+  "style": "ip",
+  "lookalikes": [
+    "di",
+    "local"
+  ],
+  "long_document": false,
+  "paragraphs": 26,
+  "points": 23,
+  "errors": []
+}

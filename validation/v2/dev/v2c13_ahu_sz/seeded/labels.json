@@ -1,0 +1,81 @@
+{
+  "case": "v2c13_ahu_sz",
+  "twin": "seeded",
+  "system": "Single Zone VAV Air Handling Unit RTU-5",
+  "style": "dual",
+  "lookalikes": [
+    "extra",
+    "units_dual"
+  ],
+  "long_document": false,
+  "paragraphs": 17,
+  "points": 14,
+  "errors": [
+    {
+      "error_id": "v2c13_ahu_sz-E1",
+      "type": "sequence_contradiction",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.1.3",
+          ""
+        ],
+        [
+          "spec",
+          "3.1.3",
+          ""
+        ]
+      ],
+      "section": "3.1",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "3.1.3: contra variant planted: Outside scheduled hours the unit runs continuously at minimum speed to hold the unoccupied setpoints."
+    },
+    {
+      "error_id": "v2c13_ahu_sz-E2",
+      "type": "setpoint_out_of_spec",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.4.3",
+          ""
+        ],
+        [
+          "spec",
+          "3.4.3",
+          ""
+        ]
+      ],
+      "section": "3.4",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "3.4.3: setpt variant planted: Minimum outdoor air damper position is interpolated linearly from 15 percent at minimum fan speed to 18 percent at maximum fan speed."
+    },
+    {
+      "error_id": "v2c13_ahu_sz-E3",
+      "type": "device_tag_mismatch",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "RTU-5-MAT",
+          "device_tag"
+        ],
+        [
+          "drawing",
+          "TT-5-MA",
+          "connected_points"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "RTU-5-MAT device tag TT-5-AM on the points list, TT-5-MA on the drawing list"
+    }
+  ]
+}

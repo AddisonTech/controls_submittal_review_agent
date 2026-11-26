@@ -1,0 +1,14 @@
+{
+  "case": "v2c25_ahu_sz",
+  "twin": "clean",
+  "system": "Single Zone VAV Air Handling Unit RTU-7",
+  "style": "si",
+  "lookalikes": [
+    "di",
+    "units_si"
+  ],
+  "long_document": false,
+  "paragraphs": 17,
+  "points": 14,
+  "errors": []
+}

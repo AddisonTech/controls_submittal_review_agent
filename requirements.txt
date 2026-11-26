@@ -4,3 +4,4 @@ pytest
 pdfplumber
 openpyxl
 reportlab
+anthropic

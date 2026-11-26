@@ -1,0 +1,83 @@
+{
+  "case": "v2c34_chw_plant",
+  "twin": "seeded",
+  "system": "Chilled Water Plant CHWP-6",
+  "style": "ip",
+  "lookalikes": [
+    "alarm_words",
+    "local"
+  ],
+  "long_document": false,
+  "paragraphs": 15,
+  "points": 29,
+  "errors": [
+    {
+      "error_id": "v2c34_chw_plant-E1",
+      "type": "setpoint_out_of_spec",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.5.1",
+          ""
+        ],
+        [
+          "spec",
+          "3.5.1",
+          ""
+        ]
+      ],
+      "section": "3.5",
+      "hard": [
+        "lookalikes_nearby",
+        "two_in_one_section"
+      ],
+      "description": "3.5.1: setpt variant planted: Tower fan speed modulates to hold condenser water supply temperature at 95 \u00b0F."
+    },
+    {
+      "error_id": "v2c34_chw_plant-E2",
+      "type": "sequence_contradiction",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.5.2",
+          ""
+        ],
+        [
+          "spec",
+          "3.5.2",
+          ""
+        ]
+      ],
+      "section": "3.5",
+      "hard": [
+        "lookalikes_nearby",
+        "two_in_one_section"
+      ],
+      "description": "3.5.2: contra variant planted: Below 68 \u00b0F condenser water supply temperature the tower fans run at minimum speed and the tower bypass valve stays closed."
+    },
+    {
+      "error_id": "v2c34_chw_plant-E3",
+      "type": "device_tag_mismatch",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "CHWP-6-RM",
+          "device_tag"
+        ],
+        [
+          "drawing",
+          "RM-6-1",
+          "connected_points"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "CHWP-6-RM device tag RM-6-6 on the points list, RM-6-1 on the drawing list"
+    }
+  ]
+}

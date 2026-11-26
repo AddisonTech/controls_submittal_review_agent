@@ -1,0 +1,54 @@
+{
+  "case": "v2c06_ahu_sz",
+  "twin": "seeded",
+  "system": "Single Zone VAV Air Handling Unit RTU-4",
+  "style": "ip",
+  "lookalikes": [
+    "di",
+    "local"
+  ],
+  "long_document": false,
+  "paragraphs": 17,
+  "points": 14,
+  "errors": [
+    {
+      "error_id": "v2c06_ahu_sz-E1",
+      "type": "alarm_wrong_or_missing",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.5.1",
+          ""
+        ],
+        [
+          "spec",
+          "3.5.1",
+          ""
+        ]
+      ],
+      "section": "3.5",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "3.5.1: alarm variant planted: The duct smoke detector is hardwired to stop the supply fan and close the outdoor air damper."
+    },
+    {
+      "error_id": "v2c06_ahu_sz-E2",
+      "type": "alarm_wrong_or_missing",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "RTU-4-SAT",
+          "alarm"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "RTU-4-SAT alarm value: 'Level 3: 10 degF from setpoint for 10 min' against the specified alarm"
+    }
+  ]
+}

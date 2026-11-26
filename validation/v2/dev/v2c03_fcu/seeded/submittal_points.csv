@@ -1,0 +1,8 @@
+point_name,description,ddc_hardware_id,io_type,units,range,settings,alarm,device_tag
+FCU-3-FAN-C,Fan start/stop,DDC-FCU3,DO,-,Off/On,,,M-3-FAN
+FCU-3-FAN-S,Fan status,DDC-FCU3,DI,-,Off/On,,Level 2: status differs from command for 15 s,CS-3-FAN
+FCU-3-FAN-SPD,Fan speed command,DDC-FCU3,AO,%,0 to 100,,,M-3-FAN
+FCU-3-ZT,Zone temperature,DDC-FCU3,AI,degC,4.4 to 37.8,,,TS-3-Z
+FCU-3-SAT,Supply air temperature,DDC-FCU3,AI,degC,-1.1 to 54.4,,Level 3: 2.8 degC from setpoint for 15 min,TT-3-SA
+FCU-3-CHWV,Cooling valve command,DDC-FCU3,AO,%,0 to 100,,,VLV-3-CHW
+FCU-3-HWV,Heating valve command,DDC-FCU3,AO,%,0 to 100,,,VLV-3-HW

@@ -1,0 +1,14 @@
+{
+  "case": "v2c05_hw_plant",
+  "twin": "clean",
+  "system": "Hot Water Boiler Plant HWP-1",
+  "style": "ip",
+  "lookalikes": [
+    "deg",
+    "local"
+  ],
+  "long_document": false,
+  "paragraphs": 11,
+  "points": 16,
+  "errors": []
+}

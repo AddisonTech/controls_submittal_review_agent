@@ -1,0 +1,24 @@
+point_name,description,ddc_hardware_id,io_type,units,range,settings,alarm,device_tag
+CHWP-5-CHWST,Chilled water supply temperature,DDC-CHWP5-1,AI,degC,-1.1 to 26.7,,Level 3: 2.8 degC from setpoint for 15 min,TT-5-CHWS
+CHWP-5-CHWRT,Chilled water return temperature,DDC-CHWP5-1,AI,degC,-1.1 to 26.7,,,TT-5-CHWR
+CHWP-5-CHW-DP,Remote chilled water differential pressure,DDC-CHWP5-1,AI,kPa,0 to 690,,Level 3: below 28 kPa for 10 min,DPT-5-CHW
+CHWP-5-CHW-FLOW,Chilled water flow,DDC-CHWP5-1,AI,L/s,0 to 126.2,,,FM-5-CHW
+CHWP-5-BYPV,Minimum flow bypass valve command,DDC-CHWP5-1,AO,%,0 to 100,,,VLV-5-BYP
+CHWP-5-CWST,Condenser water supply temperature,DDC-CHWP5-2,AI,degC,4.4 to 43.3,,,TT-5-CWS
+CHWP-5-CWRT,Condenser water return temperature,DDC-CHWP5-2,AI,degC,4.4 to 43.3,,,TT-5-CWR
+CHWP-5-CT-SPD,Cooling tower fan speed command,DDC-CHWP5-2,AO,%,0 to 100,,,VFD-5-CT
+CHWP-5-CT-S,Cooling tower fan status,DDC-CHWP5-2,BI,-,Off/On,,Level 2: status differs from command for 30 s,VFD-5-CT
+CHWP-5-RM,Refrigerant monitor concentration,DDC-CHWP5-2,AI,ppm,0 to 1000,,Level 1: above 30 ppm for 1 min,RM-5-1
+CHWP-5-ESTOP,Machine room emergency stop status,DDC-CHWP5-2,BI,-,Normal/Stop,,Level 1: on trip,ES-5-1
+CHWP-5-CH1-EN,Chiller 1 enable,DDC-CHWP5-1,BO,-,Off/On,,,CH-51
+CHWP-5-CH1-S,Chiller 1 status,DDC-CHWP5-1,BI,-,Off/On,,Level 2: status differs from command for 300 s,CH-51
+CHWP-5-CH1-ALM,Chiller 1 common alarm,DDC-CHWP5-1,BI,-,Normal/Alarm,,Level 2: on trip,CH-51
+CHWP-5-CHWP1-SPD,Chilled water pump 1 speed command,DDC-CHWP5-1,AO,%,0 to 100,,,VFD-5-P1
+CHWP-5-CHWP1-S,Chilled water pump 1 status,DDC-CHWP5-1,BI,-,Off/On,,Level 2: status differs from command for 15 s,VFD-5-P1
+CHWP-5-CHW-FS1,Chiller 1 evaporator flow switch,DDC-CHWP5-2,BI,-,No flow/Flow,,,FS-5-E1
+CHWP-5-CH2-EN,Chiller 2 enable,DDC-CHWP5-1,BO,-,Off/On,,,CH-52
+CHWP-5-CH2-S,Chiller 2 status,DDC-CHWP5-1,BI,-,Off/On,,Level 2: status differs from command for 300 s,CH-52
+CHWP-5-CH2-ALM,Chiller 2 common alarm,DDC-CHWP5-1,BI,-,Normal/Alarm,,Level 2: on trip,CH-52
+CHWP-5-CHWP2-SPD,Chilled water pump 2 speed command,DDC-CHWP5-1,AO,%,0 to 100,,,VFD-5-P2
+CHWP-5-CHWP2-S,Chilled water pump 2 status,DDC-CHWP5-1,BI,-,Off/On,,Level 2: status differs from command for 15 s,VFD-5-P2
+CHWP-5-CHW-FS2,Chiller 2 evaporator flow switch,DDC-CHWP5-2,BI,-,No flow/Flow,,,FS-5-E2

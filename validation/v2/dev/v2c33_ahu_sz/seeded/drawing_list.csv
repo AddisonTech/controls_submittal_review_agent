@@ -1,0 +1,14 @@
+device_tag,description,ddc_hardware_id,sheet,connected_points
+VFD-8-SF,"Variable frequency drive, supply fan start/stop",DDC-RTU8-1,M-502,RTU-8-SF-C; RTU-8-SF-S; RTU-8-SF-SPD
+TS-8-Z,"Temperature switch or sensor, zone temperature",DDC-RTU8-1,M-502,RTU-8-ZT
+TT-8-SA,"Temperature sensor, supply air temperature",DDC-RTU8-1,M-502,RTU-8-SAT
+TT-8-MA,"Temperature sensor, mixed air temperature",DDC-RTU8-1,M-502,RTU-8-MAT
+TT-8-OA,"Temperature sensor, outdoor air temperature",DDC-RTU8-1,M-502,RTU-8-OAT
+DMP-8-OA,"Damper actuator, outdoor air damper command",DDC-RTU8-1,M-502,RTU-8-OAD
+VLV-8-CHW,"Control valve actuator, chilled water valve command",DDC-RTU8-1,M-502,RTU-8-CHWV
+VLV-8-HW,"Control valve actuator, heating hot water valve command",DDC-RTU8-1,M-502,RTU-8-HWV
+TS-8-FZ,"Temperature switch or sensor, freeze-stat status",DDC-RTU8-1,M-502,RTU-8-FZ
+SD-8-SA,"Duct smoke detector, duct smoke detector",DDC-RTU8-1,M-502,RTU-8-SD
+LS-8-CO,"Level switch, condensate overflow switch",DDC-RTU8-1,M-502,RTU-8-COS
+DPT-8-FLT,"Differential pressure transmitter, filter differential pressure",DDC-RTU8-1,M-502,RTU-8-FLT
+TI-8-SA,"Supply air dial thermometer, local",-,M-502,"none (local indicator, no BAS connection)"

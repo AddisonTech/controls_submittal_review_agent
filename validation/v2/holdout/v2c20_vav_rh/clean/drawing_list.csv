@@ -1,0 +1,52 @@
+device_tag,description,ddc_hardware_id,sheet,connected_points
+TS-501,"Temperature switch or sensor, zone temperature",DDC-VAV501,M-601,VAV-501-ZT
+FS-501,"Flow switch or sensor, discharge airflow",DDC-VAV501,M-601,VAV-501-FLOW
+DA-501,"Damper actuator, damper command",DDC-VAV501,M-601,VAV-501-DMP
+VLV-501,"Control valve actuator, hot water valve command",DDC-VAV501,M-601,VAV-501-HWV
+TT-501-DA,"Temperature sensor, discharge air temperature",DDC-VAV501,M-601,VAV-501-DAT
+TS-502,"Temperature switch or sensor, zone temperature",DDC-VAV502,M-601,VAV-502-ZT
+FS-502,"Flow switch or sensor, discharge airflow",DDC-VAV502,M-601,VAV-502-FLOW
+DA-502,"Damper actuator, damper command",DDC-VAV502,M-601,VAV-502-DMP
+VLV-502,"Control valve actuator, hot water valve command",DDC-VAV502,M-601,VAV-502-HWV
+TT-502-DA,"Temperature sensor, discharge air temperature",DDC-VAV502,M-601,VAV-502-DAT
+TS-503,"Temperature switch or sensor, zone temperature",DDC-VAV503,M-601,VAV-503-ZT
+FS-503,"Flow switch or sensor, discharge airflow",DDC-VAV503,M-601,VAV-503-FLOW
+DA-503,"Damper actuator, damper command",DDC-VAV503,M-601,VAV-503-DMP
+VLV-503,"Control valve actuator, hot water valve command",DDC-VAV503,M-601,VAV-503-HWV
+TT-503-DA,"Temperature sensor, discharge air temperature",DDC-VAV503,M-601,VAV-503-DAT
+TS-504,"Temperature switch or sensor, zone temperature",DDC-VAV504,M-601,VAV-504-ZT
+FS-504,"Flow switch or sensor, discharge airflow",DDC-VAV504,M-601,VAV-504-FLOW
+DA-504,"Damper actuator, damper command",DDC-VAV504,M-601,VAV-504-DMP
+VLV-504,"Control valve actuator, hot water valve command",DDC-VAV504,M-601,VAV-504-HWV
+TT-504-DA,"Temperature sensor, discharge air temperature",DDC-VAV504,M-601,VAV-504-DAT
+TS-505,"Temperature switch or sensor, zone temperature",DDC-VAV505,M-601,VAV-505-ZT
+FS-505,"Flow switch or sensor, discharge airflow",DDC-VAV505,M-601,VAV-505-FLOW
+DA-505,"Damper actuator, damper command",DDC-VAV505,M-601,VAV-505-DMP
+VLV-505,"Control valve actuator, hot water valve command",DDC-VAV505,M-601,VAV-505-HWV
+TT-505-DA,"Temperature sensor, discharge air temperature",DDC-VAV505,M-601,VAV-505-DAT
+TS-506,"Temperature switch or sensor, zone temperature",DDC-VAV506,M-601,VAV-506-ZT
+FS-506,"Flow switch or sensor, discharge airflow",DDC-VAV506,M-601,VAV-506-FLOW
+DA-506,"Damper actuator, damper command",DDC-VAV506,M-601,VAV-506-DMP
+VLV-506,"Control valve actuator, hot water valve command",DDC-VAV506,M-601,VAV-506-HWV
+TT-506-DA,"Temperature sensor, discharge air temperature",DDC-VAV506,M-601,VAV-506-DAT
+TS-507,"Temperature switch or sensor, zone temperature",DDC-VAV507,M-601,VAV-507-ZT
+FS-507,"Flow switch or sensor, discharge airflow",DDC-VAV507,M-601,VAV-507-FLOW
+DA-507,"Damper actuator, damper command",DDC-VAV507,M-601,VAV-507-DMP
+VLV-507,"Control valve actuator, hot water valve command",DDC-VAV507,M-601,VAV-507-HWV
+TT-507-DA,"Temperature sensor, discharge air temperature",DDC-VAV507,M-601,VAV-507-DAT
+TS-508,"Temperature switch or sensor, zone temperature",DDC-VAV508,M-601,VAV-508-ZT
+FS-508,"Flow switch or sensor, discharge airflow",DDC-VAV508,M-601,VAV-508-FLOW
+DA-508,"Damper actuator, damper command",DDC-VAV508,M-601,VAV-508-DMP
+VLV-508,"Control valve actuator, hot water valve command",DDC-VAV508,M-601,VAV-508-HWV
+TT-508-DA,"Temperature sensor, discharge air temperature",DDC-VAV508,M-601,VAV-508-DAT
+TS-509,"Temperature switch or sensor, zone temperature",DDC-VAV509,M-601,VAV-509-ZT
+FS-509,"Flow switch or sensor, discharge airflow",DDC-VAV509,M-601,VAV-509-FLOW
+DA-509,"Damper actuator, damper command",DDC-VAV509,M-601,VAV-509-DMP
+VLV-509,"Control valve actuator, hot water valve command",DDC-VAV509,M-601,VAV-509-HWV
+TT-509-DA,"Temperature sensor, discharge air temperature",DDC-VAV509,M-601,VAV-509-DAT
+TS-510,"Temperature switch or sensor, zone temperature",DDC-VAV510,M-601,VAV-510-ZT
+FS-510,"Flow switch or sensor, discharge airflow",DDC-VAV510,M-601,VAV-510-FLOW
+DA-510,"Damper actuator, damper command",DDC-VAV510,M-601,VAV-510-DMP
+VLV-510,"Control valve actuator, hot water valve command",DDC-VAV510,M-601,VAV-510-HWV
+TT-510-DA,"Temperature sensor, discharge air temperature",DDC-VAV510,M-601,VAV-510-DAT
+BD-501,"Manual balancing damper, branch duct",-,M-601,"none (manual device, no BAS connection)"

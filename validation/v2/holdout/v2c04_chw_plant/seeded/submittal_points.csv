@@ -1,0 +1,24 @@
+point_name,description,ddc_hardware_id,io_type,units,range,settings,alarm,device_tag
+CHWP-1-CHWST,Chilled water supply temperature,DDC-CHWP1-1,AI,degF,30 to 80,,"L3 deviation alarm, +/- 5 degF from setpoint, 15 min delay",TT-1-CHWS
+CHWP-1-CHWRT,Chilled water return temperature,DDC-CHWP1-1,AI,degF,30 to 80,,,TT-1-CHWR
+CHWP-1-CHW-DP,Remote chilled water differential pressure,DDC-CHWP1-1,AI,psi,0 to 50,,"L3 low alarm at 3 psi, 10 min delay",DPT-1-CHW
+CHWP-1-CHW-FLOW,Chilled water flow,DDC-CHWP1-1,AI,gpm,0 to 2000,,,FM-1-CHW
+CHWP-1-BYPV,Minimum flow bypass valve command,DDC-CHWP1-1,AO,%,0 to 100,,,VLV-1-BYP
+CHWP-1-CWST,Condenser water supply temperature,DDC-CHWP1-2,AI,degF,40 to 110,,,TT-1-CWS
+CHWP-1-CWRT,Condenser water return temperature,DDC-CHWP1-2,AI,degF,40 to 110,,,TT-1-CWR
+CHWP-1-CT-SPD,Cooling tower fan speed command,DDC-CHWP1-2,AO,%,0 to 100,,,VFD-1-CT
+CHWP-1-CT-S,Cooling tower fan status,DDC-CHWP1-2,BI,-,Off/On,,"L2 command/status mismatch alarm, 30 s delay",VFD-1-CT
+CHWP-1-RM,Refrigerant monitor concentration,DDC-CHWP1-2,AI,ppm,0 to 1000,,"L1 high alarm at 25 ppm, 1 min delay",RM-1-1
+CHWP-1-ESTOP,Machine room emergency stop status,DDC-CHWP1-2,BI,-,Normal/Stop,,L1 alarm when tripped,ES-1-1
+CHWP-1-CH1-EN,Chiller 1 enable,DDC-CHWP1-1,BO,-,Off/On,,,CH-11
+CHWP-1-CH1-S,Chiller 1 status,DDC-CHWP1-1,BI,-,Off/On,,"L2 command/status mismatch alarm, 300 s delay",CH-11
+CHWP-1-CH1-ALM,Chiller 1 common alarm,DDC-CHWP1-1,BI,-,Normal/Alarm,,L2 alarm when tripped,CH-11
+CHWP-1-CHWP1-SPD,Chilled water pump 1 speed command,DDC-CHWP1-1,AO,%,0 to 100,,,VFD-1-P1
+CHWP-1-CHWP1-S,Chilled water pump 1 status,DDC-CHWP1-1,BI,-,Off/On,,"L2 command/status mismatch alarm, 15 s delay",VFD-1-P1
+CHWP-1-CHW-FS1,Chiller 1 evaporator flow switch,DDC-CHWP1-2,BI,-,No flow/Flow,,,FS-1-E1
+CHWP-1-CH2-EN,Chiller 2 enable,DDC-CHWP1-1,BO,-,Off/On,,,CH-12
+CHWP-1-CH2-S,Chiller 2 status,DDC-CHWP1-1,BI,-,Off/On,,"L2 command/status mismatch alarm, 300 s delay",CH-12
+CHWP-1-CH2-ALM,Chiller 2 common alarm,DDC-CHWP1-1,BI,-,Normal/Alarm,,L2 alarm when tripped,CH-12
+CHWP-1-CHWP2-SPD,Chilled water pump 2 speed command,DDC-CHWP1-1,AO,%,0 to 100,,,VFD-1-P2
+CHWP-1-CHWP2-S,Chilled water pump 2 status,DDC-CHWP1-1,BI,-,Off/On,,"L2 command/status mismatch alarm, 15 s delay",VFD-1-P2
+CHWP-1-CHW-FS2,Chiller 2 evaporator flow switch,DDC-CHWP1-2,BI,-,No flow/Flow,,,FS-1-E2

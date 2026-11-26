@@ -1,0 +1,81 @@
+{
+  "case": "v2c30_hw_plant",
+  "twin": "seeded",
+  "system": "Hot Water Boiler Plant HWP-5",
+  "style": "ip",
+  "lookalikes": [
+    "di",
+    "local"
+  ],
+  "long_document": false,
+  "paragraphs": 11,
+  "points": 21,
+  "errors": [
+    {
+      "error_id": "v2c30_hw_plant-E1",
+      "type": "sequence_contradiction",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.3.2",
+          ""
+        ],
+        [
+          "spec",
+          "3.3.2",
+          ""
+        ]
+      ],
+      "section": "3.3",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "3.3.2: contra variant planted: Another boiler stages on when the hot water supply temperature is 10 \u00b0F under setpoint for 10 minutes, whatever the firing rate of the running boilers."
+    },
+    {
+      "error_id": "v2c30_hw_plant-E2",
+      "type": "interlock_missing",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.5.1",
+          ""
+        ],
+        [
+          "spec",
+          "3.5.1",
+          ""
+        ]
+      ],
+      "section": "3.5",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "3.5.1: interlock variant planted: Each boiler firing circuit includes the flow switch so the boiler cannot fire without proven flow."
+    },
+    {
+      "error_id": "v2c30_hw_plant-E3",
+      "type": "device_tag_mismatch",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "HWP-5-HWRT",
+          "device_tag"
+        ],
+        [
+          "drawing",
+          "TT-5-HWR",
+          "connected_points"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "HWP-5-HWRT device tag TT-5-HRW on the points list, TT-5-HWR on the drawing list"
+    }
+  ]
+}

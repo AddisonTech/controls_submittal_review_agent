@@ -1,0 +1,78 @@
+{
+  "case": "v2c27_ahu_mz",
+  "twin": "seeded",
+  "system": "Multizone VAV Air Handling Unit AHU-6",
+  "style": "ip",
+  "lookalikes": [
+    "di",
+    "extra"
+  ],
+  "long_document": false,
+  "paragraphs": 26,
+  "points": 23,
+  "errors": [
+    {
+      "error_id": "v2c27_ahu_mz-E1",
+      "type": "setpoint_out_of_spec",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.3.3",
+          ""
+        ],
+        [
+          "spec",
+          "3.3.3",
+          ""
+        ]
+      ],
+      "section": "3.3",
+      "hard": [
+        "lookalikes_nearby",
+        "two_in_one_section"
+      ],
+      "description": "3.3.3: setpt variant planted: The minimum outdoor air damper modulates to hold the measured outdoor airflow at the 2700 cfm minimum setpoint."
+    },
+    {
+      "error_id": "v2c27_ahu_mz-E2",
+      "type": "sequence_contradiction",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.3.4",
+          ""
+        ],
+        [
+          "spec",
+          "3.3.4",
+          ""
+        ]
+      ],
+      "section": "3.3",
+      "hard": [
+        "lookalikes_nearby",
+        "two_in_one_section"
+      ],
+      "description": "3.3.4: contra variant planted: With the supply fan off, the outdoor air dampers and the return air damper are all closed."
+    },
+    {
+      "error_id": "v2c27_ahu_mz-E3",
+      "type": "alarm_wrong_or_missing",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "AHU-6-DSP",
+          "alarm"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "AHU-6-DSP alarm level: 'Level 1: above 2 in. w.c. for 10 min' against the specified alarm"
+    }
+  ]
+}

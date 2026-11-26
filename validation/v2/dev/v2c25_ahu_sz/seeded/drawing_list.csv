@@ -1,0 +1,12 @@
+device_tag,description,ddc_hardware_id,sheet,connected_points
+VFD-7-SF,"Variable frequency drive, supply fan start/stop",DDC-RTU7-1,M-502,RTU-7-SF-C; RTU-7-SF-S; RTU-7-SF-SPD
+TS-7-Z,"Temperature switch or sensor, zone temperature",DDC-RTU7-1,M-502,RTU-7-ZT
+TT-7-SA,"Temperature sensor, supply air temperature",DDC-RTU7-1,M-502,RTU-7-SAT
+TT-7-MA,"Temperature sensor, mixed air temperature",DDC-RTU7-1,M-502,RTU-7-MAT
+TT-7-OA,"Temperature sensor, outdoor air temperature",DDC-RTU7-1,M-502,RTU-7-OAT
+DMP-7-OA,"Damper actuator, outdoor air damper command",DDC-RTU7-1,M-502,RTU-7-OAD
+VLV-7-CHW,"Control valve actuator, chilled water valve command",DDC-RTU7-1,M-502,RTU-7-CHWV
+VLV-7-HW,"Control valve actuator, heating hot water valve command",DDC-RTU7-1,M-502,RTU-7-HWV
+SD-7-SA,"Duct smoke detector, duct smoke detector",DDC-RTU7-1,M-502,RTU-7-SD
+LS-7-CO,"Level switch, condensate overflow switch",DDC-RTU7-1,M-502,RTU-7-COS
+DPT-7-FLT,"Differential pressure transmitter, filter differential pressure",DDC-RTU7-1,M-502,RTU-7-FLT

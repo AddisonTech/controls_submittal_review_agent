@@ -1,0 +1,24 @@
+CONTRACTOR SUBMITTAL: SEQUENCE OF OPERATION (synthetic test document, case v2c18_hw_plant)
+SUBMITTAL FOR: SECTION 23 09 93, Hot Water Boiler Plant HWP-3
+Paragraph numbers follow the specification. Paragraphs with a letter suffix are contractor additions.
+
+SECTION: 3.1 | Plant Enable
+3.1.1 The plant enables after 5 minutes with 2 or more heating hot water plant requests while outdoor air is colder than the 21.1 °C (70 °F) lockout.
+
+SECTION: 3.2 | Hot Water Supply Temperature Reset
+3.2.1 The hot water supply temperature setpoint is 60.0 °C (140 °F) with outdoor air at -9.4 °C (15 °F) or colder and resets linearly to 43.3 °C (110 °F) with outdoor air at 12.8 °C (55 °F) or warmer.
+3.2.2 The setpoint is limited to no lower than 43.3 °C (110 °F).
+
+SECTION: 3.3 | Boiler Staging
+3.3.1 The lead boiler is enabled once the lead hot water pump is proven on and boiler flow is proven.
+3.3.2 Another boiler stages on when the hot water supply temperature is 5.6 °C (10 °F) under setpoint for 10 minutes and the running boilers are at full fire.
+3.3.3 Each boiler holds a minimum firing rate of 30 percent.
+
+SECTION: 3.4 | Hot Water Pumping
+3.4.1 Pump speed modulates to hold remote differential pressure at a setpoint reset by trim and respond logic between 21 kPa (3 psi) and 69 kPa (10 psi).
+3.4.2 If the lead pump fails, the lag pump starts and a Level 2 alarm is set.
+
+SECTION: 3.5 | Safeties and Interlocks
+3.5.1 The flow switch and low water cutoff are hardwired in each boiler firing circuit so the boiler cannot fire without proven flow and water level.
+3.5.2 Each boiler high limit is set at 82.2 °C (180 °F) with manual reset.
+3.5.3 The boiler room exit emergency shutoff switch is hardwired to stop every boiler, and the BAS sets a Level 1 alarm.

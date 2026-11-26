@@ -1,0 +1,76 @@
+{
+  "case": "v2c31_ahu_mz",
+  "twin": "seeded",
+  "system": "Multizone VAV Air Handling Unit AHU-7",
+  "style": "si",
+  "lookalikes": [
+    "local",
+    "units_si"
+  ],
+  "long_document": false,
+  "paragraphs": 26,
+  "points": 23,
+  "errors": [
+    {
+      "error_id": "v2c31_ahu_mz-E1",
+      "type": "interlock_missing",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.4.4",
+          ""
+        ],
+        [
+          "spec",
+          "3.4.4",
+          ""
+        ]
+      ],
+      "section": "3.4",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "3.4.4: interlock variant planted: After a freeze protection shutdown the unit restarts automatically once supply air temperature recovers."
+    },
+    {
+      "error_id": "v2c31_ahu_mz-E2",
+      "type": "setpoint_out_of_spec",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.5.3",
+          ""
+        ],
+        [
+          "spec",
+          "3.5.3",
+          ""
+        ]
+      ],
+      "section": "3.5",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "3.5.3: setpt variant planted: The high static pressure safety switch, set at 1245 Pa, stops the supply fan, which then needs a manual reset to restart."
+    },
+    {
+      "error_id": "v2c31_ahu_mz-E3",
+      "type": "ddc_hardware_mismatch",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "AHU-7-SD-RA",
+          "ddc_hardware_id"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "AHU-7-SD-RA DDC hardware DDC-AHU7-1 on the points list, DDC-AHU7-2 on the drawing list"
+    }
+  ]
+}

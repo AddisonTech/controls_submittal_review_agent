@@ -1,0 +1,54 @@
+{
+  "case": "v2c01_ahu_mz",
+  "twin": "seeded",
+  "system": "Multizone VAV Air Handling Unit AHU-1",
+  "style": "ip",
+  "lookalikes": [
+    "extra",
+    "local"
+  ],
+  "long_document": false,
+  "paragraphs": 26,
+  "points": 23,
+  "errors": [
+    {
+      "error_id": "v2c01_ahu_mz-E1",
+      "type": "setpoint_out_of_spec",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.1.3",
+          ""
+        ],
+        [
+          "spec",
+          "3.1.3",
+          ""
+        ]
+      ],
+      "section": "3.1",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "3.1.3: setpt variant planted: Trim and respond logic resets the duct static pressure setpoint between a minimum of 0.15 in. w.c. and a maximum of 2.2 in. w.c., with an initial value of 1 in. w.c.."
+    },
+    {
+      "error_id": "v2c01_ahu_mz-E2",
+      "type": "wrong_point_type",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "AHU-1-SF-S",
+          "io_type"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "AHU-1-SF-S type BI listed as AI"
+    }
+  ]
+}

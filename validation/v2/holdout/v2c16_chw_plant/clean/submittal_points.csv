@@ -1,0 +1,24 @@
+point_name,description,ddc_hardware_id,io_type,units,range,settings,alarm,device_tag
+CHWP-3-CHWST,Chilled water supply temperature,DDC-CHWP3-1,AI,°F,30-80,,Level 3: 5 °F from setpoint for 15 min,TT-3-CHWS
+CHWP-3-CHWRT,Chilled water return temperature,DDC-CHWP3-1,AI,°F,30-80,,,TT-3-CHWR
+CHWP-3-CHW-DP,Remote chilled water differential pressure,DDC-CHWP3-1,AI,psi,0-50,,Level 3: below 2 psi for 10 min,DPT-3-CHW
+CHWP-3-CHW-FLOW,Chilled water flow,DDC-CHWP3-1,AI,gpm,0-2000,,,FM-3-CHW
+CHWP-3-BYPV,Minimum flow bypass valve command,DDC-CHWP3-1,AO,%,0-100,,,VLV-3-BYP
+CHWP-3-CWST,Condenser water supply temperature,DDC-CHWP3-2,AI,°F,40-110,,,TT-3-CWS
+CHWP-3-CWRT,Condenser water return temperature,DDC-CHWP3-2,AI,°F,40-110,,,TT-3-CWR
+CHWP-3-CT-SPD,Cooling tower fan speed command,DDC-CHWP3-2,AO,%,0-100,,,VFD-3-CT
+CHWP-3-CT-S,Cooling tower fan status,DDC-CHWP3-2,BI,-,Off/On,,Level 2: status differs from command for 30 s,VFD-3-CT
+CHWP-3-RM,Refrigerant monitor concentration,DDC-CHWP3-2,AI,ppm,0-1000,,Level 1: above 20 ppm for 1 min,RM-3-1
+CHWP-3-ESTOP,Machine room emergency stop status,DDC-CHWP3-2,BI,-,Normal/Stop,,Level 1: on trip,ES-3-1
+CHWP-3-CH1-EN,Chiller 1 enable,DDC-CHWP3-1,BO,-,Off/On,,,CH-31
+CHWP-3-CH1-S,Chiller 1 status,DDC-CHWP3-1,BI,-,Off/On,,Level 2: status differs from command for 300 s,CH-31
+CHWP-3-CH1-ALM,Chiller 1 common alarm,DDC-CHWP3-1,BI,-,Normal/Alarm,,Level 2: on trip,CH-31
+CHWP-3-CHWP1-SPD,Chilled water pump 1 speed command,DDC-CHWP3-1,AO,%,0-100,,,VFD-3-P1
+CHWP-3-CHWP1-S,Chilled water pump 1 status,DDC-CHWP3-1,BI,-,Off/On,,Level 2: status differs from command for 15 s,VFD-3-P1
+CHWP-3-CHW-FS1,Chiller 1 evaporator flow switch,DDC-CHWP3-2,BI,-,No flow/Flow,,,FS-3-E1
+CHWP-3-CH2-EN,Chiller 2 enable,DDC-CHWP3-1,BO,-,Off/On,,,CH-32
+CHWP-3-CH2-S,Chiller 2 status,DDC-CHWP3-1,BI,-,Off/On,,Level 2: status differs from command for 300 s,CH-32
+CHWP-3-CH2-ALM,Chiller 2 common alarm,DDC-CHWP3-1,BI,-,Normal/Alarm,,Level 2: on trip,CH-32
+CHWP-3-CHWP2-SPD,Chilled water pump 2 speed command,DDC-CHWP3-1,AO,%,0-100,,,VFD-3-P2
+CHWP-3-CHWP2-S,Chilled water pump 2 status,DDC-CHWP3-1,BI,-,Off/On,,Level 2: status differs from command for 15 s,VFD-3-P2
+CHWP-3-CHW-FS2,Chiller 2 evaporator flow switch,DDC-CHWP3-2,BI,-,No flow/Flow,,,FS-3-E2

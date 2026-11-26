@@ -1,0 +1,13 @@
+device_tag,description,ddc_hardware_id,sheet,connected_points
+TT-2-HWS,"Temperature sensor, hot water supply temperature",DDC-HWP2-1,M-901,HWP-2-HWST
+TT-2-HWR,"Temperature sensor, hot water return temperature",DDC-HWP2-1,M-901,HWP-2-HWRT
+DPT-2-HW,"Differential pressure transmitter, remote hot water differential pressure",DDC-HWP2-1,M-901,HWP-2-HW-DP
+TT-2-OA,"Temperature sensor, outdoor air temperature",DDC-HWP2-1,M-901,HWP-2-OAT
+FS-2-HW,"Flow switch or sensor, hot water flow switch",DDC-HWP2-1,M-901,HWP-2-HW-FS
+ES-2-1,"Emergency stop switch, boiler room emergency shutoff status",DDC-HWP2-1,M-901,HWP-2-ESS
+B-21,"Boiler, boiler 1 enable",DDC-HWP2-1,M-901,HWP-2-B1-EN; HWP-2-B1-S; HWP-2-B1-ALM
+VFD-2-P1,"Variable frequency drive, hot water pump 1 speed command",DDC-HWP2-1,M-901,HWP-2-HWP1-SPD; HWP-2-HWP1-S
+B-22,"Boiler, boiler 2 enable",DDC-HWP2-1,M-901,HWP-2-B2-EN; HWP-2-B2-S; HWP-2-B2-ALM
+VFD-2-P2,"Variable frequency drive, hot water pump 2 speed command",DDC-HWP2-1,M-901,HWP-2-HWP2-SPD; HWP-2-HWP2-S
+B-23,"Boiler, boiler 3 enable",DDC-HWP2-1,M-901,HWP-2-B3-EN; HWP-2-B3-S; HWP-2-B3-ALM
+VFD-2-P3,"Variable frequency drive, hot water pump 3 speed command",DDC-HWP2-1,M-901,HWP-2-HWP3-SPD; HWP-2-HWP3-S

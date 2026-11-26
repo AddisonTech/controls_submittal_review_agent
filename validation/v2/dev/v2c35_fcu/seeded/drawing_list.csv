@@ -1,0 +1,8 @@
+device_tag,description,ddc_hardware_id,sheet,connected_points
+M-8-FAN,"Fan motor and speed controller, fan start/stop",DDC-FCU8,M-701,FCU-8-FAN-C; FCU-8-FAN-SPD
+CS-8-FAN,"Current switch, fan status",DDC-FCU8,M-701,FCU-8-FAN-S
+TS-8-Z,"Temperature switch or sensor, zone temperature",DDC-FCU8,M-701,FCU-8-ZT
+VLV-8-CHW,"Control valve actuator, cooling valve command",DDC-FCU8,M-701,FCU-8-CHWV
+VLV-8-HW,"Control valve actuator, heating valve command",DDC-FCU8,M-701,FCU-8-HWV
+LS-8-CO,"Level switch, condensate overflow switch",DDC-FCU8,M-701,FCU-8-COS
+BV-8-CHW,"Chilled water balancing valve, manual",-,M-701,"none (manual valve, no BAS connection)"

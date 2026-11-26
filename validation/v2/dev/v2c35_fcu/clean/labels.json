@@ -1,0 +1,14 @@
+{
+  "case": "v2c35_fcu",
+  "twin": "clean",
+  "system": "Fan Coil Unit FCU-8",
+  "style": "dual",
+  "lookalikes": [
+    "local",
+    "units_dual"
+  ],
+  "long_document": false,
+  "paragraphs": 9,
+  "points": 8,
+  "errors": []
+}

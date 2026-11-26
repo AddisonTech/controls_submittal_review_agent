@@ -1,0 +1,61 @@
+{
+  "case": "v2c08_vav_rh",
+  "twin": "seeded",
+  "system": "VAV Terminal Units with Hot Water Reheat on AHU-3",
+  "style": "ip",
+  "lookalikes": [
+    "extra",
+    "local"
+  ],
+  "long_document": true,
+  "paragraphs": 23,
+  "points": 60,
+  "errors": [
+    {
+      "error_id": "v2c08_vav_rh-E1",
+      "type": "setpoint_out_of_spec",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.2.8",
+          ""
+        ],
+        [
+          "spec",
+          "3.2.8",
+          ""
+        ]
+      ],
+      "section": "3.2",
+      "hard": [
+        "long_document",
+        "lookalikes_nearby"
+      ],
+      "description": "3.2.8: setpt variant planted: VAV-307 is scheduled for 600 cfm cooling maximum, 70 cfm minimum and 300 cfm heating maximum."
+    },
+    {
+      "error_id": "v2c08_vav_rh-E2",
+      "type": "alarm_wrong_or_missing",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.4.1",
+          ""
+        ],
+        [
+          "spec",
+          "3.4.1",
+          ""
+        ]
+      ],
+      "section": "3.4",
+      "hard": [
+        "long_document",
+        "lookalikes_nearby"
+      ],
+      "description": "3.4.1: alarm variant planted: With a setpoint above zero, airflow under 70 percent of setpoint for 5 minutes sets a Level 3 low airflow alarm."
+    }
+  ]
+}

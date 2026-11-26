@@ -1,0 +1,24 @@
+point_name,description,ddc_hardware_id,io_type,units,range,settings,alarm,device_tag
+AHU-9-SF-C,Supply fan start/stop,DDC-AHU9-1,DO,-,Off/On,,,VFD-9-SF
+AHU-9-SF-S,Supply fan status,DDC-AHU9-1,DI,-,Off/On,,Level 2: status differs from command for 15 s,VFD-9-SF
+AHU-9-SF-SPD,Supply fan speed command,DDC-AHU9-1,AO,%,0-100,,,VFD-9-SF
+AHU-9-RF-C,Return fan start/stop,DDC-AHU9-1,DO,-,Off/On,,,VFD-9-RF
+AHU-9-RF-S,Return fan status,DDC-AHU9-1,DI,-,Off/On,,Level 2: status differs from command for 15 s,VFD-9-RF
+AHU-9-RF-SPD,Return fan speed command,DDC-AHU9-1,AO,%,0-100,,,VFD-9-RF
+AHU-9-DSP,Duct static pressure,DDC-AHU9-1,AI,in. w.c.,0-5,,Level 3: above 2 in. w.c. for 10 min,DPT-9-1
+AHU-9-SAT,Supply air temperature,DDC-AHU9-1,AI,°F,30-130,,Level 3: 5 °F from setpoint for 10 min,TT-9-SA
+AHU-9-MAT,Mixed air temperature,DDC-AHU9-1,AI,°F,0-130,,,TT-9-MA
+AHU-9-RAT,Return air temperature,DDC-AHU9-1,AI,°F,30-130,,,TT-9-RA
+AHU-9-OAT,Outdoor air temperature,DDC-AHU9-1,AI,°F,-40-130,,,TT-9-OA
+AHU-9-OAF,Minimum outdoor airflow,DDC-AHU9-1,AI,cfm,0-10000,,Level 3: below 90 percent of setpoint for 15 min,AFMS-9-1
+AHU-9-MOAD,Minimum outdoor air damper command,DDC-AHU9-2,AO,%,0-100,,,DMP-9-MOA
+AHU-9-EOAD,Economizer outdoor air damper command,DDC-AHU9-2,AO,%,0-100,,,DMP-9-EOA
+AHU-9-RAD,Return air damper command,DDC-AHU9-2,AO,%,0-100,,,DMP-9-RA
+AHU-9-CHWV,Chilled water valve command,DDC-AHU9-1,AO,%,0-100,,,VLV-9-CHW
+AHU-9-HWV,Heating hot water valve command,DDC-AHU9-1,AO,%,0-100,,,VLV-9-HW
+AHU-9-FZ,Freeze-stat status,DDC-AHU9-2,DI,-,Normal/Alarm,,Level 2: on trip,TS-9-FZ
+AHU-9-SD-SA,Supply duct smoke detector,DDC-AHU9-2,DI,-,Normal/Alarm,,Level 1: on trip,SD-9-AS
+AHU-9-SD-RA,Return duct smoke detector,DDC-AHU9-2,DI,-,Normal/Alarm,,Level 1: on trip,SD-9-RA
+AHU-9-HSS,High static safety switch,DDC-AHU9-2,DI,-,Normal/Trip,,Level 2: on trip,PS-9-HS
+AHU-9-FLT,Filter differential pressure,DDC-AHU9-2,AI,in. w.c.,0-2,,Level 4: above 1 in. w.c. for 30 min,DPT-9-FLT
+AHU-9-MOAD-ES,Minimum outdoor air damper end switch,DDC-AHU9-2,DI,-,Closed/Open,,,DMP-9-MOA

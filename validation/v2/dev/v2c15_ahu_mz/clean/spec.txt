@@ -1,0 +1,72 @@
+SPECIFICATION EXCERPT (synthetic test document, case v2c15_ahu_mz)
+SECTION 23 09 93 SEQUENCES OF OPERATION FOR HVAC CONTROLS
+SYSTEM: Multizone VAV Air Handling Unit AHU-4
+
+PART 1 GENERAL
+1.1 Provide a points schedule in tabular form for each HVAC system, with each row representing a hardware point, network point or configuration point.
+1.2 Alarm generation is the monitoring of a value, comparison of the value to alarm conditions and the creation of an alarm when the conditions set for the alarm are met.
+1.3 Values in this section are stated in inch-pound units. A submittal may state values in SI units when they convert to the specified value.
+1.4 The sequences below are the minimum required behavior. Do not change a specified value without approval.
+
+PART 3 EXECUTION, SEQUENCE OF OPERATION
+SECTION: 3.1 | Supply Fan Control
+3.1.1 The supply fan shall run when the system is in the Cool-down, Setup or Occupied mode.
+3.1.2 No zone served by AHU-4 has reheat, so the supply fan shall not run in the Setback or Warmup mode.
+3.1.3 The duct static pressure setpoint shall be reset by trim and respond logic between 0.15 in. w.c. and 1.2 in. w.c., starting from 1 in. w.c..
+3.1.4 Every 2 minutes the setpoint shall be trimmed by 0.05 in. w.c. when fewer than 2 zone pressure requests are present, and raised by 0.06 in. w.c. for each request above that number, up to 0.15 in. w.c. per interval.
+3.1.5 When the supply fan is proven on, supply fan speed shall be modulated by a PI loop to maintain duct static pressure at setpoint.
+3.1.6 Supply fan speed shall not be reduced below 20 percent.
+3.1.7 The return fan shall start when the supply fan is proven on and shall stop when the supply fan stops.
+
+SECTION: 3.2 | Supply Air Temperature Control
+3.2.1 The supply air temperature control loop shall be enabled when the supply fan is proven on; otherwise the loop shall be disabled with heating off and the economizer at minimum position.
+3.2.2 During Occupied and Setup modes the supply air temperature setpoint shall be reset from 55 °F when the outdoor air temperature is 70 °F and above, proportionally up to the maximum supply air temperature setpoint when the outdoor air temperature is 60 °F and below.
+3.2.3 The maximum supply air temperature setpoint shall be reset by trim and respond logic between 55 °F and 65 °F.
+3.2.4 During Cool-down mode the supply air temperature setpoint shall be 55 °F.
+3.2.5 During Setback and Warmup modes the supply air temperature setpoint shall be 95 °F.
+3.2.6 The loop output shall sequence the heating coil valve, then the outdoor and return air dampers, then the chilled water valve, to maintain the supply air temperature at setpoint.
+
+SECTION: 3.3 | Economizer and Minimum Outdoor Air
+3.3.1 The economizer shall be disabled when the outdoor air temperature exceeds 75 °F and enabled again when it falls 1 °F below that limit.
+3.3.2 The economizer shall be disabled whenever freeze protection stage 2 or higher is active.
+3.3.3 The minimum outdoor airflow setpoint shall be 5800 cfm, maintained by modulating the minimum outdoor air damper against the airflow measuring station.
+3.3.4 When the supply fan is off, the outdoor air dampers shall be closed and the return air damper shall be open.
+3.3.5 When the economizer is enabled, the economizer outdoor air damper and the return air damper shall be modulated in sequence to maintain the supply air temperature setpoint.
+
+SECTION: 3.4 | Freeze Protection
+3.4.1 If the supply air temperature drops below 40 °F for 5 minutes, the controller shall send two heating hot water plant requests, override the outdoor air damper to minimum position, and modulate the heating coil to keep the supply air temperature at or above 42 °F; this stage shall end when the supply air temperature is above 45 °F for 5 minutes.
+3.4.2 If the supply air temperature drops below 38 °F for 5 minutes, the economizer and minimum outdoor air dampers shall close for 1 hour and a Level 3 alarm shall be set noting that minimum ventilation was interrupted.
+3.4.3 Upon a signal from the freeze-stat, or if the supply air temperature drops below 38 °F for 15 minutes or below 34 °F for 5 minutes, the supply and return fans shall shut down, the outdoor air dampers shall close, the cooling coil valve shall open to 100 percent, the chilled water pumps shall be energized, and a Level 2 alarm shall be set indicating the unit is shut down by freeze protection.
+3.4.4 A freeze protection shutdown shall be cleared only by a manual reset at the operator workstation.
+
+SECTION: 3.5 | Safeties and Interlocks
+3.5.1 The freeze-stat shall be hardwired to stop the supply and return fans regardless of the BAS command, and its status shall be monitored by the BAS.
+3.5.2 Duct smoke detectors in the supply and return air ducts shall be hardwired to stop both fans and close the outdoor air dampers, and the BAS shall set a Level 1 alarm on detection.
+3.5.3 A high static pressure safety switch set at 3 in. w.c. shall stop the supply fan, and the fan shall restart only after a manual reset.
+3.5.4 The supply fan shall not start until the minimum outdoor air damper end switch proves the damper open.
+
+POINTS SCHEDULE: AHU-4
+point_name | description | io_type | units | range | alarm
+AHU-4-SF-C | Supply fan start/stop | BO | - | Off/On | -
+AHU-4-SF-S | Supply fan status | BI | - | Off/On | Level 2: status differs from command for 15 s
+AHU-4-SF-SPD | Supply fan speed command | AO | % | 0 to 100 | -
+AHU-4-RF-C | Return fan start/stop | BO | - | Off/On | -
+AHU-4-RF-S | Return fan status | BI | - | Off/On | Level 2: status differs from command for 15 s
+AHU-4-RF-SPD | Return fan speed command | AO | % | 0 to 100 | -
+AHU-4-DSP | Duct static pressure | AI | in. w.c. | 0 to 5 | Level 3: above 2 in. w.c. for 10 min
+AHU-4-SAT | Supply air temperature | AI | degF | 30 to 130 | Level 3: 5 degF from setpoint for 10 min
+AHU-4-MAT | Mixed air temperature | AI | degF | 0 to 130 | -
+AHU-4-RAT | Return air temperature | AI | degF | 30 to 130 | -
+AHU-4-OAT | Outdoor air temperature | AI | degF | -40 to 130 | -
+AHU-4-OAF | Minimum outdoor airflow | AI | cfm | 0 to 10000 | Level 3: below 90 percent of setpoint for 15 min
+AHU-4-MOAD | Minimum outdoor air damper command | AO | % | 0 to 100 | -
+AHU-4-EOAD | Economizer outdoor air damper command | AO | % | 0 to 100 | -
+AHU-4-RAD | Return air damper command | AO | % | 0 to 100 | -
+AHU-4-CHWV | Chilled water valve command | AO | % | 0 to 100 | -
+AHU-4-HWV | Heating hot water valve command | AO | % | 0 to 100 | -
+AHU-4-FZ | Freeze-stat status | BI | - | Normal/Alarm | Level 2: on trip
+AHU-4-SD-SA | Supply duct smoke detector | BI | - | Normal/Alarm | Level 1: on trip
+AHU-4-SD-RA | Return duct smoke detector | BI | - | Normal/Alarm | Level 1: on trip
+AHU-4-HSS | High static safety switch | BI | - | Normal/Trip | Level 2: on trip
+AHU-4-FLT | Filter differential pressure | AI | in. w.c. | 0 to 2 | Level 4: above 1 in. w.c. for 30 min
+AHU-4-MOAD-ES | Minimum outdoor air damper end switch | BI | - | Closed/Open | -

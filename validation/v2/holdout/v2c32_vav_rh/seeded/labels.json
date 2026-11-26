@@ -1,0 +1,79 @@
+{
+  "case": "v2c32_vav_rh",
+  "twin": "seeded",
+  "system": "VAV Terminal Units with Hot Water Reheat on AHU-7",
+  "style": "ip",
+  "lookalikes": [
+    "alarm_words",
+    "extra"
+  ],
+  "long_document": true,
+  "paragraphs": 20,
+  "points": 45,
+  "errors": [
+    {
+      "error_id": "v2c32_vav_rh-E1",
+      "type": "sequence_contradiction",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.3.4",
+          ""
+        ],
+        [
+          "spec",
+          "3.3.4",
+          ""
+        ]
+      ],
+      "section": "3.3",
+      "hard": [
+        "long_document",
+        "lookalikes_nearby"
+      ],
+      "description": "3.3.4: contra variant planted: If communication with the AHU controller is lost, each terminal closes its damper fully."
+    },
+    {
+      "error_id": "v2c32_vav_rh-E2",
+      "type": "alarm_wrong_or_missing",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.4.2",
+          ""
+        ],
+        [
+          "spec",
+          "3.4.2",
+          ""
+        ]
+      ],
+      "section": "3.4",
+      "hard": [
+        "long_document",
+        "lookalikes_nearby"
+      ],
+      "description": "3.4.2: alarm variant planted: When heating hot water is available, a discharge air temperature 15 \u00b0F under its setpoint for 60 minutes sets a Level 3 low discharge temperature alarm."
+    },
+    {
+      "error_id": "v2c32_vav_rh-E3",
+      "type": "wrong_point_type",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "VAV-705-HWV",
+          "io_type"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "long_document",
+        "lookalikes_nearby"
+      ],
+      "description": "VAV-705-HWV type AO listed as BO"
+    }
+  ]
+}

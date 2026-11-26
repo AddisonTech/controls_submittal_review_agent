@@ -1,0 +1,14 @@
+{
+  "case": "v2c16_chw_plant",
+  "twin": "clean",
+  "system": "Chilled Water Plant CHWP-3",
+  "style": "ip",
+  "lookalikes": [
+    "deg",
+    "extra"
+  ],
+  "long_document": false,
+  "paragraphs": 15,
+  "points": 23,
+  "errors": []
+}

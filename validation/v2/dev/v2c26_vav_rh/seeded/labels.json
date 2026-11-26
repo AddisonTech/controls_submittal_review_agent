@@ -1,0 +1,78 @@
+{
+  "case": "v2c26_vav_rh",
+  "twin": "seeded",
+  "system": "VAV Terminal Units with Hot Water Reheat on AHU-6",
+  "style": "ip",
+  "lookalikes": [
+    "deg"
+  ],
+  "long_document": true,
+  "paragraphs": 25,
+  "points": 69,
+  "errors": [
+    {
+      "error_id": "v2c26_vav_rh-E1",
+      "type": "setpoint_out_of_spec",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.2.13",
+          ""
+        ],
+        [
+          "spec",
+          "3.2.13",
+          ""
+        ]
+      ],
+      "section": "3.2",
+      "hard": [
+        "long_document",
+        "lookalikes_nearby"
+      ],
+      "description": "3.2.13: setpt variant planted: VAV-612 is scheduled for 700 cfm cooling maximum, 80 cfm minimum and 350 cfm heating maximum."
+    },
+    {
+      "error_id": "v2c26_vav_rh-E2",
+      "type": "sequence_contradiction",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.3.3",
+          ""
+        ],
+        [
+          "spec",
+          "3.3.3",
+          ""
+        ]
+      ],
+      "section": "3.3",
+      "hard": [
+        "long_document",
+        "lookalikes_nearby"
+      ],
+      "description": "3.3.3: contra variant planted: In the deadband the hot water valve modulates to keep the discharge air temperature at the zone temperature."
+    },
+    {
+      "error_id": "v2c26_vav_rh-E3",
+      "type": "point_missing",
+      "kind": "absent",
+      "anchors": [
+        [
+          "spec_points",
+          "VAV-607-FLOW",
+          "row"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "long_document",
+        "lookalikes_nearby"
+      ],
+      "description": "VAV-607-FLOW left out of the points list and the drawing list"
+    }
+  ]
+}

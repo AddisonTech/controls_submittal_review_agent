@@ -1,0 +1,13 @@
+{
+  "case": "v2c24_hw_plant",
+  "twin": "clean",
+  "system": "Hot Water Boiler Plant HWP-4",
+  "style": "ip",
+  "lookalikes": [
+    "alarm_words"
+  ],
+  "long_document": false,
+  "paragraphs": 11,
+  "points": 16,
+  "errors": []
+}

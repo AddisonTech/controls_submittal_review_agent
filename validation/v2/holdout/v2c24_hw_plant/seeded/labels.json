@@ -1,0 +1,75 @@
+{
+  "case": "v2c24_hw_plant",
+  "twin": "seeded",
+  "system": "Hot Water Boiler Plant HWP-4",
+  "style": "ip",
+  "lookalikes": [
+    "alarm_words"
+  ],
+  "long_document": false,
+  "paragraphs": 11,
+  "points": 16,
+  "errors": [
+    {
+      "error_id": "v2c24_hw_plant-E1",
+      "type": "setpoint_out_of_spec",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.2.1",
+          ""
+        ],
+        [
+          "spec",
+          "3.2.1",
+          ""
+        ]
+      ],
+      "section": "3.2",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "3.2.1: setpt variant planted: The hot water supply temperature setpoint is 210 \u00b0F with outdoor air at 20 \u00b0F or colder and resets linearly to 140 \u00b0F with outdoor air at 60 \u00b0F or warmer."
+    },
+    {
+      "error_id": "v2c24_hw_plant-E2",
+      "type": "alarm_wrong_or_missing",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.4.2",
+          ""
+        ],
+        [
+          "spec",
+          "3.4.2",
+          ""
+        ]
+      ],
+      "section": "3.4",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "3.4.2: alarm variant planted: If the lead pump fails, the lag pump starts."
+    },
+    {
+      "error_id": "v2c24_hw_plant-E3",
+      "type": "ddc_hardware_mismatch",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "HWP-4-HW-DP",
+          "ddc_hardware_id"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "HWP-4-HW-DP DDC hardware DDC-HWP4-2 on the points list, DDC-HWP4-1 on the drawing list"
+    }
+  ]
+}

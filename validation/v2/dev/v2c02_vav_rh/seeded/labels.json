@@ -1,0 +1,79 @@
+{
+  "case": "v2c02_vav_rh",
+  "twin": "seeded",
+  "system": "VAV Terminal Units with Hot Water Reheat on AHU-2",
+  "style": "ip",
+  "lookalikes": [
+    "alarm_words",
+    "local"
+  ],
+  "long_document": true,
+  "paragraphs": 19,
+  "points": 40,
+  "errors": [
+    {
+      "error_id": "v2c02_vav_rh-E1",
+      "type": "setpoint_out_of_spec",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.2.6",
+          ""
+        ],
+        [
+          "spec",
+          "3.2.6",
+          ""
+        ]
+      ],
+      "section": "3.2",
+      "hard": [
+        "long_document",
+        "lookalikes_nearby"
+      ],
+      "description": "3.2.6: setpt variant planted: VAV-205 is scheduled for 400 cfm cooling maximum, 50 cfm minimum and 200 cfm heating maximum."
+    },
+    {
+      "error_id": "v2c02_vav_rh-E2",
+      "type": "device_tag_mismatch",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "VAV-203-FLOW",
+          "device_tag"
+        ],
+        [
+          "drawing",
+          "FS-203",
+          "connected_points"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "long_document",
+        "lookalikes_nearby"
+      ],
+      "description": "VAV-203-FLOW device tag FS-208 on the points list, FS-203 on the drawing list"
+    },
+    {
+      "error_id": "v2c02_vav_rh-E3",
+      "type": "wrong_point_type",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "VAV-206-DMP",
+          "io_type"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "long_document",
+        "lookalikes_nearby"
+      ],
+      "description": "VAV-206-DMP type AO listed as BO"
+    }
+  ]
+}

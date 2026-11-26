@@ -1,0 +1,24 @@
+point_name,description,ddc_hardware_id,io_type,units,range,settings,alarm,device_tag
+AHU-5-SF-C,Supply fan start/stop,DDC-AHU5-1,BO,-,Off/On,,,VFD-5-SF
+AHU-5-SF-S,Supply fan status,DDC-AHU5-1,BI,-,Off/On,,"L2 command/status mismatch alarm, 15 s delay",VFD-5-SF
+AHU-5-SF-SPD,Supply fan speed command,DDC-AHU5-1,AO,%,0 to 100,,,VFD-5-SF
+AHU-5-RF-C,Return fan start/stop,DDC-AHU5-1,BO,-,Off/On,,,VFD-5-RF
+AHU-5-RF-S,Return fan status,DDC-AHU5-1,BI,-,Off/On,,"L2 command/status mismatch alarm, 15 s delay",VFD-5-RF
+AHU-5-RF-SPD,Return fan speed command,DDC-AHU5-1,AO,%,0 to 100,,,VFD-5-RF
+AHU-5-DSP,Duct static pressure,DDC-AHU5-1,AI,Pa,0 to 1245,,"L3 high alarm at 498 Pa, 10 min delay",DPT-5-1
+AHU-5-SAT,Supply air temperature,DDC-AHU5-1,AI,degF,-1.1 to 54.4,,"L3 deviation alarm, +/- 2.8 degC from setpoint, 10 min delay",TT-5-SA
+AHU-5-MAT,Mixed air temperature,DDC-AHU5-1,AI,degC,-17.8 to 54.4,,,TT-5-MA
+AHU-5-RAT,Return air temperature,DDC-AHU5-1,AI,degC,-1.1 to 54.4,,,TT-5-RA
+AHU-5-OAT,Outdoor air temperature,DDC-AHU5-1,AI,degC,-40 to 54.4,,,TT-5-OA
+AHU-5-OAF,Minimum outdoor airflow,DDC-AHU5-1,AI,L/s,0 to 4719,,"L3 low alarm under 90% of setpoint, 15 min delay",AFMS-5-1
+AHU-5-MOAD,Minimum outdoor air damper command,DDC-AHU5-2,AO,%,0 to 100,,,DMP-5-MOA
+AHU-5-EOAD,Economizer outdoor air damper command,DDC-AHU5-2,AO,%,0 to 100,,,DMP-5-EOA
+AHU-5-RAD,Return air damper command,DDC-AHU5-2,AO,%,0 to 100,,,DMP-5-RA
+AHU-5-CHWV,Chilled water valve command,DDC-AHU5-1,AO,%,0 to 100,,,VLV-5-CHW
+AHU-5-HWV,Heating hot water valve command,DDC-AHU5-1,AO,%,0 to 100,,,VLV-5-HW
+AHU-5-FZ,Freeze-stat status,DDC-AHU5-2,BI,-,Normal/Alarm,,L2 alarm when tripped,TS-5-FZ
+AHU-5-SD-SA,Supply duct smoke detector,DDC-AHU5-2,BI,-,Normal/Alarm,,L1 alarm when tripped,SD-5-SA
+AHU-5-SD-RA,Return duct smoke detector,DDC-AHU5-2,BI,-,Normal/Alarm,,L1 alarm when tripped,SD-5-RA
+AHU-5-HSS,High static safety switch,DDC-AHU5-2,BI,-,Normal/Trip,,L2 alarm when tripped,PS-5-HS
+AHU-5-FLT,Filter differential pressure,DDC-AHU5-1,AI,Pa,0 to 498,,"L4 high alarm at 249 Pa, 30 min delay",DPT-5-FLT
+AHU-5-MOAD-ES,Minimum outdoor air damper end switch,DDC-AHU5-2,BI,-,Closed/Open,,,DMP-5-MOA

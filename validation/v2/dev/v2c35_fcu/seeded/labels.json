@@ -1,0 +1,71 @@
+{
+  "case": "v2c35_fcu",
+  "twin": "seeded",
+  "system": "Fan Coil Unit FCU-8",
+  "style": "dual",
+  "lookalikes": [
+    "local",
+    "units_dual"
+  ],
+  "long_document": false,
+  "paragraphs": 9,
+  "points": 7,
+  "errors": [
+    {
+      "error_id": "v2c35_fcu-E1",
+      "type": "setpoint_out_of_spec",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.3.1",
+          ""
+        ],
+        [
+          "spec",
+          "3.3.1",
+          ""
+        ]
+      ],
+      "section": "3.3",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "3.3.1: setpt variant planted: Occupied setpoints are 21.7 \u00b0C (71 \u00b0F) heating and 23.3 \u00b0C (74 \u00b0F) cooling, and unoccupied setpoints are 15.6 \u00b0C (60 \u00b0F) heating and 35.0 \u00b0C (95 \u00b0F) cooling."
+    },
+    {
+      "error_id": "v2c35_fcu-E2",
+      "type": "point_missing",
+      "kind": "absent",
+      "anchors": [
+        [
+          "spec_points",
+          "FCU-8-SAT",
+          "row"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "FCU-8-SAT left out of the points list and the drawing list"
+    },
+    {
+      "error_id": "v2c35_fcu-E3",
+      "type": "alarm_wrong_or_missing",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "FCU-8-COS",
+          "alarm"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "FCU-8-COS alarm blank: '' against the specified alarm"
+    }
+  ]
+}

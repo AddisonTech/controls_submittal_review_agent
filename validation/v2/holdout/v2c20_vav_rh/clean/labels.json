@@ -1,0 +1,15 @@
+{
+  "case": "v2c20_vav_rh",
+  "twin": "clean",
+  "system": "VAV Terminal Units with Hot Water Reheat on AHU-5",
+  "style": "dual",
+  "lookalikes": [
+    "extra",
+    "local",
+    "units_dual"
+  ],
+  "long_document": true,
+  "paragraphs": 21,
+  "points": 50,
+  "errors": []
+}

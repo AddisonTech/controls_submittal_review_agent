@@ -1,0 +1,9 @@
+point_name,description,ddc_hardware_id,io_type,units,range,settings,alarm,device_tag
+FCU-6-FAN-C,Fan start/stop,DDC-FCU6,BO,-,Off/On,,,M-6-FAN
+FCU-6-FAN-S,Fan status,DDC-FCU6,BI,-,Off/On,,Level 2: status differs from command for 15 s,CS-6-FAN
+FCU-6-FAN-SPD,Fan speed command,DDC-FCU6,AO,%,0-100,,,M-6-FAN
+FCU-6-ZT,Zone temperature,DDC-FCU6,AI,degC,40-100,,,TS-6-Z
+FCU-6-SAT,Supply air temperature,DDC-FCU6,AI,°F,30-130,,Level 3: 5 °F from setpoint for 15 min,TT-6-AS
+FCU-6-CHWV,Cooling valve command,DDC-FCU6,AO,%,0-100,,,VLV-6-CHW
+FCU-6-HWV,Heating valve command,DDC-FCU6,AO,%,0-100,,,VLV-6-HW
+FCU-6-COS,Condensate overflow switch,DDC-FCU6,BI,-,Normal/Alarm,,Level 3: on trip,LS-6-CO

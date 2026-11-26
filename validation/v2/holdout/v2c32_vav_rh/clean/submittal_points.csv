@@ -1,0 +1,46 @@
+point_name,description,ddc_hardware_id,io_type,units,range,settings,alarm,device_tag
+VAV-701-ZT,Zone temperature,DDC-VAV701,AI,degF,40 to 100,,,TS-701
+VAV-701-FLOW,Discharge airflow,DDC-VAV701,AI,cfm,0 to 1300,,"L3 low alarm under 70% of setpoint, 5 min delay",FS-701
+VAV-701-DMP,Damper command,DDC-VAV701,AO,%,0 to 100,,,DA-701
+VAV-701-HWV,Hot water valve command,DDC-VAV701,AO,%,0 to 100,,,VLV-701
+VAV-701-DAT,Discharge air temperature,DDC-VAV701,AI,degF,40 to 140,,"L3 low alarm at 55 degF, 10 min delay",TT-701-DA
+VAV-702-ZT,Zone temperature,DDC-VAV702,AI,degF,40 to 100,,,TS-702
+VAV-702-FLOW,Discharge airflow,DDC-VAV702,AI,cfm,0 to 600,,"L3 low alarm under 70% of setpoint, 5 min delay",FS-702
+VAV-702-DMP,Damper command,DDC-VAV702,AO,%,0 to 100,,,DA-702
+VAV-702-HWV,Hot water valve command,DDC-VAV702,AO,%,0 to 100,,,VLV-702
+VAV-702-DAT,Discharge air temperature,DDC-VAV702,AI,degF,40 to 140,,"L3 low alarm at 55 degF, 10 min delay",TT-702-DA
+VAV-703-ZT,Zone temperature,DDC-VAV703,AI,degF,40 to 100,,,TS-703
+VAV-703-FLOW,Discharge airflow,DDC-VAV703,AI,cfm,0 to 800,,"L3 low alarm under 70% of setpoint, 5 min delay",FS-703
+VAV-703-DMP,Damper command,DDC-VAV703,AO,%,0 to 100,,,DA-703
+VAV-703-HWV,Hot water valve command,DDC-VAV703,AO,%,0 to 100,,,VLV-703
+VAV-703-DAT,Discharge air temperature,DDC-VAV703,AI,degF,40 to 140,,"L3 low alarm at 55 degF, 10 min delay",TT-703-DA
+VAV-704-ZT,Zone temperature,DDC-VAV704,AI,degF,40 to 100,,,TS-704
+VAV-704-FLOW,Discharge airflow,DDC-VAV704,AI,cfm,0 to 1000,,"L3 low alarm under 70% of setpoint, 5 min delay",FS-704
+VAV-704-DMP,Damper command,DDC-VAV704,AO,%,0 to 100,,,DA-704
+VAV-704-HWV,Hot water valve command,DDC-VAV704,AO,%,0 to 100,,,VLV-704
+VAV-704-DAT,Discharge air temperature,DDC-VAV704,AI,degF,40 to 140,,"L3 low alarm at 55 degF, 10 min delay",TT-704-DA
+VAV-705-ZT,Zone temperature,DDC-VAV705,AI,degF,40 to 100,,,TS-705
+VAV-705-FLOW,Discharge airflow,DDC-VAV705,AI,cfm,0 to 1200,,"L3 low alarm under 70% of setpoint, 5 min delay",FS-705
+VAV-705-DMP,Damper command,DDC-VAV705,AO,%,0 to 100,,,DA-705
+VAV-705-HWV,Hot water valve command,DDC-VAV705,AO,%,0 to 100,,,VLV-705
+VAV-705-DAT,Discharge air temperature,DDC-VAV705,AI,degF,40 to 140,,"L3 low alarm at 55 degF, 10 min delay",TT-705-DA
+VAV-706-ZT,Zone temperature,DDC-VAV706,AI,degF,40 to 100,,,TS-706
+VAV-706-FLOW,Discharge airflow,DDC-VAV706,AI,cfm,0 to 1400,,"L3 low alarm under 70% of setpoint, 5 min delay",FS-706
+VAV-706-DMP,Damper command,DDC-VAV706,AO,%,0 to 100,,,DA-706
+VAV-706-HWV,Hot water valve command,DDC-VAV706,AO,%,0 to 100,,,VLV-706
+VAV-706-DAT,Discharge air temperature,DDC-VAV706,AI,degF,40 to 140,,"L3 low alarm at 55 degF, 10 min delay",TT-706-DA
+VAV-707-ZT,Zone temperature,DDC-VAV707,AI,degF,40 to 100,,,TS-707
+VAV-707-FLOW,Discharge airflow,DDC-VAV707,AI,cfm,0 to 700,,"L3 low alarm under 70% of setpoint, 5 min delay",FS-707
+VAV-707-DMP,Damper command,DDC-VAV707,AO,%,0 to 100,,,DA-707
+VAV-707-HWV,Hot water valve command,DDC-VAV707,AO,%,0 to 100,,,VLV-707
+VAV-707-DAT,Discharge air temperature,DDC-VAV707,AI,degF,40 to 140,,"L3 low alarm at 55 degF, 10 min delay",TT-707-DA
+VAV-708-ZT,Zone temperature,DDC-VAV708,AI,degF,40 to 100,,,TS-708
+VAV-708-FLOW,Discharge airflow,DDC-VAV708,AI,cfm,0 to 900,,"L3 low alarm under 70% of setpoint, 5 min delay",FS-708
+VAV-708-DMP,Damper command,DDC-VAV708,AO,%,0 to 100,,,DA-708
+VAV-708-HWV,Hot water valve command,DDC-VAV708,AO,%,0 to 100,,,VLV-708
+VAV-708-DAT,Discharge air temperature,DDC-VAV708,AI,degF,40 to 140,,"L3 low alarm at 55 degF, 10 min delay",TT-708-DA
+VAV-709-ZT,Zone temperature,DDC-VAV709,AI,degF,40 to 100,,,TS-709
+VAV-709-FLOW,Discharge airflow,DDC-VAV709,AI,cfm,0 to 1100,,"L3 low alarm under 70% of setpoint, 5 min delay",FS-709
+VAV-709-DMP,Damper command,DDC-VAV709,AO,%,0 to 100,,,DA-709
+VAV-709-HWV,Hot water valve command,DDC-VAV709,AO,%,0 to 100,,,VLV-709
+VAV-709-DAT,Discharge air temperature,DDC-VAV709,AI,degF,40 to 140,,"L3 low alarm at 55 degF, 10 min delay",TT-709-DA

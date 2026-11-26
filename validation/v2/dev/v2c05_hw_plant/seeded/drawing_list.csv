@@ -1,0 +1,12 @@
+device_tag,description,ddc_hardware_id,sheet,connected_points
+TT-1-HWS,"Temperature sensor, hot water supply temperature",DDC-HWP1-1,M-901,HWP-1-HWST
+TT-1-HWR,"Temperature sensor, hot water return temperature",DDC-HWP1-1,M-901,HWP-1-HWRT
+DPT-1-HW,"Differential pressure transmitter, remote hot water differential pressure",DDC-HWP1-1,M-901,HWP-1-HW-DP
+TT-1-OA,"Temperature sensor, outdoor air temperature",DDC-HWP1-1,M-901,HWP-1-OAT
+FS-1-HW,"Flow switch or sensor, hot water flow switch",DDC-HWP1-1,M-901,HWP-1-HW-FS
+ES-1-1,"Emergency stop switch, boiler room emergency shutoff status",DDC-HWP1-1,M-901,HWP-1-ESS
+B-11,"Boiler, boiler 1 enable",DDC-HWP1-1,M-901,HWP-1-B1-EN; HWP-1-B1-S; HWP-1-B1-ALM
+VFD-1-P1,"Variable frequency drive, hot water pump 1 speed command",DDC-HWP1-1,M-901,HWP-1-HWP1-SPD; HWP-1-HWP1-S
+B-12,"Boiler, boiler 2 enable",DDC-HWP1-1,M-901,HWP-1-B2-EN; HWP-1-B2-S; HWP-1-B2-ALM
+VFD-1-P2,"Variable frequency drive, hot water pump 2 speed command",DDC-HWP1-1,M-901,HWP-1-HWP2-SPD; HWP-1-HWP2-S
+PG-1-HWS,"Hot water supply pressure gauge, local",-,M-901,"none (local gauge, no BAS connection)"

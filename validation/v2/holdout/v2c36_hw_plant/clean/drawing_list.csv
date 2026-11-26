@@ -1,0 +1,11 @@
+device_tag,description,ddc_hardware_id,sheet,connected_points
+TT-6-HWS,"Temperature sensor, hot water supply temperature",DDC-HWP6-1,M-901,HWP-6-HWST
+TT-6-HWR,"Temperature sensor, hot water return temperature",DDC-HWP6-1,M-901,HWP-6-HWRT
+DPT-6-HW,"Differential pressure transmitter, remote hot water differential pressure",DDC-HWP6-1,M-901,HWP-6-HW-DP
+TT-6-OA,"Temperature sensor, outdoor air temperature",DDC-HWP6-1,M-901,HWP-6-OAT
+FS-6-HW,"Flow switch or sensor, hot water flow switch",DDC-HWP6-1,M-901,HWP-6-HW-FS
+ES-6-1,"Emergency stop switch, boiler room emergency shutoff status",DDC-HWP6-1,M-901,HWP-6-ESS
+B-61,"Boiler, boiler 1 enable",DDC-HWP6-1,M-901,HWP-6-B1-EN; HWP-6-B1-S; HWP-6-B1-ALM
+VFD-6-P1,"Variable frequency drive, hot water pump 1 speed command",DDC-HWP6-1,M-901,HWP-6-HWP1-SPD; HWP-6-HWP1-S
+B-62,"Boiler, boiler 2 enable",DDC-HWP6-1,M-901,HWP-6-B2-EN; HWP-6-B2-S; HWP-6-B2-ALM
+VFD-6-P2,"Variable frequency drive, hot water pump 2 speed command",DDC-HWP6-1,M-901,HWP-6-HWP2-SPD; HWP-6-HWP2-S

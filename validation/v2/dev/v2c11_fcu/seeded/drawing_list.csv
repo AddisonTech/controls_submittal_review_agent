@@ -1,0 +1,9 @@
+device_tag,description,ddc_hardware_id,sheet,connected_points
+M-4-FAN,"Fan motor and speed controller, fan start/stop",DDC-FCU4,M-701,FCU-4-FAN-C; FCU-4-FAN-SPD
+CS-4-FAN,"Current switch, fan status",DDC-FCU4,M-701,FCU-4-FAN-S
+TS-4-Z,"Temperature switch or sensor, zone temperature",DDC-FCU4,M-701,FCU-4-ZT
+TT-4-SA,"Temperature sensor, supply air temperature",DDC-FCU4,M-701,FCU-4-SAT
+VLV-4-CHW,"Control valve actuator, cooling valve command",DDC-FCU4,M-701,FCU-4-CHWV
+VLV-4-HW,"Control valve actuator, heating valve command",DDC-FCU4,M-701,FCU-4-HWV
+LS-4-CO,"Level switch, condensate overflow switch",DDC-FCU4,M-701,FCU-4-COS
+BV-4-CHW,"Chilled water balancing valve, manual",-,M-701,"none (manual valve, no BAS connection)"

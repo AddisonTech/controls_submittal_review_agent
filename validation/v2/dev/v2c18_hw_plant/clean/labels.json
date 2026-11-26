@@ -1,0 +1,15 @@
+{
+  "case": "v2c18_hw_plant",
+  "twin": "clean",
+  "system": "Hot Water Boiler Plant HWP-3",
+  "style": "dual",
+  "lookalikes": [
+    "di",
+    "local",
+    "units_dual"
+  ],
+  "long_document": false,
+  "paragraphs": 11,
+  "points": 16,
+  "errors": []
+}

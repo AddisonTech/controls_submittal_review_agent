@@ -1,0 +1,24 @@
+point_name,description,ddc_hardware_id,io_type,units,range,settings,alarm,device_tag
+AHU-3-SF-C,Supply fan start/stop,DDC-AHU3-1,BO,-,Off/On,,,VFD-3-SF
+AHU-3-SF-S,Supply fan status,DDC-AHU3-1,BI,-,Off/On,,"L2 command/status mismatch alarm, 15 s delay",VFD-3-SF
+AHU-3-SF-SPD,Supply fan speed command,DDC-AHU3-1,AO,%,0-100,,,VFD-3-SF
+AHU-3-RF-C,Return fan start/stop,DDC-AHU3-1,BO,-,Off/On,,,VFD-3-RF
+AHU-3-RF-S,Return fan status,DDC-AHU3-1,BI,-,Off/On,,"L2 command/status mismatch alarm, 15 s delay",VFD-3-RF
+AHU-3-RF-SPD,Return fan speed command,DDC-AHU3-1,AO,%,0-100,,,VFD-3-RF
+AHU-3-DSP,Duct static pressure,DDC-AHU3-1,AI,in. w.c.,0-5,,"L3 high alarm at 2 in. w.c., 10 min delay",DPT-3-1
+AHU-3-SAT,Supply air temperature,DDC-AHU3-1,AI,°F,30-130,,"L3 deviation alarm, +/- 5 °F from setpoint, 10 min delay",TT-3-SA
+AHU-3-MAT,Mixed air temperature,DDC-AHU3-1,AI,°F,0-130,,,TT-3-MA
+AHU-3-RAT,Return air temperature,DDC-AHU3-1,AI,°F,30-130,,,TT-3-RA
+AHU-3-OAT,Outdoor air temperature,DDC-AHU3-1,AI,°F,-40-130,,,TT-3-OA
+AHU-3-OAF,Minimum outdoor airflow,DDC-AHU3-1,AI,cfm,0-10000,,"L3 low alarm under 90% of setpoint, 15 min delay",AFMS-3-1
+AHU-3-MOAD,Minimum outdoor air damper command,DDC-AHU3-2,AO,%,0-100,,,DMP-3-MOA
+AHU-3-EOAD,Economizer outdoor air damper command,DDC-AHU3-2,AO,%,0-100,,,DMP-3-EOA
+AHU-3-RAD,Return air damper command,DDC-AHU3-2,AO,%,0-100,,,DMP-3-RA
+AHU-3-CHWV,Chilled water valve command,DDC-AHU3-1,AO,%,0-100,,,VLV-3-CHW
+AHU-3-HWV,Heating hot water valve command,DDC-AHU3-1,AO,%,0-100,,,VLV-3-HW
+AHU-3-FZ,Freeze-stat status,DDC-AHU3-2,BI,-,Normal/Alarm,,L2 alarm when tripped,TS-3-FZ
+AHU-3-SD-SA,Supply duct smoke detector,DDC-AHU3-2,BI,-,Normal/Alarm,,L1 alarm when tripped,SD-3-SA
+AHU-3-SD-RA,Return duct smoke detector,DDC-AHU3-2,BI,-,Normal/Alarm,,L1 alarm when tripped,SD-3-RA
+AHU-3-HSS,High static safety switch,DDC-AHU3-2,BI,-,Normal/Trip,,L2 alarm when tripped,PS-3-HS
+AHU-3-FLT,Filter differential pressure,DDC-AHU3-1,AI,in. w.c.,0-2,,"L4 high alarm at 1 in. w.c., 30 min delay",DPT-3-FLT
+AHU-3-MOAD-ES,Minimum outdoor air damper end switch,DDC-AHU3-2,BI,-,Closed/Open,,,DMP-3-MOA

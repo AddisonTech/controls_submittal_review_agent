@@ -1,0 +1,66 @@
+{
+  "case": "v2c19_ahu_sz",
+  "twin": "seeded",
+  "system": "Single Zone VAV Air Handling Unit RTU-6",
+  "style": "ip",
+  "lookalikes": [
+    "alarm_words",
+    "extra"
+  ],
+  "long_document": false,
+  "paragraphs": 16,
+  "points": 13,
+  "errors": [
+    {
+      "error_id": "v2c19_ahu_sz-E1",
+      "type": "interlock_missing",
+      "kind": "absent",
+      "anchors": [
+        [
+          "spec",
+          "3.5.3",
+          ""
+        ]
+      ],
+      "section": "3.5",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "3.5.3: paragraph left out of the submittal"
+    },
+    {
+      "error_id": "v2c19_ahu_sz-E2",
+      "type": "unit_scaling_mismatch",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "RTU-6-FLT",
+          "units_range"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "RTU-6-FLT range scaled to twice the specified span: 0 to 4"
+    },
+    {
+      "error_id": "v2c19_ahu_sz-E3",
+      "type": "point_missing",
+      "kind": "absent",
+      "anchors": [
+        [
+          "spec_points",
+          "RTU-6-OAT",
+          "row"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "RTU-6-OAT left out of the points list and the drawing list"
+    }
+  ]
+}

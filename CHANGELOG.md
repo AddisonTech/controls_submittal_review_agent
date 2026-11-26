@@ -93,3 +93,80 @@
 - P5-C2 - final holdout, 2026-11-17, scored once with tools\validate.py --final: holdout_1 (5 panels, ECY-600, typical; never seen by the model or used for tuning) 5 of 5 caught, 0 wrong comments, 0 clean-twin comments, CBL-105 kept as a drafting convention (recall 1.0, precision 1.0); rules only 5 of 5 with 2 wrong comments (precision 0.714). The registration records the run, so a later revision needs a newly generated holdout. Result: validation\results\final_holdout_20261117_132843.json
 - P5-C2 - limitation: every result above is on synthetic sets in the P0-C1 notation. The holdout is one set with 5 seeded errors, which shows the model generalizes to an unseen layout but is a small sample. Real exported packages have not been scored.
 - P5-C2 - test updated 2026-11-17, after the final holdout run: test_the_shipped_registration_matches_the_holdout_and_metric_script required final_run to be empty, which was only true before validate.py --final ran, so it failed once the registration recorded the run (160 passed, 1 failed). It now accepts final_run as empty, or as naming a result file in validation\results\ that records the holdout as passed (5 of 5 caught, 0 wrong comments). The holdout.untouched() check is unchanged, the holdout was not rerun, and no agent logic changed.
+
+## v2 (unreleased)
+
+### Scoring rules and readings (pre-registered)
+
+Written and committed before any engine has run on a v2 case and before any Claude API call. The only v2 run
+before this commit is the rules-only baseline on the dev cases, which uses no model. Code: tools\score_v2.py,
+pinned by SHA-256 in validation\v2\HOLDOUT_V2.md.
+
+- Test set v2: validation\v2, 40 spec compliance pairs built by tools\make_v2_sets.py from public and synthetic
+  material (sources and terms in validation\v2\SOURCES.md). Each pair is a seeded twin with planted errors and a
+  clean twin with none; both carry the same correct look-alikes. Split now and fixed: 30 dev pairs and 10 holdout
+  pairs (cases 4, 8, ..., 40). 113 planted errors in 9 types (84 dev, 29 holdout).
+- Unit of scoring: one planted error, as listed in the seeded twin's labels.json, which the agent never reads.
+- Recall: planted errors caught, out of planted. Counts are summed across pairs before the rate is taken; rates
+  are never averaged.
+- Wrong comments: flags on correct content, including every comment on a clean twin. A comment is wrong when it
+  matches no planted error in its twin. Wrong comment rate = wrong comments / comments made, where comments made =
+  caught + wrong.
+- Matching: a table comment carries the anchor code gave it (document, key, field); a sequence comment is anchored
+  at the submittal paragraph it quotes, or at the specification paragraph when it quotes no submittal paragraph. A
+  comment catches a planted error when its anchor is one of the error's anchors. For an error of kind "absent"
+  (a requirement left out of the submittal) a comment also matches through the specification paragraph it quotes.
+  Each error is caught once; a second comment on an error already caught is a duplicate, reported but not counted
+  as wrong or as a comment made.
+- An item whose reply fails the code checks twice is unresolved: it is never a comment and never a catch.
+- Pass bar for an engine: recall 0.90 or higher with wrong comments at 5 percent or less of comments made (wrong
+  comment rate 0.05 or lower). Both must hold.
+- Reported for every engine (gemma3:4b, Claude Haiku 5.5, Claude Sonnet 5.5) against the bar: recall, wrong
+  comments and rate, clean twin comments, time per document, cost per document, and a per error type table
+  (planted, caught, recall, wrong comments by the type the engine gave them), plus the hard case slices (long
+  documents, two errors in one section) and the rules-only baseline from the same runs.
+- Tuning: prompts and code-side rules may change on dev results only. Every dev run and rerun is logged with its
+  cost in validation\v2\RUNS.md and validation\v2\results\. When dev is final, each engine scores the v2 holdout
+  exactly once with tools\validate_v2.py --holdout-final, and tuning stops. The v1 holdout (holdout_1) was scored
+  once in Phase 5 and stays spent; it is not rescored.
+- Budget: $50.00 of Claude API spend for this task, a hard stop in code (engines.py SpendGuard reserves each call's
+  worst case and refuses any call that could pass the cap). Cost check first: Claude Haiku on 5 dev pairs; if the
+  projected cost of both full dev runs plus both holdout runs is over $44, stop and report.
+- Engine settings, the same prompts, schemas and code checks for all three: gemma3:4b through Ollama, temperature 0,
+  num_ctx 8192 for v2 prompts. Claude Haiku 5.5 (claude-haiku-5-5) and Claude Sonnet 5.5 (claude-sonnet-5-5):
+  effort medium set explicitly, adaptive thinking (the model default), max_tokens 8000, no temperature (both models
+  refuse non-default sampling parameters), the instructions in a cached system block, the reply schema through
+  structured outputs. Server-side refusal fallbacks are left off: a fallback would answer with a different model in
+  the middle of a measurement, so a refusal counts as a failed attempt instead.
+
+### Built
+
+- v2 engines - implemented: engines.py adds --engine gemma3:4b (default, local), --engine claude-haiku and --engine
+  claude-sonnet to submittal_review (N7) and spec_review; the API key comes only from ANTHROPIC_API_KEY and is never
+  printed or logged; every Claude call is priced from its usage and appended to validation\v2\spend_ledger.jsonl;
+  a budget stop ends a run cleanly rather than counting as a failed reply; one Claude validation run at a time.
+- v2 privacy - design change from P2-C2: v1 never sent anything off the machine. That stays the default. A Claude
+  engine sends prompts to the Anthropic API, so it refuses any package that is not a frozen public or synthetic
+  test set unless --allow-cloud is passed. THIRD_PARTY_NOTICES.txt lists the SDK and the hosted models.
+- v2 spec compliance review - implemented: spec_review.py reads spec.txt, submittal_sequence.txt,
+  submittal_points.csv and drawing_list.csv; six table rules T1 to T6 (exact keys, as P3-C1) find every difference
+  between the points schedule, the points list and the drawing list and the model judges each one real_error,
+  not_an_error or unresolved; each specification sequence section is paired with the submittal section of the
+  same number and the model lists issues, each with one exact quote per side; code checks every quote (word for
+  word, one paragraph only), the reply schema, the forbidden phrases and the two attempt limit for every engine.
+  Prompt version v2-p1.
+- v2 test set - implemented: tools\make_v2_sets.py and tools\v2_templates.py (generator 2.0.0, deterministic), six
+  systems (multizone and single zone VAV AHUs, VAV reheat terminals, fan coil units, chilled water and hot water
+  plants); hard cases: long documents (up to 16 terminals and 80 points), two errors in one section, and look-alikes
+  in every pair (SI or dual units, DI and DO for BI and BO, reworded alarms, contractor added paragraphs, local
+  devices with no BAS point). Frozen in validation\v2\datasets_v2.json; holdout pinned in validation\v2\HOLDOUT_V2.md.
+- v2 holdout - implemented: spec_review and tools\validate_v2.py refuse a holdout folder, by path or by file hashes,
+  unless validate_v2 runs with --holdout-final; the final run checks all 100 pinned files and the scorer, records
+  the engine before its first call, and refuses a second final for the same engine.
+- Disclosure: one author wrote the generator, the prompts and the scorer. The prompts state standard reviewer
+  knowledge written before any run (unit conversions, DI and DO as names for binary points, Level 1 most critical),
+  and that knowledge also covers look-alikes the generator plants. The holdout comes from the same generator, so it
+  tests unseen combinations of systems, values, look-alikes and errors, not unseen kinds of error.
+- Rules-only baseline on dev (no model, run before this commit): recall 0.452 (38 of 84; the rules see only the
+  points and drawing lists, never the sequences) with 995 wrong comments of 1033 (rate 0.963). The model step is
+  what has to remove the look-alikes and find the sequence errors.

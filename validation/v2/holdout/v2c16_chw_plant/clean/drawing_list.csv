@@ -1,0 +1,17 @@
+device_tag,description,ddc_hardware_id,sheet,connected_points
+TT-3-CHWS,"Temperature sensor, chilled water supply temperature",DDC-CHWP3-1,M-801,CHWP-3-CHWST
+TT-3-CHWR,"Temperature sensor, chilled water return temperature",DDC-CHWP3-1,M-801,CHWP-3-CHWRT
+DPT-3-CHW,"Differential pressure transmitter, remote chilled water differential pressure",DDC-CHWP3-1,M-801,CHWP-3-CHW-DP
+FM-3-CHW,"Flow meter, chilled water flow",DDC-CHWP3-1,M-801,CHWP-3-CHW-FLOW
+VLV-3-BYP,"Control valve actuator, minimum flow bypass valve command",DDC-CHWP3-1,M-801,CHWP-3-BYPV
+TT-3-CWS,"Temperature sensor, condenser water supply temperature",DDC-CHWP3-2,M-801,CHWP-3-CWST
+TT-3-CWR,"Temperature sensor, condenser water return temperature",DDC-CHWP3-2,M-801,CHWP-3-CWRT
+VFD-3-CT,"Variable frequency drive, cooling tower fan speed command",DDC-CHWP3-2,M-801,CHWP-3-CT-SPD; CHWP-3-CT-S
+RM-3-1,"Refrigerant monitor, refrigerant monitor concentration",DDC-CHWP3-2,M-801,CHWP-3-RM
+ES-3-1,"Emergency stop switch, machine room emergency stop status",DDC-CHWP3-2,M-801,CHWP-3-ESTOP
+CH-31,"Chiller, chiller 1 enable",DDC-CHWP3-1,M-801,CHWP-3-CH1-EN; CHWP-3-CH1-S; CHWP-3-CH1-ALM
+VFD-3-P1,"Variable frequency drive, chilled water pump 1 speed command",DDC-CHWP3-1,M-801,CHWP-3-CHWP1-SPD; CHWP-3-CHWP1-S
+FS-3-E1,"Flow switch or sensor, chiller 1 evaporator flow switch",DDC-CHWP3-2,M-801,CHWP-3-CHW-FS1
+CH-32,"Chiller, chiller 2 enable",DDC-CHWP3-1,M-801,CHWP-3-CH2-EN; CHWP-3-CH2-S; CHWP-3-CH2-ALM
+VFD-3-P2,"Variable frequency drive, chilled water pump 2 speed command",DDC-CHWP3-1,M-801,CHWP-3-CHWP2-SPD; CHWP-3-CHWP2-S
+FS-3-E2,"Flow switch or sensor, chiller 2 evaporator flow switch",DDC-CHWP3-2,M-801,CHWP-3-CHW-FS2

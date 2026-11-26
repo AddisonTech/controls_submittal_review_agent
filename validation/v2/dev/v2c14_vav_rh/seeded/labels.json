@@ -1,0 +1,79 @@
+{
+  "case": "v2c14_vav_rh",
+  "twin": "seeded",
+  "system": "VAV Terminal Units with Hot Water Reheat on AHU-4",
+  "style": "si",
+  "lookalikes": [
+    "alarm_words",
+    "units_si"
+  ],
+  "long_document": true,
+  "paragraphs": 27,
+  "points": 80,
+  "errors": [
+    {
+      "error_id": "v2c14_vav_rh-E1",
+      "type": "setpoint_out_of_spec",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.2.11",
+          ""
+        ],
+        [
+          "spec",
+          "3.2.11",
+          ""
+        ]
+      ],
+      "section": "3.2",
+      "hard": [
+        "long_document",
+        "lookalikes_nearby"
+      ],
+      "description": "3.2.11: setpt variant planted: VAV-410 is scheduled for 472 L/s cooling maximum, 57 L/s minimum and 236 L/s heating maximum."
+    },
+    {
+      "error_id": "v2c14_vav_rh-E2",
+      "type": "sequence_contradiction",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.3.1",
+          ""
+        ],
+        [
+          "spec",
+          "3.3.1",
+          ""
+        ]
+      ],
+      "section": "3.3",
+      "hard": [
+        "long_document",
+        "lookalikes_nearby"
+      ],
+      "description": "3.3.1: contra variant planted: As the cooling loop rises from 0 to 100 percent, the airflow setpoint falls from the maximum cooling airflow to the minimum."
+    },
+    {
+      "error_id": "v2c14_vav_rh-E3",
+      "type": "alarm_wrong_or_missing",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "VAV-409-DAT",
+          "alarm"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "long_document",
+        "lookalikes_nearby"
+      ],
+      "description": "VAV-409-DAT alarm blank: '' against the specified alarm"
+    }
+  ]
+}

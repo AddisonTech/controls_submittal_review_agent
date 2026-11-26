@@ -1,0 +1,32 @@
+CONTRACTOR SUBMITTAL: SEQUENCE OF OPERATION (synthetic test document, case v2c02_vav_rh)
+SUBMITTAL FOR: SECTION 23 09 93, VAV Terminal Units with Hot Water Reheat on AHU-2
+Paragraph numbers follow the specification. Paragraphs with a letter suffix are contractor additions.
+
+SECTION: 3.1 | Zone Temperature Setpoints
+3.1.1 Each zone holds 70 °F heating and 74 °F cooling when occupied and 60 °F heating and 85 °F cooling when unoccupied.
+3.1.2 Occupants may adjust the zone setpoints by at most 2 °F in either direction.
+
+SECTION: 3.2 | Terminal Airflow Setpoints
+3.2.1 Each terminal controls its discharge airflow between the scheduled minimum and the active maximum listed below.
+3.2.2 VAV-201 is scheduled for 500 cfm cooling maximum, 150 cfm minimum and 250 cfm heating maximum.
+3.2.3 VAV-202 is scheduled for 700 cfm cooling maximum, 210 cfm minimum and 350 cfm heating maximum.
+3.2.4 VAV-203 is scheduled for 900 cfm cooling maximum, 270 cfm minimum and 450 cfm heating maximum.
+3.2.5 VAV-204 is scheduled for 1100 cfm cooling maximum, 330 cfm minimum and 550 cfm heating maximum.
+3.2.6 VAV-205 is scheduled for 400 cfm cooling maximum, 50 cfm minimum and 200 cfm heating maximum.
+3.2.7 VAV-206 is scheduled for 600 cfm cooling maximum, 180 cfm minimum and 300 cfm heating maximum.
+3.2.8 VAV-207 is scheduled for 800 cfm cooling maximum, 240 cfm minimum and 400 cfm heating maximum.
+3.2.9 VAV-208 is scheduled for 1000 cfm cooling maximum, 300 cfm minimum and 500 cfm heating maximum.
+
+SECTION: 3.3 | Damper and Valve Control
+3.3.1 As the cooling loop rises from 0 to 100 percent, the airflow setpoint rises from the minimum to the maximum cooling airflow.
+3.3.2 From 0 to 50 percent heating loop the discharge air temperature setpoint rises from zone temperature to 20 °F above it, and from 50 to 100 percent heating loop the airflow setpoint rises to the maximum heating airflow.
+3.3.3 In cooling and in the deadband the hot water valve is closed.
+3.3.4 If communication with the AHU controller is lost, each terminal controls to its minimum airflow setpoint.
+
+SECTION: 3.4 | Terminal Alarms
+3.4.1 With a setpoint above zero, airflow under 70 percent of setpoint for 5 minutes sets a Level 3 low airflow alarm, and airflow under 50 percent of setpoint for 5 minutes sets a Level 2 alarm.
+3.4.2 When heating hot water is available, a discharge air temperature 15 °F under its setpoint for 10 minutes sets a Level 3 low discharge temperature alarm.
+3.4.3 A damper commanded closed with measured airflow above 10 percent of the maximum cooling airflow for 10 minutes sets a Level 4 leaking damper alarm.
+
+SECTION: 3.5 | Interlocks
+3.5.1 Whenever the AHU-2 supply fan is not proven on, heating is disabled and the hot water valve is closed.

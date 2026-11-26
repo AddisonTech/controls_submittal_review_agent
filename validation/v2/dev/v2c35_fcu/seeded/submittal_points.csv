@@ -1,0 +1,8 @@
+point_name,description,ddc_hardware_id,io_type,units,range,settings,alarm,device_tag
+FCU-8-FAN-C,Fan start/stop,DDC-FCU8,BO,-,Off/On,,,M-8-FAN
+FCU-8-FAN-S,Fan status,DDC-FCU8,BI,-,Off/On,,Level 2: status differs from command for 15 s,CS-8-FAN
+FCU-8-FAN-SPD,Fan speed command,DDC-FCU8,AO,%,0 to 100,,,M-8-FAN
+FCU-8-ZT,Zone temperature,DDC-FCU8,AI,degC,4.4 to 37.8,,,TS-8-Z
+FCU-8-CHWV,Cooling valve command,DDC-FCU8,AO,%,0 to 100,,,VLV-8-CHW
+FCU-8-HWV,Heating valve command,DDC-FCU8,AO,%,0 to 100,,,VLV-8-HW
+FCU-8-COS,Condensate overflow switch,DDC-FCU8,BI,-,Normal/Alarm,,,LS-8-CO

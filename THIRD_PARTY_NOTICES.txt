@@ -10,6 +10,8 @@ Python libraries (requirements.txt)
   openpyxl      MIT      points list workbook
   pytest        MIT      tests
   reportlab     BSD      fixture generator only, never used during a review
+  anthropic     Apache 2.0  Anthropic Python SDK, used only by the optional
+                Claude engines (engines.py)
 
 Local model runtime (installed separately, not shipped here)
   Ollama        MIT
@@ -19,8 +21,24 @@ Models (pulled into Ollama, not shipped here)
                 here, and swappable by config if the terms ever matter.
   qwen2.5:7b    Apache 2.0. Comparison config only (configs\qwen2.5-7b.json).
 
+Hosted models (v2, optional, reached through the Anthropic API, never shipped)
+  claude-haiku-5-5 and claude-sonnet-5-5   Anthropic commercial terms of
+                service. Used only when --engine claude-haiku or
+                --engine claude-sonnet is passed, and by default only on the
+                frozen public and synthetic test sets.
+
 No reference entries or borrowed code are used, so no license is unknown.
 
 Data: version one runs only on generated synthetic data. Any real submittal
 goes in real_packages\ (ignored by git), is run locally, and is never sent
-anywhere or committed.
+anywhere or committed. With the default engine nothing leaves the machine.
+A Claude engine sends prompts to the Anthropic API, so it refuses any package
+that is not a frozen test set unless --allow-cloud is passed.
+
+Test set v2 sources (validation\v2\SOURCES.md has the URLs and terms)
+  UFGS 23 09 00, 23 09 23.02, 25 10 10 and VA 23 09 23: US Government works,
+                no copyright notice; paraphrased, not copied.
+  Modelica Buildings Library, package Buildings.Controls.OBC.ASHRAE.G36:
+                BSD 3-clause style license (copyright notice in SOURCES.md);
+                sequence logic paraphrased from its documentation.
+  ASHRAE Guideline 36: not used directly (ASHRAE copyright, no reuse grant).

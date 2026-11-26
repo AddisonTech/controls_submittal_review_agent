@@ -1,0 +1,70 @@
+{
+  "case": "v2c29_fcu",
+  "twin": "seeded",
+  "system": "Fan Coil Unit FCU-7",
+  "style": "ip",
+  "lookalikes": [
+    "extra"
+  ],
+  "long_document": false,
+  "paragraphs": 9,
+  "points": 8,
+  "errors": [
+    {
+      "error_id": "v2c29_fcu-E1",
+      "type": "sequence_contradiction",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.1.1",
+          ""
+        ],
+        [
+          "spec",
+          "3.1.1",
+          ""
+        ]
+      ],
+      "section": "3.1",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "3.1.1: contra variant planted: The fan cycles with heating or cooling demand in all modes, including Occupied."
+    },
+    {
+      "error_id": "v2c29_fcu-E2",
+      "type": "ddc_hardware_mismatch",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "FCU-7-HWV",
+          "ddc_hardware_id"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "FCU-7-HWV DDC hardware DDC-FCU7-2 on the points list, DDC-FCU7 on the drawing list"
+    },
+    {
+      "error_id": "v2c29_fcu-E3",
+      "type": "wrong_point_type",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "FCU-7-FAN-S",
+          "io_type"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "FCU-7-FAN-S type BI listed as AI"
+    }
+  ]
+}

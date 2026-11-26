@@ -1,0 +1,78 @@
+{
+  "case": "v2c28_chw_plant",
+  "twin": "seeded",
+  "system": "Chilled Water Plant CHWP-5",
+  "style": "dual",
+  "lookalikes": [
+    "local",
+    "units_dual"
+  ],
+  "long_document": false,
+  "paragraphs": 15,
+  "points": 23,
+  "errors": [
+    {
+      "error_id": "v2c28_chw_plant-E1",
+      "type": "interlock_missing",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.6.1",
+          ""
+        ],
+        [
+          "spec",
+          "3.6.1",
+          ""
+        ]
+      ],
+      "section": "3.6",
+      "hard": [
+        "lookalikes_nearby",
+        "two_in_one_section"
+      ],
+      "description": "3.6.1: interlock variant planted: The BAS reads the chilled water and condenser water flow switches and disables a chiller in software when flow is lost."
+    },
+    {
+      "error_id": "v2c28_chw_plant-E2",
+      "type": "alarm_wrong_or_missing",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.6.2",
+          ""
+        ],
+        [
+          "spec",
+          "3.6.2",
+          ""
+        ]
+      ],
+      "section": "3.6",
+      "hard": [
+        "lookalikes_nearby",
+        "two_in_one_section"
+      ],
+      "description": "3.6.2: alarm variant planted: A refrigerant monitor reading above 30 ppm starts the machine room exhaust fans and sets a Level 3 alarm."
+    },
+    {
+      "error_id": "v2c28_chw_plant-E3",
+      "type": "unit_scaling_mismatch",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "CHWP-5-CHW-DP",
+          "units_range"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "CHWP-5-CHW-DP range scaled to twice the specified span: 0 to 690"
+    }
+  ]
+}

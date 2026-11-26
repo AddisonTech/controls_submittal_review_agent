@@ -1,0 +1,78 @@
+{
+  "case": "v2c22_chw_plant",
+  "twin": "seeded",
+  "system": "Chilled Water Plant CHWP-4",
+  "style": "si",
+  "lookalikes": [
+    "extra",
+    "units_si"
+  ],
+  "long_document": false,
+  "paragraphs": 15,
+  "points": 29,
+  "errors": [
+    {
+      "error_id": "v2c22_chw_plant-E1",
+      "type": "setpoint_out_of_spec",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.4.1",
+          ""
+        ],
+        [
+          "spec",
+          "3.4.1",
+          ""
+        ]
+      ],
+      "section": "3.4",
+      "hard": [
+        "lookalikes_nearby",
+        "two_in_one_section"
+      ],
+      "description": "3.4.1: setpt variant planted: Trim and respond logic driven by cooling coil requests resets the chilled water supply temperature setpoint between 6.7 \u00b0C and 18.9 \u00b0C."
+    },
+    {
+      "error_id": "v2c22_chw_plant-E2",
+      "type": "sequence_contradiction",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.4.2",
+          ""
+        ],
+        [
+          "spec",
+          "3.4.2",
+          ""
+        ]
+      ],
+      "section": "3.4",
+      "hard": [
+        "lookalikes_nearby",
+        "two_in_one_section"
+      ],
+      "description": "3.4.2: contra variant planted: When the plant enables, the chilled water supply temperature setpoint starts at 12.2 \u00b0C."
+    },
+    {
+      "error_id": "v2c22_chw_plant-E3",
+      "type": "wrong_point_type",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "CHWP-4-CH2-S",
+          "io_type"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "CHWP-4-CH2-S type BI listed as AI"
+    }
+  ]
+}

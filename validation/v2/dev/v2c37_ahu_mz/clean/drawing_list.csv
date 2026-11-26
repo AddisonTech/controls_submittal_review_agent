@@ -1,0 +1,21 @@
+device_tag,description,ddc_hardware_id,sheet,connected_points
+VFD-8-SF,"Variable frequency drive, supply fan start/stop",DDC-AHU8-1,M-501,AHU-8-SF-C; AHU-8-SF-S; AHU-8-SF-SPD
+VFD-8-RF,"Variable frequency drive, return fan start/stop",DDC-AHU8-1,M-501,AHU-8-RF-C; AHU-8-RF-S; AHU-8-RF-SPD
+DPT-8-1,"Differential pressure transmitter, duct static pressure",DDC-AHU8-1,M-501,AHU-8-DSP
+TT-8-SA,"Temperature sensor, supply air temperature",DDC-AHU8-1,M-501,AHU-8-SAT
+TT-8-MA,"Temperature sensor, mixed air temperature",DDC-AHU8-1,M-501,AHU-8-MAT
+TT-8-RA,"Temperature sensor, return air temperature",DDC-AHU8-1,M-501,AHU-8-RAT
+TT-8-OA,"Temperature sensor, outdoor air temperature",DDC-AHU8-1,M-501,AHU-8-OAT
+AFMS-8-1,"Airflow measuring station, minimum outdoor airflow",DDC-AHU8-1,M-501,AHU-8-OAF
+DMP-8-MOA,"Damper actuator, minimum outdoor air damper command",DDC-AHU8-2,M-501,AHU-8-MOAD; AHU-8-MOAD-ES
+DMP-8-EOA,"Damper actuator, economizer outdoor air damper command",DDC-AHU8-2,M-501,AHU-8-EOAD
+DMP-8-RA,"Damper actuator, return air damper command",DDC-AHU8-2,M-501,AHU-8-RAD
+VLV-8-CHW,"Control valve actuator, chilled water valve command",DDC-AHU8-1,M-501,AHU-8-CHWV
+VLV-8-HW,"Control valve actuator, heating hot water valve command",DDC-AHU8-1,M-501,AHU-8-HWV
+TS-8-FZ,"Temperature switch or sensor, freeze-stat status",DDC-AHU8-2,M-501,AHU-8-FZ
+SD-8-SA,"Duct smoke detector, supply duct smoke detector",DDC-AHU8-2,M-501,AHU-8-SD-SA
+SD-8-RA,"Duct smoke detector, return duct smoke detector",DDC-AHU8-2,M-501,AHU-8-SD-RA
+PS-8-HS,"Pressure switch, high static safety switch",DDC-AHU8-2,M-501,AHU-8-HSS
+DPT-8-FLT,"Differential pressure transmitter, filter differential pressure",DDC-AHU8-1,M-501,AHU-8-FLT
+GA-8-FLT,"Filter differential pressure gauge, local",-,M-501,"none (local gauge, no BAS connection)"
+TI-8-MA,"Mixed air dial thermometer, local",-,M-501,"none (local indicator, no BAS connection)"

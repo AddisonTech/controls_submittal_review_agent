@@ -1,0 +1,54 @@
+{
+  "case": "v2c04_chw_plant",
+  "twin": "seeded",
+  "system": "Chilled Water Plant CHWP-1",
+  "style": "ip",
+  "lookalikes": [
+    "alarm_words",
+    "local"
+  ],
+  "long_document": false,
+  "paragraphs": 14,
+  "points": 23,
+  "errors": [
+    {
+      "error_id": "v2c04_chw_plant-E1",
+      "type": "setpoint_out_of_spec",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.3.2",
+          ""
+        ],
+        [
+          "spec",
+          "3.3.2",
+          ""
+        ]
+      ],
+      "section": "3.3",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "3.3.2: setpt variant planted: Pump speed modulates to hold remote differential pressure at a setpoint that trim and respond logic resets between 5 psi and 35 psi."
+    },
+    {
+      "error_id": "v2c04_chw_plant-E2",
+      "type": "interlock_missing",
+      "kind": "absent",
+      "anchors": [
+        [
+          "spec",
+          "3.6.3",
+          ""
+        ]
+      ],
+      "section": "3.6",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "3.6.3: paragraph left out of the submittal"
+    }
+  ]
+}

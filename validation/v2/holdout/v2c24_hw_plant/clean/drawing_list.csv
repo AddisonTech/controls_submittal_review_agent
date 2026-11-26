@@ -1,0 +1,11 @@
+device_tag,description,ddc_hardware_id,sheet,connected_points
+TT-4-HWS,"Temperature sensor, hot water supply temperature",DDC-HWP4-1,M-901,HWP-4-HWST
+TT-4-HWR,"Temperature sensor, hot water return temperature",DDC-HWP4-1,M-901,HWP-4-HWRT
+DPT-4-HW,"Differential pressure transmitter, remote hot water differential pressure",DDC-HWP4-1,M-901,HWP-4-HW-DP
+TT-4-OA,"Temperature sensor, outdoor air temperature",DDC-HWP4-1,M-901,HWP-4-OAT
+FS-4-HW,"Flow switch or sensor, hot water flow switch",DDC-HWP4-1,M-901,HWP-4-HW-FS
+ES-4-1,"Emergency stop switch, boiler room emergency shutoff status",DDC-HWP4-1,M-901,HWP-4-ESS
+B-41,"Boiler, boiler 1 enable",DDC-HWP4-1,M-901,HWP-4-B1-EN; HWP-4-B1-S; HWP-4-B1-ALM
+VFD-4-P1,"Variable frequency drive, hot water pump 1 speed command",DDC-HWP4-1,M-901,HWP-4-HWP1-SPD; HWP-4-HWP1-S
+B-42,"Boiler, boiler 2 enable",DDC-HWP4-1,M-901,HWP-4-B2-EN; HWP-4-B2-S; HWP-4-B2-ALM
+VFD-4-P2,"Variable frequency drive, hot water pump 2 speed command",DDC-HWP4-1,M-901,HWP-4-HWP2-SPD; HWP-4-HWP2-S

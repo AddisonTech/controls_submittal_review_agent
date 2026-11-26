@@ -1,0 +1,14 @@
+device_tag,description,ddc_hardware_id,sheet,connected_points
+VFD-4-SF,"Variable frequency drive, supply fan start/stop",DDC-RTU4-1,M-502,RTU-4-SF-C; RTU-4-SF-S; RTU-4-SF-SPD
+TS-4-Z,"Temperature switch or sensor, zone temperature",DDC-RTU4-1,M-502,RTU-4-ZT
+TT-4-SA,"Temperature sensor, supply air temperature",DDC-RTU4-1,M-502,RTU-4-SAT
+TT-4-MA,"Temperature sensor, mixed air temperature",DDC-RTU4-1,M-502,RTU-4-MAT
+TT-4-OA,"Temperature sensor, outdoor air temperature",DDC-RTU4-1,M-502,RTU-4-OAT
+DMP-4-OA,"Damper actuator, outdoor air damper command",DDC-RTU4-1,M-502,RTU-4-OAD
+VLV-4-CHW,"Control valve actuator, chilled water valve command",DDC-RTU4-1,M-502,RTU-4-CHWV
+VLV-4-HW,"Control valve actuator, heating hot water valve command",DDC-RTU4-1,M-502,RTU-4-HWV
+TS-4-FZ,"Temperature switch or sensor, freeze-stat status",DDC-RTU4-1,M-502,RTU-4-FZ
+SD-4-SA,"Duct smoke detector, duct smoke detector",DDC-RTU4-1,M-502,RTU-4-SD
+LS-4-CO,"Level switch, condensate overflow switch",DDC-RTU4-1,M-502,RTU-4-COS
+DPT-4-FLT,"Differential pressure transmitter, filter differential pressure",DDC-RTU4-1,M-502,RTU-4-FLT
+TI-4-SA,"Supply air dial thermometer, local",-,M-502,"none (local indicator, no BAS connection)"

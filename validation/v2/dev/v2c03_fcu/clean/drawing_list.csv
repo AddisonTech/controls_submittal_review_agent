@@ -1,0 +1,8 @@
+device_tag,description,ddc_hardware_id,sheet,connected_points
+M-3-FAN,"Fan motor and speed controller, fan start/stop",DDC-FCU3,M-701,FCU-3-FAN-C; FCU-3-FAN-SPD
+CS-3-FAN,"Current switch, fan status",DDC-FCU3,M-701,FCU-3-FAN-S
+TS-3-Z,"Temperature switch or sensor, zone temperature",DDC-FCU3,M-701,FCU-3-ZT
+TT-3-SA,"Temperature sensor, supply air temperature",DDC-FCU3,M-701,FCU-3-SAT
+VLV-3-CHW,"Control valve actuator, cooling valve command",DDC-FCU3,M-701,FCU-3-CHWV
+VLV-3-HW,"Control valve actuator, heating valve command",DDC-FCU3,M-701,FCU-3-HWV
+LS-3-CO,"Level switch, condensate overflow switch",DDC-FCU3,M-701,FCU-3-COS

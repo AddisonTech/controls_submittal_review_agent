@@ -1,0 +1,54 @@
+{
+  "case": "v2c05_hw_plant",
+  "twin": "seeded",
+  "system": "Hot Water Boiler Plant HWP-1",
+  "style": "ip",
+  "lookalikes": [
+    "deg",
+    "local"
+  ],
+  "long_document": false,
+  "paragraphs": 11,
+  "points": 16,
+  "errors": [
+    {
+      "error_id": "v2c05_hw_plant-E1",
+      "type": "sequence_contradiction",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.2.1",
+          ""
+        ],
+        [
+          "spec",
+          "3.2.1",
+          ""
+        ]
+      ],
+      "section": "3.2",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "3.2.1: contra variant planted: The hot water supply temperature setpoint is 140 \u00b0F with outdoor air at 20 \u00b0F or colder and resets linearly to 180 \u00b0F with outdoor air at 60 \u00b0F or warmer."
+    },
+    {
+      "error_id": "v2c05_hw_plant-E2",
+      "type": "unit_scaling_mismatch",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "HWP-1-HW-DP",
+          "units_range"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "HWP-1-HW-DP range scaled to twice the specified span: 0-100"
+    }
+  ]
+}

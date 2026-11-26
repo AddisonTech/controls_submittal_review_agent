@@ -1,0 +1,9 @@
+point_name,description,ddc_hardware_id,io_type,units,range,settings,alarm,device_tag
+FCU-7-FAN-C,Fan start/stop,DDC-FCU7,BO,-,Off/On,,,M-7-FAN
+FCU-7-FAN-S,Fan status,DDC-FCU7,AI,-,Off/On,,Level 2: status differs from command for 15 s,CS-7-FAN
+FCU-7-FAN-SPD,Fan speed command,DDC-FCU7,AO,%,0 to 100,,,M-7-FAN
+FCU-7-ZT,Zone temperature,DDC-FCU7,AI,degF,40 to 100,,,TS-7-Z
+FCU-7-SAT,Supply air temperature,DDC-FCU7,AI,degF,30 to 130,,Level 3: 5 degF from setpoint for 15 min,TT-7-SA
+FCU-7-CHWV,Cooling valve command,DDC-FCU7,AO,%,0 to 100,,,VLV-7-CHW
+FCU-7-HWV,Heating valve command,DDC-FCU7-2,AO,%,0 to 100,,,VLV-7-HW
+FCU-7-COS,Condensate overflow switch,DDC-FCU7,BI,-,Normal/Alarm,,Level 3: on trip,LS-7-CO

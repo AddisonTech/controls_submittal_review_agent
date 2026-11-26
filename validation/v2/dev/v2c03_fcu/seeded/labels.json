@@ -1,0 +1,55 @@
+{
+  "case": "v2c03_fcu",
+  "twin": "seeded",
+  "system": "Fan Coil Unit FCU-3",
+  "style": "dual",
+  "lookalikes": [
+    "di",
+    "extra",
+    "units_dual"
+  ],
+  "long_document": false,
+  "paragraphs": 9,
+  "points": 7,
+  "errors": [
+    {
+      "error_id": "v2c03_fcu-E1",
+      "type": "sequence_contradiction",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.2.3",
+          ""
+        ],
+        [
+          "spec",
+          "3.2.3",
+          ""
+        ]
+      ],
+      "section": "3.2",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "3.2.3: contra variant planted: The heating valve may stay open at minimum position while the cooling valve modulates, to limit overcooling."
+    },
+    {
+      "error_id": "v2c03_fcu-E2",
+      "type": "point_missing",
+      "kind": "absent",
+      "anchors": [
+        [
+          "spec_points",
+          "FCU-3-COS",
+          "row"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "FCU-3-COS left out of the points list and the drawing list"
+    }
+  ]
+}

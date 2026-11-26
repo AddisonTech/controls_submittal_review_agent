@@ -1,0 +1,34 @@
+CONTRACTOR SUBMITTAL: SEQUENCE OF OPERATION (synthetic test document, case v2c20_vav_rh)
+SUBMITTAL FOR: SECTION 23 09 93, VAV Terminal Units with Hot Water Reheat on AHU-5
+Paragraph numbers follow the specification. Paragraphs with a letter suffix are contractor additions.
+
+SECTION: 3.1 | Zone Temperature Setpoints
+3.1.1 Each zone holds 21.1 °C (70 °F) heating and 23.3 °C (74 °F) cooling when occupied and 15.6 °C (60 °F) heating and 29.4 °C (85 °F) cooling when unoccupied.
+3.1.2 Occupants may adjust the zone setpoints by at most 1.1 °C (2 °F) in either direction.
+3.1.2a Zone setpoints and the adjustment limit are adjustable at the operator workstation.
+
+SECTION: 3.2 | Terminal Airflow Setpoints
+3.2.1 Each terminal controls its discharge airflow between the scheduled minimum and the active maximum listed below.
+3.2.2 VAV-501 is scheduled for 236 L/s (500 cfm) cooling maximum, 71 L/s (150 cfm) minimum and 118 L/s (250 cfm) heating maximum.
+3.2.3 VAV-502 is scheduled for 330 L/s (700 cfm) cooling maximum, 99 L/s (210 cfm) minimum and 165 L/s (350 cfm) heating maximum.
+3.2.4 VAV-503 is scheduled for 425 L/s (900 cfm) cooling maximum, 127 L/s (270 cfm) minimum and 212 L/s (450 cfm) heating maximum.
+3.2.5 VAV-504 is scheduled for 519 L/s (1100 cfm) cooling maximum, 156 L/s (330 cfm) minimum and 260 L/s (550 cfm) heating maximum.
+3.2.6 VAV-505 is scheduled for 189 L/s (400 cfm) cooling maximum, 57 L/s (120 cfm) minimum and 94 L/s (200 cfm) heating maximum.
+3.2.7 VAV-506 is scheduled for 283 L/s (600 cfm) cooling maximum, 85 L/s (180 cfm) minimum and 142 L/s (300 cfm) heating maximum.
+3.2.8 VAV-507 is scheduled for 378 L/s (800 cfm) cooling maximum, 113 L/s (240 cfm) minimum and 189 L/s (400 cfm) heating maximum.
+3.2.9 VAV-508 is scheduled for 472 L/s (1000 cfm) cooling maximum, 142 L/s (300 cfm) minimum and 236 L/s (500 cfm) heating maximum.
+3.2.10 VAV-509 is scheduled for 142 L/s (300 cfm) cooling maximum, 42 L/s (90 cfm) minimum and 71 L/s (150 cfm) heating maximum.
+3.2.11 VAV-510 is scheduled for 236 L/s (500 cfm) cooling maximum, 71 L/s (150 cfm) minimum and 118 L/s (250 cfm) heating maximum.
+
+SECTION: 3.3 | Damper and Valve Control
+3.3.1 As the cooling loop rises from 0 to 100 percent, the airflow setpoint rises from the minimum to the maximum cooling airflow.
+3.3.2 From 0 to 50 percent heating loop the discharge air temperature setpoint rises from zone temperature to 11.1 °C (20 °F) above it, and from 50 to 100 percent heating loop the airflow setpoint rises to the maximum heating airflow.
+3.3.3 In cooling and in the deadband the hot water valve is closed.
+3.3.4 If communication with the AHU controller is lost, each terminal controls to its minimum airflow setpoint.
+3.3.4a Each terminal controller reports its cooling and pressure reset requests to AHU-5 over the BACnet MS/TP trunk.
+
+SECTION: 3.4 | Terminal Alarms
+3.4.1 With a setpoint above zero, airflow under 70 percent of setpoint for 5 minutes sets a Level 3 low airflow alarm, and airflow under 50 percent of setpoint for 5 minutes sets a Level 2 alarm.
+3.4.2 When heating hot water is available, a discharge air temperature 8.3 °C (15 °F) under its setpoint for 10 minutes sets a Level 3 low discharge temperature alarm.
+
+SECTION: 3.5 | Interlocks

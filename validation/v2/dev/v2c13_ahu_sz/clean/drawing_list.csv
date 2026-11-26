@@ -1,0 +1,13 @@
+device_tag,description,ddc_hardware_id,sheet,connected_points
+VFD-5-SF,"Variable frequency drive, supply fan start/stop",DDC-RTU5-1,M-502,RTU-5-SF-C; RTU-5-SF-S; RTU-5-SF-SPD
+TS-5-Z,"Temperature switch or sensor, zone temperature",DDC-RTU5-1,M-502,RTU-5-ZT
+TT-5-SA,"Temperature sensor, supply air temperature",DDC-RTU5-1,M-502,RTU-5-SAT
+TT-5-MA,"Temperature sensor, mixed air temperature",DDC-RTU5-1,M-502,RTU-5-MAT
+TT-5-OA,"Temperature sensor, outdoor air temperature",DDC-RTU5-1,M-502,RTU-5-OAT
+DMP-5-OA,"Damper actuator, outdoor air damper command",DDC-RTU5-1,M-502,RTU-5-OAD
+VLV-5-CHW,"Control valve actuator, chilled water valve command",DDC-RTU5-1,M-502,RTU-5-CHWV
+VLV-5-HW,"Control valve actuator, heating hot water valve command",DDC-RTU5-1,M-502,RTU-5-HWV
+TS-5-FZ,"Temperature switch or sensor, freeze-stat status",DDC-RTU5-1,M-502,RTU-5-FZ
+SD-5-SA,"Duct smoke detector, duct smoke detector",DDC-RTU5-1,M-502,RTU-5-SD
+LS-5-CO,"Level switch, condensate overflow switch",DDC-RTU5-1,M-502,RTU-5-COS
+DPT-5-FLT,"Differential pressure transmitter, filter differential pressure",DDC-RTU5-1,M-502,RTU-5-FLT

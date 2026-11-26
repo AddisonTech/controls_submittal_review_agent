@@ -1,0 +1,55 @@
+{
+  "case": "v2c18_hw_plant",
+  "twin": "seeded",
+  "system": "Hot Water Boiler Plant HWP-3",
+  "style": "dual",
+  "lookalikes": [
+    "di",
+    "local",
+    "units_dual"
+  ],
+  "long_document": false,
+  "paragraphs": 11,
+  "points": 16,
+  "errors": [
+    {
+      "error_id": "v2c18_hw_plant-E1",
+      "type": "interlock_missing",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.3.1",
+          ""
+        ],
+        [
+          "spec",
+          "3.3.1",
+          ""
+        ]
+      ],
+      "section": "3.3",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "3.3.1: interlock variant planted: The lead boiler is enabled at the same time as the lead hot water pump is commanded on."
+    },
+    {
+      "error_id": "v2c18_hw_plant-E2",
+      "type": "alarm_wrong_or_missing",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "HWP-3-B1-S",
+          "alarm"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "HWP-3-B1-S alarm delay: 'Level 2: status differs from command for 720 s' against the specified alarm"
+    }
+  ]
+}

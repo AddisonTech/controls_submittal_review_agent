@@ -1,0 +1,74 @@
+{
+  "case": "v2c38_vav_rh",
+  "twin": "seeded",
+  "system": "VAV Terminal Units with Hot Water Reheat on AHU-8",
+  "style": "si",
+  "lookalikes": [
+    "local",
+    "units_si"
+  ],
+  "long_document": true,
+  "paragraphs": 23,
+  "points": 60,
+  "errors": [
+    {
+      "error_id": "v2c38_vav_rh-E1",
+      "type": "setpoint_out_of_spec",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.1.2",
+          ""
+        ],
+        [
+          "spec",
+          "3.1.2",
+          ""
+        ]
+      ],
+      "section": "3.1",
+      "hard": [
+        "long_document",
+        "lookalikes_nearby"
+      ],
+      "description": "3.1.2: setpt variant planted: Occupants may adjust the zone setpoints by at most 2.8 \u00b0C in either direction."
+    },
+    {
+      "error_id": "v2c38_vav_rh-E2",
+      "type": "ddc_hardware_mismatch",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "VAV-806-DMP",
+          "ddc_hardware_id"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "long_document",
+        "lookalikes_nearby"
+      ],
+      "description": "VAV-806-DMP DDC hardware DDC-VAV801 on the points list, DDC-VAV806 on the drawing list"
+    },
+    {
+      "error_id": "v2c38_vav_rh-E3",
+      "type": "alarm_wrong_or_missing",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "VAV-803-FLOW",
+          "alarm"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "long_document",
+        "lookalikes_nearby"
+      ],
+      "description": "VAV-803-FLOW alarm value: 'Level 3: below 40 percent of setpoint for 5 min' against the specified alarm"
+    }
+  ]
+}

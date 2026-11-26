@@ -1,0 +1,15 @@
+point_name,description,ddc_hardware_id,io_type,units,range,settings,alarm,device_tag
+RTU-9-SF-C,Supply fan start/stop,DDC-RTU9-1,DO,-,Off/On,,,VFD-9-SF
+RTU-9-SF-S,Supply fan status,DDC-RTU9-1,DI,-,Off/On,,"L2 command/status mismatch alarm, 15 s delay",VFD-9-SF
+RTU-9-SF-SPD,Supply fan speed command,DDC-RTU9-1,AO,%,0 to 100,,,VFD-9-SF
+RTU-9-ZT,Zone temperature,DDC-RTU9-1,AI,degC,4.4 to 37.8,,"L3 deviation alarm, +/- 2.2 degC from setpoint, 60 min delay",TS-9-Z
+RTU-9-SAT,Supply air temperature,DDC-RTU9-1,AI,degC,-1.1 to 54.4,,"L3 deviation alarm, +/- 2.8 degC from setpoint, 10 min delay",TT-9-SA
+RTU-9-MAT,Mixed air temperature,DDC-RTU9-1,AI,degC,-17.8 to 54.4,,,TT-9-MA
+RTU-9-OAT,Outdoor air temperature,DDC-RTU9-1,AI,degC,-40 to 54.4,,,TT-9-OA
+RTU-9-OAD,Outdoor air damper command,DDC-RTU9-1,AO,%,0 to 100,,,DMP-9-OA
+RTU-9-CHWV,Chilled water valve command,DDC-RTU9-1,AO,%,0 to 100,,,VLV-9-CHW
+RTU-9-HWV,Heating hot water valve command,DDC-RTU9-1,AO,%,0 to 100,,,VLV-9-HW
+RTU-9-FZ,Freeze-stat status,DDC-RTU9-1,DI,-,Normal/Alarm,,L2 alarm when tripped,TS-9-FZ
+RTU-9-SD,Duct smoke detector,DDC-RTU9-1,DI,-,Normal/Alarm,,L1 alarm when tripped,SD-9-SA
+RTU-9-COS,Condensate overflow switch,DDC-RTU9-1,DI,-,Normal/Alarm,,L3 alarm when tripped,LS-9-CO
+RTU-9-FLT,Filter differential pressure,DDC-RTU9-1,AI,Pa,0 to 498,,"L4 high alarm at 249 Pa, 30 min delay",DPT-9-FLT

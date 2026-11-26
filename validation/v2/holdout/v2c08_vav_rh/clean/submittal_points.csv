@@ -1,0 +1,61 @@
+point_name,description,ddc_hardware_id,io_type,units,range,settings,alarm,device_tag
+VAV-301-ZT,Zone temperature,DDC-VAV301,AI,degF,40 to 100,,,TS-301
+VAV-301-FLOW,Discharge airflow,DDC-VAV301,AI,cfm,0 to 600,,Level 3: below 70 percent of setpoint for 5 min,FS-301
+VAV-301-DMP,Damper command,DDC-VAV301,AO,%,0 to 100,,,DA-301
+VAV-301-HWV,Hot water valve command,DDC-VAV301,AO,%,0 to 100,,,VLV-301
+VAV-301-DAT,Discharge air temperature,DDC-VAV301,AI,degF,40 to 140,,Level 3: below 55 degF for 10 min,TT-301-DA
+VAV-302-ZT,Zone temperature,DDC-VAV302,AI,degF,40 to 100,,,TS-302
+VAV-302-FLOW,Discharge airflow,DDC-VAV302,AI,cfm,0 to 800,,Level 3: below 70 percent of setpoint for 5 min,FS-302
+VAV-302-DMP,Damper command,DDC-VAV302,AO,%,0 to 100,,,DA-302
+VAV-302-HWV,Hot water valve command,DDC-VAV302,AO,%,0 to 100,,,VLV-302
+VAV-302-DAT,Discharge air temperature,DDC-VAV302,AI,degF,40 to 140,,Level 3: below 55 degF for 10 min,TT-302-DA
+VAV-303-ZT,Zone temperature,DDC-VAV303,AI,degF,40 to 100,,,TS-303
+VAV-303-FLOW,Discharge airflow,DDC-VAV303,AI,cfm,0 to 1000,,Level 3: below 70 percent of setpoint for 5 min,FS-303
+VAV-303-DMP,Damper command,DDC-VAV303,AO,%,0 to 100,,,DA-303
+VAV-303-HWV,Hot water valve command,DDC-VAV303,AO,%,0 to 100,,,VLV-303
+VAV-303-DAT,Discharge air temperature,DDC-VAV303,AI,degF,40 to 140,,Level 3: below 55 degF for 10 min,TT-303-DA
+VAV-304-ZT,Zone temperature,DDC-VAV304,AI,degF,40 to 100,,,TS-304
+VAV-304-FLOW,Discharge airflow,DDC-VAV304,AI,cfm,0 to 1200,,Level 3: below 70 percent of setpoint for 5 min,FS-304
+VAV-304-DMP,Damper command,DDC-VAV304,AO,%,0 to 100,,,DA-304
+VAV-304-HWV,Hot water valve command,DDC-VAV304,AO,%,0 to 100,,,VLV-304
+VAV-304-DAT,Discharge air temperature,DDC-VAV304,AI,degF,40 to 140,,Level 3: below 55 degF for 10 min,TT-304-DA
+VAV-305-ZT,Zone temperature,DDC-VAV305,AI,degF,40 to 100,,,TS-305
+VAV-305-FLOW,Discharge airflow,DDC-VAV305,AI,cfm,0 to 1400,,Level 3: below 70 percent of setpoint for 5 min,FS-305
+VAV-305-DMP,Damper command,DDC-VAV305,AO,%,0 to 100,,,DA-305
+VAV-305-HWV,Hot water valve command,DDC-VAV305,AO,%,0 to 100,,,VLV-305
+VAV-305-DAT,Discharge air temperature,DDC-VAV305,AI,degF,40 to 140,,Level 3: below 55 degF for 10 min,TT-305-DA
+VAV-306-ZT,Zone temperature,DDC-VAV306,AI,degF,40 to 100,,,TS-306
+VAV-306-FLOW,Discharge airflow,DDC-VAV306,AI,cfm,0 to 700,,Level 3: below 70 percent of setpoint for 5 min,FS-306
+VAV-306-DMP,Damper command,DDC-VAV306,AO,%,0 to 100,,,DA-306
+VAV-306-HWV,Hot water valve command,DDC-VAV306,AO,%,0 to 100,,,VLV-306
+VAV-306-DAT,Discharge air temperature,DDC-VAV306,AI,degF,40 to 140,,Level 3: below 55 degF for 10 min,TT-306-DA
+VAV-307-ZT,Zone temperature,DDC-VAV307,AI,degF,40 to 100,,,TS-307
+VAV-307-FLOW,Discharge airflow,DDC-VAV307,AI,cfm,0 to 900,,Level 3: below 70 percent of setpoint for 5 min,FS-307
+VAV-307-DMP,Damper command,DDC-VAV307,AO,%,0 to 100,,,DA-307
+VAV-307-HWV,Hot water valve command,DDC-VAV307,AO,%,0 to 100,,,VLV-307
+VAV-307-DAT,Discharge air temperature,DDC-VAV307,AI,degF,40 to 140,,Level 3: below 55 degF for 10 min,TT-307-DA
+VAV-308-ZT,Zone temperature,DDC-VAV308,AI,degF,40 to 100,,,TS-308
+VAV-308-FLOW,Discharge airflow,DDC-VAV308,AI,cfm,0 to 1100,,Level 3: below 70 percent of setpoint for 5 min,FS-308
+VAV-308-DMP,Damper command,DDC-VAV308,AO,%,0 to 100,,,DA-308
+VAV-308-HWV,Hot water valve command,DDC-VAV308,AO,%,0 to 100,,,VLV-308
+VAV-308-DAT,Discharge air temperature,DDC-VAV308,AI,degF,40 to 140,,Level 3: below 55 degF for 10 min,TT-308-DA
+VAV-309-ZT,Zone temperature,DDC-VAV309,AI,degF,40 to 100,,,TS-309
+VAV-309-FLOW,Discharge airflow,DDC-VAV309,AI,cfm,0 to 1300,,Level 3: below 70 percent of setpoint for 5 min,FS-309
+VAV-309-DMP,Damper command,DDC-VAV309,AO,%,0 to 100,,,DA-309
+VAV-309-HWV,Hot water valve command,DDC-VAV309,AO,%,0 to 100,,,VLV-309
+VAV-309-DAT,Discharge air temperature,DDC-VAV309,AI,degF,40 to 140,,Level 3: below 55 degF for 10 min,TT-309-DA
+VAV-310-ZT,Zone temperature,DDC-VAV310,AI,degF,40 to 100,,,TS-310
+VAV-310-FLOW,Discharge airflow,DDC-VAV310,AI,cfm,0 to 600,,Level 3: below 70 percent of setpoint for 5 min,FS-310
+VAV-310-DMP,Damper command,DDC-VAV310,AO,%,0 to 100,,,DA-310
+VAV-310-HWV,Hot water valve command,DDC-VAV310,AO,%,0 to 100,,,VLV-310
+VAV-310-DAT,Discharge air temperature,DDC-VAV310,AI,degF,40 to 140,,Level 3: below 55 degF for 10 min,TT-310-DA
+VAV-311-ZT,Zone temperature,DDC-VAV311,AI,degF,40 to 100,,,TS-311
+VAV-311-FLOW,Discharge airflow,DDC-VAV311,AI,cfm,0 to 800,,Level 3: below 70 percent of setpoint for 5 min,FS-311
+VAV-311-DMP,Damper command,DDC-VAV311,AO,%,0 to 100,,,DA-311
+VAV-311-HWV,Hot water valve command,DDC-VAV311,AO,%,0 to 100,,,VLV-311
+VAV-311-DAT,Discharge air temperature,DDC-VAV311,AI,degF,40 to 140,,Level 3: below 55 degF for 10 min,TT-311-DA
+VAV-312-ZT,Zone temperature,DDC-VAV312,AI,degF,40 to 100,,,TS-312
+VAV-312-FLOW,Discharge airflow,DDC-VAV312,AI,cfm,0 to 1000,,Level 3: below 70 percent of setpoint for 5 min,FS-312
+VAV-312-DMP,Damper command,DDC-VAV312,AO,%,0 to 100,,,DA-312
+VAV-312-HWV,Hot water valve command,DDC-VAV312,AO,%,0 to 100,,,VLV-312
+VAV-312-DAT,Discharge air temperature,DDC-VAV312,AI,degF,40 to 140,,Level 3: below 55 degF for 10 min,TT-312-DA

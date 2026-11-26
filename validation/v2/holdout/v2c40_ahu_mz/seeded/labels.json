@@ -1,0 +1,99 @@
+{
+  "case": "v2c40_ahu_mz",
+  "twin": "seeded",
+  "system": "Multizone VAV Air Handling Unit AHU-9",
+  "style": "ip",
+  "lookalikes": [
+    "deg",
+    "di",
+    "local"
+  ],
+  "long_document": false,
+  "paragraphs": 26,
+  "points": 23,
+  "errors": [
+    {
+      "error_id": "v2c40_ahu_mz-E1",
+      "type": "setpoint_out_of_spec",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.1.6",
+          ""
+        ],
+        [
+          "spec",
+          "3.1.6",
+          ""
+        ]
+      ],
+      "section": "3.1",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "3.1.6: setpt variant planted: The minimum supply fan speed is 15 percent."
+    },
+    {
+      "error_id": "v2c40_ahu_mz-E2",
+      "type": "alarm_wrong_or_missing",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.4.3",
+          ""
+        ],
+        [
+          "spec",
+          "3.4.3",
+          ""
+        ]
+      ],
+      "section": "3.4",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "3.4.3: alarm variant planted: Stage 3: on a freeze-stat trip, or when supply air temperature is below 38 \u00b0F for 15 minutes or below 34 \u00b0F for 5 minutes, the supply and return fans stop, the outdoor air dampers close, the cooling coil valve opens fully, the chilled water pumps are energized and a Level 4 alarm reports a freeze protection shutdown."
+    },
+    {
+      "error_id": "v2c40_ahu_mz-E3",
+      "type": "device_tag_mismatch",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "AHU-9-SD-SA",
+          "device_tag"
+        ],
+        [
+          "drawing",
+          "SD-9-SA",
+          "connected_points"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "AHU-9-SD-SA device tag SD-9-AS on the points list, SD-9-SA on the drawing list"
+    },
+    {
+      "error_id": "v2c40_ahu_mz-E4",
+      "type": "ddc_hardware_mismatch",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "AHU-9-FLT",
+          "ddc_hardware_id"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "AHU-9-FLT DDC hardware DDC-AHU9-2 on the points list, DDC-AHU9-1 on the drawing list"
+    }
+  ]
+}

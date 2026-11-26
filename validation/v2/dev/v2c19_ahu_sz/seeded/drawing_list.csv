@@ -1,0 +1,12 @@
+device_tag,description,ddc_hardware_id,sheet,connected_points
+VFD-6-SF,"Variable frequency drive, supply fan start/stop",DDC-RTU6-1,M-502,RTU-6-SF-C; RTU-6-SF-S; RTU-6-SF-SPD
+TS-6-Z,"Temperature switch or sensor, zone temperature",DDC-RTU6-1,M-502,RTU-6-ZT
+TT-6-SA,"Temperature sensor, supply air temperature",DDC-RTU6-1,M-502,RTU-6-SAT
+TT-6-MA,"Temperature sensor, mixed air temperature",DDC-RTU6-1,M-502,RTU-6-MAT
+DMP-6-OA,"Damper actuator, outdoor air damper command",DDC-RTU6-1,M-502,RTU-6-OAD
+VLV-6-CHW,"Control valve actuator, chilled water valve command",DDC-RTU6-1,M-502,RTU-6-CHWV
+VLV-6-HW,"Control valve actuator, heating hot water valve command",DDC-RTU6-1,M-502,RTU-6-HWV
+TS-6-FZ,"Temperature switch or sensor, freeze-stat status",DDC-RTU6-1,M-502,RTU-6-FZ
+SD-6-SA,"Duct smoke detector, duct smoke detector",DDC-RTU6-1,M-502,RTU-6-SD
+LS-6-CO,"Level switch, condensate overflow switch",DDC-RTU6-1,M-502,RTU-6-COS
+DPT-6-FLT,"Differential pressure transmitter, filter differential pressure",DDC-RTU6-1,M-502,RTU-6-FLT

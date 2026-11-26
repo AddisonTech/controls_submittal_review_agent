@@ -1,0 +1,14 @@
+{
+  "case": "v2c36_hw_plant",
+  "twin": "clean",
+  "system": "Hot Water Boiler Plant HWP-6",
+  "style": "ip",
+  "lookalikes": [
+    "deg",
+    "extra"
+  ],
+  "long_document": false,
+  "paragraphs": 11,
+  "points": 16,
+  "errors": []
+}

@@ -1,0 +1,15 @@
+point_name,description,ddc_hardware_id,io_type,units,range,settings,alarm,device_tag
+RTU-4-SF-C,Supply fan start/stop,DDC-RTU4-1,DO,-,Off/On,,,VFD-4-SF
+RTU-4-SF-S,Supply fan status,DDC-RTU4-1,DI,-,Off/On,,Level 2: status differs from command for 15 s,VFD-4-SF
+RTU-4-SF-SPD,Supply fan speed command,DDC-RTU4-1,AO,%,0 to 100,,,VFD-4-SF
+RTU-4-ZT,Zone temperature,DDC-RTU4-1,AI,degF,40 to 100,,Level 3: 4 degF from setpoint for 60 min,TS-4-Z
+RTU-4-SAT,Supply air temperature,DDC-RTU4-1,AI,degF,30 to 130,,Level 3: 10 degF from setpoint for 10 min,TT-4-SA
+RTU-4-MAT,Mixed air temperature,DDC-RTU4-1,AI,degF,0 to 130,,,TT-4-MA
+RTU-4-OAT,Outdoor air temperature,DDC-RTU4-1,AI,degF,-40 to 130,,,TT-4-OA
+RTU-4-OAD,Outdoor air damper command,DDC-RTU4-1,AO,%,0 to 100,,,DMP-4-OA
+RTU-4-CHWV,Chilled water valve command,DDC-RTU4-1,AO,%,0 to 100,,,VLV-4-CHW
+RTU-4-HWV,Heating hot water valve command,DDC-RTU4-1,AO,%,0 to 100,,,VLV-4-HW
+RTU-4-FZ,Freeze-stat status,DDC-RTU4-1,DI,-,Normal/Alarm,,Level 2: on trip,TS-4-FZ
+RTU-4-SD,Duct smoke detector,DDC-RTU4-1,DI,-,Normal/Alarm,,Level 1: on trip,SD-4-SA
+RTU-4-COS,Condensate overflow switch,DDC-RTU4-1,DI,-,Normal/Alarm,,Level 3: on trip,LS-4-CO
+RTU-4-FLT,Filter differential pressure,DDC-RTU4-1,AI,in. w.c.,0 to 2,,Level 4: above 1 in. w.c. for 30 min,DPT-4-FLT

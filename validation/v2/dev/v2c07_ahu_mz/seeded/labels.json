@@ -1,0 +1,76 @@
+{
+  "case": "v2c07_ahu_mz",
+  "twin": "seeded",
+  "system": "Multizone VAV Air Handling Unit AHU-2",
+  "style": "si",
+  "lookalikes": [
+    "extra",
+    "units_si"
+  ],
+  "long_document": false,
+  "paragraphs": 26,
+  "points": 23,
+  "errors": [
+    {
+      "error_id": "v2c07_ahu_mz-E1",
+      "type": "sequence_contradiction",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.1.5",
+          ""
+        ],
+        [
+          "spec",
+          "3.1.5",
+          ""
+        ]
+      ],
+      "section": "3.1",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "3.1.5: contra variant planted: With the supply fan proven on, a PI loop modulates fan speed to hold supply airflow at the scheduled design airflow."
+    },
+    {
+      "error_id": "v2c07_ahu_mz-E2",
+      "type": "setpoint_out_of_spec",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.2.3",
+          ""
+        ],
+        [
+          "spec",
+          "3.2.3",
+          ""
+        ]
+      ],
+      "section": "3.2",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "3.2.3: setpt variant planted: The maximum supply air temperature setpoint is reset by trim and respond logic within the range 12.8 \u00b0C to 19.4 \u00b0C."
+    },
+    {
+      "error_id": "v2c07_ahu_mz-E3",
+      "type": "ddc_hardware_mismatch",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "AHU-2-FZ",
+          "ddc_hardware_id"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "AHU-2-FZ DDC hardware DDC-AHU2-1 on the points list, DDC-AHU2-2 on the drawing list"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+CONTRACTOR SUBMITTAL: SEQUENCE OF OPERATION (synthetic test document, case v2c13_ahu_sz)
+SUBMITTAL FOR: SECTION 23 09 93, Single Zone VAV Air Handling Unit RTU-5
+Paragraph numbers follow the specification. Paragraphs with a letter suffix are contractor additions.
+
+SECTION: 3.1 | Zone Setpoints and Modes
+3.1.1 The zone is held between 20.0 °C (68 °F) heating and 23.3 °C (74 °F) cooling when occupied, and between 15.6 °C (60 °F) heating and 29.4 °C (85 °F) cooling when unoccupied.
+3.1.2 The occupant can offset the zone setpoints by no more than 1.1 °C (2 °F) up or down.
+3.1.3 Outside scheduled hours the unit runs only in Setback or Setup mode when needed to hold the unoccupied setpoints.
+
+SECTION: 3.2 | Supply Fan Control
+3.2.1 In the Occupied mode the supply fan runs continuously.
+3.2.2 With both loops in deadband the supply fan runs at the 35 percent minimum speed.
+3.2.3 As the cooling loop goes from 50 to 100 percent, supply fan speed rises from minimum to 100 percent.
+3.2.4 As the heating loop goes from 50 to 100 percent, supply fan speed rises from minimum to 60 percent.
+3.2.4a Fan speed limits are adjustable at the operator workstation.
+
+SECTION: 3.3 | Supply Air Temperature Control
+3.3.1 The cooling supply air temperature setpoint moves from 22.2 °C (72 °F) at 0 percent cooling loop down to 12.2 °C (54 °F) at 50 percent cooling loop.
+3.3.2 The heating supply air temperature setpoint moves from 22.2 °C (72 °F) at 0 percent heating loop up to 32.2 °C (90 °F) at 50 percent heating loop.
+3.3.2a The supply air temperature loops use the zone heating and cooling loop outputs calculated by the zone controller.
+3.3.3 The chilled water valve is allowed to open only when outdoor air is warmer than 10.0 °C (50 °F).
+
+SECTION: 3.4 | Economizer
+3.4.1 The economizer is locked out above 21.1 °C (70 °F) outdoor air temperature and released when outdoor air drops 0.6 °C (1 °F) below that limit.
+3.4.2 In heating the outdoor air damper stays at its minimum position.
+3.4.3 Minimum outdoor air damper position is interpolated linearly from 30 percent at minimum fan speed to 18 percent at maximum fan speed.
+
+SECTION: 3.5 | Safeties and Interlocks
+3.5.1 The duct smoke detector is hardwired to stop the supply fan and close the outdoor air damper, and the BAS raises a Level 1 alarm on detection.
+3.5.2 The freeze-stat is hardwired to stop the supply fan and must be reset by hand.
+3.5.3 On a condensate overflow switch trip the chilled water valve closes and a Level 3 alarm is set.
+3.5.4 The heating and chilled water valves stay closed until the supply fan is proven on.

@@ -1,0 +1,76 @@
+{
+  "case": "v2c25_ahu_sz",
+  "twin": "seeded",
+  "system": "Single Zone VAV Air Handling Unit RTU-7",
+  "style": "si",
+  "lookalikes": [
+    "di",
+    "units_si"
+  ],
+  "long_document": false,
+  "paragraphs": 17,
+  "points": 13,
+  "errors": [
+    {
+      "error_id": "v2c25_ahu_sz-E1",
+      "type": "setpoint_out_of_spec",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.1.1",
+          ""
+        ],
+        [
+          "spec",
+          "3.1.1",
+          ""
+        ]
+      ],
+      "section": "3.1",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "3.1.1: setpt variant planted: The zone is held between 21.1 \u00b0C heating and 23.9 \u00b0C cooling when occupied, and between 10.0 \u00b0C heating and 29.4 \u00b0C cooling when unoccupied."
+    },
+    {
+      "error_id": "v2c25_ahu_sz-E2",
+      "type": "sequence_contradiction",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.4.2",
+          ""
+        ],
+        [
+          "spec",
+          "3.4.2",
+          ""
+        ]
+      ],
+      "section": "3.4",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "3.4.2: contra variant planted: In heating the outdoor air damper modulates above minimum to hold mixed air temperature at 12.8 \u00b0C."
+    },
+    {
+      "error_id": "v2c25_ahu_sz-E3",
+      "type": "point_missing",
+      "kind": "absent",
+      "anchors": [
+        [
+          "spec_points",
+          "RTU-7-FZ",
+          "row"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "RTU-7-FZ left out of the points list and the drawing list"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "case": "v2c33_ahu_sz",
+  "twin": "seeded",
+  "system": "Single Zone VAV Air Handling Unit RTU-8",
+  "style": "ip",
+  "lookalikes": [
+    "deg",
+    "local"
+  ],
+  "long_document": false,
+  "paragraphs": 17,
+  "points": 14,
+  "errors": [
+    {
+      "error_id": "v2c33_ahu_sz-E1",
+      "type": "setpoint_out_of_spec",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.3.3",
+          ""
+        ],
+        [
+          "spec",
+          "3.3.3",
+          ""
+        ]
+      ],
+      "section": "3.3",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "3.3.3: setpt variant planted: The chilled water valve is allowed to open only when outdoor air is warmer than 25 \u00b0F."
+    },
+    {
+      "error_id": "v2c33_ahu_sz-E2",
+      "type": "alarm_wrong_or_missing",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "RTU-8-ZT",
+          "alarm"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "RTU-8-ZT alarm delay: 'Level 3: 4 \u00b0F from setpoint for 360 min' against the specified alarm"
+    },
+    {
+      "error_id": "v2c33_ahu_sz-E3",
+      "type": "unit_scaling_mismatch",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "RTU-8-SAT",
+          "units_range"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "RTU-8-SAT units degC with the range numbers left as 30-130"
+    }
+  ]
+}

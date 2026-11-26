@@ -1,0 +1,9 @@
+point_name,description,ddc_hardware_id,io_type,units,range,settings,alarm,device_tag
+FCU-5-FAN-C,Fan start/stop,DDC-FCU5,BO,-,Off/On,,,M-5-FAN
+FCU-5-FAN-S,Fan status,DDC-FCU5,BI,-,Off/On,,"L2 command/status mismatch alarm, 15 s delay",CS-5-FAN
+FCU-5-FAN-SPD,Fan speed command,DDC-FCU5,AO,%,0 to 100,,,M-5-FAN
+FCU-5-ZT,Zone temperature,DDC-FCU5-2,AI,degC,4.4 to 37.8,,,TS-5-Z
+FCU-5-SAT,Supply air temperature,DDC-FCU5,AI,degC,-1.1 to 54.4,,"L3 deviation alarm, +/- 2.8 degC from setpoint, 15 min delay",TT-5-SA
+FCU-5-CHWV,Cooling valve command,DDC-FCU5,AO,%,0 to 100,,,VLV-5-CHW
+FCU-5-HWV,Heating valve command,DDC-FCU5,AO,%,0 to 100,,,VLV-5-HW
+FCU-5-COS,Condensate overflow switch,DDC-FCU5,BI,-,Normal/Alarm,,L3 alarm when tripped,LS-5-CO

@@ -1,0 +1,20 @@
+CONTRACTOR SUBMITTAL: SEQUENCE OF OPERATION (synthetic test document, case v2c23_fcu)
+SUBMITTAL FOR: SECTION 23 09 93, Fan Coil Unit FCU-6
+Paragraph numbers follow the specification. Paragraphs with a letter suffix are contractor additions.
+
+SECTION: 3.1 | Fan Control
+3.1.1 The fan runs all the time in the Occupied mode and cycles with heating or cooling demand in Setback and Setup.
+3.1.2 In deadband the fan runs at 20 percent, ramping to 100 percent as the heating or cooling loop goes from 50 to 100 percent.
+
+SECTION: 3.2 | Supply Air Temperature Control
+3.2.1 Cooling resets the supply air temperature setpoint from 72 °F at 0 percent loop down to 55 °F at 50 percent loop.
+3.2.2 Heating resets the supply air temperature setpoint from 72 °F at 0 percent loop up to 95 °F at 50 percent loop.
+3.2.3 The controller never opens the heating and cooling valves at the same time.
+
+SECTION: 3.3 | Zone Setpoints
+3.3.1 Occupied setpoints are 70 °F heating and 75 °F cooling, and unoccupied setpoints are 60 °F heating and 85 °F cooling.
+
+SECTION: 3.4 | Alarms and Interlocks
+3.4.1 The condensate overflow switch is hardwired to close the cooling valve and the BAS sets a Level 3 alarm on a trip.
+3.4.2 A fan status that disagrees with the command for 15 seconds sets a Level 2 fan failure alarm and closes both valves.
+3.4.3 The heating valve stays closed until the fan is proven on.

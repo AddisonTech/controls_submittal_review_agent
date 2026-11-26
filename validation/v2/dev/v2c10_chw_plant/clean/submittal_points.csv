@@ -1,0 +1,30 @@
+point_name,description,ddc_hardware_id,io_type,units,range,settings,alarm,device_tag
+CHWP-2-CHWST,Chilled water supply temperature,DDC-CHWP2-1,AI,degC,-1.1 to 26.7,,Level 3: 2.8 degC from setpoint for 15 min,TT-2-CHWS
+CHWP-2-CHWRT,Chilled water return temperature,DDC-CHWP2-1,AI,degC,-1.1 to 26.7,,,TT-2-CHWR
+CHWP-2-CHW-DP,Remote chilled water differential pressure,DDC-CHWP2-1,AI,kPa,0 to 345,,Level 3: below 28 kPa for 10 min,DPT-2-CHW
+CHWP-2-CHW-FLOW,Chilled water flow,DDC-CHWP2-1,AI,L/s,0 to 126.2,,,FM-2-CHW
+CHWP-2-BYPV,Minimum flow bypass valve command,DDC-CHWP2-1,AO,%,0 to 100,,,VLV-2-BYP
+CHWP-2-CWST,Condenser water supply temperature,DDC-CHWP2-2,AI,degC,4.4 to 43.3,,,TT-2-CWS
+CHWP-2-CWRT,Condenser water return temperature,DDC-CHWP2-2,AI,degC,4.4 to 43.3,,,TT-2-CWR
+CHWP-2-CT-SPD,Cooling tower fan speed command,DDC-CHWP2-2,AO,%,0 to 100,,,VFD-2-CT
+CHWP-2-CT-S,Cooling tower fan status,DDC-CHWP2-2,DI,-,Off/On,,Level 2: status differs from command for 30 s,VFD-2-CT
+CHWP-2-RM,Refrigerant monitor concentration,DDC-CHWP2-2,AI,ppm,0 to 1000,,Level 1: above 30 ppm for 1 min,RM-2-1
+CHWP-2-ESTOP,Machine room emergency stop status,DDC-CHWP2-2,DI,-,Normal/Stop,,Level 1: on trip,ES-2-1
+CHWP-2-CH1-EN,Chiller 1 enable,DDC-CHWP2-1,DO,-,Off/On,,,CH-21
+CHWP-2-CH1-S,Chiller 1 status,DDC-CHWP2-1,DI,-,Off/On,,Level 2: status differs from command for 300 s,CH-21
+CHWP-2-CH1-ALM,Chiller 1 common alarm,DDC-CHWP2-1,DI,-,Normal/Alarm,,Level 2: on trip,CH-21
+CHWP-2-CHWP1-SPD,Chilled water pump 1 speed command,DDC-CHWP2-1,AO,%,0 to 100,,,VFD-2-P1
+CHWP-2-CHWP1-S,Chilled water pump 1 status,DDC-CHWP2-1,DI,-,Off/On,,Level 2: status differs from command for 15 s,VFD-2-P1
+CHWP-2-CHW-FS1,Chiller 1 evaporator flow switch,DDC-CHWP2-2,DI,-,No flow/Flow,,,FS-2-E1
+CHWP-2-CH2-EN,Chiller 2 enable,DDC-CHWP2-1,DO,-,Off/On,,,CH-22
+CHWP-2-CH2-S,Chiller 2 status,DDC-CHWP2-1,DI,-,Off/On,,Level 2: status differs from command for 300 s,CH-22
+CHWP-2-CH2-ALM,Chiller 2 common alarm,DDC-CHWP2-1,DI,-,Normal/Alarm,,Level 2: on trip,CH-22
+CHWP-2-CHWP2-SPD,Chilled water pump 2 speed command,DDC-CHWP2-1,AO,%,0 to 100,,,VFD-2-P2
+CHWP-2-CHWP2-S,Chilled water pump 2 status,DDC-CHWP2-1,DI,-,Off/On,,Level 2: status differs from command for 15 s,VFD-2-P2
+CHWP-2-CHW-FS2,Chiller 2 evaporator flow switch,DDC-CHWP2-2,DI,-,No flow/Flow,,,FS-2-E2
+CHWP-2-CH3-EN,Chiller 3 enable,DDC-CHWP2-1,DO,-,Off/On,,,CH-23
+CHWP-2-CH3-S,Chiller 3 status,DDC-CHWP2-1,DI,-,Off/On,,Level 2: status differs from command for 300 s,CH-23
+CHWP-2-CH3-ALM,Chiller 3 common alarm,DDC-CHWP2-1,DI,-,Normal/Alarm,,Level 2: on trip,CH-23
+CHWP-2-CHWP3-SPD,Chilled water pump 3 speed command,DDC-CHWP2-1,AO,%,0 to 100,,,VFD-2-P3
+CHWP-2-CHWP3-S,Chilled water pump 3 status,DDC-CHWP2-1,DI,-,Off/On,,Level 2: status differs from command for 15 s,VFD-2-P3
+CHWP-2-CHW-FS3,Chiller 3 evaporator flow switch,DDC-CHWP2-2,DI,-,No flow/Flow,,,FS-2-E3

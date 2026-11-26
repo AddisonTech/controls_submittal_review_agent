@@ -1,0 +1,71 @@
+{
+  "case": "v2c16_chw_plant",
+  "twin": "seeded",
+  "system": "Chilled Water Plant CHWP-3",
+  "style": "ip",
+  "lookalikes": [
+    "deg",
+    "extra"
+  ],
+  "long_document": false,
+  "paragraphs": 15,
+  "points": 22,
+  "errors": [
+    {
+      "error_id": "v2c16_chw_plant-E1",
+      "type": "interlock_missing",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.2.1",
+          ""
+        ],
+        [
+          "spec",
+          "3.2.1",
+          ""
+        ]
+      ],
+      "section": "3.2",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "3.2.1: interlock variant planted: A chiller is enabled after its chilled water and condenser water isolation valves are commanded open."
+    },
+    {
+      "error_id": "v2c16_chw_plant-E2",
+      "type": "point_missing",
+      "kind": "absent",
+      "anchors": [
+        [
+          "spec_points",
+          "CHWP-3-CHW-FS2",
+          "row"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "CHWP-3-CHW-FS2 left out of the points list and the drawing list"
+    },
+    {
+      "error_id": "v2c16_chw_plant-E3",
+      "type": "unit_scaling_mismatch",
+      "kind": "present",
+      "anchors": [
+        [
+          "points",
+          "CHWP-3-CHW-FLOW",
+          "units_range"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "CHWP-3-CHW-FLOW range scaled to twice the specified span: 0-4000"
+    }
+  ]
+}

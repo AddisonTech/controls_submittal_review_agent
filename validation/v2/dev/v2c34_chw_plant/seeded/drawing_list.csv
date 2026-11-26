@@ -1,0 +1,22 @@
+device_tag,description,ddc_hardware_id,sheet,connected_points
+TT-6-CHWS,"Temperature sensor, chilled water supply temperature",DDC-CHWP6-1,M-801,CHWP-6-CHWST
+TT-6-CHWR,"Temperature sensor, chilled water return temperature",DDC-CHWP6-1,M-801,CHWP-6-CHWRT
+DPT-6-CHW,"Differential pressure transmitter, remote chilled water differential pressure",DDC-CHWP6-1,M-801,CHWP-6-CHW-DP
+FM-6-CHW,"Flow meter, chilled water flow",DDC-CHWP6-1,M-801,CHWP-6-CHW-FLOW
+VLV-6-BYP,"Control valve actuator, minimum flow bypass valve command",DDC-CHWP6-1,M-801,CHWP-6-BYPV
+TT-6-CWS,"Temperature sensor, condenser water supply temperature",DDC-CHWP6-2,M-801,CHWP-6-CWST
+TT-6-CWR,"Temperature sensor, condenser water return temperature",DDC-CHWP6-2,M-801,CHWP-6-CWRT
+VFD-6-CT,"Variable frequency drive, cooling tower fan speed command",DDC-CHWP6-2,M-801,CHWP-6-CT-SPD; CHWP-6-CT-S
+RM-6-1,"Refrigerant monitor, refrigerant monitor concentration",DDC-CHWP6-2,M-801,CHWP-6-RM
+ES-6-1,"Emergency stop switch, machine room emergency stop status",DDC-CHWP6-2,M-801,CHWP-6-ESTOP
+CH-61,"Chiller, chiller 1 enable",DDC-CHWP6-1,M-801,CHWP-6-CH1-EN; CHWP-6-CH1-S; CHWP-6-CH1-ALM
+VFD-6-P1,"Variable frequency drive, chilled water pump 1 speed command",DDC-CHWP6-1,M-801,CHWP-6-CHWP1-SPD; CHWP-6-CHWP1-S
+FS-6-E1,"Flow switch or sensor, chiller 1 evaporator flow switch",DDC-CHWP6-2,M-801,CHWP-6-CHW-FS1
+CH-62,"Chiller, chiller 2 enable",DDC-CHWP6-1,M-801,CHWP-6-CH2-EN; CHWP-6-CH2-S; CHWP-6-CH2-ALM
+VFD-6-P2,"Variable frequency drive, chilled water pump 2 speed command",DDC-CHWP6-1,M-801,CHWP-6-CHWP2-SPD; CHWP-6-CHWP2-S
+FS-6-E2,"Flow switch or sensor, chiller 2 evaporator flow switch",DDC-CHWP6-2,M-801,CHWP-6-CHW-FS2
+CH-63,"Chiller, chiller 3 enable",DDC-CHWP6-1,M-801,CHWP-6-CH3-EN; CHWP-6-CH3-S; CHWP-6-CH3-ALM
+VFD-6-P3,"Variable frequency drive, chilled water pump 3 speed command",DDC-CHWP6-1,M-801,CHWP-6-CHWP3-SPD; CHWP-6-CHWP3-S
+FS-6-E3,"Flow switch or sensor, chiller 3 evaporator flow switch",DDC-CHWP6-2,M-801,CHWP-6-CHW-FS3
+PG-6-CHWS,"Chilled water supply pressure gauge, local",-,M-801,"none (local gauge, no BAS connection)"
+TI-6-CHWS,"Chilled water supply thermometer, local",-,M-801,"none (local indicator, no BAS connection)"

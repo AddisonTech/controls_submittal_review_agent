@@ -1,0 +1,15 @@
+point_name,description,ddc_hardware_id,io_type,units,range,settings,alarm,device_tag
+RTU-8-SF-C,Supply fan start/stop,DDC-RTU8-1,BO,-,Off/On,,,VFD-8-SF
+RTU-8-SF-S,Supply fan status,DDC-RTU8-1,BI,-,Off/On,,Level 2: status differs from command for 15 s,VFD-8-SF
+RTU-8-SF-SPD,Supply fan speed command,DDC-RTU8-1,AO,%,0-100,,,VFD-8-SF
+RTU-8-ZT,Zone temperature,DDC-RTU8-1,AI,°F,40-100,,Level 3: 4 °F from setpoint for 360 min,TS-8-Z
+RTU-8-SAT,Supply air temperature,DDC-RTU8-1,AI,degC,30-130,,Level 3: 5 °F from setpoint for 10 min,TT-8-SA
+RTU-8-MAT,Mixed air temperature,DDC-RTU8-1,AI,°F,0-130,,,TT-8-MA
+RTU-8-OAT,Outdoor air temperature,DDC-RTU8-1,AI,°F,-40-130,,,TT-8-OA
+RTU-8-OAD,Outdoor air damper command,DDC-RTU8-1,AO,%,0-100,,,DMP-8-OA
+RTU-8-CHWV,Chilled water valve command,DDC-RTU8-1,AO,%,0-100,,,VLV-8-CHW
+RTU-8-HWV,Heating hot water valve command,DDC-RTU8-1,AO,%,0-100,,,VLV-8-HW
+RTU-8-FZ,Freeze-stat status,DDC-RTU8-1,BI,-,Normal/Alarm,,Level 2: on trip,TS-8-FZ
+RTU-8-SD,Duct smoke detector,DDC-RTU8-1,BI,-,Normal/Alarm,,Level 1: on trip,SD-8-SA
+RTU-8-COS,Condensate overflow switch,DDC-RTU8-1,BI,-,Normal/Alarm,,Level 3: on trip,LS-8-CO
+RTU-8-FLT,Filter differential pressure,DDC-RTU8-1,AI,in. w.c.,0-2,,Level 4: above 1 in. w.c. for 30 min,DPT-8-FLT

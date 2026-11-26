@@ -1,0 +1,21 @@
+point_name,description,ddc_hardware_id,io_type,units,range,settings,alarm,device_tag
+HWP-2-HWST,Hot water supply temperature,DDC-HWP2-1,AI,degC,4.4 to 115.6,,Level 3: 5.6 degC from setpoint for 15 min,TT-2-HWS
+HWP-2-HW-DP,Remote hot water differential pressure,DDC-HWP2-1,AI,kPa,0 to 345,,Level 3: below 28 kPa for 10 min,DPT-2-HW
+HWP-2-OAT,Outdoor air temperature,DDC-HWP2-1,AI,degC,-40 to 54.4,,,TT-2-OA
+HWP-2-HW-FS,Hot water flow switch,DDC-HWP2-1,BI,-,No flow/Flow,,,FS-2-HW
+HWP-2-ESS,Boiler room emergency shutoff status,DDC-HWP2-1,BI,-,Normal/Stop,,Level 1: on trip,ES-2-1
+HWP-2-B1-EN,Boiler 1 enable,DDC-HWP2-1,BO,-,Off/On,,,B-21
+HWP-2-B1-S,Boiler 1 status,DDC-HWP2-1,BI,-,Off/On,,Level 2: status differs from command for 120 s,B-21
+HWP-2-B1-ALM,Boiler 1 common alarm,DDC-HWP2-1,BI,-,Normal/Alarm,,Level 2: on trip,B-21
+HWP-2-HWP1-SPD,Hot water pump 1 speed command,DDC-HWP2-1,AO,%,0 to 100,,,VFD-2-P1
+HWP-2-HWP1-S,Hot water pump 1 status,DDC-HWP2-1,BI,-,Off/On,,Level 2: status differs from command for 15 s,VFD-2-P1
+HWP-2-B2-EN,Boiler 2 enable,DDC-HWP2-1,BO,-,Off/On,,,B-22
+HWP-2-B2-S,Boiler 2 status,DDC-HWP2-1,BI,-,Off/On,,Level 2: status differs from command for 120 s,B-22
+HWP-2-B2-ALM,Boiler 2 common alarm,DDC-HWP2-1,BI,-,Normal/Alarm,,Level 2: on trip,B-22
+HWP-2-HWP2-SPD,Hot water pump 2 speed command,DDC-HWP2-1,AO,%,0 to 100,,,VFD-2-P2
+HWP-2-HWP2-S,Hot water pump 2 status,DDC-HWP2-1,BI,-,Off/On,,Level 2: status differs from command for 15 s,VFD-2-P2
+HWP-2-B3-EN,Boiler 3 enable,DDC-HWP2-1,BO,-,Off/On,,,B-23
+HWP-2-B3-S,Boiler 3 status,DDC-HWP2-1,BI,-,Off/On,,Level 2: status differs from command for 120 s,B-23
+HWP-2-B3-ALM,Boiler 3 common alarm,DDC-HWP2-1,BI,-,Normal/Alarm,,Level 2: on trip,B-23
+HWP-2-HWP3-SPD,Hot water pump 3 speed command,DDC-HWP2-1,AO,%,0 to 100,,,VFD-2-P3
+HWP-2-HWP3-S,Hot water pump 3 status,DDC-HWP2-1,BI,-,Off/On,,Level 2: status differs from command for 15 s,VFD-2-P3

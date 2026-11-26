@@ -1,0 +1,77 @@
+{
+  "case": "v2c39_ahu_sz",
+  "twin": "seeded",
+  "system": "Single Zone VAV Air Handling Unit RTU-9",
+  "style": "dual",
+  "lookalikes": [
+    "alarm_words",
+    "di",
+    "units_dual"
+  ],
+  "long_document": false,
+  "paragraphs": 17,
+  "points": 13,
+  "errors": [
+    {
+      "error_id": "v2c39_ahu_sz-E1",
+      "type": "setpoint_out_of_spec",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.2.4",
+          ""
+        ],
+        [
+          "spec",
+          "3.2.4",
+          ""
+        ]
+      ],
+      "section": "3.2",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "3.2.4: setpt variant planted: As the heating loop goes from 50 to 100 percent, supply fan speed rises from minimum to 100 percent."
+    },
+    {
+      "error_id": "v2c39_ahu_sz-E2",
+      "type": "interlock_missing",
+      "kind": "present",
+      "anchors": [
+        [
+          "sub",
+          "3.5.2",
+          ""
+        ],
+        [
+          "spec",
+          "3.5.2",
+          ""
+        ]
+      ],
+      "section": "3.5",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "3.5.2: interlock variant planted: The freeze-stat is hardwired to stop the supply fan and resets automatically when the coil warms up."
+    },
+    {
+      "error_id": "v2c39_ahu_sz-E3",
+      "type": "point_missing",
+      "kind": "absent",
+      "anchors": [
+        [
+          "spec_points",
+          "RTU-9-ZT",
+          "row"
+        ]
+      ],
+      "section": "points",
+      "hard": [
+        "lookalikes_nearby"
+      ],
+      "description": "RTU-9-ZT left out of the points list and the drawing list"
+    }
+  ]
+}
