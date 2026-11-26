@@ -1,0 +1,488 @@
+{
+  "label": "dev_gemma3-4b_20261126_182534",
+  "split": "dev",
+  "engine": "gemma3:4b",
+  "model": "gemma3:4b",
+  "effort": null,
+  "prompt_version": "v2-p1",
+  "agent_version": "2.0.0",
+  "git_commit": "8e45679",
+  "scorer_sha256": "6dd9976119a30dd1fe4e59bf7a15444ec0dcb8d76524fe4ca6945611196e55c3",
+  "note": "smoke run, one pair, pipeline check",
+  "holdout_final": false,
+  "cases_requested": [
+    "v2c01_ahu_mz"
+  ],
+  "cases_scored": [
+    "v2c01_ahu_mz"
+  ],
+  "aborted": null,
+  "documents": 2,
+  "wall_seconds": 100.2,
+  "seconds_per_document": 48.85,
+  "spend_usd": 0.0,
+  "cost_per_document_usd": 0.0,
+  "total_spend_after_usd": 0.0,
+  "model_calls": 20,
+  "failed_attempts": 10,
+  "unresolved": 5,
+  "score": {
+    "totals": {
+      "planted": 2,
+      "caught": 1,
+      "wrong": 9,
+      "duplicates": 0,
+      "wrong_on_clean": 5,
+      "wrong_on_seeded": 4,
+      "comments_made": 10,
+      "recall": 0.5,
+      "wrong_rate": 0.9,
+      "passes": false
+    },
+    "per_type": {
+      "point_missing": {
+        "planted": 0,
+        "caught": 0,
+        "wrong": 0,
+        "recall": null
+      },
+      "wrong_point_type": {
+        "planted": 1,
+        "caught": 0,
+        "wrong": 0,
+        "recall": 0.0
+      },
+      "sequence_contradiction": {
+        "planted": 0,
+        "caught": 0,
+        "wrong": 9,
+        "recall": null
+      },
+      "setpoint_out_of_spec": {
+        "planted": 1,
+        "caught": 1,
+        "wrong": 0,
+        "recall": 1.0
+      },
+      "alarm_wrong_or_missing": {
+        "planted": 0,
+        "caught": 0,
+        "wrong": 0,
+        "recall": null
+      },
+      "interlock_missing": {
+        "planted": 0,
+        "caught": 0,
+        "wrong": 0,
+        "recall": null
+      },
+      "unit_scaling_mismatch": {
+        "planted": 0,
+        "caught": 0,
+        "wrong": 0,
+        "recall": null
+      },
+      "device_tag_mismatch": {
+        "planted": 0,
+        "caught": 0,
+        "wrong": 0,
+        "recall": null
+      },
+      "ddc_hardware_mismatch": {
+        "planted": 0,
+        "caught": 0,
+        "wrong": 0,
+        "recall": null
+      }
+    },
+    "per_hard": {
+      "lookalikes_nearby": {
+        "planted": 2,
+        "caught": 1,
+        "wrong": 0,
+        "recall": 0.5
+      }
+    },
+    "misses": [
+      {
+        "case": "v2c01_ahu_mz",
+        "error_id": "v2c01_ahu_mz-E2",
+        "type": "wrong_point_type",
+        "kind": "present",
+        "anchors": [
+          [
+            "points",
+            "AHU-1-SF-S",
+            "io_type"
+          ]
+        ],
+        "section": "points",
+        "hard": [
+          "lookalikes_nearby"
+        ],
+        "description": "AHU-1-SF-S type BI listed as AI"
+      }
+    ],
+    "wrong_comments": [
+      {
+        "case": "v2c01_ahu_mz",
+        "twin": "seeded",
+        "comment_id": "P:3.2:3.2.6:3.2.6",
+        "source": "prose",
+        "rule": "P1",
+        "error_type": "sequence_contradiction",
+        "section": "3.2",
+        "sub_para": "3.2.6",
+        "spec_para": "3.2.6",
+        "submittal_quote": "As the loop output rises it strokes the heating coil valve closed first, then modulates the outdoor and return air dampers, and finally opens the chilled water valve.",
+        "spec_quote": "The loop output shall sequence the heating coil valve, then the outdoor and return air dampers, then the chilled water valve, to maintain the supply air temperature at setpoint.",
+        "reason": "The submittal describes the valve order as heating coil valve closed first, while the specification requires the sequence to be heating coil valve, then dampers, then chilled water valve."
+      },
+      {
+        "case": "v2c01_ahu_mz",
+        "twin": "seeded",
+        "comment_id": "P:3.3:3.3.1:3.3.1",
+        "source": "prose",
+        "rule": "P1",
+        "error_type": "sequence_contradiction",
+        "section": "3.3",
+        "sub_para": "3.3.1",
+        "spec_para": "3.3.1",
+        "submittal_quote": "Economizer operation is locked out above an outdoor air temperature of 75 \u00b0F and released once the outdoor air temperature drops 1 \u00b0F below the limit.",
+        "spec_quote": "The economizer shall be disabled when the outdoor air temperature exceeds 75 \u00b0F and enabled again when it falls 1 \u00b0F below that limit.",
+        "reason": "The submittal describes a locked-out and released operation, while the specification describes a disabled and re-enabled operation."
+      },
+      {
+        "case": "v2c01_ahu_mz",
+        "twin": "seeded",
+        "comment_id": "P:3.4:3.4.1:3.4.1",
+        "source": "prose",
+        "rule": "P1",
+        "error_type": "sequence_contradiction",
+        "section": "3.4",
+        "sub_para": "3.4.1",
+        "spec_para": "3.4.1",
+        "submittal_quote": "holds the outdoor air damper at minimum position",
+        "spec_quote": "override the outdoor air damper to minimum position",
+        "reason": "The submittal states \u2018holds\u2019 while the specification requires \u2018override\u2019."
+      },
+      {
+        "case": "v2c01_ahu_mz",
+        "twin": "seeded",
+        "comment_id": "P:3.5:3.5.1:3.5.1",
+        "source": "prose",
+        "rule": "P1",
+        "error_type": "sequence_contradiction",
+        "section": "3.5",
+        "sub_para": "3.5.1",
+        "spec_para": "3.5.1",
+        "submittal_quote": "stops the supply and return fans independent of the BAS",
+        "spec_quote": "shall be hardwired to stop the supply and return fans regardless of the BAS command",
+        "reason": "The submittal states the freeze-stat stops the fans independently of the BAS, while the specification requires it to stop the fans regardless of the BAS command."
+      },
+      {
+        "case": "v2c01_ahu_mz",
+        "twin": "clean",
+        "comment_id": "P:3.1:3.1.2:3.1.1",
+        "source": "prose",
+        "rule": "P1",
+        "error_type": "sequence_contradiction",
+        "section": "3.1",
+        "sub_para": "3.1.2",
+        "spec_para": "3.1.1",
+        "submittal_quote": "Since no zone on AHU-1 has reheat, the supply fan stays off in the Setback and Warmup modes.",
+        "spec_quote": "The supply fan shall run when the system is in the Cool-down, Setup or Occupied mode.",
+        "reason": "The submittal states the supply fan stays off in Setback and Warmup modes, contradicting the specification which requires it to run in those modes."
+      },
+      {
+        "case": "v2c01_ahu_mz",
+        "twin": "clean",
+        "comment_id": "P:3.2:3.2.6:3.2.6",
+        "source": "prose",
+        "rule": "P1",
+        "error_type": "sequence_contradiction",
+        "section": "3.2",
+        "sub_para": "3.2.6",
+        "spec_para": "3.2.6",
+        "submittal_quote": "As the loop output rises it strokes the heating coil valve closed first, then modulates the outdoor and return air dampers, and finally opens the chilled water valve.",
+        "spec_quote": "The loop output shall sequence the heating coil valve, then the outdoor and return air dampers, then the chilled water valve, to maintain the supply air temperature at setpoint.",
+        "reason": "The submittal describes the valve order as heating coil valve closed first, while the specification requires the sequence to be heating coil valve, then dampers, then chilled water valve."
+      },
+      {
+        "case": "v2c01_ahu_mz",
+        "twin": "clean",
+        "comment_id": "P:3.3:3.3.1:3.3.1",
+        "source": "prose",
+        "rule": "P1",
+        "error_type": "sequence_contradiction",
+        "section": "3.3",
+        "sub_para": "3.3.1",
+        "spec_para": "3.3.1",
+        "submittal_quote": "Economizer operation is locked out above an outdoor air temperature of 75 \u00b0F and released once the outdoor air temperature drops 1 \u00b0F below the limit.",
+        "spec_quote": "The economizer shall be disabled when the outdoor air temperature exceeds 75 \u00b0F and enabled again when it falls 1 \u00b0F below that limit.",
+        "reason": "The submittal describes a locked-out and released operation, while the specification describes a disabled and re-enabled operation."
+      },
+      {
+        "case": "v2c01_ahu_mz",
+        "twin": "clean",
+        "comment_id": "P:3.4:3.4.1:3.4.1",
+        "source": "prose",
+        "rule": "P1",
+        "error_type": "sequence_contradiction",
+        "section": "3.4",
+        "sub_para": "3.4.1",
+        "spec_para": "3.4.1",
+        "submittal_quote": "holds the outdoor air damper at minimum position",
+        "spec_quote": "override the outdoor air damper to minimum position",
+        "reason": "The submittal states the damper is 'held' at minimum, while the specification requires it to be overridden."
+      },
+      {
+        "case": "v2c01_ahu_mz",
+        "twin": "clean",
+        "comment_id": "P:3.5:3.5.1:3.5.1",
+        "source": "prose",
+        "rule": "P1",
+        "error_type": "sequence_contradiction",
+        "section": "3.5",
+        "sub_para": "3.5.1",
+        "spec_para": "3.5.1",
+        "submittal_quote": "stops the supply and return fans independent of the BAS",
+        "spec_quote": "shall be hardwired to stop the supply and return fans regardless of the BAS command",
+        "reason": "The submittal states the freeze-stat stops the fans independently of the BAS, while the specification requires it to stop the fans regardless of the BAS command."
+      }
+    ],
+    "bar": {
+      "recall_at_least": 0.9,
+      "wrong_rate_at_most": 0.05
+    }
+  },
+  "rules_only_baseline": {
+    "planted": 2,
+    "caught": 1,
+    "wrong": 4,
+    "duplicates": 0,
+    "wrong_on_clean": 2,
+    "wrong_on_seeded": 2,
+    "comments_made": 5,
+    "recall": 0.5,
+    "wrong_rate": 0.8,
+    "passes": false
+  },
+  "per_case": {
+    "v2c01_ahu_mz": {
+      "seeded": {
+        "comments": [
+          {
+            "comment_id": "P:3.1:3.1.3:3.1.3",
+            "source": "prose",
+            "rule": "P1",
+            "error_type": "setpoint_out_of_spec",
+            "section": "3.1",
+            "sub_para": "3.1.3",
+            "spec_para": "3.1.3",
+            "submittal_quote": "between a minimum of 0.15 in. w.c. and a maximum of 2.2 in. w.c.",
+            "spec_quote": "between 0.15 in. w.c. and 1.2 in. w.c.",
+            "reason": "The submittal specifies a maximum duct static pressure setpoint of 2.2 in. w.c., which exceeds the specification's limit of 1.2 in. w.c."
+          },
+          {
+            "comment_id": "P:3.2:3.2.6:3.2.6",
+            "source": "prose",
+            "rule": "P1",
+            "error_type": "sequence_contradiction",
+            "section": "3.2",
+            "sub_para": "3.2.6",
+            "spec_para": "3.2.6",
+            "submittal_quote": "As the loop output rises it strokes the heating coil valve closed first, then modulates the outdoor and return air dampers, and finally opens the chilled water valve.",
+            "spec_quote": "The loop output shall sequence the heating coil valve, then the outdoor and return air dampers, then the chilled water valve, to maintain the supply air temperature at setpoint.",
+            "reason": "The submittal describes the valve order as heating coil valve closed first, while the specification requires the sequence to be heating coil valve, then dampers, then chilled water valve."
+          },
+          {
+            "comment_id": "P:3.3:3.3.1:3.3.1",
+            "source": "prose",
+            "rule": "P1",
+            "error_type": "sequence_contradiction",
+            "section": "3.3",
+            "sub_para": "3.3.1",
+            "spec_para": "3.3.1",
+            "submittal_quote": "Economizer operation is locked out above an outdoor air temperature of 75 \u00b0F and released once the outdoor air temperature drops 1 \u00b0F below the limit.",
+            "spec_quote": "The economizer shall be disabled when the outdoor air temperature exceeds 75 \u00b0F and enabled again when it falls 1 \u00b0F below that limit.",
+            "reason": "The submittal describes a locked-out and released operation, while the specification describes a disabled and re-enabled operation."
+          },
+          {
+            "comment_id": "P:3.4:3.4.1:3.4.1",
+            "source": "prose",
+            "rule": "P1",
+            "error_type": "sequence_contradiction",
+            "section": "3.4",
+            "sub_para": "3.4.1",
+            "spec_para": "3.4.1",
+            "submittal_quote": "holds the outdoor air damper at minimum position",
+            "spec_quote": "override the outdoor air damper to minimum position",
+            "reason": "The submittal states \u2018holds\u2019 while the specification requires \u2018override\u2019."
+          },
+          {
+            "comment_id": "P:3.5:3.5.1:3.5.1",
+            "source": "prose",
+            "rule": "P1",
+            "error_type": "sequence_contradiction",
+            "section": "3.5",
+            "sub_para": "3.5.1",
+            "spec_para": "3.5.1",
+            "submittal_quote": "stops the supply and return fans independent of the BAS",
+            "spec_quote": "shall be hardwired to stop the supply and return fans regardless of the BAS command",
+            "reason": "The submittal states the freeze-stat stops the fans independently of the BAS, while the specification requires it to stop the fans regardless of the BAS command."
+          }
+        ],
+        "dismissed": [],
+        "unresolved": [
+          {
+            "comment_id": "T2:AHU-1-SF-S:io_type",
+            "source": "table",
+            "rule": "T2",
+            "error_type": "wrong_point_type",
+            "anchor": [
+              "points",
+              "AHU-1-SF-S",
+              "io_type"
+            ],
+            "summary": "AHU-1-SF-S io_type: specification 'BI', submittal 'AI'",
+            "quote": "",
+            "reason": "model reply failed checks after 2 attempts; last: attempt 2: quote not found word for word in the supplied context: \"AHU-1-SF-S io_type: specification 'BI', submittal 'AI'\"",
+            "attempts": 2
+          },
+          {
+            "comment_id": "T5:GA-1-FLT:connected_points",
+            "source": "table",
+            "rule": "T5",
+            "error_type": "device_tag_mismatch",
+            "anchor": [
+              "drawing",
+              "GA-1-FLT",
+              "connected_points"
+            ],
+            "summary": "drawing list device GA-1-FLT connects to 'none (local gauge, no BAS connection)', which is not a points list row",
+            "quote": "",
+            "reason": "model reply failed checks after 2 attempts; last: attempt 2: quote not found word for word in the supplied context: \"drawing list device GA-1-FLT connects to 'none (local gauge, no BAS connection)'\"",
+            "attempts": 2
+          },
+          {
+            "comment_id": "T5:TI-1-MA:connected_points",
+            "source": "table",
+            "rule": "T5",
+            "error_type": "device_tag_mismatch",
+            "anchor": [
+              "drawing",
+              "TI-1-MA",
+              "connected_points"
+            ],
+            "summary": "drawing list device TI-1-MA connects to 'none (local indicator, no BAS connection)', which is not a points list row",
+            "quote": "",
+            "reason": "model reply failed checks after 2 attempts; last: attempt 2: quote not found word for word in the supplied context: \"drawing list device TI-1-MA connects to 'none (local indicator, no BAS connectio\"",
+            "attempts": 2
+          }
+        ],
+        "seconds": 57.56,
+        "cost_usd": 0.0
+      },
+      "clean": {
+        "comments": [
+          {
+            "comment_id": "P:3.1:3.1.2:3.1.1",
+            "source": "prose",
+            "rule": "P1",
+            "error_type": "sequence_contradiction",
+            "section": "3.1",
+            "sub_para": "3.1.2",
+            "spec_para": "3.1.1",
+            "submittal_quote": "Since no zone on AHU-1 has reheat, the supply fan stays off in the Setback and Warmup modes.",
+            "spec_quote": "The supply fan shall run when the system is in the Cool-down, Setup or Occupied mode.",
+            "reason": "The submittal states the supply fan stays off in Setback and Warmup modes, contradicting the specification which requires it to run in those modes."
+          },
+          {
+            "comment_id": "P:3.2:3.2.6:3.2.6",
+            "source": "prose",
+            "rule": "P1",
+            "error_type": "sequence_contradiction",
+            "section": "3.2",
+            "sub_para": "3.2.6",
+            "spec_para": "3.2.6",
+            "submittal_quote": "As the loop output rises it strokes the heating coil valve closed first, then modulates the outdoor and return air dampers, and finally opens the chilled water valve.",
+            "spec_quote": "The loop output shall sequence the heating coil valve, then the outdoor and return air dampers, then the chilled water valve, to maintain the supply air temperature at setpoint.",
+            "reason": "The submittal describes the valve order as heating coil valve closed first, while the specification requires the sequence to be heating coil valve, then dampers, then chilled water valve."
+          },
+          {
+            "comment_id": "P:3.3:3.3.1:3.3.1",
+            "source": "prose",
+            "rule": "P1",
+            "error_type": "sequence_contradiction",
+            "section": "3.3",
+            "sub_para": "3.3.1",
+            "spec_para": "3.3.1",
+            "submittal_quote": "Economizer operation is locked out above an outdoor air temperature of 75 \u00b0F and released once the outdoor air temperature drops 1 \u00b0F below the limit.",
+            "spec_quote": "The economizer shall be disabled when the outdoor air temperature exceeds 75 \u00b0F and enabled again when it falls 1 \u00b0F below that limit.",
+            "reason": "The submittal describes a locked-out and released operation, while the specification describes a disabled and re-enabled operation."
+          },
+          {
+            "comment_id": "P:3.4:3.4.1:3.4.1",
+            "source": "prose",
+            "rule": "P1",
+            "error_type": "sequence_contradiction",
+            "section": "3.4",
+            "sub_para": "3.4.1",
+            "spec_para": "3.4.1",
+            "submittal_quote": "holds the outdoor air damper at minimum position",
+            "spec_quote": "override the outdoor air damper to minimum position",
+            "reason": "The submittal states the damper is 'held' at minimum, while the specification requires it to be overridden."
+          },
+          {
+            "comment_id": "P:3.5:3.5.1:3.5.1",
+            "source": "prose",
+            "rule": "P1",
+            "error_type": "sequence_contradiction",
+            "section": "3.5",
+            "sub_para": "3.5.1",
+            "spec_para": "3.5.1",
+            "submittal_quote": "stops the supply and return fans independent of the BAS",
+            "spec_quote": "shall be hardwired to stop the supply and return fans regardless of the BAS command",
+            "reason": "The submittal states the freeze-stat stops the fans independently of the BAS, while the specification requires it to stop the fans regardless of the BAS command."
+          }
+        ],
+        "dismissed": [],
+        "unresolved": [
+          {
+            "comment_id": "T5:GA-1-FLT:connected_points",
+            "source": "table",
+            "rule": "T5",
+            "error_type": "device_tag_mismatch",
+            "anchor": [
+              "drawing",
+              "GA-1-FLT",
+              "connected_points"
+            ],
+            "summary": "drawing list device GA-1-FLT connects to 'none (local gauge, no BAS connection)', which is not a points list row",
+            "quote": "",
+            "reason": "model reply failed checks after 2 attempts; last: attempt 2: quote not found word for word in the supplied context: \"drawing list device GA-1-FLT connects to 'none (local gauge, no BAS connection)'\"",
+            "attempts": 2
+          },
+          {
+            "comment_id": "T5:TI-1-MA:connected_points",
+            "source": "table",
+            "rule": "T5",
+            "error_type": "device_tag_mismatch",
+            "anchor": [
+              "drawing",
+              "TI-1-MA",
+              "connected_points"
+            ],
+            "summary": "drawing list device TI-1-MA connects to 'none (local indicator, no BAS connection)', which is not a points list row",
+            "quote": "",
+            "reason": "model reply failed checks after 2 attempts; last: attempt 2: quote not found word for word in the supplied context: \"drawing list device TI-1-MA connects to 'none (local indicator, no BAS connectio\"",
+            "attempts": 2
+          }
+        ],
+        "seconds": 40.14,
+        "cost_usd": 0.0
+      }
+    }
+  }
+}

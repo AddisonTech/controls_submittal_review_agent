@@ -165,8 +165,8 @@ class OllamaEngine(sr.OllamaClient):
 
     engine = "gemma3:4b"
 
-    def generate(self, system: str, user: str, schema: dict, tag: str = "") -> str:
-        payload = {"model": self.config.model_name, "system": system, "prompt": user, "stream": False,
+    def generate(self, system: str, user: str, schema: dict, tag: str = "", prefix: str = "") -> str:
+        payload = {"model": self.config.model_name, "system": system, "prompt": prefix + user, "stream": False,
                    "format": strict_schema(schema), "options": {"temperature": self.config.temperature,
                                                                 "num_ctx": OLLAMA_NUM_CTX}}
         limit = self.config.model_timeout_seconds
@@ -218,13 +218,17 @@ class ClaudeEngine:
         return (tokens_in * pr.get("long_input", pr["input"]) * 1.25
                 + self.max_tokens * pr.get("long_output", pr["output"])) / 1_000_000
 
-    def generate(self, system: Optional[str], user: str, schema: dict, tag: str = "") -> str:
+    def generate(self, system: Optional[str], user: str, schema: dict, tag: str = "", prefix: str = "") -> str:
+        """prefix: text that opens the user turn and repeats across calls (the v2-p2 specification reference); it is
+        sent as its own cached block. The model reads exactly prefix + user, the same text the local engine gets."""
         if self._client is None:
             self.preflight()
-        worst = self._worst_case((system or "") + user)
+        worst = self._worst_case((system or "") + prefix + user)
         self.guard.reserve(worst)
+        content = ([{"type": "text", "text": prefix, "cache_control": {"type": "ephemeral"}}, {"type": "text", "text": user}]
+                   if prefix else user)
         kwargs = dict(model=self.model, max_tokens=self.max_tokens,
-                      messages=[{"role": "user", "content": user}],
+                      messages=[{"role": "user", "content": content}],
                       output_config={"effort": self.effort, "format": {"type": "json_schema", "schema": strict_schema(schema)}})
         if system:
             kwargs["system"] = [{"type": "text", "text": system, "cache_control": {"type": "ephemeral"}}]

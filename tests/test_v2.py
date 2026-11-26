@@ -95,6 +95,24 @@ def test_the_same_prompt_and_schema_go_to_every_engine(tmp_path, monkeypatch):
     assert sent["ollama"]["options"]["temperature"] == 0
 
 
+def test_the_spec_reference_reaches_every_engine_as_the_same_text_and_is_cached_for_claude(tmp_path, monkeypatch):
+    sent = {}
+
+    def fake_ollama(self, path, payload, timeout):
+        sent["ollama"] = payload
+        return {"response": json.dumps({"issues": []})}
+    monkeypatch.setattr(sr.OllamaClient, "_call", fake_ollama)
+    pkg = srv.parse_package(DEV_CASE / "clean")
+    srv.check_section(en.make_engine("gemma3:4b", sr.ReviewConfig()), pkg, "3.3", 2, "t", [])
+    client = fake_client([json.dumps({"issues": []})])
+    srv.check_section(en.make_engine("claude-haiku", sr.ReviewConfig(), guard=guard(tmp_path), client=client), pkg, "3.3", 2, "t", [])
+    blocks = client.messages.calls[0]["messages"][0]["content"]
+    ref = srv.spec_reference(pkg)
+    assert blocks[0] == {"type": "text", "text": ref, "cache_control": {"type": "ephemeral"}}
+    assert sent["ollama"]["prompt"] == blocks[0]["text"] + blocks[1]["text"] and sent["ollama"]["prompt"].startswith(ref)
+    assert "SECTION 3.4 Freeze Protection" in ref and "POINTS SCHEDULE" in ref
+
+
 def test_v1_n7_uses_the_same_prompt_and_reply_format_with_claude(tmp_path):
     client = fake_client([json.dumps({"verdict": "unresolved", "supporting_quote": "", "reason": "test"})] * 20)
     eng = en.make_engine("claude-sonnet", sr.ReviewConfig(), guard=guard(tmp_path), client=client)
@@ -202,6 +220,20 @@ def test_prose_quotes_must_point_at_exactly_one_paragraph():
     assert "approve or reject" in srv.check_prose_issue(rude, spec, sub)[0]
 
 
+def test_an_entry_the_model_marks_compliant_is_dropped_by_code(tmp_path):
+    pkg = srv.parse_package(DEV_CASE / "seeded")
+    s5, p5 = pkg.sub_sections["3.1"].paras["3.1.5"][6:], pkg.spec_sections["3.1"].paras["3.1.5"][6:]
+    s6, p6 = pkg.sub_sections["3.1"].paras["3.1.6"][6:], pkg.spec_sections["3.1"].paras["3.1.6"][6:]
+    reply = {"issues": [
+        {"error_type": "sequence_contradiction", "submittal_quote": s5, "spec_quote": p5, "reason": "airflow, not pressure",
+         "submittal_meets_spec": False},
+        {"error_type": "setpoint_out_of_spec", "submittal_quote": s6, "spec_quote": p6, "reason": "this matches",
+         "submittal_meets_spec": True}]}
+    eng = en.make_engine("claude-haiku", sr.ReviewConfig(), guard=guard(tmp_path), client=fake_client([json.dumps(reply)]))
+    r = srv.check_section(eng, pkg, "3.1", 2, "t", [])
+    assert [c["sub_para"] for c in r["comments"]] == ["3.1.5"] and r["unresolved"] == []
+
+
 def test_table_rules_find_every_planted_table_error_on_dev():
     for case in sorted((V2 / "dev").iterdir()):
         cands = {tuple(c.anchor) for c in srv.table_rules(srv.parse_package(case / "seeded"))}
@@ -218,7 +250,7 @@ def test_agent_never_reads_the_labels(tmp_path):
     class Echo:
         name, engine, last_usage, context = "echo", "echo", None, ""
 
-        def generate(self, system, user, schema, tag=""):
+        def generate(self, system, user, schema, tag="", prefix=""):
             return json.dumps({"issues": []}) if system is srv.PROSE_SYSTEM else json.dumps(
                 {"verdict": "unresolved", "supporting_quote": "", "reason": "n/a"})
     a = srv.run_spec_review(DEV_CASE / "seeded", tmp_path / "a", Echo(), write_files=False)

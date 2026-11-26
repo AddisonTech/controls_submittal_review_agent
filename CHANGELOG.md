@@ -170,3 +170,31 @@ pinned by SHA-256 in validation\v2\HOLDOUT_V2.md.
 - Rules-only baseline on dev (no model, run before this commit): recall 0.452 (38 of 84; the rules see only the
   points and drawing lists, never the sequences) with 995 wrong comments of 1033 (rate 0.963). The model step is
   what has to remove the look-alikes and find the sequence errors.
+
+### Dev runs and tuning log (dev results only; the v2 holdout is untouched)
+
+- 2026-11-26, rules-only baseline on dev (no model): recall 0.452, wrong 995 of 1033 (rate 0.963), $0.
+- 2026-11-26, gemma3:4b smoke run on one dev pair, prompt v2-p1: pipeline check only (recall 0.500, wrong 9 of 10).
+- 2026-11-26, cost check, Claude Haiku 5.5 on the first 5 dev pairs, prompt v2-p1: $0.0215 actual ($0.0022 per
+  document; 1,105 to 1,208 cached system tokens read per call). Projected from the measured tokens per call and the
+  dev call counts (1,033 table differences, 294 sequence sections): Haiku dev $0.22 and holdout $0.07, Sonnet dev
+  $4.20 to $6.62 and holdout $1.40 to $2.21, total $5.90 to $9.13, under the $44 stop line, so the runs went ahead.
+- 2026-11-26, Claude Haiku 5.5 on all dev pairs, prompt v2-p1: recall 0.976 (82 of 84), wrong 27 of 109 (rate
+  0.248), FAIL, $0.2675. 26 of the 27 wrong comments sat on two paraphrases in the generator that are correct only
+  in the context of the whole system (AHU 3.3.2 "stage 2 and stage 3" for "stage 2 or higher" where the sequence
+  has three stages; single zone AHU 3.3.3 and 3.5.4 naming the chilled water valve where the unit's only cooling is
+  a chilled water coil); the model saw only the section under review. Misses: a device tag with two letters swapped
+  (TT-6-AS for TT-6-SA), which the "different spelling" wording in the table prompt invited it to excuse, and one
+  terminal minimum airflow in a 14 terminal section.
+- 2026-11-26, Claude Sonnet 5.5 on all dev pairs, prompt v2-p1: recall 1.000 (84 of 84), wrong 24 of 108 (rate
+  0.222), FAIL, $3.5421. 16 wrong comments were entries whose own reason says the paragraph matches ("55 °F converts
+  to 12.8 °C, so this matches"); 8 were table verdicts that judged a different column of the row than the one code
+  flagged (a correct unit range called wrong because the same row carried a planted device tag error).
+- Prompt v2-p2 (spec_review.py), from those dev results only: (1) every sequence section check now carries the
+  whole specification (all sections and the points schedule) as a reference block before the section, sent to
+  Claude as its own cached block and to gemma3:4b as the same text, with quotes still limited to the section; (2)
+  the sequence prompt says to read a general specification phrase against the system the specification describes;
+  (3) each sequence issue carries submittal_meets_spec, and code drops every entry the model marks true, for every
+  engine; (4) the table prompt says point names, device tags and DDC hardware identifiers must match character for
+  character (the P3-C1 exact key policy) and drops "different spelling" from the not_an_error examples; (5) the
+  table prompt says to judge only the field code flagged. No test set file, label, threshold or scoring rule changed.

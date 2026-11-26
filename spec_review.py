@@ -48,7 +48,7 @@ from pydantic import BaseModel, Field
 import submittal_review as sr
 
 VERSION = "2.0.0"
-PROMPT_VERSION_V2 = "v2-p1"
+PROMPT_VERSION_V2 = "v2-p2"
 HERE = Path(__file__).resolve().parent
 V2_DIR = HERE / "validation" / "v2"
 INPUT_FILES = ("spec.txt", "submittal_sequence.txt", "submittal_points.csv", "drawing_list.csv")
@@ -257,9 +257,9 @@ Verdicts
   is missing or has a different level, limit or delay; the points list and the drawing list name different
   devices or different DDC hardware for the same point.
 - not_an_error: both documents say the same thing in a different form, or the difference does not change what is
-  built. For example different spelling, capital letters, spacing, symbols or abbreviations; an equivalent
-  naming convention; a value stated in other units that converts to the specified value within rounding; a
-  drawing list device marked as needing no BAS connection.
+  built. For example a different unit symbol, unit spelling or abbreviation, range format or wording; an
+  equivalent naming convention for point types; a value stated in other units that converts to the specified
+  value within rounding; a drawing list device marked as needing no BAS connection.
 - unresolved: the CONTEXT does not contain what you need to decide.
 
 """ + FACTS + """- AI analog input, AO analog output, BI binary input, BO binary output. Some vendors write DI and DO for
@@ -267,6 +267,10 @@ Verdicts
 
 Rules
 - Use only the CONTEXT section. The FINDING section is what code found; never quote it.
+- Point names, device tags and DDC hardware identifiers must match character for character, ignoring only spaces
+  and letter case. Any other difference in one of them is a real_error.
+- Judge only the field named in the FINDING. A difference in another column of the same row is checked on its
+  own and is not a reason for this verdict.
 - supporting_quote: copy ONE whole line exactly as it appears in the CONTEXT. For real_error quote the submittal
   line that is wrong, or the specification line that is not met when the submittal has no line. For not_an_error
   quote the submittal line that meets the specification. For unresolved write "".
@@ -299,12 +303,18 @@ These are not issues
 Rules
 - Use only the text you are given. Read every paragraph of both sections; an error can be anywhere, and one
   section can hold more than one.
+- The SPECIFICATION REFERENCE shows the whole system. Read the section against it: a submittal that names the
+  specific equipment, stages or cases of this system that a general specification phrase covers meets the
+  specification. Quote only from the SPECIFICATION SECTION and the SUBMITTAL SECTION.
 - submittal_quote: copy the words of ONE submittal paragraph exactly, from the SUBMITTAL SECTION. Write "" only
   when the submittal has no paragraph for the requirement at all.
 - spec_quote: copy the words of ONE specification paragraph exactly, from the SPECIFICATION SECTION.
 - reason: one sentence. Never approve or reject the submittal and never ask for a resubmittal.
+- List only deviations. Never add an entry to say that a paragraph or a converted value matches.
+- submittal_meets_spec: false for a real deviation. If your check of an entry finds that the submittal does meet
+  the specification, set it true; code drops every entry marked true.
 - If the section meets the specification, reply with an empty list.
-Reply with JSON only: {"issues": [{"error_type": "...", "submittal_quote": "...", "spec_quote": "...", "reason": "..."}]}
+Reply with JSON only: {"issues": [{"error_type": "...", "submittal_quote": "...", "spec_quote": "...", "reason": "...", "submittal_meets_spec": false}]}
 """
 
 TableVerdict = Literal["real_error", "not_an_error", "unresolved"]
@@ -321,6 +331,7 @@ class ProseIssue(BaseModel):
     submittal_quote: str = ""
     spec_quote: str = Field(min_length=1)
     reason: str = Field(min_length=1)
+    submittal_meets_spec: bool = False  # v2-p2: an entry the model itself found compliant is dropped by code
 
 
 class ProseReply(BaseModel):
@@ -334,8 +345,9 @@ TABLE_SCHEMA = {"type": "object", "properties": {
 PROSE_SCHEMA = {"type": "object", "properties": {"issues": {"type": "array", "items": {
     "type": "object", "properties": {
         "error_type": {"type": "string", "enum": list(PROSE_TYPES)},
-        "submittal_quote": {"type": "string"}, "spec_quote": {"type": "string"}, "reason": {"type": "string"}},
-    "required": ["error_type", "submittal_quote", "spec_quote", "reason"]}}}, "required": ["issues"]}
+        "submittal_quote": {"type": "string"}, "spec_quote": {"type": "string"}, "reason": {"type": "string"},
+        "submittal_meets_spec": {"type": "boolean"}},
+    "required": ["error_type", "submittal_quote", "spec_quote", "reason", "submittal_meets_spec"]}}}, "required": ["issues"]}
 
 
 def table_user(c: Candidate) -> str:
@@ -343,13 +355,22 @@ def table_user(c: Candidate) -> str:
             + "\n".join(c.context_lines) + "\n")
 
 
+def spec_reference(pkg: Package) -> str:
+    """v2-p2: the whole specification for the system, the same for every section of a package (cached per package)."""
+    out = ["SPECIFICATION REFERENCE (the whole specification for this system, for context; quote only from the",
+           "SPECIFICATION SECTION and the SUBMITTAL SECTION further below)", "GENERAL REQUIREMENTS"] + pkg.general
+    for num, sec in pkg.spec_sections.items():
+        out += [f"SECTION {num} {sec.title}"] + list(sec.paras.values())
+    out += ["POINTS SCHEDULE", pkg.spec_points_header] + [line for _, line in pkg.spec_points.values()]
+    return "\n".join(out) + "\n\n"
+
+
 def prose_user(pkg: Package, num: str) -> tuple[str, list[str], list[str]]:
     spec = pkg.spec_sections[num]
     sub = pkg.sub_sections.get(num)
     spec_lines = list(spec.paras.values())
     sub_lines = list(sub.paras.values()) if sub else []
-    text = ("SPECIFICATION GENERAL REQUIREMENTS\n" + "\n".join(pkg.general) + "\n\n"
-            f"SPECIFICATION SECTION {num} {spec.title}\n" + "\n".join(spec_lines) + "\n\n"
+    text = (f"SPECIFICATION SECTION {num} {spec.title}\n" + "\n".join(spec_lines) + "\n\n"
             f"SUBMITTAL SECTION {num} {spec.title}\n" + ("\n".join(sub_lines) if sub_lines else
                                                        "(the submittal has no section with this number)") + "\n")
     return text, spec_lines, sub_lines
@@ -405,11 +426,12 @@ def check_prose_issue(issue: ProseIssue, spec_lines: list[str], sub_lines: list[
 # ---------------------------------------------------------------------------
 # V5 model check and the whole run
 # ---------------------------------------------------------------------------
-def _call(engine, system: str, user: str, schema: dict, tag: str) -> tuple[Optional[str], Optional[str], float, dict]:
+def _call(engine, system: str, user: str, schema: dict, tag: str,
+          prefix: Optional[str] = None) -> tuple[Optional[str], Optional[str], float, dict]:
     started = time.monotonic()
     engine.context = tag
     try:
-        raw = engine.generate(system, user, schema, tag=tag)
+        raw = engine.generate(system, user, schema, tag=tag, **({"prefix": prefix} if prefix else {}))
         problem = None
     except Exception as exc:  # timeout, connection error, refusal, cut-off reply: a failed attempt, never a stop
         from engines import BudgetExceeded
@@ -443,15 +465,16 @@ def check_candidate(engine, c: Candidate, attempts: int, tag: str, log: list) ->
 
 def check_section(engine, pkg: Package, num: str, attempts: int, tag: str, log: list) -> dict:
     user, spec_lines, sub_lines = prose_user(pkg, num)
+    prefix = spec_reference(pkg)
     failures, kept, bad, done = [], [], [], 0
     for attempt in range(1, attempts + 1):
         done = attempt
-        raw, problem, secs, usage = _call(engine, PROSE_SYSTEM, user, PROSE_SCHEMA, f"{tag}/S{num}")
+        raw, problem, secs, usage = _call(engine, PROSE_SYSTEM, user, PROSE_SCHEMA, f"{tag}/S{num}", prefix=prefix)
         kept, bad = [], []
         if problem is None:
             try:
                 reply = ProseReply.model_validate_json(raw)
-                for issue in reply.issues:
+                for issue in [i for i in reply.issues if not i.submittal_meets_spec]:  # v2-p2: compliant entries dropped
                     p, sub_para, spec_para = check_prose_issue(issue, spec_lines, sub_lines)
                     (bad if p else kept).append((issue, p, sub_para, spec_para))
                 if bad:
@@ -459,7 +482,7 @@ def check_section(engine, pkg: Package, num: str, attempts: int, tag: str, log: 
             except Exception as exc:
                 problem = f"{type(exc).__name__}: {str(exc)[:200]}"
         log.append({"item": f"S{num}", "kind": "prose", "attempt": attempt, "seconds": round(secs, 3), "system": "PROSE_SYSTEM",
-                    "user": user, "reply": raw, "problem": problem, "usage": usage})
+                    "prefix_sha256": hashlib.sha256(prefix.encode("utf-8")).hexdigest(), "user": user, "reply": raw, "problem": problem, "usage": usage})
         if problem is None:
             break
         failures.append(f"attempt {attempt}: {problem}")

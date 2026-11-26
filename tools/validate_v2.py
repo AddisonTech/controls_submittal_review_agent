@@ -103,6 +103,7 @@ def _labels(folder: Path) -> dict:
 def run(engine_name: str, cases: list[tuple[str, Path]], split: str, workers: int, note: str, holdout_final: bool,
         ollama_url: str, config: sr.ReviewConfig, rules_only: bool = False) -> dict:
     stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    commit = _git()  # the code this run starts with
     label = f"{split}_{'rules-only' if rules_only else engine_name.replace(':', '-')}_{stamp}"
     guard = en.SpendGuard()
     spent0 = guard.spent()
@@ -166,7 +167,7 @@ def run(engine_name: str, cases: list[tuple[str, Path]], split: str, workers: in
     out = {"label": label, "split": split, "engine": "rules-only" if rules_only else engine_name,
            "model": en.CLAUDE_MODELS.get(engine_name, config.model_name) if not rules_only else "none",
            "effort": en.CLAUDE_EFFORT if engine_name in en.CLAUDE_MODELS and not rules_only else None,
-           "prompt_version": srv.PROMPT_VERSION_V2, "agent_version": srv.VERSION, "git_commit": _git(),
+           "prompt_version": srv.PROMPT_VERSION_V2, "agent_version": srv.VERSION, "git_commit": commit,
            "scorer_sha256": sha256(SCORER), "note": note, "holdout_final": holdout_final,
            "cases_requested": [c for c, _ in cases], "cases_scored": [c for c, _ in done], "aborted": aborted,
            "documents": len(docs), "wall_seconds": round(time.monotonic() - started, 1),

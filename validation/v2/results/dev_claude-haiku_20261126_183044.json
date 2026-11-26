@@ -1,0 +1,1659 @@
+{
+  "label": "dev_claude-haiku_20261126_183044",
+  "split": "dev",
+  "engine": "claude-haiku",
+  "model": "claude-haiku-5-5",
+  "effort": "medium",
+  "prompt_version": "v2-p1",
+  "agent_version": "2.0.0",
+  "git_commit": "8e45679",
+  "scorer_sha256": "6dd9976119a30dd1fe4e59bf7a15444ec0dcb8d76524fe4ca6945611196e55c3",
+  "note": "cost check, first 5 dev pairs",
+  "holdout_final": false,
+  "cases_requested": [
+    "v2c01_ahu_mz",
+    "v2c02_vav_rh",
+    "v2c03_fcu",
+    "v2c05_hw_plant",
+    "v2c06_ahu_sz"
+  ],
+  "cases_scored": [
+    "v2c01_ahu_mz",
+    "v2c02_vav_rh",
+    "v2c03_fcu",
+    "v2c05_hw_plant",
+    "v2c06_ahu_sz"
+  ],
+  "aborted": null,
+  "documents": 10,
+  "wall_seconds": 85.9,
+  "seconds_per_document": 15.96,
+  "spend_usd": 0.021464,
+  "cost_per_document_usd": 0.002146,
+  "total_spend_after_usd": 0.021464,
+  "model_calls": 130,
+  "failed_attempts": 0,
+  "unresolved": 0,
+  "score": {
+    "totals": {
+      "planted": 11,
+      "caught": 11,
+      "wrong": 5,
+      "duplicates": 0,
+      "wrong_on_clean": 2,
+      "wrong_on_seeded": 3,
+      "comments_made": 16,
+      "recall": 1.0,
+      "wrong_rate": 0.3125,
+      "passes": false
+    },
+    "per_type": {
+      "point_missing": {
+        "planted": 1,
+        "caught": 1,
+        "wrong": 0,
+        "recall": 1.0
+      },
+      "wrong_point_type": {
+        "planted": 2,
+        "caught": 2,
+        "wrong": 0,
+        "recall": 1.0
+      },
+      "sequence_contradiction": {
+        "planted": 2,
+        "caught": 2,
+        "wrong": 3,
+        "recall": 1.0
+      },
+      "setpoint_out_of_spec": {
+        "planted": 2,
+        "caught": 2,
+        "wrong": 0,
+        "recall": 1.0
+      },
+      "alarm_wrong_or_missing": {
+        "planted": 2,
+        "caught": 2,
+        "wrong": 0,
+        "recall": 1.0
+      },
+      "interlock_missing": {
+        "planted": 0,
+        "caught": 0,
+        "wrong": 2,
+        "recall": null
+      },
+      "unit_scaling_mismatch": {
+        "planted": 1,
+        "caught": 1,
+        "wrong": 0,
+        "recall": 1.0
+      },
+      "device_tag_mismatch": {
+        "planted": 1,
+        "caught": 1,
+        "wrong": 0,
+        "recall": 1.0
+      },
+      "ddc_hardware_mismatch": {
+        "planted": 0,
+        "caught": 0,
+        "wrong": 0,
+        "recall": null
+      }
+    },
+    "per_hard": {
+      "lookalikes_nearby": {
+        "planted": 11,
+        "caught": 11,
+        "wrong": 0,
+        "recall": 1.0
+      },
+      "long_document": {
+        "planted": 3,
+        "caught": 3,
+        "wrong": 0,
+        "recall": 1.0
+      }
+    },
+    "misses": [],
+    "wrong_comments": [
+      {
+        "case": "v2c01_ahu_mz",
+        "twin": "seeded",
+        "comment_id": "P:3.3:3.3.2:3.3.2",
+        "source": "prose",
+        "rule": "P1",
+        "error_type": "interlock_missing",
+        "section": "3.3",
+        "sub_para": "3.3.2",
+        "spec_para": "3.3.2",
+        "submittal_quote": "3.3.2 Economizer operation is disabled during freeze protection stage 2 and stage 3.",
+        "spec_quote": "3.3.2 The economizer shall be disabled whenever freeze protection stage 2 or higher is active.",
+        "reason": "The submittal limits the economizer disable to stages 2 and 3, omitting stage 4 and higher, which weakens the freeze protection interlock the specification requires."
+      },
+      {
+        "case": "v2c01_ahu_mz",
+        "twin": "clean",
+        "comment_id": "P:3.3:3.3.2:3.3.2",
+        "source": "prose",
+        "rule": "P1",
+        "error_type": "interlock_missing",
+        "section": "3.3",
+        "sub_para": "3.3.2",
+        "spec_para": "3.3.2",
+        "submittal_quote": "3.3.2 Economizer operation is disabled during freeze protection stage 2 and stage 3.",
+        "spec_quote": "3.3.2 The economizer shall be disabled whenever freeze protection stage 2 or higher is active.",
+        "reason": "The submittal limits the economizer lockout to stages 2 and 3, leaving out stage 4 and higher, which weakens the required freeze protection interlock."
+      },
+      {
+        "case": "v2c06_ahu_sz",
+        "twin": "seeded",
+        "comment_id": "P:3.3:3.3.3:3.3.3",
+        "source": "prose",
+        "rule": "P1",
+        "error_type": "sequence_contradiction",
+        "section": "3.3",
+        "sub_para": "3.3.3",
+        "spec_para": "3.3.3",
+        "submittal_quote": "The chilled water valve is allowed to open only when outdoor air is warmer than 55 \u00b0F.",
+        "spec_quote": "Mechanical cooling shall be enabled only when the outdoor air temperature is above 55 \u00b0F.",
+        "reason": "The submittal limits the outdoor air lockout to the chilled water valve, while the specification applies it to all mechanical cooling, so other mechanical cooling would not be covered."
+      },
+      {
+        "case": "v2c06_ahu_sz",
+        "twin": "seeded",
+        "comment_id": "P:3.5:3.5.4:3.5.4",
+        "source": "prose",
+        "rule": "P1",
+        "error_type": "sequence_contradiction",
+        "section": "3.5",
+        "sub_para": "3.5.4",
+        "spec_para": "3.5.4",
+        "submittal_quote": "3.5.4 The heating and chilled water valves stay closed until the supply fan is proven on.",
+        "spec_quote": "3.5.4 Heating and cooling shall be disabled until the supply fan is proven on.",
+        "reason": "The submittal only keeps the heating and chilled water valves closed, whereas the specification requires heating and cooling to be disabled until the fan is proven on."
+      },
+      {
+        "case": "v2c06_ahu_sz",
+        "twin": "clean",
+        "comment_id": "P:3.5:3.5.4:3.5.4",
+        "source": "prose",
+        "rule": "P1",
+        "error_type": "sequence_contradiction",
+        "section": "3.5",
+        "sub_para": "3.5.4",
+        "spec_para": "3.5.4",
+        "submittal_quote": "The heating and chilled water valves stay closed until the supply fan is proven on.",
+        "spec_quote": "Heating and cooling shall be disabled until the supply fan is proven on.",
+        "reason": "The submittal limits the fan-proof interlock to the heating and chilled water valves, while the specification requires all heating and cooling to be disabled until the supply fan is proven on."
+      }
+    ],
+    "bar": {
+      "recall_at_least": 0.9,
+      "wrong_rate_at_most": 0.05
+    }
+  },
+  "rules_only_baseline": {
+    "planted": 11,
+    "caught": 6,
+    "wrong": 76,
+    "duplicates": 0,
+    "wrong_on_clean": 39,
+    "wrong_on_seeded": 37,
+    "comments_made": 82,
+    "recall": 0.5455,
+    "wrong_rate": 0.9268,
+    "passes": false
+  },
+  "per_case": {
+    "v2c01_ahu_mz": {
+      "seeded": {
+        "comments": [
+          {
+            "comment_id": "T2:AHU-1-SF-S:io_type",
+            "source": "table",
+            "rule": "T2",
+            "error_type": "wrong_point_type",
+            "anchor": [
+              "points",
+              "AHU-1-SF-S",
+              "io_type"
+            ],
+            "summary": "AHU-1-SF-S io_type: specification 'BI', submittal 'AI'",
+            "quote": "AHU-1-SF-S,Supply fan status,DDC-AHU1-1,AI,-,Off/On,,Level 2: status differs from command for 15 s,VFD-1-SF",
+            "reason": "The specification requires supply fan status AHU-1-SF-S to be a binary input (BI), but the submittal lists it as an analog input (AI), which is a different point type.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "P:3.1:3.1.3:3.1.3",
+            "source": "prose",
+            "rule": "P1",
+            "error_type": "setpoint_out_of_spec",
+            "section": "3.1",
+            "sub_para": "3.1.3",
+            "spec_para": "3.1.3",
+            "submittal_quote": "Trim and respond logic resets the duct static pressure setpoint between a minimum of 0.15 in. w.c. and a maximum of 2.2 in. w.c., with an initial value of 1 in. w.c..",
+            "spec_quote": "The duct static pressure setpoint shall be reset by trim and respond logic between 0.15 in. w.c. and 1.2 in. w.c., starting from 1 in. w.c..",
+            "reason": "The submittal sets the maximum setpoint limit at 2.2 in. w.c. instead of the specified 1.2 in. w.c."
+          },
+          {
+            "comment_id": "P:3.3:3.3.2:3.3.2",
+            "source": "prose",
+            "rule": "P1",
+            "error_type": "interlock_missing",
+            "section": "3.3",
+            "sub_para": "3.3.2",
+            "spec_para": "3.3.2",
+            "submittal_quote": "3.3.2 Economizer operation is disabled during freeze protection stage 2 and stage 3.",
+            "spec_quote": "3.3.2 The economizer shall be disabled whenever freeze protection stage 2 or higher is active.",
+            "reason": "The submittal limits the economizer disable to stages 2 and 3, omitting stage 4 and higher, which weakens the freeze protection interlock the specification requires."
+          }
+        ],
+        "dismissed": [
+          {
+            "comment_id": "T5:GA-1-FLT:connected_points",
+            "source": "table",
+            "rule": "T5",
+            "error_type": "device_tag_mismatch",
+            "anchor": [
+              "drawing",
+              "GA-1-FLT",
+              "connected_points"
+            ],
+            "summary": "drawing list device GA-1-FLT connects to 'none (local gauge, no BAS connection)', which is not a points list row",
+            "quote": "GA-1-FLT,\"Filter differential pressure gauge, local\",-,M-501,\"none (local gauge, no BAS connection)\"",
+            "reason": "The drawing list marks GA-1-FLT as a local gauge with no BAS connection, so it correctly has no row in the points list and does not change what is built.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T5:TI-1-MA:connected_points",
+            "source": "table",
+            "rule": "T5",
+            "error_type": "device_tag_mismatch",
+            "anchor": [
+              "drawing",
+              "TI-1-MA",
+              "connected_points"
+            ],
+            "summary": "drawing list device TI-1-MA connects to 'none (local indicator, no BAS connection)', which is not a points list row",
+            "quote": "TI-1-MA,\"Mixed air dial thermometer, local\",-,M-501,\"none (local indicator, no BAS connection)\"",
+            "reason": "The drawing list marks TI-1-MA as a local dial thermometer with no BAS connection, so it correctly has no row in the points list and nothing in the build is changed.",
+            "attempts": 1
+          }
+        ],
+        "unresolved": [],
+        "seconds": 14.81,
+        "cost_usd": 0.003893
+      },
+      "clean": {
+        "comments": [
+          {
+            "comment_id": "P:3.3:3.3.2:3.3.2",
+            "source": "prose",
+            "rule": "P1",
+            "error_type": "interlock_missing",
+            "section": "3.3",
+            "sub_para": "3.3.2",
+            "spec_para": "3.3.2",
+            "submittal_quote": "3.3.2 Economizer operation is disabled during freeze protection stage 2 and stage 3.",
+            "spec_quote": "3.3.2 The economizer shall be disabled whenever freeze protection stage 2 or higher is active.",
+            "reason": "The submittal limits the economizer lockout to stages 2 and 3, leaving out stage 4 and higher, which weakens the required freeze protection interlock."
+          }
+        ],
+        "dismissed": [
+          {
+            "comment_id": "T5:GA-1-FLT:connected_points",
+            "source": "table",
+            "rule": "T5",
+            "error_type": "device_tag_mismatch",
+            "anchor": [
+              "drawing",
+              "GA-1-FLT",
+              "connected_points"
+            ],
+            "summary": "drawing list device GA-1-FLT connects to 'none (local gauge, no BAS connection)', which is not a points list row",
+            "quote": "GA-1-FLT,\"Filter differential pressure gauge, local\",-,M-501,\"none (local gauge, no BAS connection)\"",
+            "reason": "The drawing list marks GA-1-FLT as a local gauge with no BAS connection, so it correctly has no points list row and does not change what is built.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T5:TI-1-MA:connected_points",
+            "source": "table",
+            "rule": "T5",
+            "error_type": "device_tag_mismatch",
+            "anchor": [
+              "drawing",
+              "TI-1-MA",
+              "connected_points"
+            ],
+            "summary": "drawing list device TI-1-MA connects to 'none (local indicator, no BAS connection)', which is not a points list row",
+            "quote": "TI-1-MA,\"Mixed air dial thermometer, local\",-,M-501,\"none (local indicator, no BAS connection)\"",
+            "reason": "The drawing list marks TI-1-MA as a local dial thermometer with no BAS connection, so it correctly has no points list row and does not change what is built.",
+            "attempts": 1
+          }
+        ],
+        "unresolved": [],
+        "seconds": 14.8,
+        "cost_usd": 0.003807
+      }
+    },
+    "v2c02_vav_rh": {
+      "seeded": {
+        "comments": [
+          {
+            "comment_id": "T2:VAV-206-DMP:io_type",
+            "source": "table",
+            "rule": "T2",
+            "error_type": "wrong_point_type",
+            "anchor": [
+              "points",
+              "VAV-206-DMP",
+              "io_type"
+            ],
+            "summary": "VAV-206-DMP io_type: specification 'AO', submittal 'BO'",
+            "quote": "VAV-206-DMP,Damper command,DDC-VAV206,BO,%,0 to 100,,,DA-206",
+            "reason": "The specification requires the damper command VAV-206-DMP to be an analog output (AO), but the submittal lists it as a binary output (BO), which is a different point type that would drive the damper incorrectly.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T5:VAV-203-FLOW:device_tag",
+            "source": "table",
+            "rule": "T5",
+            "error_type": "device_tag_mismatch",
+            "anchor": [
+              "points",
+              "VAV-203-FLOW",
+              "device_tag"
+            ],
+            "summary": "VAV-203-FLOW: points list device FS-208, drawing list device FS-203",
+            "quote": "VAV-203-FLOW,Discharge airflow,DDC-VAV203,AI,cfm,0 to 1200,,\"L3 low alarm under 70% of setpoint, 5 min delay\",FS-208",
+            "reason": "The submittal points list assigns VAV-203-FLOW to device FS-208, but the drawing list shows that point connected to FS-203 on DDC-VAV203, while FS-208 is connected to VAV-208-FLOW on a different DDC unit.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "P:3.2:3.2.6:3.2.6",
+            "source": "prose",
+            "rule": "P1",
+            "error_type": "setpoint_out_of_spec",
+            "section": "3.2",
+            "sub_para": "3.2.6",
+            "spec_para": "3.2.6",
+            "submittal_quote": "3.2.6 VAV-205 is scheduled for 400 cfm cooling maximum, 50 cfm minimum and 200 cfm heating maximum.",
+            "spec_quote": "3.2.6 Terminal VAV-205 shall have a maximum cooling airflow of 400 cfm, a minimum airflow of 120 cfm and a maximum heating airflow of 200 cfm.",
+            "reason": "The submittal gives a minimum airflow of 50 cfm for VAV-205, while the specification requires 120 cfm."
+          }
+        ],
+        "dismissed": [
+          {
+            "comment_id": "T4:VAV-201-FLOW:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "VAV-201-FLOW",
+              "alarm"
+            ],
+            "summary": "VAV-201-FLOW alarm: specification 'Level 3: below 70 percent of setpoint for 5 min', submittal 'L3 low alarm under 70% of setpoint, 5 min delay'",
+            "quote": "VAV-201-FLOW,Discharge airflow,DDC-VAV201,AI,cfm,0 to 800,,\"L3 low alarm under 70% of setpoint, 5 min delay\",FS-201",
+            "reason": "The submittal's alarm wording 'L3 low alarm under 70% of setpoint, 5 min delay' is a different written form of the specified Level 3 alarm below 70 percent of setpoint for 5 minutes, with the same level, limit and delay.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:VAV-201-DAT:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "VAV-201-DAT",
+              "alarm"
+            ],
+            "summary": "VAV-201-DAT alarm: specification 'Level 3: below 55 degF for 10 min', submittal 'L3 low alarm at 55 degF, 10 min delay'",
+            "quote": "VAV-201-DAT,Discharge air temperature,DDC-VAV201,AI,degF,40 to 140,,\"L3 low alarm at 55 degF, 10 min delay\",TT-201-DA",
+            "reason": "The submittal's 'L3 low alarm at 55 degF, 10 min delay' is the same Level 3, below 55 degF, 10 minute alarm as the specification, just written in different words.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:VAV-202-FLOW:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "VAV-202-FLOW",
+              "alarm"
+            ],
+            "summary": "VAV-202-FLOW alarm: specification 'Level 3: below 70 percent of setpoint for 5 min', submittal 'L3 low alarm under 70% of setpoint, 5 min delay'",
+            "quote": "VAV-202-FLOW,Discharge airflow,DDC-VAV202,AI,cfm,0 to 1000,,\"L3 low alarm under 70% of setpoint, 5 min delay\",FS-202",
+            "reason": "The submittal's Level 3 alarm for below 70% of setpoint with a 5 minute delay is the same requirement as the specification's Level 3 alarm, just written in different words.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:VAV-202-DAT:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "VAV-202-DAT",
+              "alarm"
+            ],
+            "summary": "VAV-202-DAT alarm: specification 'Level 3: below 55 degF for 10 min', submittal 'L3 low alarm at 55 degF, 10 min delay'",
+            "quote": "VAV-202-DAT,Discharge air temperature,DDC-VAV202,AI,degF,40 to 140,,\"L3 low alarm at 55 degF, 10 min delay\",TT-202-DA",
+            "reason": "The submittal's Level 3 low alarm at 55 degF with a 10 min delay is the same alarm as the specification's Level 3 below 55 degF for 10 min, just written in different words.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:VAV-203-FLOW:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "VAV-203-FLOW",
+              "alarm"
+            ],
+            "summary": "VAV-203-FLOW alarm: specification 'Level 3: below 70 percent of setpoint for 5 min', submittal 'L3 low alarm under 70% of setpoint, 5 min delay'",
+            "quote": "VAV-203-FLOW,Discharge airflow,DDC-VAV203,AI,cfm,0 to 1200,,\"L3 low alarm under 70% of setpoint, 5 min delay\",FS-208",
+            "reason": "The submittal describes the same Level 3 alarm, triggered below 70 percent of setpoint after a 5 minute delay, just written in abbreviated form.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:VAV-203-DAT:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "VAV-203-DAT",
+              "alarm"
+            ],
+            "summary": "VAV-203-DAT alarm: specification 'Level 3: below 55 degF for 10 min', submittal 'L3 low alarm at 55 degF, 10 min delay'",
+            "quote": "VAV-203-DAT,Discharge air temperature,DDC-VAV203,AI,degF,40 to 140,,\"L3 low alarm at 55 degF, 10 min delay\",TT-203-DA",
+            "reason": "The submittal's 'L3 low alarm at 55 degF, 10 min delay' states the same Level 3 low alarm at 55 degF for 10 minutes as the specification, just written in a different form.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:VAV-204-FLOW:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "VAV-204-FLOW",
+              "alarm"
+            ],
+            "summary": "VAV-204-FLOW alarm: specification 'Level 3: below 70 percent of setpoint for 5 min', submittal 'L3 low alarm under 70% of setpoint, 5 min delay'",
+            "quote": "VAV-204-FLOW,Discharge airflow,DDC-VAV204,AI,cfm,0 to 1400,,\"L3 low alarm under 70% of setpoint, 5 min delay\",FS-204",
+            "reason": "The submittal's Level 3 low alarm under 70% of setpoint with a 5 minute delay is the same requirement as the specification's Level 3 alarm below 70 percent of setpoint for 5 minutes, just written in abbreviated form.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:VAV-204-DAT:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "VAV-204-DAT",
+              "alarm"
+            ],
+            "summary": "VAV-204-DAT alarm: specification 'Level 3: below 55 degF for 10 min', submittal 'L3 low alarm at 55 degF, 10 min delay'",
+            "quote": "VAV-204-DAT,Discharge air temperature,DDC-VAV204,AI,degF,40 to 140,,\"L3 low alarm at 55 degF, 10 min delay\",TT-204-DA",
+            "reason": "The submittal's 'L3 low alarm at 55 degF, 10 min delay' is the same Level 3, below 55 degF, 10 minute alarm as the specification, just written in abbreviated form.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:VAV-205-FLOW:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "VAV-205-FLOW",
+              "alarm"
+            ],
+            "summary": "VAV-205-FLOW alarm: specification 'Level 3: below 70 percent of setpoint for 5 min', submittal 'L3 low alarm under 70% of setpoint, 5 min delay'",
+            "quote": "VAV-205-FLOW,Discharge airflow,DDC-VAV205,AI,cfm,0 to 700,,\"L3 low alarm under 70% of setpoint, 5 min delay\",FS-205",
+            "reason": "The submittal's Level 3 low alarm under 70% of setpoint with a 5 min delay is the same alarm as the specification's Level 3 below 70 percent of setpoint for 5 min, just written in different words.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:VAV-205-DAT:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "VAV-205-DAT",
+              "alarm"
+            ],
+            "summary": "VAV-205-DAT alarm: specification 'Level 3: below 55 degF for 10 min', submittal 'L3 low alarm at 55 degF, 10 min delay'",
+            "quote": "VAV-205-DAT,Discharge air temperature,DDC-VAV205,AI,degF,40 to 140,,\"L3 low alarm at 55 degF, 10 min delay\",TT-205-DA",
+            "reason": "The submittal's Level 3 low alarm at 55 degF with a 10 min delay states the same alarm condition as the specification's Level 3 below 55 degF for 10 min, just worded differently.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:VAV-206-FLOW:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "VAV-206-FLOW",
+              "alarm"
+            ],
+            "summary": "VAV-206-FLOW alarm: specification 'Level 3: below 70 percent of setpoint for 5 min', submittal 'L3 low alarm under 70% of setpoint, 5 min delay'",
+            "quote": "VAV-206-FLOW,Discharge airflow,DDC-VAV206,AI,cfm,0 to 900,,\"L3 low alarm under 70% of setpoint, 5 min delay\",FS-206",
+            "reason": "The submittal's Level 3 low alarm under 70% of setpoint with a 5 min delay is the same condition as the specification's Level 3 alarm below 70 percent of setpoint for 5 min, written in different words.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:VAV-206-DAT:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "VAV-206-DAT",
+              "alarm"
+            ],
+            "summary": "VAV-206-DAT alarm: specification 'Level 3: below 55 degF for 10 min', submittal 'L3 low alarm at 55 degF, 10 min delay'",
+            "quote": "VAV-206-DAT,Discharge air temperature,DDC-VAV206,AI,degF,40 to 140,,\"L3 low alarm at 55 degF, 10 min delay\",TT-206-DA",
+            "reason": "The submittal's Level 3 low alarm at 55 degF with a 10 min delay states the same alarm condition as the specification's Level 3 below 55 degF for 10 min, just worded differently.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:VAV-207-FLOW:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "VAV-207-FLOW",
+              "alarm"
+            ],
+            "summary": "VAV-207-FLOW alarm: specification 'Level 3: below 70 percent of setpoint for 5 min', submittal 'L3 low alarm under 70% of setpoint, 5 min delay'",
+            "quote": "VAV-207-FLOW,Discharge airflow,DDC-VAV207,AI,cfm,0 to 1100,,\"L3 low alarm under 70% of setpoint, 5 min delay\",FS-207",
+            "reason": "The submittal's 'L3 low alarm under 70% of setpoint, 5 min delay' is the same Level 3, 70 percent of setpoint, 5 minute alarm as the specification, just written in abbreviated form.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:VAV-207-DAT:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "VAV-207-DAT",
+              "alarm"
+            ],
+            "summary": "VAV-207-DAT alarm: specification 'Level 3: below 55 degF for 10 min', submittal 'L3 low alarm at 55 degF, 10 min delay'",
+            "quote": "VAV-207-DAT,Discharge air temperature,DDC-VAV207,AI,degF,40 to 140,,\"L3 low alarm at 55 degF, 10 min delay\",TT-207-DA",
+            "reason": "The submittal's L3 low alarm at 55 degF with a 10 min delay is the same requirement as the specified Level 3 alarm below 55 degF for 10 min, only written in different words.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:VAV-208-FLOW:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "VAV-208-FLOW",
+              "alarm"
+            ],
+            "summary": "VAV-208-FLOW alarm: specification 'Level 3: below 70 percent of setpoint for 5 min', submittal 'L3 low alarm under 70% of setpoint, 5 min delay'",
+            "quote": "VAV-208-FLOW,Discharge airflow,DDC-VAV208,AI,cfm,0 to 1300,,\"L3 low alarm under 70% of setpoint, 5 min delay\",FS-208",
+            "reason": "The submittal's Level 3 low alarm under 70% of setpoint with a 5 min delay is the same requirement as the specification's Level 3 alarm below 70 percent of setpoint for 5 min, just written in different words.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:VAV-208-DAT:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "VAV-208-DAT",
+              "alarm"
+            ],
+            "summary": "VAV-208-DAT alarm: specification 'Level 3: below 55 degF for 10 min', submittal 'L3 low alarm at 55 degF, 10 min delay'",
+            "quote": "VAV-208-DAT,Discharge air temperature,DDC-VAV208,AI,degF,40 to 140,,\"L3 low alarm at 55 degF, 10 min delay\",TT-208-DA",
+            "reason": "The submittal's Level 3 low alarm at 55 degF with a 10 minute delay is the same alarm as the specification's Level 3 below 55 degF for 10 min, just worded differently.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T5:BD-201:connected_points",
+            "source": "table",
+            "rule": "T5",
+            "error_type": "device_tag_mismatch",
+            "anchor": [
+              "drawing",
+              "BD-201",
+              "connected_points"
+            ],
+            "summary": "drawing list device BD-201 connects to 'none (manual device, no BAS connection)', which is not a points list row",
+            "quote": "BD-201,\"Manual balancing damper, branch duct\",-,M-601,\"none (manual device, no BAS connection)\"",
+            "reason": "The drawing list marks BD-201 as a manual balancing damper with no BAS connection, so it correctly has no points list row and does not change what is built.",
+            "attempts": 1
+          }
+        ],
+        "unresolved": [],
+        "seconds": 25.47,
+        "cost_usd": 0.007366
+      },
+      "clean": {
+        "comments": [],
+        "dismissed": [
+          {
+            "comment_id": "T4:VAV-201-FLOW:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "VAV-201-FLOW",
+              "alarm"
+            ],
+            "summary": "VAV-201-FLOW alarm: specification 'Level 3: below 70 percent of setpoint for 5 min', submittal 'L3 low alarm under 70% of setpoint, 5 min delay'",
+            "quote": "VAV-201-FLOW,Discharge airflow,DDC-VAV201,AI,cfm,0 to 800,,\"L3 low alarm under 70% of setpoint, 5 min delay\",FS-201",
+            "reason": "The submittal's 'L3 low alarm under 70% of setpoint, 5 min delay' is the same Level 3, below 70 percent of setpoint, 5 minute alarm as the specification, just written in abbreviated form.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:VAV-201-DAT:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "VAV-201-DAT",
+              "alarm"
+            ],
+            "summary": "VAV-201-DAT alarm: specification 'Level 3: below 55 degF for 10 min', submittal 'L3 low alarm at 55 degF, 10 min delay'",
+            "quote": "VAV-201-DAT,Discharge air temperature,DDC-VAV201,AI,degF,40 to 140,,\"L3 low alarm at 55 degF, 10 min delay\",TT-201-DA",
+            "reason": "The submittal's Level 3 low alarm at 55 degF with a 10 minute delay is the same alarm as the specification's Level 3 alarm below 55 degF for 10 min, just written in different words.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:VAV-202-FLOW:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "VAV-202-FLOW",
+              "alarm"
+            ],
+            "summary": "VAV-202-FLOW alarm: specification 'Level 3: below 70 percent of setpoint for 5 min', submittal 'L3 low alarm under 70% of setpoint, 5 min delay'",
+            "quote": "VAV-202-FLOW,Discharge airflow,DDC-VAV202,AI,cfm,0 to 1000,,\"L3 low alarm under 70% of setpoint, 5 min delay\",FS-202",
+            "reason": "The submittal's Level 3 alarm for low airflow under 70% of setpoint with a 5 minute delay is the same requirement as the specification's Level 3 alarm below 70 percent of setpoint for 5 min, just written in different words.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:VAV-202-DAT:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "VAV-202-DAT",
+              "alarm"
+            ],
+            "summary": "VAV-202-DAT alarm: specification 'Level 3: below 55 degF for 10 min', submittal 'L3 low alarm at 55 degF, 10 min delay'",
+            "quote": "VAV-202-DAT,Discharge air temperature,DDC-VAV202,AI,degF,40 to 140,,\"L3 low alarm at 55 degF, 10 min delay\",TT-202-DA",
+            "reason": "The submittal's Level 3 low alarm at 55 degF with a 10 minute delay is the same alarm as the specified Level 3 below 55 degF for 10 min, only written in a different form.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:VAV-203-FLOW:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "VAV-203-FLOW",
+              "alarm"
+            ],
+            "summary": "VAV-203-FLOW alarm: specification 'Level 3: below 70 percent of setpoint for 5 min', submittal 'L3 low alarm under 70% of setpoint, 5 min delay'",
+            "quote": "VAV-203-FLOW,Discharge airflow,DDC-VAV203,AI,cfm,0 to 1200,,\"L3 low alarm under 70% of setpoint, 5 min delay\",FS-203",
+            "reason": "The submittal's Level 3 low alarm under 70% of setpoint with a 5 min delay is the same alarm the specification requires, only written in abbreviated form.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:VAV-203-DAT:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "VAV-203-DAT",
+              "alarm"
+            ],
+            "summary": "VAV-203-DAT alarm: specification 'Level 3: below 55 degF for 10 min', submittal 'L3 low alarm at 55 degF, 10 min delay'",
+            "quote": "VAV-203-DAT,Discharge air temperature,DDC-VAV203,AI,degF,40 to 140,,\"L3 low alarm at 55 degF, 10 min delay\",TT-203-DA",
+            "reason": "The submittal's 'L3 low alarm at 55 degF, 10 min delay' states the same Level 3 low alarm at 55 degF for 10 minutes as the specification, just written in different words.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:VAV-204-FLOW:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "VAV-204-FLOW",
+              "alarm"
+            ],
+            "summary": "VAV-204-FLOW alarm: specification 'Level 3: below 70 percent of setpoint for 5 min', submittal 'L3 low alarm under 70% of setpoint, 5 min delay'",
+            "quote": "VAV-204-FLOW,Discharge airflow,DDC-VAV204,AI,cfm,0 to 1400,,\"L3 low alarm under 70% of setpoint, 5 min delay\",FS-204",
+            "reason": "The submittal's Level 3 low alarm under 70% of setpoint with a 5 min delay is the same requirement as the specification's Level 3 below 70 percent of setpoint for 5 min, just worded differently.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:VAV-204-DAT:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "VAV-204-DAT",
+              "alarm"
+            ],
+            "summary": "VAV-204-DAT alarm: specification 'Level 3: below 55 degF for 10 min', submittal 'L3 low alarm at 55 degF, 10 min delay'",
+            "quote": "VAV-204-DAT,Discharge air temperature,DDC-VAV204,AI,degF,40 to 140,,\"L3 low alarm at 55 degF, 10 min delay\",TT-204-DA",
+            "reason": "The submittal's Level 3 low alarm at 55 degF with a 10 minute delay is the same alarm as the specification's Level 3 below 55 degF for 10 min, only worded differently.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:VAV-205-FLOW:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "VAV-205-FLOW",
+              "alarm"
+            ],
+            "summary": "VAV-205-FLOW alarm: specification 'Level 3: below 70 percent of setpoint for 5 min', submittal 'L3 low alarm under 70% of setpoint, 5 min delay'",
+            "quote": "VAV-205-FLOW,Discharge airflow,DDC-VAV205,AI,cfm,0 to 700,,\"L3 low alarm under 70% of setpoint, 5 min delay\",FS-205",
+            "reason": "The submittal's Level 3 low alarm under 70% of setpoint with a 5 min delay is the same requirement as the specification's 'Level 3: below 70 percent of setpoint for 5 min', only worded differently.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:VAV-205-DAT:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "VAV-205-DAT",
+              "alarm"
+            ],
+            "summary": "VAV-205-DAT alarm: specification 'Level 3: below 55 degF for 10 min', submittal 'L3 low alarm at 55 degF, 10 min delay'",
+            "quote": "VAV-205-DAT,Discharge air temperature,DDC-VAV205,AI,degF,40 to 140,,\"L3 low alarm at 55 degF, 10 min delay\",TT-205-DA",
+            "reason": "The submittal's 'L3 low alarm at 55 degF, 10 min delay' is the same Level 3 below-55 degF alarm with a 10-minute delay as the specification, only written in different words.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:VAV-206-FLOW:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "VAV-206-FLOW",
+              "alarm"
+            ],
+            "summary": "VAV-206-FLOW alarm: specification 'Level 3: below 70 percent of setpoint for 5 min', submittal 'L3 low alarm under 70% of setpoint, 5 min delay'",
+            "quote": "VAV-206-FLOW,Discharge airflow,DDC-VAV206,AI,cfm,0 to 900,,\"L3 low alarm under 70% of setpoint, 5 min delay\",FS-206",
+            "reason": "The submittal's Level 3 low alarm under 70% of setpoint with a 5 minute delay is the same requirement as the specification's Level 3 alarm below 70 percent of setpoint for 5 min, just written in different words.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:VAV-206-DAT:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "VAV-206-DAT",
+              "alarm"
+            ],
+            "summary": "VAV-206-DAT alarm: specification 'Level 3: below 55 degF for 10 min', submittal 'L3 low alarm at 55 degF, 10 min delay'",
+            "quote": "VAV-206-DAT,Discharge air temperature,DDC-VAV206,AI,degF,40 to 140,,\"L3 low alarm at 55 degF, 10 min delay\",TT-206-DA",
+            "reason": "The submittal's Level 3 low alarm at 55 degF with a 10 min delay states the same alarm as the specification's Level 3 below 55 degF for 10 min, just in different wording.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:VAV-207-FLOW:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "VAV-207-FLOW",
+              "alarm"
+            ],
+            "summary": "VAV-207-FLOW alarm: specification 'Level 3: below 70 percent of setpoint for 5 min', submittal 'L3 low alarm under 70% of setpoint, 5 min delay'",
+            "quote": "VAV-207-FLOW,Discharge airflow,DDC-VAV207,AI,cfm,0 to 1100,,\"L3 low alarm under 70% of setpoint, 5 min delay\",FS-207",
+            "reason": "The submittal's 'L3 low alarm under 70% of setpoint, 5 min delay' is the same Level 3, 70 percent of setpoint, 5 minute alarm as the specification, just written in abbreviated form.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:VAV-207-DAT:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "VAV-207-DAT",
+              "alarm"
+            ],
+            "summary": "VAV-207-DAT alarm: specification 'Level 3: below 55 degF for 10 min', submittal 'L3 low alarm at 55 degF, 10 min delay'",
+            "quote": "VAV-207-DAT,Discharge air temperature,DDC-VAV207,AI,degF,40 to 140,,\"L3 low alarm at 55 degF, 10 min delay\",TT-207-DA",
+            "reason": "The submittal's Level 3 low alarm at 55 degF with a 10 minute delay is the same alarm as the specification's Level 3 below 55 degF for 10 min, just worded differently.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:VAV-208-FLOW:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "VAV-208-FLOW",
+              "alarm"
+            ],
+            "summary": "VAV-208-FLOW alarm: specification 'Level 3: below 70 percent of setpoint for 5 min', submittal 'L3 low alarm under 70% of setpoint, 5 min delay'",
+            "quote": "VAV-208-FLOW,Discharge airflow,DDC-VAV208,AI,cfm,0 to 1300,,\"L3 low alarm under 70% of setpoint, 5 min delay\",FS-208",
+            "reason": "The submittal's 'L3 low alarm under 70% of setpoint, 5 min delay' is the same Level 3, below 70 percent of setpoint, 5 minute alarm as the specification, just written in abbreviated form.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:VAV-208-DAT:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "VAV-208-DAT",
+              "alarm"
+            ],
+            "summary": "VAV-208-DAT alarm: specification 'Level 3: below 55 degF for 10 min', submittal 'L3 low alarm at 55 degF, 10 min delay'",
+            "quote": "VAV-208-DAT,Discharge air temperature,DDC-VAV208,AI,degF,40 to 140,,\"L3 low alarm at 55 degF, 10 min delay\",TT-208-DA",
+            "reason": "The submittal states the same alarm as the specification, a Level 3 low alarm at 55 degF with a 10 minute delay, just written in different words.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T5:BD-201:connected_points",
+            "source": "table",
+            "rule": "T5",
+            "error_type": "device_tag_mismatch",
+            "anchor": [
+              "drawing",
+              "BD-201",
+              "connected_points"
+            ],
+            "summary": "drawing list device BD-201 connects to 'none (manual device, no BAS connection)', which is not a points list row",
+            "quote": "BD-201,\"Manual balancing damper, branch duct\",-,M-601,\"none (manual device, no BAS connection)\"",
+            "reason": "The drawing list marks BD-201 as a manual device with no BAS connection, so it correctly has no points list row and does not change what is built.",
+            "attempts": 1
+          }
+        ],
+        "unresolved": [],
+        "seconds": 21.84,
+        "cost_usd": 0.006339
+      }
+    },
+    "v2c03_fcu": {
+      "seeded": {
+        "comments": [
+          {
+            "comment_id": "T1:FCU-3-COS:row",
+            "source": "table",
+            "rule": "T1",
+            "error_type": "point_missing",
+            "anchor": [
+              "spec_points",
+              "FCU-3-COS",
+              "row"
+            ],
+            "summary": "the points schedule requires FCU-3-COS; the points list has no row of that name",
+            "quote": "FCU-3-COS | Condensate overflow switch | BI | - | Normal/Alarm | Level 3: on trip",
+            "reason": "The specification requires point FCU-3-COS, a condensate overflow switch with a Level 3 trip alarm, but neither the submittal points list nor the drawing device list contains any row or device with that name.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "P:3.2:3.2.3:3.2.3",
+            "source": "prose",
+            "rule": "P1",
+            "error_type": "sequence_contradiction",
+            "section": "3.2",
+            "sub_para": "3.2.3",
+            "spec_para": "3.2.3",
+            "submittal_quote": "3.2.3 The heating valve may stay open at minimum position while the cooling valve modulates, to limit overcooling.",
+            "spec_quote": "3.2.3 The heating valve and the cooling valve shall never be open at the same time.",
+            "reason": "The submittal allows the heating valve to remain open while the cooling valve modulates, which the specification forbids since the two valves shall never be open at the same time."
+          }
+        ],
+        "dismissed": [
+          {
+            "comment_id": "T2:FCU-3-FAN-C:io_type",
+            "source": "table",
+            "rule": "T2",
+            "error_type": "wrong_point_type",
+            "anchor": [
+              "points",
+              "FCU-3-FAN-C",
+              "io_type"
+            ],
+            "summary": "FCU-3-FAN-C io_type: specification 'BO', submittal 'DO'",
+            "quote": "FCU-3-FAN-C,Fan start/stop,DDC-FCU3,DO,-,Off/On,,,M-3-FAN",
+            "reason": "The submittal writes DO for a binary output, which the context says some vendors use for BO, and the description, range and device match the specification.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T2:FCU-3-FAN-S:io_type",
+            "source": "table",
+            "rule": "T2",
+            "error_type": "wrong_point_type",
+            "anchor": [
+              "points",
+              "FCU-3-FAN-S",
+              "io_type"
+            ],
+            "summary": "FCU-3-FAN-S io_type: specification 'BI', submittal 'DI'",
+            "quote": "FCU-3-FAN-S,Fan status,DDC-FCU3,DI,-,Off/On,,Level 2: status differs from command for 15 s,CS-3-FAN",
+            "reason": "The submittal uses DI, which the context states is the vendor's way of writing a binary input, the same as the specified BI, so the point type matches.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T3:FCU-3-ZT:units_range",
+            "source": "table",
+            "rule": "T3",
+            "error_type": "unit_scaling_mismatch",
+            "anchor": [
+              "points",
+              "FCU-3-ZT",
+              "units_range"
+            ],
+            "summary": "FCU-3-ZT units_range: specification 'degF | 40 to 100', submittal 'degC | 4.4 to 37.8'",
+            "quote": "FCU-3-ZT,Zone temperature,DDC-FCU3,AI,degC,4.4 to 37.8,,,TS-3-Z",
+            "reason": "The specified range of 40 to 100 degF converts to 4.4 to 37.8 degC within rounding, so the submittal's Celsius range matches the specification and the spec allows SI values that convert to the specified value.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T3:FCU-3-SAT:units_range",
+            "source": "table",
+            "rule": "T3",
+            "error_type": "unit_scaling_mismatch",
+            "anchor": [
+              "points",
+              "FCU-3-SAT",
+              "units_range"
+            ],
+            "summary": "FCU-3-SAT units_range: specification 'degF | 30 to 130', submittal 'degC | -1.1 to 54.4'",
+            "quote": "FCU-3-SAT,Supply air temperature,DDC-FCU3,AI,degC,-1.1 to 54.4,,Level 3: 2.8 degC from setpoint for 15 min,TT-3-SA",
+            "reason": "The submittal states the specified 30 to 130 degF range as -1.1 to 54.4 degC, and the 5 degF alarm offset as 2.8 degC, both matching the specified values within rounding, with the same AI point type and Level 3 alarm.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:FCU-3-SAT:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "FCU-3-SAT",
+              "alarm"
+            ],
+            "summary": "FCU-3-SAT alarm: specification 'Level 3: 5 degF from setpoint for 15 min', submittal 'Level 3: 2.8 degC from setpoint for 15 min'",
+            "quote": "FCU-3-SAT,Supply air temperature,DDC-FCU3,AI,degC,-1.1 to 54.4,,Level 3: 2.8 degC from setpoint for 15 min,TT-3-SA",
+            "reason": "The specified 5 degF alarm difference converts to 2.78 degC, which rounds to the submittal's 2.8 degC, so the level, delay and point match the specification.",
+            "attempts": 1
+          }
+        ],
+        "unresolved": [],
+        "seconds": 16.14,
+        "cost_usd": 0.004313
+      },
+      "clean": {
+        "comments": [],
+        "dismissed": [
+          {
+            "comment_id": "T2:FCU-3-FAN-C:io_type",
+            "source": "table",
+            "rule": "T2",
+            "error_type": "wrong_point_type",
+            "anchor": [
+              "points",
+              "FCU-3-FAN-C",
+              "io_type"
+            ],
+            "summary": "FCU-3-FAN-C io_type: specification 'BO', submittal 'DO'",
+            "quote": "FCU-3-FAN-C,Fan start/stop,DDC-FCU3,DO,-,Off/On,,,M-3-FAN",
+            "reason": "The submittal writes DO, which the context says some vendors use for binary outputs, so it is the same point type as the specified BO with the same on/off range.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T2:FCU-3-FAN-S:io_type",
+            "source": "table",
+            "rule": "T2",
+            "error_type": "wrong_point_type",
+            "anchor": [
+              "points",
+              "FCU-3-FAN-S",
+              "io_type"
+            ],
+            "summary": "FCU-3-FAN-S io_type: specification 'BI', submittal 'DI'",
+            "quote": "FCU-3-FAN-S,Fan status,DDC-FCU3,DI,-,Off/On,,Level 2: status differs from command for 15 s,CS-3-FAN",
+            "reason": "The specification's BI and the submittal's DI both denote a binary input, and the vendor convention is stated in the context, so the point type matches and only the label differs.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T2:FCU-3-COS:io_type",
+            "source": "table",
+            "rule": "T2",
+            "error_type": "wrong_point_type",
+            "anchor": [
+              "points",
+              "FCU-3-COS",
+              "io_type"
+            ],
+            "summary": "FCU-3-COS io_type: specification 'BI', submittal 'DI'",
+            "quote": "FCU-3-COS,Condensate overflow switch,DDC-FCU3,DI,-,Normal/Alarm,,Level 3: on trip,LS-3-CO",
+            "reason": "The submittal labels the condensate overflow switch as DI, which is the vendor abbreviation for a binary input, the same point type as the specified BI.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T3:FCU-3-ZT:units_range",
+            "source": "table",
+            "rule": "T3",
+            "error_type": "unit_scaling_mismatch",
+            "anchor": [
+              "points",
+              "FCU-3-ZT",
+              "units_range"
+            ],
+            "summary": "FCU-3-ZT units_range: specification 'degF | 40 to 100', submittal 'degC | 4.4 to 37.8'",
+            "quote": "FCU-3-ZT,Zone temperature,DDC-FCU3,AI,degC,4.4 to 37.8,,,TS-3-Z",
+            "reason": "The specified 40 to 100 degF range converts to 4.4 to 37.8 degC, which matches the submitted range within rounding, and the specification allows SI units that convert to the specified value.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T3:FCU-3-SAT:units_range",
+            "source": "table",
+            "rule": "T3",
+            "error_type": "unit_scaling_mismatch",
+            "anchor": [
+              "points",
+              "FCU-3-SAT",
+              "units_range"
+            ],
+            "summary": "FCU-3-SAT units_range: specification 'degF | 30 to 130', submittal 'degC | -1.1 to 54.4'",
+            "quote": "FCU-3-SAT,Supply air temperature,DDC-FCU3,AI,degC,-1.1 to 54.4,,Level 3: 2.8 degC from setpoint for 15 min,TT-3-SA",
+            "reason": "The submittal states the same range in Celsius: 30 to 130 degF converts to -1.1 to 54.4 degC, and the 5 degF alarm offset converts to 2.8 degC, so the values match the specification within rounding.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:FCU-3-SAT:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "FCU-3-SAT",
+              "alarm"
+            ],
+            "summary": "FCU-3-SAT alarm: specification 'Level 3: 5 degF from setpoint for 15 min', submittal 'Level 3: 2.8 degC from setpoint for 15 min'",
+            "quote": "FCU-3-SAT,Supply air temperature,DDC-FCU3,AI,degC,-1.1 to 54.4,,Level 3: 2.8 degC from setpoint for 15 min,TT-3-SA",
+            "reason": "The specified 5 degF alarm difference converts by 5/9 to 2.78 degC, which rounds to the submittal's 2.8 degC, so the alarm level, delay and point are the same.",
+            "attempts": 1
+          }
+        ],
+        "unresolved": [],
+        "seconds": 12.27,
+        "cost_usd": 0.003218
+      }
+    },
+    "v2c05_hw_plant": {
+      "seeded": {
+        "comments": [
+          {
+            "comment_id": "T3:HWP-1-HW-DP:units_range",
+            "source": "table",
+            "rule": "T3",
+            "error_type": "unit_scaling_mismatch",
+            "anchor": [
+              "points",
+              "HWP-1-HW-DP",
+              "units_range"
+            ],
+            "summary": "HWP-1-HW-DP units_range: specification 'psi | 0 to 50', submittal 'psi | 0-100'",
+            "quote": "HWP-1-HW-DP,Remote hot water differential pressure,DDC-HWP1-1,AI,psi,0-100,,Level 3: below 3 psi for 10 min,DPT-1-HW",
+            "reason": "The specification requires a 0 to 50 psi range for this differential pressure point, but the submittal lists 0-100 psi, which would read and scale the value wrongly; units are the same and no conversion applies.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "P:3.2:3.2.1:3.2.1",
+            "source": "prose",
+            "rule": "P1",
+            "error_type": "sequence_contradiction",
+            "section": "3.2",
+            "sub_para": "3.2.1",
+            "spec_para": "3.2.1",
+            "submittal_quote": "The hot water supply temperature setpoint is 140 \u00b0F with outdoor air at 20 \u00b0F or colder and resets linearly to 180 \u00b0F with outdoor air at 60 \u00b0F or warmer.",
+            "spec_quote": "The hot water supply temperature setpoint shall be reset from 180 \u00b0F at an outdoor air temperature of 20 \u00b0F and below to 140 \u00b0F at 60 \u00b0F and above.",
+            "reason": "The submittal reverses the reset direction, setting 140 \u00b0F at 20 \u00b0F outdoor air and 180 \u00b0F at 60 \u00b0F, whereas the specification requires 180 \u00b0F at 20 \u00b0F and 140 \u00b0F at 60 \u00b0F."
+          }
+        ],
+        "dismissed": [
+          {
+            "comment_id": "T3:HWP-1-HWST:units_range",
+            "source": "table",
+            "rule": "T3",
+            "error_type": "unit_scaling_mismatch",
+            "anchor": [
+              "points",
+              "HWP-1-HWST",
+              "units_range"
+            ],
+            "summary": "HWP-1-HWST units_range: specification 'degF | 40 to 240', submittal '\u00b0F | 40-240'",
+            "quote": "HWP-1-HWST,Hot water supply temperature,DDC-HWP1-1,AI,\u00b0F,40-240,,Level 3: 10 \u00b0F from setpoint for 15 min,TT-1-HWS",
+            "reason": "The submittal uses \u00b0F and 40-240 for the same 40 to 240 degF range, differing only in symbol and dash form, so the point is built the same way.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T3:HWP-1-HWRT:units_range",
+            "source": "table",
+            "rule": "T3",
+            "error_type": "unit_scaling_mismatch",
+            "anchor": [
+              "points",
+              "HWP-1-HWRT",
+              "units_range"
+            ],
+            "summary": "HWP-1-HWRT units_range: specification 'degF | 40 to 240', submittal '\u00b0F | 40-240'",
+            "quote": "HWP-1-HWRT,Hot water return temperature,DDC-HWP1-1,AI,\u00b0F,40-240,,,TT-1-HWR",
+            "reason": "The submittal writes the same units and range as the specification, only with the degree symbol and a hyphen in place of 'degF' and 'to', so the scaling is unchanged.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T3:HWP-1-OAT:units_range",
+            "source": "table",
+            "rule": "T3",
+            "error_type": "unit_scaling_mismatch",
+            "anchor": [
+              "points",
+              "HWP-1-OAT",
+              "units_range"
+            ],
+            "summary": "HWP-1-OAT units_range: specification 'degF | -40 to 130', submittal '\u00b0F | -40-130'",
+            "quote": "HWP-1-OAT,Outdoor air temperature,DDC-HWP1-1,AI,\u00b0F,-40-130,,,TT-1-OA",
+            "reason": "The submittal writes the units as \u00b0F and the range as -40-130, which is the same degF range of -40 to 130 in a different notation, so the value is not changed.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T3:HWP-1-HWP1-SPD:units_range",
+            "source": "table",
+            "rule": "T3",
+            "error_type": "unit_scaling_mismatch",
+            "anchor": [
+              "points",
+              "HWP-1-HWP1-SPD",
+              "units_range"
+            ],
+            "summary": "HWP-1-HWP1-SPD units_range: specification '% | 0 to 100', submittal '% | 0-100'",
+            "quote": "HWP-1-HWP1-SPD,Hot water pump 1 speed command,DDC-HWP1-1,AO,%,0-100,,,VFD-1-P1",
+            "reason": "The submittal range 0-100 % is the same as the specified 0 to 100 %, differing only in the separator style, so the point is built as specified.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T3:HWP-1-HWP2-SPD:units_range",
+            "source": "table",
+            "rule": "T3",
+            "error_type": "unit_scaling_mismatch",
+            "anchor": [
+              "points",
+              "HWP-1-HWP2-SPD",
+              "units_range"
+            ],
+            "summary": "HWP-1-HWP2-SPD units_range: specification '% | 0 to 100', submittal '% | 0-100'",
+            "quote": "HWP-1-HWP2-SPD,Hot water pump 2 speed command,DDC-HWP1-1,AO,%,0-100,,,VFD-1-P2",
+            "reason": "The submittal writes the range as 0-100 while the specification writes 0 to 100, which is the same range in a different form, with the same units, point type and hardware.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:HWP-1-HWST:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "HWP-1-HWST",
+              "alarm"
+            ],
+            "summary": "HWP-1-HWST alarm: specification 'Level 3: 10 degF from setpoint for 15 min', submittal 'Level 3: 10 \u00b0F from setpoint for 15 min'",
+            "quote": "HWP-1-HWST,Hot water supply temperature,DDC-HWP1-1,AI,\u00b0F,40-240,,Level 3: 10 \u00b0F from setpoint for 15 min,TT-1-HWS",
+            "reason": "The submittal alarm reads Level 3, 10 \u00b0F from setpoint for 15 min, the same as the specification, differing only in the degree symbol form (\u00b0F versus degF), which is the same unit.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T5:PG-1-HWS:connected_points",
+            "source": "table",
+            "rule": "T5",
+            "error_type": "device_tag_mismatch",
+            "anchor": [
+              "drawing",
+              "PG-1-HWS",
+              "connected_points"
+            ],
+            "summary": "drawing list device PG-1-HWS connects to 'none (local gauge, no BAS connection)', which is not a points list row",
+            "quote": "PG-1-HWS,\"Hot water supply pressure gauge, local\",-,M-901,\"none (local gauge, no BAS connection)\"",
+            "reason": "The drawing list marks PG-1-HWS as a local gauge with no BAS connection, so it correctly has no points list row and does not change what is built.",
+            "attempts": 1
+          }
+        ],
+        "unresolved": [],
+        "seconds": 12.89,
+        "cost_usd": 0.003279
+      },
+      "clean": {
+        "comments": [],
+        "dismissed": [
+          {
+            "comment_id": "T3:HWP-1-HWST:units_range",
+            "source": "table",
+            "rule": "T3",
+            "error_type": "unit_scaling_mismatch",
+            "anchor": [
+              "points",
+              "HWP-1-HWST",
+              "units_range"
+            ],
+            "summary": "HWP-1-HWST units_range: specification 'degF | 40 to 240', submittal '\u00b0F | 40-240'",
+            "quote": "HWP-1-HWST,Hot water supply temperature,DDC-HWP1-1,AI,\u00b0F,40-240,,Level 3: 10 \u00b0F from setpoint for 15 min,TT-1-HWS",
+            "reason": "The submittal writes the same units as degF (\u00b0F) and the same 40 to 240 range, with the same AI type and alarm, so only the notation differs.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T3:HWP-1-HWRT:units_range",
+            "source": "table",
+            "rule": "T3",
+            "error_type": "unit_scaling_mismatch",
+            "anchor": [
+              "points",
+              "HWP-1-HWRT",
+              "units_range"
+            ],
+            "summary": "HWP-1-HWRT units_range: specification 'degF | 40 to 240', submittal '\u00b0F | 40-240'",
+            "quote": "HWP-1-HWRT,Hot water return temperature,DDC-HWP1-1,AI,\u00b0F,40-240,,,TT-1-HWR",
+            "reason": "The submittal writes the same units as the specification using the degree symbol and a hyphen for 'to' in the range, which is the same 40 to 240 degF range with no change in meaning.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T3:HWP-1-HW-DP:units_range",
+            "source": "table",
+            "rule": "T3",
+            "error_type": "unit_scaling_mismatch",
+            "anchor": [
+              "points",
+              "HWP-1-HW-DP",
+              "units_range"
+            ],
+            "summary": "HWP-1-HW-DP units_range: specification 'psi | 0 to 50', submittal 'psi | 0-50'",
+            "quote": "HWP-1-HW-DP,Remote hot water differential pressure,DDC-HWP1-1,AI,psi,0-50,,Level 3: below 3 psi for 10 min,DPT-1-HW",
+            "reason": "The submittal writes the range as 0-50 instead of 0 to 50, which is the same psi range as the specification and does not change the built value.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T3:HWP-1-OAT:units_range",
+            "source": "table",
+            "rule": "T3",
+            "error_type": "unit_scaling_mismatch",
+            "anchor": [
+              "points",
+              "HWP-1-OAT",
+              "units_range"
+            ],
+            "summary": "HWP-1-OAT units_range: specification 'degF | -40 to 130', submittal '\u00b0F | -40-130'",
+            "quote": "HWP-1-OAT,Outdoor air temperature,DDC-HWP1-1,AI,\u00b0F,-40-130,,,TT-1-OA",
+            "reason": "The submittal writes the unit as \u00b0F and the range as -40-130, which is the same as the specified degF and -40 to 130, differing only in symbol and separator form.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T3:HWP-1-HWP1-SPD:units_range",
+            "source": "table",
+            "rule": "T3",
+            "error_type": "unit_scaling_mismatch",
+            "anchor": [
+              "points",
+              "HWP-1-HWP1-SPD",
+              "units_range"
+            ],
+            "summary": "HWP-1-HWP1-SPD units_range: specification '% | 0 to 100', submittal '% | 0-100'",
+            "quote": "HWP-1-HWP1-SPD,Hot water pump 1 speed command,DDC-HWP1-1,AO,%,0-100,,,VFD-1-P1",
+            "reason": "The submittal range 0-100 % is the same as the specified range 0 to 100 %, differing only in the wording of the separator, so the output scaling is unchanged.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T3:HWP-1-HWP2-SPD:units_range",
+            "source": "table",
+            "rule": "T3",
+            "error_type": "unit_scaling_mismatch",
+            "anchor": [
+              "points",
+              "HWP-1-HWP2-SPD",
+              "units_range"
+            ],
+            "summary": "HWP-1-HWP2-SPD units_range: specification '% | 0 to 100', submittal '% | 0-100'",
+            "quote": "HWP-1-HWP2-SPD,Hot water pump 2 speed command,DDC-HWP1-1,AO,%,0-100,,,VFD-1-P2",
+            "reason": "The submittal writes the range as 0-100 while the specification writes 0 to 100, which is the same range in a different form, with the same units, AO type and hardware.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T4:HWP-1-HWST:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "HWP-1-HWST",
+              "alarm"
+            ],
+            "summary": "HWP-1-HWST alarm: specification 'Level 3: 10 degF from setpoint for 15 min', submittal 'Level 3: 10 \u00b0F from setpoint for 15 min'",
+            "quote": "HWP-1-HWST,Hot water supply temperature,DDC-HWP1-1,AI,\u00b0F,40-240,,Level 3: 10 \u00b0F from setpoint for 15 min,TT-1-HWS",
+            "reason": "The submittal writes the degree symbol as \u00b0F instead of degF and the alarm reads 10 \u00b0F instead of 10 degF, but the alarm level, limit, delay and units are the same as specified.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T5:PG-1-HWS:connected_points",
+            "source": "table",
+            "rule": "T5",
+            "error_type": "device_tag_mismatch",
+            "anchor": [
+              "drawing",
+              "PG-1-HWS",
+              "connected_points"
+            ],
+            "summary": "drawing list device PG-1-HWS connects to 'none (local gauge, no BAS connection)', which is not a points list row",
+            "quote": "PG-1-HWS,\"Hot water supply pressure gauge, local\",-,M-901,\"none (local gauge, no BAS connection)\"",
+            "reason": "The drawing list marks the hot water supply pressure gauge as a local gauge with no BAS connection, so it correctly has no points list row and the mismatch does not change what is built.",
+            "attempts": 1
+          }
+        ],
+        "unresolved": [],
+        "seconds": 12.61,
+        "cost_usd": 0.00314
+      }
+    },
+    "v2c06_ahu_sz": {
+      "seeded": {
+        "comments": [
+          {
+            "comment_id": "T4:RTU-4-SAT:alarm",
+            "source": "table",
+            "rule": "T4",
+            "error_type": "alarm_wrong_or_missing",
+            "anchor": [
+              "points",
+              "RTU-4-SAT",
+              "alarm"
+            ],
+            "summary": "RTU-4-SAT alarm: specification 'Level 3: 5 degF from setpoint for 10 min', submittal 'Level 3: 10 degF from setpoint for 10 min'",
+            "quote": "RTU-4-SAT,Supply air temperature,DDC-RTU4-1,AI,degF,30 to 130,,Level 3: 10 degF from setpoint for 10 min,TT-4-SA",
+            "reason": "The submittal sets the supply air temperature Level 3 alarm deviation to 10 degF, while the specification requires 5 degF from setpoint, so the alarm limit differs and is not a wording difference.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "P:3.3:3.3.3:3.3.3",
+            "source": "prose",
+            "rule": "P1",
+            "error_type": "sequence_contradiction",
+            "section": "3.3",
+            "sub_para": "3.3.3",
+            "spec_para": "3.3.3",
+            "submittal_quote": "The chilled water valve is allowed to open only when outdoor air is warmer than 55 \u00b0F.",
+            "spec_quote": "Mechanical cooling shall be enabled only when the outdoor air temperature is above 55 \u00b0F.",
+            "reason": "The submittal limits the outdoor air lockout to the chilled water valve, while the specification applies it to all mechanical cooling, so other mechanical cooling would not be covered."
+          },
+          {
+            "comment_id": "P:3.5:3.5.1:3.5.1",
+            "source": "prose",
+            "rule": "P1",
+            "error_type": "alarm_wrong_or_missing",
+            "section": "3.5",
+            "sub_para": "3.5.1",
+            "spec_para": "3.5.1",
+            "submittal_quote": "3.5.1 The duct smoke detector is hardwired to stop the supply fan and close the outdoor air damper.",
+            "spec_quote": "3.5.1 The duct smoke detector shall be hardwired to stop the supply fan and close the outdoor air damper, and the BAS shall set a Level 1 alarm on detection.",
+            "reason": "The submittal omits the Level 1 alarm that the BAS must set when the duct smoke detector detects smoke."
+          },
+          {
+            "comment_id": "P:3.5:3.5.4:3.5.4",
+            "source": "prose",
+            "rule": "P1",
+            "error_type": "sequence_contradiction",
+            "section": "3.5",
+            "sub_para": "3.5.4",
+            "spec_para": "3.5.4",
+            "submittal_quote": "3.5.4 The heating and chilled water valves stay closed until the supply fan is proven on.",
+            "spec_quote": "3.5.4 Heating and cooling shall be disabled until the supply fan is proven on.",
+            "reason": "The submittal only keeps the heating and chilled water valves closed, whereas the specification requires heating and cooling to be disabled until the fan is proven on."
+          }
+        ],
+        "dismissed": [
+          {
+            "comment_id": "T2:RTU-4-SF-C:io_type",
+            "source": "table",
+            "rule": "T2",
+            "error_type": "wrong_point_type",
+            "anchor": [
+              "points",
+              "RTU-4-SF-C",
+              "io_type"
+            ],
+            "summary": "RTU-4-SF-C io_type: specification 'BO', submittal 'DO'",
+            "quote": "RTU-4-SF-C,Supply fan start/stop,DDC-RTU4-1,DO,-,Off/On,,,VFD-4-SF",
+            "reason": "The specification's BO and the submittal's DO both denote a binary output, the same point type written with a different abbreviation, and all other fields match.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T2:RTU-4-SF-S:io_type",
+            "source": "table",
+            "rule": "T2",
+            "error_type": "wrong_point_type",
+            "anchor": [
+              "points",
+              "RTU-4-SF-S",
+              "io_type"
+            ],
+            "summary": "RTU-4-SF-S io_type: specification 'BI', submittal 'DI'",
+            "quote": "RTU-4-SF-S,Supply fan status,DDC-RTU4-1,DI,-,Off/On,,Level 2: status differs from command for 15 s,VFD-4-SF",
+            "reason": "The submittal uses DI, which the vendor convention treats as a binary input, the same point type the specification calls BI, and the rest of the point matches.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T2:RTU-4-FZ:io_type",
+            "source": "table",
+            "rule": "T2",
+            "error_type": "wrong_point_type",
+            "anchor": [
+              "points",
+              "RTU-4-FZ",
+              "io_type"
+            ],
+            "summary": "RTU-4-FZ io_type: specification 'BI', submittal 'DI'",
+            "quote": "RTU-4-FZ,Freeze-stat status,DDC-RTU4-1,DI,-,Normal/Alarm,,Level 2: on trip,TS-4-FZ",
+            "reason": "DI is the vendor's label for a binary input, which is the same point type the specification calls BI, and the rest of the point matches the specification.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T2:RTU-4-SD:io_type",
+            "source": "table",
+            "rule": "T2",
+            "error_type": "wrong_point_type",
+            "anchor": [
+              "points",
+              "RTU-4-SD",
+              "io_type"
+            ],
+            "summary": "RTU-4-SD io_type: specification 'BI', submittal 'DI'",
+            "quote": "RTU-4-SD,Duct smoke detector,DDC-RTU4-1,DI,-,Normal/Alarm,,Level 1: on trip,SD-4-SA",
+            "reason": "The submittal uses DI for the binary input, which the specification notes as an accepted vendor abbreviation for BI, and all other fields match the specification.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T2:RTU-4-COS:io_type",
+            "source": "table",
+            "rule": "T2",
+            "error_type": "wrong_point_type",
+            "anchor": [
+              "points",
+              "RTU-4-COS",
+              "io_type"
+            ],
+            "summary": "RTU-4-COS io_type: specification 'BI', submittal 'DI'",
+            "quote": "RTU-4-COS,Condensate overflow switch,DDC-RTU4-1,DI,-,Normal/Alarm,,Level 3: on trip,LS-4-CO",
+            "reason": "The submittal's DI is the vendor's alternate abbreviation for a binary input, which matches the specified BI, and the switch is still a binary Normal/Alarm point with the same Level 3 alarm.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T5:TI-4-SA:connected_points",
+            "source": "table",
+            "rule": "T5",
+            "error_type": "device_tag_mismatch",
+            "anchor": [
+              "drawing",
+              "TI-4-SA",
+              "connected_points"
+            ],
+            "summary": "drawing list device TI-4-SA connects to 'none (local indicator, no BAS connection)', which is not a points list row",
+            "quote": "TI-4-SA,\"Supply air dial thermometer, local\",-,M-502,\"none (local indicator, no BAS connection)\"",
+            "reason": "The drawing list marks TI-4-SA as a local dial thermometer with no BAS connection, so it correctly has no row in the points list and builds nothing the points schedule requires.",
+            "attempts": 1
+          }
+        ],
+        "unresolved": [],
+        "seconds": 16.28,
+        "cost_usd": 0.003709
+      },
+      "clean": {
+        "comments": [
+          {
+            "comment_id": "P:3.5:3.5.4:3.5.4",
+            "source": "prose",
+            "rule": "P1",
+            "error_type": "sequence_contradiction",
+            "section": "3.5",
+            "sub_para": "3.5.4",
+            "spec_para": "3.5.4",
+            "submittal_quote": "The heating and chilled water valves stay closed until the supply fan is proven on.",
+            "spec_quote": "Heating and cooling shall be disabled until the supply fan is proven on.",
+            "reason": "The submittal limits the fan-proof interlock to the heating and chilled water valves, while the specification requires all heating and cooling to be disabled until the supply fan is proven on."
+          }
+        ],
+        "dismissed": [
+          {
+            "comment_id": "T2:RTU-4-SF-C:io_type",
+            "source": "table",
+            "rule": "T2",
+            "error_type": "wrong_point_type",
+            "anchor": [
+              "points",
+              "RTU-4-SF-C",
+              "io_type"
+            ],
+            "summary": "RTU-4-SF-C io_type: specification 'BO', submittal 'DO'",
+            "quote": "RTU-4-SF-C,Supply fan start/stop,DDC-RTU4-1,DO,-,Off/On,,,VFD-4-SF",
+            "reason": "The specification requires BO (binary output) and the submittal lists DO, which the vendor convention treats as the same binary output type, with the same range Off/On and the same point name and description.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T2:RTU-4-SF-S:io_type",
+            "source": "table",
+            "rule": "T2",
+            "error_type": "wrong_point_type",
+            "anchor": [
+              "points",
+              "RTU-4-SF-S",
+              "io_type"
+            ],
+            "summary": "RTU-4-SF-S io_type: specification 'BI', submittal 'DI'",
+            "quote": "RTU-4-SF-S,Supply fan status,DDC-RTU4-1,DI,-,Off/On,,Level 2: status differs from command for 15 s,VFD-4-SF",
+            "reason": "The submittal writes DI for the binary input that the specification calls BI, which is the same point type under a different abbreviation, and all other fields match.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T2:RTU-4-FZ:io_type",
+            "source": "table",
+            "rule": "T2",
+            "error_type": "wrong_point_type",
+            "anchor": [
+              "points",
+              "RTU-4-FZ",
+              "io_type"
+            ],
+            "summary": "RTU-4-FZ io_type: specification 'BI', submittal 'DI'",
+            "quote": "RTU-4-FZ,Freeze-stat status,DDC-RTU4-1,DI,-,Normal/Alarm,,Level 2: on trip,TS-4-FZ",
+            "reason": "The specification's BI and the submittal's DI both denote a binary input, the vendor abbreviation the context describes, so the point type matches and the difference is only naming.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T2:RTU-4-SD:io_type",
+            "source": "table",
+            "rule": "T2",
+            "error_type": "wrong_point_type",
+            "anchor": [
+              "points",
+              "RTU-4-SD",
+              "io_type"
+            ],
+            "summary": "RTU-4-SD io_type: specification 'BI', submittal 'DI'",
+            "quote": "RTU-4-SD,Duct smoke detector,DDC-RTU4-1,DI,-,Normal/Alarm,,Level 1: on trip,SD-4-SA",
+            "reason": "The submittal writes DI for a binary input, which the specification calls BI; the task notes say DI and BI are the same kind of point, so the point type matches and only the abbreviation differs.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T2:RTU-4-COS:io_type",
+            "source": "table",
+            "rule": "T2",
+            "error_type": "wrong_point_type",
+            "anchor": [
+              "points",
+              "RTU-4-COS",
+              "io_type"
+            ],
+            "summary": "RTU-4-COS io_type: specification 'BI', submittal 'DI'",
+            "quote": "RTU-4-COS,Condensate overflow switch,DDC-RTU4-1,DI,-,Normal/Alarm,,Level 3: on trip,LS-4-CO",
+            "reason": "The submittal writes DI for a binary input, which is the same point type as the specified BI, and the alarm, range and device match the specification.",
+            "attempts": 1
+          },
+          {
+            "comment_id": "T5:TI-4-SA:connected_points",
+            "source": "table",
+            "rule": "T5",
+            "error_type": "device_tag_mismatch",
+            "anchor": [
+              "drawing",
+              "TI-4-SA",
+              "connected_points"
+            ],
+            "summary": "drawing list device TI-4-SA connects to 'none (local indicator, no BAS connection)', which is not a points list row",
+            "quote": "TI-4-SA,\"Supply air dial thermometer, local\",-,M-502,\"none (local indicator, no BAS connection)\"",
+            "reason": "The drawing list marks TI-4-SA as a local dial thermometer with no BAS connection, so it correctly has no points list row and does not change what is built.",
+            "attempts": 1
+          }
+        ],
+        "unresolved": [],
+        "seconds": 12.47,
+        "cost_usd": 0.003162
+      }
+    }
+  }
+}
