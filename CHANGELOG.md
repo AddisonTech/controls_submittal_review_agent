@@ -198,3 +198,10 @@ pinned by SHA-256 in validation\v2\HOLDOUT_V2.md.
   engine; (4) the table prompt says point names, device tags and DDC hardware identifiers must match character for
   character (the P3-C1 exact key policy) and drops "different spelling" from the not_an_error examples; (5) the
   table prompt says to judge only the field code flagged. No test set file, label, threshold or scoring rule changed.
+- 2026-11-26, Claude Haiku 5.5 on all dev pairs, prompt v2-p2: recall 0.976 (82 of 84), wrong 5 of 87 (rate 0.058),
+  FAIL by 0.008, $0.2714. Both misses were T1 missing points answered unresolved because "the points list rows
+  searched are not shown"; 3 wrong comments were still on the AHU 3.3.2 stage wording.
+- 2026-11-26, Claude Sonnet 5.5 on all dev pairs, prompt v2-p2: recall 1.000 (84 of 84), wrong 1 of 85 (rate 0.012),
+  PASS, $3.6428.
+- Prompt v2-p3 (spec_review.py), from the Haiku v2-p2 misses only: a T1 missing point check now lists every point
+  name and description in the submittal points list, so the model can see what code searched. Nothing else changed.

@@ -48,7 +48,7 @@ from pydantic import BaseModel, Field
 import submittal_review as sr
 
 VERSION = "2.0.0"
-PROMPT_VERSION_V2 = "v2-p2"
+PROMPT_VERSION_V2 = "v2-p3"
 HERE = Path(__file__).resolve().parent
 V2_DIR = HERE / "validation" / "v2"
 INPUT_FILES = ("spec.txt", "submittal_sequence.txt", "submittal_points.csv", "drawing_list.csv")
@@ -183,6 +183,9 @@ def table_rules(pkg: Package) -> list[Candidate]:
             lines.append(pkg.points[name][1])
         else:
             lines.append(f"Absent: no row named {name} in submittal_points.csv ({len(pkg.points)} rows searched)")
+            # v2-p3: show what was searched, so the model can confirm the point is absent and not listed under another name
+            lines.append("SUBMITTAL POINTS LIST point names and descriptions: "
+                         + "; ".join(f"{r['point_name']} ({r['description']})" for r, _ in pkg.points.values()))
         lines.append(f"DRAWING LIST columns: {pkg.drawing_header}")
         devs = list(dict.fromkeys(listed_by.get(name, []) + [t for t in extra if t in pkg.drawing]))
         lines += [pkg.drawing[t][1] for t in devs] or [f"Absent: no device in drawing_list.csv lists {name}"]
