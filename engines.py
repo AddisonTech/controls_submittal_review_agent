@@ -65,13 +65,16 @@ class SpendGuard:
         self._lock = threading.Lock()
         self._reserved = 0.0
 
-    def spent(self) -> float:
+    def spent(self, run: str | None = None) -> float:
+        """Total spend in the ledger, or only the entries one run wrote when run is given."""
         if not self.ledger.is_file():
             return 0.0
         total = 0.0
         for line in self.ledger.read_text(encoding="utf-8").splitlines():
             if line.strip():
-                total += float(json.loads(line).get("cost_usd", 0.0))
+                entry = json.loads(line)
+                if run is None or entry.get("run") == run:
+                    total += float(entry.get("cost_usd", 0.0))
         return total
 
     def remaining(self) -> float:

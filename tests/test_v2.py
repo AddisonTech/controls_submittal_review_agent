@@ -367,3 +367,16 @@ def test_changelog_states_the_v2_scoring_rules():
     v2 = text.split("## v2", 1)[1]
     for phrase in ("Recall", "Wrong comments", "0.90", "5 percent", "clean twin", "per error type"):
         assert phrase in v2, phrase
+
+
+def test_run_spend_counts_only_that_runs_ledger_entries(tmp_path):
+    guard = en.SpendGuard(tmp_path / "ledger.jsonl", 50.0)
+    guard.record({"run": "holdout_claude-haiku_x", "cost_usd": 0.25}, 0.0)
+    guard.record({"run": "dev_gemma3-4b_y", "cost_usd": 0.0}, 0.0)
+    assert guard.spent() == 0.25
+    assert guard.spent(run="dev_gemma3-4b_y") == 0.0 and guard.spent(run="holdout_claude-haiku_x") == 0.25
+
+
+def test_written_reports_replace_model_dashes():
+    text = "valve opens" + chr(0x2014) + "then" + chr(0x2013) + "closes"
+    assert srv.plain(text) == "valve opens-then-closes"

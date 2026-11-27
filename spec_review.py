@@ -588,6 +588,16 @@ def _is_public(folder: Path) -> bool:
 REVIEWER_COLUMNS = sr.REVIEWER_COLUMNS
 
 
+DASHES = {chr(0x2013): "-", chr(0x2014): "-"}
+
+
+def plain(text: str) -> str:
+    """Model text can carry en or em dashes; every written file uses a plain hyphen instead."""
+    for dash, hyphen in DASHES.items():
+        text = text.replace(dash, hyphen)
+    return text
+
+
 def _write_outputs(output: Path, result: dict, log: list, public: bool) -> Path:
     stamp = datetime.now().strftime("run_%Y%m%d_%H%M%S")
     run_dir, n = output / stamp, 2
@@ -610,21 +620,21 @@ def _write_outputs(output: Path, result: dict, log: list, public: bool) -> Path:
     lines += [f"- {d['summary']}: {d['reason']}" for d in result["dismissed"]]
     lines += ["", f"UNRESOLVED, FOR THE REVIEWER ({len(result['unresolved'])})"]
     lines += [f"- {u.get('comment_id', u.get('item'))}: {u['reason']}" for u in result["unresolved"]]
-    (run_dir / "review_report.txt").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    (run_dir / "review_report.txt").write_text(plain("\n".join(lines)) + "\n", encoding="utf-8")
     with (run_dir / "review_report.csv").open("w", newline="", encoding="utf-8") as fh:
         w = csv.writer(fh)
         w.writerow(["n", "comment_id", "error_type", "where", "submittal_quote", "spec_quote", "reason"] + REVIEWER_COLUMNS)
         for i, c in enumerate(result["comments"], 1):
             where = "/".join(c["anchor"]) if c["source"] == "table" else f"section {c['section']} submittal {c['sub_para'] or '-'}"
-            w.writerow([i, c["comment_id"], c["error_type"], where, c.get("quote") or c.get("submittal_quote", ""),
-                        c.get("spec_quote", ""), c["reason"], "", ""])
+            w.writerow([plain(str(v)) for v in [i, c["comment_id"], c["error_type"], where,
+                        c.get("quote") or c.get("submittal_quote", ""), c.get("spec_quote", ""), c["reason"], "", ""]])
     with (run_dir / "check_log.jsonl").open("w", encoding="utf-8") as fh:
         for entry in log:
             if not public:  # full prompts and replies only for the frozen public and synthetic sets (v1 I10)
                 entry = {**entry, "user": hashlib.sha256(entry["user"].encode("utf-8")).hexdigest(), "reply": None}
-            fh.write(json.dumps(entry) + "\n")
-    (run_dir / "run_summary.json").write_text(json.dumps({k: v for k, v in result.items() if k not in ("candidates",)},
-                                                         indent=2) + "\n", encoding="utf-8")
+            fh.write(plain(json.dumps(entry, ensure_ascii=False)) + "\n")
+    (run_dir / "run_summary.json").write_text(plain(json.dumps({k: v for k, v in result.items() if k not in ("candidates",)},
+                                                               indent=2, ensure_ascii=False)) + "\n", encoding="utf-8")
     result["run_dir"] = str(run_dir)
     return run_dir
 

@@ -1,0 +1,16 @@
+{
+  "claude-haiku": {
+    "result_file": "validation/v2/results/holdout_claude-haiku_20261126_193440.json",
+    "at": "2026-11-26T19:37:25",
+    "recall": 1.0,
+    "wrong_rate": 0.0333,
+    "aborted": null
+  },
+  "claude-sonnet": {
+    "result_file": "validation/v2/results/holdout_claude-sonnet_20261126_193727.json",
+    "at": "2026-11-26T19:40:34",
+    "recall": 0.9655,
+    "wrong_rate": 0.0,
+    "aborted": null
+  }
+}

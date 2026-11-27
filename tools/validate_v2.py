@@ -106,7 +106,6 @@ def run(engine_name: str, cases: list[tuple[str, Path]], split: str, workers: in
     commit = _git()  # the code this run starts with
     label = f"{split}_{'rules-only' if rules_only else engine_name.replace(':', '-')}_{stamp}"
     guard = en.SpendGuard()
-    spent0 = guard.spent()
     out_dir = RUNS_DIR / label
     results: dict[tuple[str, str], dict] = {}
     aborted = None
@@ -163,7 +162,7 @@ def run(engine_name: str, cases: list[tuple[str, Path]], split: str, workers: in
              "seeded_comments": score_v2.rules_only_comments(results[(cid, "seeded")]),
              "clean_comments": score_v2.rules_only_comments(results[(cid, "clean")])} for cid, folder in done]
     docs = [results[(cid, t)] for cid, _ in done for t in ("seeded", "clean")]
-    spend = round(guard.spent() - spent0, 6)
+    spend = round(guard.spent(run=label), 6)  # only this run's ledger entries, so a parallel local run is not charged
     out = {"label": label, "split": split, "engine": "rules-only" if rules_only else engine_name,
            "model": en.CLAUDE_MODELS.get(engine_name, config.model_name) if not rules_only else "none",
            "effort": en.CLAUDE_EFFORT if engine_name in en.CLAUDE_MODELS and not rules_only else None,
@@ -183,10 +182,17 @@ def run(engine_name: str, cases: list[tuple[str, Path]], split: str, workers: in
                         for cid, _ in done}}
     RESULTS.mkdir(parents=True, exist_ok=True)
     path = RESULTS / f"{label}.json"
-    path.write_text(json.dumps(out, indent=2) + "\n", encoding="utf-8")
+    path.write_text(no_dashes(json.dumps(out, indent=2)) + "\n", encoding="utf-8")
     out["result_file"] = path.relative_to(ROOT).as_posix()
     _log_run(out)
     return out
+
+
+def no_dashes(text: str) -> str:
+    """Model replies are stored verbatim except that an en or em dash becomes a hyphen (project style rule)."""
+    for d in ("\\u2013", "\\u2014", chr(0x2013), chr(0x2014)):
+        text = text.replace(d, "-")
+    return text
 
 
 def _log_run(out: dict) -> None:

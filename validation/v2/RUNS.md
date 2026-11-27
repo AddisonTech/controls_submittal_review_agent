@@ -14,3 +14,6 @@ Every v2 validation run, written by tools/validate_v2.py. Spend is Claude API sp
 | dev_claude-haiku_20261126_191450 | claude-haiku | dev | 30 | 1.000 | 0.106 | 84/84 | 10/94 | 32.8 | 0.2742 | 8.0195 | v2-p3 | dev rerun, prompt v2-p3 |
 | dev_claude-sonnet_20261126_192336 | claude-sonnet | dev | 30 | 1.000 | 0.012 | 84/84 | 1/85 | 36.5 | 3.6807 | 11.7001 | v2-p3 | dev rerun, prompt v2-p3 |
 | dev_gemma3-4b_20261126_182733 | gemma3:4b | dev | 14 | 0.556 | 0.932 | 20/36 | 274/294 | 136.0 | 0.0000 | 11.7001 | v2-p1 | stopped by hand after 14 of 30 pairs: the prompt had moved to v2-p3 |
+| holdout_claude-haiku_20261126_193440 | claude-haiku | holdout | 10 | 1.000 | 0.033 | 29/29 | 1/30 | 28.6 | 0.0779 | 11.7780 | v2-p3 | holdout final, prompt v2-p3 |
+| holdout_claude-sonnet_20261126_193727 | claude-sonnet | holdout | 10 | 0.966 | 0.000 | 28/29 | 0/28 | 32.5 | 1.0618 | 12.8398 | v2-p3 | holdout final, prompt v2-p3 |
+| dev_gemma3-4b_20261126_193439 | gemma3:4b | dev | 30 | 0.524 | 0.939 | 44/84 | 674/718 | 159.8 | 0.0000 | 12.8398 | v2-p3 | full dev run, prompt v2-p3 (final); spend corrected from 1.1397, which was the two Claude holdout runs made at the same time |
