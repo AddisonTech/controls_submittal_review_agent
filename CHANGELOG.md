@@ -205,3 +205,15 @@ pinned by SHA-256 in validation\v2\HOLDOUT_V2.md.
   PASS, $3.6428.
 - Prompt v2-p3 (spec_review.py), from the Haiku v2-p2 misses only: a T1 missing point check now lists every point
   name and description in the submittal points list, so the model can see what code searched. Nothing else changed.
+- 2026-11-26, gemma3:4b on dev, prompt v2-p1: stopped by hand after 14 of 30 pairs once the prompt had moved to
+  v2-p3; partial score of the completed pairs: recall 0.556 (20 of 36), wrong 274 of 294 (rate 0.932), 136 s per
+  document (validation\v2\results\dev_gemma3-4b_20261126_182733_partial.json).
+- 2026-11-26, Claude Haiku 5.5 on all dev pairs, prompt v2-p3: recall 1.000 (84 of 84), wrong 10 of 94 (rate 0.106),
+  FAIL, $0.2742. Every wrong comment was on one of three paraphrases the generator wrote as correct (AHU 3.3.2
+  "stage 2 and stage 3", single zone AHU 3.5.4 "the heating and chilled water valves", AHU 3.2.6 valve order); the
+  count moves between runs (5 at v2-p2, 10 at v2-p3), since these models take no temperature setting.
+- 2026-11-26, Claude Sonnet 5.5 on all dev pairs, prompt v2-p3: recall 1.000 (84 of 84), wrong 1 of 85 (rate 0.012),
+  PASS, $3.6807.
+- Dev final, 2026-11-26: prompt v2-p3 is frozen and tuning stops. The remaining Haiku wrong comments sit on three
+  sentences of this generator; a prompt aimed at them would teach to the test, not improve the reviewer. Next:
+  gemma3:4b on dev with v2-p3, then each engine on the v2 holdout once with --holdout-final.
