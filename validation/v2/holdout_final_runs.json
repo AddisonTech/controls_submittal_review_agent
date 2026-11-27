@@ -12,5 +12,12 @@
     "recall": 0.9655,
     "wrong_rate": 0.0,
     "aborted": null
+  },
+  "gemma3:4b": {
+    "result_file": "validation/v2/results/holdout_gemma3-4b_20261126_221856.json",
+    "at": "2026-11-26T23:05:55",
+    "recall": 0.5862,
+    "wrong_rate": 0.9227,
+    "aborted": null
   }
 }

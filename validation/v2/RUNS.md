@@ -17,3 +17,4 @@ Every v2 validation run, written by tools/validate_v2.py. Spend is Claude API sp
 | holdout_claude-haiku_20261126_193440 | claude-haiku | holdout | 10 | 1.000 | 0.033 | 29/29 | 1/30 | 28.6 | 0.0779 | 11.7780 | v2-p3 | holdout final, prompt v2-p3 |
 | holdout_claude-sonnet_20261126_193727 | claude-sonnet | holdout | 10 | 0.966 | 0.000 | 28/29 | 0/28 | 32.5 | 1.0618 | 12.8398 | v2-p3 | holdout final, prompt v2-p3 |
 | dev_gemma3-4b_20261126_193439 | gemma3:4b | dev | 30 | 0.524 | 0.939 | 44/84 | 674/718 | 159.8 | 0.0000 | 12.8398 | v2-p3 | full dev run, prompt v2-p3 (final); spend corrected from 1.1397, which was the two Claude holdout runs made at the same time |
+| holdout_gemma3-4b_20261126_221856 | gemma3:4b | holdout | 10 | 0.586 | 0.923 | 17/29 | 203/220 | 140.7 | 0.0000 | 12.8398 | v2-p3 | holdout final, prompt v2-p3 |

@@ -94,7 +94,7 @@
 - P5-C2 - limitation: every result above is on synthetic sets in the P0-C1 notation. The holdout is one set with 5 seeded errors, which shows the model generalizes to an unseen layout but is a small sample. Real exported packages have not been scored.
 - P5-C2 - test updated 2026-11-17, after the final holdout run: test_the_shipped_registration_matches_the_holdout_and_metric_script required final_run to be empty, which was only true before validate.py --final ran, so it failed once the registration recorded the run (160 passed, 1 failed). It now accepts final_run as empty, or as naming a result file in validation\results\ that records the holdout as passed (5 of 5 caught, 0 wrong comments). The holdout.untouched() check is unchanged, the holdout was not rerun, and no agent logic changed.
 
-## v2 (unreleased)
+## v2 - released 2026-11-26
 
 ### Scoring rules and readings (pre-registered)
 
@@ -217,3 +217,58 @@ pinned by SHA-256 in validation\v2\HOLDOUT_V2.md.
 - Dev final, 2026-11-26: prompt v2-p3 is frozen and tuning stops. The remaining Haiku wrong comments sit on three
   sentences of this generator; a prompt aimed at them would teach to the test, not improve the reviewer. Next:
   gemma3:4b on dev with v2-p3, then each engine on the v2 holdout once with --holdout-final.
+- 2026-11-26, gemma3:4b on all dev pairs, prompt v2-p3: recall 0.524 (44 of 84), wrong 674 of 718 (rate 0.939),
+  FAIL, $0, 159.8 s per document. 1,284 of 1,973 model replies failed the code checks (bad JSON, a quote not
+  found word for word, or a forbidden phrase) and 661 items ended unresolved. Of the wrong comments 369 were table
+  verdicts that called a look-alike a real error (an SI or dual unit range, DI or DO for BI or BO, a reworded
+  alarm) and 305 were sequence entries on correct paragraphs. Hardest types: unit or scaling mismatch 0 of 6, wrong
+  point type 1 of 6, sequence contradiction 6 of 16, interlock missing 3 of 8. No tuning followed: the misses come
+  from the size of the model, not from a prompt gap the dev set shows, and v2-p3 was already frozen.
+
+### Holdout finals (v2 holdout, 10 pairs, 29 planted errors, scored once per engine with --holdout-final)
+
+- 2026-11-26, Claude Haiku 5.5, prompt v2-p3: recall 1.000 (29 of 29), wrong 1 of 30 (rate 0.033), passes the bar
+  on this split, $0.0779 ($0.0039 per document), 28.6 s per document. The wrong comment was on the AHU 3.3.2
+  "stage 2 and stage 3" paraphrase, the same look-alike that caused its dev failures.
+- 2026-11-26, Claude Sonnet 5.5, prompt v2-p3: recall 0.966 (28 of 29), wrong 0 of 28 (rate 0.000), PASS, $1.0618
+  ($0.0531 per document), 32.5 s per document. The miss was a unit or scaling mismatch on a chilled water
+  differential pressure point (case v2c28, CHWP-5-CHW-DP): the table verdict said not_an_error while its own
+  reason described the different range.
+- 2026-11-26, gemma3:4b, prompt v2-p3: recall 0.586 (17 of 29), wrong 203 of 220 (rate 0.923), FAIL, $0,
+  140.7 s per document. 352 of 576 replies failed the code checks and 196 items ended unresolved; 112 wrong
+  comments were table verdicts on look-alikes and 91 were sequence entries. Hardest types: unit or scaling
+  mismatch 0 of 2, wrong or missing alarm 1 of 6, interlock missing 3 of 6.
+- After the finals: no prompt, code-side rule, threshold, label or scoring rule changed. The v1 holdout was not
+  rescored.
+
+### Fixes after the dev final (no effect on any score)
+
+- tools\validate_v2.py took a run's spend as the change in the whole ledger, so the gemma3:4b dev run, which ran
+  while the two Claude holdout finals ran, was charged their $1.1397. A run's spend is now the sum of the ledger
+  entries carrying its own run label (SpendGuard.spent(run=...)); the gemma3:4b result file and its RUNS.md line
+  were corrected to $0. The budget stop always read the whole ledger and was never affected.
+- Model replies stored in validation\v2\results\ and written to review reports now have every en or em dash
+  replaced by a plain hyphen (project style rule); one Claude Sonnet 5.5 holdout reply carried one. Wording and
+  scores are otherwise unchanged.
+
+### Result
+
+- Pass bar (recall 0.90 or higher and wrong comment rate 0.05 or lower), dev and holdout:
+
+  | engine | dev recall | dev wrong rate | holdout recall | holdout wrong rate | s per doc | USD per doc | call |
+  |---|---|---|---|---|---|---|---|
+  | gemma3:4b | 0.524 | 0.939 | 0.586 | 0.923 | 159.8 / 140.7 | 0 | FAIL |
+  | Claude Haiku 5.5 | 1.000 | 0.106 | 1.000 | 0.033 | 32.8 / 28.6 | 0.0046 / 0.0039 | not a pass: fails dev |
+  | Claude Sonnet 5.5 | 1.000 | 0.012 | 0.966 | 0.000 | 36.5 / 32.5 | 0.0613 / 0.0531 | PASS |
+  | rules only | 0.452 | 0.963 | 0.345 | 0.966 | 0 | 0 | FAIL |
+
+- Claude Sonnet 5.5 is the only engine that meets the bar on both splits. Claude Haiku 5.5 meets it on the holdout
+  only. On dev it failed at every prompt version (0.248, 0.058, 0.106), and the rise from v2-p2 to v2-p3 came on
+  sequence sections that v2-p3 did not change, so the rate varies from run to run. It is not called a pass. gemma3:4b stays the default because it is the local engine, not because it passes.
+- Hardest error types: unit or scaling mismatch (gemma3:4b 0 of 6 on dev, Claude Sonnet 5.5's only holdout miss),
+  sequence contradictions and interlocks for gemma3:4b, and for every engine the correct look-alike paraphrases in
+  sequence sections, which drove all of Claude Haiku 5.5's wrong comments.
+- Actual Claude API spend for v2: $12.8398 of the $50.00 budget (Claude Haiku 5.5 $0.91 across 5 runs, Claude
+  Sonnet 5.5 $11.93 across 4 runs), from validation\v2\spend_ledger.jsonl. gemma3:4b runs cost nothing.
+- Limitation: all v2 material is public or synthetic and laid out in one fixed format; the holdout comes from the
+  same generator as dev; real exported submittals are untested.

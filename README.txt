@@ -1,22 +1,120 @@
-CONTROLS SUBMITTAL REVIEW AGENT - PHASE 5 (VALIDATION)
+CONTROLS SUBMITTAL REVIEW AGENT - v2
 Addison Smith (addsmi1720) - AGENT PRO, ECPI University - MIT License
 
 At a glance
 -----------
-What it does: reads a controls submittal (drawing set PDF, points list
-spreadsheet, sequence of operation text), cross references the three, runs
-five plain-code rule checks (R1 to R5), and has a small local model
-(gemma3:4b through Ollama) sort each suspected finding into a real error, a
-drafting convention, or unresolved. It drafts recommended comments with full
-evidence for an engineer to review. It never approves or rejects a submittal
-and never changes a source file. Everything runs on one Windows PC; nothing
-leaves the machine.
+What it does: reads a controls submittal, checks it against the
+specification and against itself, and drafts recommended comments with full
+evidence for an engineer to review. It never approves or rejects a
+submittal and never changes a source file.
 
-Final results (2026-11-17, gemma3:4b, prompt p2-v4):
+Two reviews:
+  submittal_review (v1): drawing set PDF, points list spreadsheet and
+    sequence of operation text cross referenced by five plain-code rules
+    (R1 to R5); a model sorts each suspected finding into a real error, a
+    drafting convention or unresolved.
+  spec_review (v2): a specification (sequences and points schedule) against
+    the submittal's sequence, points list and drawing device list. Six
+    plain-code table rules (T1 to T6) find every difference and the model
+    judges each one; the model reads each sequence section against the
+    specification section of the same number. Code checks every quote word
+    for word.
+
+Engines: gemma3:4b through Ollama is the default, runs on the PC, and
+nothing leaves the machine. v2 adds Claude as an optional engine behind a
+flag (--engine claude-haiku or --engine claude-sonnet). A Claude engine
+sends the prompts to the Anthropic API, so it refuses any package that is
+not a frozen public or synthetic test set unless --allow-cloud is given.
+
+v2 results (2026-11-26, prompt v2-p3)
+-------------------------------------
+Test set v2: 40 spec compliance pairs (a seeded twin with planted errors and
+a clean twin with none) in six systems: multizone and single zone VAV air
+handlers, VAV reheat terminals, fan coil units, and chilled water and hot
+water plants. 113 planted errors in 9 types: point missing, wrong point
+type, sequence contradicts spec, setpoint or range out of spec, wrong or
+missing alarm, interlock or safety missing, unit or scaling mismatch, device
+tag mismatch between the drawing list and the points list, and DDC hardware
+identifier mismatch. Hard cases: long documents (up to 16 terminals and 80
+points), two errors in one section, and correct look-alikes in every pair
+(SI or dual units, DI and DO for BI and BO, reworded alarms, contractor
+added paragraphs, local devices with no BAS point). Split before any run:
+30 dev pairs (84 errors) and 10 holdout pairs (29 errors), the holdout
+pinned by SHA-256 in validation\v2\HOLDOUT_V2.md and scored once per
+engine.
+
+Sources (validation\v2\SOURCES.md has URLs and terms): UFGS 23 09 00,
+UFGS 23 09 23.02 and UFGS 25 10 10 (US Government works), VA Section
+23 09 23 (US Government work), and the sequence logic of the Modelica
+Buildings Library G36 package (BSD 3-clause style license). Everything was
+paraphrased into new synthetic text; ASHRAE Guideline 36 itself was skipped
+because it has no reuse grant.
+
+Scoring (pre-registered in CHANGELOG.md before any engine ran): recall =
+planted errors caught / planted. A wrong comment is any comment that matches
+no planted error, including every comment on a clean twin. Wrong comment
+rate = wrong / comments made. Pass bar: recall 0.90 or higher AND wrong
+comment rate 0.05 or lower.
+
+  engine          split    recall          wrong comments      s/doc   USD/doc   bar
+  gemma3:4b       dev      0.524 (44/84)   674/718 (0.939)     159.8   0         FAIL
+  gemma3:4b       holdout  0.586 (17/29)   203/220 (0.923)     140.7   0         FAIL
+  Claude Haiku    dev      1.000 (84/84)   10/94 (0.106)       32.8    0.0046    FAIL
+  Claude Haiku    holdout  1.000 (29/29)   1/30 (0.033)        28.6    0.0039    pass
+  Claude Sonnet   dev      1.000 (84/84)   1/85 (0.012)        36.5    0.0613    PASS
+  Claude Sonnet   holdout  0.966 (28/29)   0/28 (0.000)        32.5    0.0531    PASS
+  rules only      dev      0.452 (38/84)   995/1033 (0.963)    0       0         FAIL
+  rules only      holdout  0.345 (10/29)   283/293 (0.966)     0       0         FAIL
+
+  Claude Haiku is Claude Haiku 5.5 (claude-haiku-5-5) and Claude Sonnet is
+  Claude Sonnet 5.5 (claude-sonnet-5-5), both at effort medium. A document is
+  one twin. Time is wall time per document with one document at a time.
+
+The call:
+  Claude Sonnet 5.5 PASSES the bar on dev and on the holdout. It is the
+    only engine that does.
+  Claude Haiku 5.5 is NOT a pass. It clears the bar on the holdout but fails
+    it on dev (wrong comment rate 0.106 against 0.05). Its dev wrong
+    comments went from 5 at v2-p2 to 10 at v2-p3 although v2-p3 changed only
+    the missing point check, so the count varies from run to run. One good
+    holdout does not outweigh that.
+  gemma3:4b FAILS by a wide margin on both splits. It catches about half
+    the errors and most of its comments are wrong; 65 percent of its replies
+    failed the code checks. It stays the default only because it is the
+    local, nothing-leaves-the-machine engine.
+
+Where the engines struggled (per type tables in validation\v2\results\):
+  gemma3:4b: unit or scaling mismatch (0 of 6 on dev), wrong point type
+    (1 of 6), sequence contradictions and interlocks (6 of 16, 3 of 8), and
+    look-alikes: 369 wrong table verdicts called a correct SI value, a DI
+    for BI name or a reworded alarm a real error.
+  Claude Haiku 5.5: no missed errors on dev at v2-p3; every wrong comment
+    sat on three correct paraphrases in sequence sections (AHU "stage 2
+    and stage 3" for "stage 2 or higher", a single zone AHU naming its
+    chilled water valve, a valve order).
+  Claude Sonnet 5.5: one holdout miss, a unit or scaling mismatch on a
+    chilled water differential pressure point, where its verdict
+    contradicted its own reason.
+
+Claude API spend for v2: $12.84 of the $50.00 budget, every call priced from
+its usage in validation\v2\spend_ledger.jsonl (run by run in
+validation\v2\RUNS.md).
+
+Limitation: every v2 package is built from public and synthetic material in
+a fixed layout (SECTION lines, numbered paragraphs, CSV lists). One author
+wrote the generator, the prompts and the scorer, and the holdout comes from
+the same generator, so it tests unseen combinations, not unseen kinds of
+error. The holdout is small (29 errors), so one miss moves recall by 0.034.
+Real exported submittals are longer, messier and laid out differently; no
+score here carries over to them without a test on real packages.
+
+v1 results (2026-11-17, gemma3:4b, prompt p2-v4, submittal_review)
+------------------------------------------------------------------
   Development sets (dev_a, dev_b, dev_c and the fixtures, with clean twins):
     20 of 20 seeded errors caught, 0 wrong comments, 0 comments on the
     clean twins (recall 1.0, precision 1.0).
-  Holdout (holdout_1, pre-registered, never used for tuning, scored once):
+  Holdout (holdout_1, pre-registered, never used for tuning, scored once,
+    now spent and not rescored in v2):
     5 of 5 caught, 0 wrong comments, 0 comments on the clean twin.
   Rules-only baseline (every suspected finding issued, no model):
     20 of 20 caught on the development sets but 7 wrong comments
@@ -25,11 +123,8 @@ Final results (2026-11-17, gemma3:4b, prompt p2-v4):
   Evidence: validation\results\validate_20261117_131754.json,
   validation\results\final_holdout_20261117_132843.json and
   benchmarks\baseline.json.
-
-Limitation: every result above is on synthetic sets built by the project's
-own generator in a deliberate test notation. The holdout is one set with 5
-seeded errors. Real exported submittal packages have not been scored, and
-extraction from real CAD exports is unproven.
+  Limitation: synthetic sets built by the project's own generator in a
+  deliberate test notation; the holdout is one set with 5 seeded errors.
 
 Quick start on a fresh Windows PC
   1. Install Python 3.11 or newer (python.org) and Git for Windows.
@@ -41,9 +136,14 @@ Quick start on a fresh Windows PC
        py -m venv .venv
        .venv\Scripts\python.exe -m pip install -r requirements.txt
        .venv\Scripts\python.exe -m pytest -q
-     The last line should read "161 passed" (the tests do not need Ollama).
+     The last line should read "191 passed" (the tests need neither Ollama
+     nor an API key; the Claude API is mocked).
   4. Run a review on the seeded example:
        .venv\Scripts\python.exe -m submittal_review --input tests\fixtures\seeded --output out
+       .venv\Scripts\python.exe spec_review.py --input validation\v2\dev\v2c01_ahu_mz\seeded --output out
+  5. Optional, Claude engines: set ANTHROPIC_API_KEY as a user environment
+     variable (never in a file in this folder), then add
+     --engine claude-haiku or --engine claude-sonnet to either command.
 The full install, model and run notes follow below.
 
 What this is
@@ -132,6 +232,27 @@ Phase 5 decides whether it is ready to ship (P5-C1 to P5-C7):
   N1 ingest -> N2 validate -> N3 extract -> N4 cross reference -> N5 rule checks
   -> N6 gather context -> N7 classify -> N8 order -> N9 report
 
+v2 adds a second review and a choice of engine:
+  - spec_review.py checks a submittal against its specification: V1 read
+    the package, V2 parse the sections and lists, V3 table rules T1 to T6,
+    V4 pair each specification sequence section with the submittal section
+    of the same number, V5 model judgments, V6 report. T1 missing point,
+    T2 point type, T3 range and units, T4 alarm, T5 drawing list device
+    tag, T6 DDC hardware identifier. Exact keys as P3-C1.
+  - Every sequence check carries the whole specification as a reference
+    block; quotes must come from the section under review. An entry the
+    model itself marks as meeting the spec is dropped by code.
+  - engines.py: --engine gemma3:4b (default), claude-haiku or
+    claude-sonnet, for both reviews. Every engine gets the same prompts,
+    schemas and code checks. Claude calls use structured outputs, cached
+    instructions and effort medium; the key comes only from
+    ANTHROPIC_API_KEY and is never printed or logged.
+  - Every Claude call is priced from its usage and written to
+    validation\v2\spend_ledger.jsonl. SpendGuard reserves each call's
+    worst case and stops the run before the $50.00 cap could be passed.
+  - A Claude engine refuses a package that is not a frozen public or
+    synthetic test set unless --allow-cloud is given.
+
 Files
 -----
   review_config.json           thresholds and limits (edit by hand)
@@ -158,7 +279,20 @@ Files
   THIRD_PARTY_NOTICES.txt      licenses for every library and model (P4-C2)
   tests/fixtures/datasets.json the frozen versions and hashes
   tests/test_phase1.py to test_phase5.py   tests for each phase
-  CHANGELOG.md                 what was built in each phase
+  CHANGELOG.md                 what was built in each phase and in v2
+  engines.py                   v2 engine switch, Claude engine, spend guard and ledger
+  spec_review.py               v2 specification compliance review (T1 to T6, sequence checks)
+  tools/v2_templates.py        v2 system templates and error types
+  tools/make_v2_sets.py        builds and freezes test set v2 (--check verifies it)
+  tools/score_v2.py            v2 scorer (pinned in HOLDOUT_V2.md)
+  tools/validate_v2.py         v2 dev runs, rules-only baseline, holdout final
+  tests/test_v2.py             v2 tests, Claude API mocked
+  validation/v2/dev, holdout/  30 dev and 10 holdout pairs, each seeded and clean
+  validation/v2/SOURCES.md     sources, URLs and licenses for test set v2
+  validation/v2/HOLDOUT_V2.md  the pinned holdout and scorer hashes
+  validation/v2/RUNS.md        every v2 run with its scores and spend
+  validation/v2/results/       one JSON result per v2 run
+  validation/v2/spend_ledger.jsonl   every Claude call with its usage and cost
 
 Install (Windows 11)
 --------------------
@@ -213,6 +347,23 @@ Final holdout (P5-C2), ONCE, only when every development check passes:
 It refuses if validate.py or the holdout changed since registration, and it
 refuses a second run. A later revision needs a newly generated holdout.
 
+v2 specification review on one package:
+  .venv\Scripts\python.exe spec_review.py --input validation\v2\dev\v2c01_ahu_mz\seeded --output out
+  add --engine claude-haiku or --engine claude-sonnet for a Claude engine
+The folder holds spec.txt, submittal_sequence.txt, submittal_points.csv
+and drawing_list.csv. A holdout folder is refused.
+
+v2 validation (dev only unless --holdout-final):
+  .venv\Scripts\python.exe tools\validate_v2.py --rules-only
+  .venv\Scripts\python.exe tools\validate_v2.py --engine gemma3:4b
+  .venv\Scripts\python.exe tools\validate_v2.py --engine claude-haiku --workers 4
+  .venv\Scripts\python.exe tools\validate_v2.py --engine claude-sonnet --limit 5
+Each run prints recall, wrong comments, the bar, a per type table, time
+and spend, writes validation\v2\results\<run>.json and adds a line to
+validation\v2\RUNS.md. --holdout-final scores the v2 holdout once per
+engine; all three engines have used theirs. Rebuild or check the set with
+  .venv\Scripts\python.exe tools\make_v2_sets.py --check
+
 Real packages: keep them in real_packages\ (never committed). The audit log
 withholds prompt and reply text for anything that is not a frozen synthetic set.
 
@@ -255,8 +406,9 @@ Run the tests
 -------------
   .venv\Scripts\python.exe -m pytest -q
 
-A pass is every test green. The last line reads "161 passed". The tests never
-call a real model; they use recorded replies and a fake local Ollama server.
+A pass is every test green. The last line reads "191 passed". The tests never
+call a real model; they use recorded replies, a fake local Ollama server and a
+mocked Claude client, and need no API key.
 
 Regenerate the fixtures (only if the generator changes)
 ------------------------------------------------------
